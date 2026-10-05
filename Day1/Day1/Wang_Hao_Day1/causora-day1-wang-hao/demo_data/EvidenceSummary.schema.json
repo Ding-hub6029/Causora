@@ -1,0 +1,287 @@
+{
+  "$defs": {
+    "BusinessVariable": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/EvidenceField"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "enum": [
+            "days",
+            "months",
+            "fraction",
+            "share",
+            "USD",
+            "boolean"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "evidence_id": {
+          "pattern": "^EV-[0-9]{3}$",
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote_matched": {
+          "const": true,
+          "title": "Quote Matched",
+          "type": "boolean"
+        },
+        "manually_verified": {
+          "const": true,
+          "title": "Manually Verified",
+          "type": "boolean"
+        },
+        "source": {
+          "const": "synthetic_contract",
+          "default": "synthetic_contract",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value",
+        "unit",
+        "evidence_id",
+        "quote_matched",
+        "manually_verified"
+      ],
+      "title": "BusinessVariable",
+      "type": "object"
+    },
+    "EvidenceField": {
+      "enum": [
+        "renewal_notice_days",
+        "auto_renew",
+        "renewal_term_months",
+        "renewal_price_increase_pct",
+        "min_purchase_share_A",
+        "termination_fee"
+      ],
+      "title": "EvidenceField",
+      "type": "string"
+    },
+    "EvidenceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^EV-[0-9]{3}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "source_file": {
+          "title": "Source File",
+          "type": "string"
+        },
+        "source_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Source Sha256",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "minLength": 5,
+          "title": "Quote",
+          "type": "string"
+        },
+        "source_quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Quote"
+        },
+        "source_span": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Span"
+        },
+        "locator_bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Locator Bbox"
+        },
+        "extracted_field": {
+          "$ref": "#/$defs/EvidenceField"
+        },
+        "extracted_value": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Extracted Value"
+        },
+        "unit": {
+          "enum": [
+            "days",
+            "months",
+            "percent",
+            "share",
+            "USD",
+            "boolean"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "match_method": {
+          "enum": [
+            "exact",
+            "fuzzy",
+            "none"
+          ],
+          "title": "Match Method",
+          "type": "string"
+        },
+        "match_score": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Match Score",
+          "type": "number"
+        },
+        "quote_matched": {
+          "title": "Quote Matched",
+          "type": "boolean"
+        },
+        "manually_verified": {
+          "default": false,
+          "title": "Manually Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "source_file",
+        "source_sha256",
+        "page",
+        "quote",
+        "extracted_field",
+        "extracted_value",
+        "unit",
+        "match_method",
+        "match_score",
+        "quote_matched"
+      ],
+      "title": "EvidenceRecord",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "dataset_id": {
+      "title": "Dataset Id",
+      "type": "string"
+    },
+    "source_file": {
+      "title": "Source File",
+      "type": "string"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRecord"
+      },
+      "title": "Records",
+      "type": "array"
+    },
+    "business_variables": {
+      "items": {
+        "$ref": "#/$defs/BusinessVariable"
+      },
+      "title": "Business Variables",
+      "type": "array"
+    },
+    "scenario_assumptions": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      },
+      "title": "Scenario Assumptions",
+      "type": "object"
+    },
+    "status": {
+      "enum": [
+        "MOCK_QUOTE_MATCHED_SYNTHETIC",
+        "LIVE_VERIFIED"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "dataset_id",
+    "source_file",
+    "records",
+    "business_variables",
+    "scenario_assumptions",
+    "status"
+  ],
+  "title": "EvidenceSummary",
+  "type": "object"
+}

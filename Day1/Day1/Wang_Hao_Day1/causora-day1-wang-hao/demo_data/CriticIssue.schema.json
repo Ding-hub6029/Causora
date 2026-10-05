@@ -1,0 +1,68 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "issue_id": {
+      "pattern": "^CR-[0-9]{3}$",
+      "title": "Issue Id",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "omission",
+        "conflict",
+        "compound_risk"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "explanation": {
+      "title": "Explanation",
+      "type": "string"
+    },
+    "agent_refs": {
+      "items": {
+        "enum": [
+          "CFO",
+          "COO",
+          "Risk"
+        ],
+        "type": "string"
+      },
+      "title": "Agent Refs",
+      "type": "array"
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "metric_refs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Metric Refs",
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "MOCK",
+        "LIVE"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "issue_id",
+    "category",
+    "explanation",
+    "agent_refs",
+    "evidence_ids",
+    "metric_refs",
+    "status"
+  ],
+  "title": "CriticIssue",
+  "type": "object"
+}

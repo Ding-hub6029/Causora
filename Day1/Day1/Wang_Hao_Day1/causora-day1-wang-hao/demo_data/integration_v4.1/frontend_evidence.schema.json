@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/schemas/frontend-evidence-v4.1.json",
+  "title": "Causora v4.1 frontend EvidenceRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "sourceFile",
+    "page",
+    "quote",
+    "locatorBbox",
+    "extractedField",
+    "extractedValue",
+    "matchMethod",
+    "matchScore",
+    "quoteMatched"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^EV-[0-9]{3}$"
+    },
+    "sourceFile": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+\\.pdf$"
+    },
+    "page": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "quote": {
+      "type": "string",
+      "minLength": 5
+    },
+    "locatorBbox": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      ]
+    },
+    "extractedField": {
+      "type": "string",
+      "enum": [
+        "renewal_notice_days",
+        "renewal_term_months",
+        "renewal_price_increase_pct",
+        "min_purchase_share_A",
+        "termination_fee"
+      ]
+    },
+    "extractedValue": {
+      "type": "string",
+      "minLength": 1
+    },
+    "matchMethod": {
+      "type": "string",
+      "enum": [
+        "exact",
+        "fuzzy"
+      ]
+    },
+    "matchScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "quoteMatched": {
+      "type": "boolean"
+    }
+  }
+}

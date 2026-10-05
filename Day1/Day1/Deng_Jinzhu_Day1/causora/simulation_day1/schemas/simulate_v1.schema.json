@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/schemas/simulate_v1.schema.json",
+  "title": "Day 1 Causora v1 simulate wire DTOs (static examples only)",
+  "$defs": {
+    "scenario": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "tag", "demandShock", "demandUnits24m", "leadTime", "leadTimeMultiplier", "description"],
+      "properties": {
+        "id": {"enum": ["baseline", "demand-drop", "lead-stress"]},
+        "label": {"type": "string", "minLength": 1}, "tag": {"type": "string", "minLength": 1},
+        "demandShock": {"type": "number", "minimum": -100, "maximum": 1000},
+        "demandUnits24m": {"type": "integer", "minimum": 0},
+        "leadTime": {"type": "string", "minLength": 1},
+        "leadTimeMultiplier": {"type": "number", "exclusiveMinimum": 0},
+        "description": {"type": "string", "minLength": 1}
+      }
+    },
+    "option": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "label", "shareA", "terminateA", "allocation", "short", "description"],
+      "properties": {
+        "id": {"enum": ["D0", "D1", "D2"]}, "label": {"type": "string", "minLength": 1},
+        "shareA": {"type": "number", "minimum": 0, "maximum": 1}, "terminateA": {"type": "boolean"},
+        "allocation": {"type": "string", "minLength": 1}, "short": {"type": "string", "minLength": 1},
+        "description": {"type": "string", "minLength": 1}
+      }
+    },
+    "request": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "datasetId", "scenarios", "options", "seed", "riskThreshold", "budgetCeilingUsd"],
+      "properties": {
+        "schemaVersion": {"const": "causora.contract.v1"},
+        "datasetId": {"type": "string", "minLength": 1},
+        "scenarios": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/scenario"}},
+        "options": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/option"}},
+        "seed": {"type": "integer", "minimum": 0},
+        "riskThreshold": {"type": "number", "minimum": 0, "maximum": 1},
+        "budgetCeilingUsd": {"type": "integer", "minimum": 0}
+      }
+    },
+    "cost": {
+      "type": "object", "additionalProperties": false,
+      "required": ["purchase", "holding", "stockoutLoss", "renewalPremium", "terminationFee"],
+      "properties": {
+        "purchase": {"type": "integer", "minimum": 0}, "holding": {"type": "integer", "minimum": 0},
+        "stockoutLoss": {"type": "integer", "minimum": 0}, "renewalPremium": {"type": "integer", "minimum": 0},
+        "terminationFee": {"type": "integer", "minimum": 0}
+      }
+    },
+    "cell": {
+      "type": "object", "additionalProperties": false,
+      "required": ["optionId", "feasible", "expectedTco", "stockoutProbability", "serviceLevel", "cashOutflowP90", "breakdown", "unitsFromA", "unitsFromB", "tone"],
+      "properties": {
+        "optionId": {"enum": ["D0", "D1", "D2"]}, "feasible": {"type": "boolean"},
+        "expectedTco": {"type": "integer", "minimum": 0},
+        "stockoutProbability": {"type": "number", "minimum": 0, "maximum": 1},
+        "serviceLevel": {"type": "number", "minimum": 0, "maximum": 1},
+        "cashOutflowP90": {"type": "integer", "minimum": 0},
+        "breakdown": {"$ref": "#/$defs/cost"}, "unitsFromA": {"type": "integer", "minimum": 0},
+        "unitsFromB": {"type": "integer", "minimum": 0},
+        "tone": {"enum": ["neutral", "recommended", "risk"]}
+      }
+    },
+    "simulation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["simulationId", "seed", "dataVersion", "formulaVersion", "weeks", "monteCarloRuns", "unitPricesUsd", "matrix"],
+      "properties": {
+        "simulationId": {"type": "string", "minLength": 1}, "seed": {"type": "integer", "minimum": 0},
+        "dataVersion": {"type": "string", "minLength": 1}, "formulaVersion": {"const": "tco-v1"},
+        "weeks": {"const": 104}, "monteCarloRuns": {"type": "integer", "minimum": 0},
+        "unitPricesUsd": {"type": "object", "required": ["A", "B"], "additionalProperties": false,
+          "properties": {"A": {"type": "number", "minimum": 0}, "B": {"type": "number", "minimum": 0}}},
+        "matrix": {"type": "object", "required": ["baseline", "demand-drop", "lead-stress"], "additionalProperties": false,
+          "properties": {
+            "baseline": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/cell"}},
+            "demand-drop": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/cell"}},
+            "lead-stress": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/cell"}}
+          }}
+      }
+    },
+    "delta": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scenarioId", "optionId", "baselineOptionId", "deltaTco", "deltaStockoutPp", "deltaServicePp", "deltaCashP90"],
+      "properties": {
+        "scenarioId": {"enum": ["baseline", "demand-drop", "lead-stress"]},
+        "optionId": {"enum": ["D0", "D1", "D2"]}, "baselineOptionId": {"const": "D0"},
+        "deltaTco": {"type": "integer"}, "deltaStockoutPp": {"type": "number"},
+        "deltaServicePp": {"type": "number"}, "deltaCashP90": {"type": "integer"}
+      }
+    },
+    "violation": {
+      "type": "object", "additionalProperties": false, "required": ["optionId", "code"],
+      "properties": {"optionId": {"enum": ["D0", "D1", "D2"]},
+        "code": {"enum": ["infeasible", "stockout_threshold", "cash_ceiling"]}}
+    },
+    "selection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scenarioId", "status", "recommendedOptionId", "constraintViolations"],
+      "properties": {
+        "scenarioId": {"enum": ["baseline", "demand-drop", "lead-stress"]},
+        "status": {"enum": ["selected", "no_feasible_option"]},
+        "recommendedOptionId": {"enum": ["D0", "D1", "D2", null]},
+        "constraintViolations": {"type": "array", "items": {"$ref": "#/$defs/violation"}}
+      },
+      "oneOf": [
+        {"properties": {"status": {"const": "selected"}, "recommendedOptionId": {"enum": ["D0", "D1", "D2"]}}},
+        {"properties": {"status": {"const": "no_feasible_option"}, "recommendedOptionId": {"const": null}}}
+      ]
+    },
+    "response": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "dataVersion", "requestId", "data"],
+      "properties": {
+        "schemaVersion": {"const": "causora.contract.v1"}, "dataVersion": {"type": "string", "minLength": 1},
+        "requestId": {"type": "string", "minLength": 1},
+        "data": {"type": "object", "additionalProperties": false,
+          "required": ["simulation", "deltas", "selections"],
+          "properties": {
+            "simulation": {"$ref": "#/$defs/simulation"},
+            "deltas": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/delta"}},
+            "selections": {"type": "object", "required": ["baseline", "demand-drop", "lead-stress"], "additionalProperties": false,
+              "properties": {"baseline": {"$ref": "#/$defs/selection"},
+                "demand-drop": {"$ref": "#/$defs/selection"}, "lead-stress": {"$ref": "#/$defs/selection"}}}
+          }}
+      }
+    }
+  }
+}

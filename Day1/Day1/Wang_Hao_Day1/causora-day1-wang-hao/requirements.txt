@@ -1,0 +1,7 @@
+pydantic>=2.10,<3
+PyMuPDF>=1.25,<2
+rapidfuzz>=3.10,<4
+reportlab>=4.0,<5
+openai>=1.0,<3
+pytest>=8,<10
+jsonschema>=4.23,<5

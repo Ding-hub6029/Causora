@@ -1,0 +1,161 @@
+{
+  "dataset_id": "supplier-a-synthetic-v1",
+  "source_file": "supplier_a_poison_pill.pdf",
+  "records": [
+    {
+      "id": "EV-001",
+      "source_file": "supplier_a_poison_pill.pdf",
+      "source_sha256": "a47216a5e916be2b2e92c61c550e25e300040cada9eb8578d04ca88ccdd50f11",
+      "page": 1,
+      "quote": "at least 60 days before renewal",
+      "source_quote": "at least 60 days before renewal",
+      "source_span": [
+        169,
+        200
+      ],
+      "locator_bbox": [
+        204.4627685546875,
+        170.63027954101562,
+        358.4114685058594,
+        180.3302764892578
+      ],
+      "extracted_field": "renewal_notice_days",
+      "extracted_value": 60,
+      "unit": "days",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-002",
+      "source_file": "supplier_a_poison_pill.pdf",
+      "source_sha256": "a47216a5e916be2b2e92c61c550e25e300040cada9eb8578d04ca88ccdd50f11",
+      "page": 1,
+      "quote": "the agreement automatically renews for 24 months",
+      "source_quote": "the agreement automatically renews for 24 months",
+      "source_span": [
+        202,
+        250
+      ],
+      "locator_bbox": [
+        50.0,
+        191.63027954101562,
+        301.2300109863281,
+        201.3302764892578
+      ],
+      "extracted_field": "auto_renew",
+      "extracted_value": true,
+      "unit": "boolean",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-003",
+      "source_file": "supplier_a_poison_pill.pdf",
+      "source_sha256": "a47216a5e916be2b2e92c61c550e25e300040cada9eb8578d04ca88ccdd50f11",
+      "page": 1,
+      "quote": "automatically renews for 24 months",
+      "source_quote": "automatically renews for 24 months",
+      "source_span": [
+        216,
+        250
+      ],
+      "locator_bbox": [
+        125.47570037841797,
+        191.63027954101562,
+        301.2300109863281,
+        201.3302764892578
+      ],
+      "extracted_field": "renewal_term_months",
+      "extracted_value": 24,
+      "unit": "months",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-004",
+      "source_file": "supplier_a_poison_pill.pdf",
+      "source_sha256": "a47216a5e916be2b2e92c61c550e25e300040cada9eb8578d04ca88ccdd50f11",
+      "page": 1,
+      "quote": "at a 14% higher unit price",
+      "source_quote": "at a 14% higher unit price",
+      "source_span": [
+        251,
+        277
+      ],
+      "locator_bbox": [
+        304.3146057128906,
+        191.63027954101562,
+        431.035400390625,
+        201.3302764892578
+      ],
+      "extracted_field": "renewal_price_increase_pct",
+      "extracted_value": 14,
+      "unit": "percent",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-005",
+      "source_file": "supplier_a_poison_pill.pdf",
+      "source_sha256": "a47216a5e916be2b2e92c61c550e25e300040cada9eb8578d04ca88ccdd50f11",
+      "page": 1,
+      "quote": "minimum purchase commitment equal to 60% of forecast demand",
+      "source_quote": "minimum purchase commitment equal to 60% of forecast demand",
+      "source_span": [
+        281,
+        340
+      ],
+      "locator_bbox": [
+        59.719398498535156,
+        212.63027954101562,
+        384.03887939453125,
+        222.3302764892578
+      ],
+      "extracted_field": "min_purchase_share_A",
+      "extracted_value": 0.6,
+      "unit": "share",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-006",
+      "source_file": "supplier_a_poison_pill.pdf",
+      "source_sha256": "a47216a5e916be2b2e92c61c550e25e300040cada9eb8578d04ca88ccdd50f11",
+      "page": 1,
+      "quote": "fixed termination fee of $25,000",
+      "source_quote": "fixed termination fee of $25,000",
+      "source_span": [
+        394,
+        426
+      ],
+      "locator_bbox": [
+        265.2526550292969,
+        233.63027954101562,
+        422.9455261230469,
+        243.3302764892578
+      ],
+      "extracted_field": "termination_fee",
+      "extracted_value": 25000,
+      "unit": "USD",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    }
+  ],
+  "business_variables": [],
+  "scenario_assumptions": {
+    "days_to_renewal": 45
+  },
+  "status": "MOCK_QUOTE_MATCHED_SYNTHETIC"
+}

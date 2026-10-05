@@ -1,0 +1,68 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "role": {
+      "enum": [
+        "CFO",
+        "COO",
+        "Risk"
+      ],
+      "title": "Role",
+      "type": "string"
+    },
+    "narrative_key": {
+      "title": "Narrative Key",
+      "type": "string"
+    },
+    "reason_text": {
+      "title": "Reason Text",
+      "type": "string"
+    },
+    "option_ids": {
+      "items": {
+        "enum": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "type": "string"
+      },
+      "title": "Option Ids",
+      "type": "array"
+    },
+    "metric_refs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Metric Refs",
+      "type": "array"
+    },
+    "evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "MOCK",
+        "LIVE",
+        "UNAVAILABLE"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "role",
+    "narrative_key",
+    "reason_text",
+    "option_ids",
+    "metric_refs",
+    "evidence_ids",
+    "status"
+  ],
+  "title": "AgentOutput",
+  "type": "object"
+}

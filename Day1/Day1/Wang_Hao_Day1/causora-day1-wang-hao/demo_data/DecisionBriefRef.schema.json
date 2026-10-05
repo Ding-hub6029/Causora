@@ -1,0 +1,57 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "recommended_option_id": {
+      "anyOf": [
+        {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Recommended Option Id"
+    },
+    "reason_text": {
+      "title": "Reason Text",
+      "type": "string"
+    },
+    "metric_refs": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Metric Refs",
+      "type": "array"
+    },
+    "critic_issue_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Critic Issue Ids",
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "MOCK",
+        "LIVE",
+        "UNAVAILABLE"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "recommended_option_id",
+    "reason_text",
+    "metric_refs",
+    "critic_issue_ids",
+    "status"
+  ],
+  "title": "DecisionBriefRef",
+  "type": "object"
+}

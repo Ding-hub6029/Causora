@@ -1,0 +1,188 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Causora v4.1 LOCAL MOCK wire shape (structural subset)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "meta",
+    "intake",
+    "evidence",
+    "contract",
+    "variables",
+    "scenarios",
+    "options",
+    "simulation",
+    "boardroom",
+    "critic",
+    "brief"
+  ],
+  "$defs": {
+    "evidence": {
+      "title": "Causora v4.1 frontend EvidenceRecord",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sourceFile",
+        "page",
+        "quote",
+        "locatorBbox",
+        "extractedField",
+        "extractedValue",
+        "matchMethod",
+        "matchScore",
+        "quoteMatched"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^EV-[0-9]{3}$"
+        },
+        "sourceFile": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.-]+\\.pdf$"
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 5
+        },
+        "locatorBbox": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          ]
+        },
+        "extractedField": {
+          "type": "string",
+          "enum": [
+            "renewal_notice_days",
+            "renewal_term_months",
+            "renewal_price_increase_pct",
+            "min_purchase_share_A",
+            "termination_fee"
+          ]
+        },
+        "extractedValue": {
+          "type": "string",
+          "minLength": 1
+        },
+        "matchMethod": {
+          "type": "string",
+          "enum": [
+            "exact",
+            "fuzzy"
+          ]
+        },
+        "matchScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "quoteMatched": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": [
+        "schemaVersion",
+        "dataVersion",
+        "status",
+        "notice"
+      ],
+      "properties": {
+        "schemaVersion": {
+          "const": "causora.contract.v1"
+        },
+        "dataVersion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "pattern": "LOCAL MOCK"
+        },
+        "notice": {
+          "type": "string",
+          "pattern": "LOCAL MOCK"
+        }
+      }
+    },
+    "intake": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "contract": {
+      "type": "object"
+    },
+    "variables": {
+      "type": "array"
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "options": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "simulation": {
+      "type": "object",
+      "required": [
+        "dataVersion",
+        "matrix",
+        "monteCarloRuns"
+      ],
+      "properties": {
+        "dataVersion": {
+          "type": "string"
+        },
+        "matrix": {
+          "type": "object"
+        },
+        "monteCarloRuns": {
+          "const": 0
+        }
+      }
+    },
+    "boardroom": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "critic": {
+      "type": "object"
+    },
+    "brief": {
+      "type": "object"
+    }
+  }
+}

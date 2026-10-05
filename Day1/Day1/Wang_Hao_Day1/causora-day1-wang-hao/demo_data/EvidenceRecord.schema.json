@@ -1,0 +1,157 @@
+{
+  "$defs": {
+    "EvidenceField": {
+      "enum": [
+        "renewal_notice_days",
+        "auto_renew",
+        "renewal_term_months",
+        "renewal_price_increase_pct",
+        "min_purchase_share_A",
+        "termination_fee"
+      ],
+      "title": "EvidenceField",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^EV-[0-9]{3}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "source_file": {
+      "title": "Source File",
+      "type": "string"
+    },
+    "source_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "page": {
+      "minimum": 1,
+      "title": "Page",
+      "type": "integer"
+    },
+    "quote": {
+      "minLength": 5,
+      "title": "Quote",
+      "type": "string"
+    },
+    "source_quote": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Quote"
+    },
+    "source_span": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "integer"
+          },
+          "maxItems": 2,
+          "minItems": 2,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Span"
+    },
+    "locator_bbox": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Locator Bbox"
+    },
+    "extracted_field": {
+      "$ref": "#/$defs/EvidenceField"
+    },
+    "extracted_value": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        }
+      ],
+      "title": "Extracted Value"
+    },
+    "unit": {
+      "enum": [
+        "days",
+        "months",
+        "percent",
+        "share",
+        "USD",
+        "boolean"
+      ],
+      "title": "Unit",
+      "type": "string"
+    },
+    "match_method": {
+      "enum": [
+        "exact",
+        "fuzzy",
+        "none"
+      ],
+      "title": "Match Method",
+      "type": "string"
+    },
+    "match_score": {
+      "maximum": 100,
+      "minimum": 0,
+      "title": "Match Score",
+      "type": "number"
+    },
+    "quote_matched": {
+      "title": "Quote Matched",
+      "type": "boolean"
+    },
+    "manually_verified": {
+      "default": false,
+      "title": "Manually Verified",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "source_file",
+    "source_sha256",
+    "page",
+    "quote",
+    "extracted_field",
+    "extracted_value",
+    "unit",
+    "match_method",
+    "match_score",
+    "quote_matched"
+  ],
+  "title": "EvidenceRecord",
+  "type": "object"
+}
