@@ -1,0 +1,34 @@
+{
+  "name": "causora-day2",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "build": "next build",
+    "start": "node scripts/serve-static.mjs",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/day1-flow.test.mjs tests/day2-ux.test.mjs",
+    "freeze:golden": "node scripts/freeze-golden.mjs",
+    "test:production": "node --test tests/static-server.test.mjs",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build && npm run test:production"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.7",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "^15.5.7",
+    "pdfjs-dist": "^6.4.299",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}

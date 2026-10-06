@@ -1,0 +1,136 @@
+{
+  "kind": "CAUSORA_SYNTHETIC_DEMO_FIELD_REVIEW_V1",
+  "scopeSha256": "1f1e9b6b8397377dad5655c78a73c1e2ed4211f3d9a010c382387f7e0dd64908",
+  "sourceHashes": {
+    "public/demo/supplier_a_agreement.pdf": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+    "demo_data/causora_day1_mock.json": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+    "public/demo/supplier_correspondence_log.csv": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952",
+    "demo_data/supplier_correspondence_log.csv": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952",
+    "public/demo/historical_demand.csv": "654a22f3f5433e214611f3c5a69b625bedad2d11157dedfa9cd65bbb14d3499e",
+    "public/demo/supplier_delivery_history.xlsx": "cabeaae5d3a9ba23f863734fca3b3080bc85d121b0dba75a7f6457fa76c56298",
+    "public/demo/opening_inventory.csv": "c2ad7ff5d928623f69d2599fea47d20c008c3b1fdd4d3879d29dcc2799ffe067",
+    "lib/contracts.ts": "2c4eb25fab520c76a8d0622df3425eea443d56440a067eafdd18f148c030176d"
+  },
+  "implementationHashes": {
+    "evidence_day2/pipeline.py": "5b3902fa0491069ec8f2a9489f96fc1b5ade89bf5252880c258bd5ec54c2b015",
+    "evidence_day2/cli.py": "c3349ffc26ab73f2ea6462421ec635c91bc59da9056394cc299cfc0792f750cb",
+    "evidence_day2/handoff_models.py": "476471eb322c84229741627e8dfc32b7d727a7686b52134e356555a0da70aeec",
+    "evidence_day2/schemas/jinzhu_contract_input.schema.json": "0dc73222be812ca829ad0ff16af91c90f16df55a5db037c349f76a51fb4de39e",
+    "causora_day1/claim_checks.py": "f8a16db8bba8b40d75f13041c4bc72808ae497e2b15d9c313f5e331f601f2066",
+    "causora_day1/evidence.py": "0b7f8bfd6b2c52e1076bdf3235c87c685b42242729bb0dba83c8e755b06e1ba2",
+    "causora_day1/schemas.py": "9696bbc48d89ec504697c2baa5534230615c4c2ec5a9df0351c59ef208d65f97",
+    "causora_day1/adapter.py": "af37e2399c2eb7f1310943c9b05e6c8679165e6c138e8c7387ab0780e2e3de97",
+    "simulation_day1/wire_models.py": "b1033d6acd79d57f5fb3fe0521c15e44c2548044b9c8519f0749e0b7d5be5e3f",
+    "simulation_day1/source_models.py": "5202c91de2dfcac97ee9cccaea2820b18456374c912b8025d56b8a8c36e398bd",
+    "simulation_day1/build_day1_schemas.py": "a141f2f582c7360f028f484798dfc290eaff97be815860ae178debd3d2fa2f34",
+    "simulation_day1/schemas/dataset_success_v1.schema.json": "9092ed6e97f3083db616c70c1c128746d047d42fc593e17f2ae8776905eca872",
+    "simulation_day1/schemas/evidence_success_v1.schema.json": "80858fc1b5ddf68d7ca566289b814e137b1ac563ed1a768c3ff8d7f06e7ed7a6"
+  },
+  "reviewerName": "",
+  "reviewedAtUtc": "",
+  "acknowledgement": "",
+  "evidence": [
+    {
+      "id": "EV-014",
+      "page": 4,
+      "quote": "If written notice is not received at least 60 days before renewal, the agreement automatically renews.",
+      "field": "renewal_notice_days",
+      "expectedValue": "60 days",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "id": "EV-019",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "field": "renewal_term_months",
+      "expectedValue": "24 months",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "id": "EV-021",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "field": "renewal_price_increase_pct",
+      "expectedValue": "14%",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "id": "EV-024",
+      "page": 4,
+      "quote": "The renewed term has a minimum purchase commitment equal to 60% of forecast demand.",
+      "field": "min_purchase_share_A",
+      "expectedValue": "60%",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "id": "EV-027",
+      "page": 4,
+      "quote": "Early exit during the renewed term incurs a fixed termination fee of $25,000.",
+      "field": "termination_fee",
+      "expectedValue": "$25,000",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "id": "EV-020",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "field": "auto_renew",
+      "expectedValue": "conditional auto-renew clause present",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    }
+  ],
+  "assumptions": [
+    {
+      "key": "decisionDate",
+      "expectedValue": "2026-10-04",
+      "source": "frozen synthetic contract input (not inferred from PDF)",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "key": "renewalDate",
+      "expectedValue": "2026-11-18",
+      "source": "frozen synthetic contract input (not inferred from PDF)",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "key": "noticeSent",
+      "expectedValue": false,
+      "source": "public/demo/supplier_correspondence_log.csv",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "key": "forecastBasis",
+      "expectedValue": "locked-at-renewal",
+      "source": "public/demo/supplier_a_agreement.pdf p.4 + frozen mock",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    },
+    {
+      "key": "lockedForecastUnits24m",
+      "expectedValue": 26000,
+      "source": "public/demo/supplier_a_agreement.pdf p.4 + frozen mock",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "$defs": {
+    "BusinessVariable": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/EvidenceField"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "enum": [
+            "days",
+            "months",
+            "fraction",
+            "share",
+            "USD",
+            "boolean"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "evidence_id": {
+          "pattern": "^EV-[0-9]{3}$",
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "quote_matched": {
+          "const": true,
+          "title": "Quote Matched",
+          "type": "boolean"
+        },
+        "manually_verified": {
+          "const": true,
+          "title": "Manually Verified",
+          "type": "boolean"
+        },
+        "source": {
+          "const": "synthetic_contract",
+          "default": "synthetic_contract",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value",
+        "unit",
+        "evidence_id",
+        "quote_matched",
+        "manually_verified"
+      ],
+      "title": "BusinessVariable",
+      "type": "object"
+    },
+    "ContractConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "decisionDate": {
+          "format": "date",
+          "title": "Decisiondate",
+          "type": "string"
+        },
+        "renewalDate": {
+          "format": "date",
+          "title": "Renewaldate",
+          "type": "string"
+        },
+        "daysToRenewal": {
+          "minimum": 0,
+          "title": "Daystorenewal",
+          "type": "integer"
+        },
+        "renewalNoticeDays": {
+          "minimum": 0,
+          "title": "Renewalnoticedays",
+          "type": "integer"
+        },
+        "noticeDeadline": {
+          "format": "date",
+          "title": "Noticedeadline",
+          "type": "string"
+        },
+        "noticeSent": {
+          "title": "Noticesent",
+          "type": "boolean"
+        },
+        "noticeRecordSource": {
+          "title": "Noticerecordsource",
+          "type": "string"
+        },
+        "renewalLocked": {
+          "title": "Renewallocked",
+          "type": "boolean"
+        },
+        "renewalTermMonths": {
+          "minimum": 0,
+          "title": "Renewaltermmonths",
+          "type": "integer"
+        },
+        "renewalPriceIncreasePct": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Renewalpriceincreasepct",
+          "type": "number"
+        },
+        "minPurchaseShareA": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Minpurchasesharea",
+          "type": "number"
+        },
+        "forecastBasis": {
+          "enum": [
+            "locked-at-renewal",
+            "rolling"
+          ],
+          "title": "Forecastbasis",
+          "type": "string"
+        },
+        "lockedForecastUnits24m": {
+          "minimum": 0,
+          "title": "Lockedforecastunits24M",
+          "type": "integer"
+        },
+        "minPurchaseUnitsA": {
+          "minimum": 0,
+          "title": "Minpurchaseunitsa",
+          "type": "integer"
+        },
+        "terminationFeeUsd": {
+          "minimum": 0,
+          "title": "Terminationfeeusd",
+          "type": "integer"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "decisionDate",
+        "renewalDate",
+        "daysToRenewal",
+        "renewalNoticeDays",
+        "noticeDeadline",
+        "noticeSent",
+        "noticeRecordSource",
+        "renewalLocked",
+        "renewalTermMonths",
+        "renewalPriceIncreasePct",
+        "minPurchaseShareA",
+        "forecastBasis",
+        "lockedForecastUnits24m",
+        "minPurchaseUnitsA",
+        "terminationFeeUsd",
+        "evidenceIds"
+      ],
+      "title": "ContractConstraint",
+      "type": "object"
+    },
+    "EvidenceField": {
+      "enum": [
+        "renewal_notice_days",
+        "auto_renew",
+        "renewal_term_months",
+        "renewal_price_increase_pct",
+        "min_purchase_share_A",
+        "termination_fee"
+      ],
+      "title": "EvidenceField",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "CAUSORA_WANG_TO_JINZHU_SYNTHETIC_CONTRACT_V1",
+      "title": "Kind",
+      "type": "string"
+    },
+    "handoffVersion": {
+      "const": "wang.evidence_day2.v1",
+      "title": "Handoffversion",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "datasetId": {
+      "const": "ds-001",
+      "title": "Datasetid",
+      "type": "string"
+    },
+    "dataVersion": {
+      "pattern": "^demo-2026\\.10\\.04-v4-wang-day2-reviewed-[a-f0-9]{12}$",
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "contract": {
+      "$ref": "#/$defs/ContractConstraint"
+    },
+    "businessVariables": {
+      "items": {
+        "$ref": "#/$defs/BusinessVariable"
+      },
+      "maxItems": 5,
+      "minItems": 5,
+      "title": "Businessvariables",
+      "type": "array"
+    },
+    "sourceHashes": {
+      "additionalProperties": {
+        "pattern": "^[a-f0-9]{64}$",
+        "type": "string"
+      },
+      "title": "Sourcehashes",
+      "type": "object"
+    },
+    "reviewSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Reviewsha256",
+      "type": "string"
+    },
+    "status": {
+      "const": "SELF_ATTESTED_SYNTHETIC_ONLY_NOT_SIMULATED",
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "kind",
+    "handoffVersion",
+    "schemaVersion",
+    "datasetId",
+    "dataVersion",
+    "contract",
+    "businessVariables",
+    "sourceHashes",
+    "reviewSha256",
+    "status"
+  ],
+  "title": "JinzhuContractHandoff",
+  "type": "object"
+}

@@ -1,0 +1,9 @@
+# Exact top-level versions observed in the 2026-10-05 Ubuntu/Python 3.12 run.
+# Not a supply-chain hash-locked lockfile; transitive dependencies may differ.
+pydantic==2.13.5
+PyMuPDF==1.28.2
+rapidfuzz==3.14.6
+openpyxl==3.1.5
+jsonschema==4.26.0
+pytest==9.1.1
+reportlab==4.5.1
