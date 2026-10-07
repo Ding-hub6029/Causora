@@ -1,0 +1,259 @@
+{
+  "kind": "CAUSORA_AI_REVIEWED_SYNTHETIC_INPUT_CANDIDATE",
+  "schemaVersion": "causora.contract.v1",
+  "dataVersion": "demo-2026.10.04-v4-wang-ai-review-568c0474a14a",
+  "baselineDataVersion": "demo-2026.10.04-v4",
+  "datasetId": "ds-001",
+  "sourceMode": "LOCAL_MOCK",
+  "permittedUse": "SYNTHETIC_DEVELOPMENT_ONLY",
+  "humanReviewStatus": "pending",
+  "realWorldVerificationStatus": "not_verified",
+  "simulationState": "NOT_COMPUTED",
+  "decisionReady": false,
+  "scopeSha256": "568c0474a14a5c9d8fda25e69f1dc6014ccd1d12a8ae7b10b8bb8845a913a7d0",
+  "sourceHashes": {
+    "fixtures/causora_day1_mock.json": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+    "fixtures/demo/historical_demand.csv": "654a22f3f5433e214611f3c5a69b625bedad2d11157dedfa9cd65bbb14d3499e",
+    "fixtures/demo/opening_inventory.csv": "c2ad7ff5d928623f69d2599fea47d20c008c3b1fdd4d3879d29dcc2799ffe067",
+    "fixtures/demo/supplier_a_agreement.pdf": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+    "fixtures/demo/supplier_correspondence_log.csv": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952",
+    "fixtures/demo/supplier_delivery_history.xlsx": "cabeaae5d3a9ba23f863734fca3b3080bc85d121b0dba75a7f6457fa76c56298",
+    "reference/API_CONTRACT.md": "e88c0bb2fb014338ed31dc55894f6aa0f9c99c31a4231c47d20a1c90497e8226",
+    "reference/contracts.ts": "2c4eb25fab520c76a8d0622df3425eea443d56440a067eafdd18f148c030176d"
+  },
+  "contract": {
+    "decisionDate": "2026-10-04",
+    "renewalDate": "2026-11-18",
+    "daysToRenewal": 45,
+    "renewalNoticeDays": 60,
+    "noticeDeadline": "2026-09-19",
+    "noticeSent": false,
+    "noticeRecordSource": "supplier_correspondence_log.csv — no written notice entry before 2026-09-19 (mock input)",
+    "renewalLocked": true,
+    "renewalTermMonths": 24,
+    "renewalPriceIncreasePct": 0.14,
+    "minPurchaseShareA": 0.6,
+    "forecastBasis": "locked-at-renewal",
+    "lockedForecastUnits24m": 26000,
+    "minPurchaseUnitsA": 15600,
+    "terminationFeeUsd": 25000,
+    "evidenceIds": [
+      "EV-014",
+      "EV-019",
+      "EV-021",
+      "EV-024",
+      "EV-027"
+    ]
+  },
+  "evidence": [
+    {
+      "id": "EV-014",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "If written notice is not received at least 60 days before renewal, the agreement automatically renews.",
+      "locatorBbox": [
+        54.0,
+        170.1750030517578,
+        543.7199096679688,
+        185.28900146484375
+      ],
+      "extractedField": "renewal_notice_days",
+      "extractedValue": "60 days",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-019",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "locatorBbox": [
+        54.0,
+        198.1750030517578,
+        435.5019836425781,
+        213.28900146484375
+      ],
+      "extractedField": "renewal_term_months",
+      "extractedValue": "24 months",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-021",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "locatorBbox": [
+        54.0,
+        198.1750030517578,
+        435.5019836425781,
+        213.28900146484375
+      ],
+      "extractedField": "renewal_price_increase_pct",
+      "extractedValue": "14%",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-024",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "The renewed term has a minimum purchase commitment equal to 60% of forecast demand.",
+      "locatorBbox": [
+        54.0,
+        226.1750030517578,
+        499.676025390625,
+        241.28900146484375
+      ],
+      "extractedField": "min_purchase_share_A",
+      "extractedValue": "60%",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-027",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "Early exit during the renewed term incurs a fixed termination fee of $25,000.",
+      "locatorBbox": [
+        54.0,
+        254.1750030517578,
+        423.2809753417969,
+        269.28900146484375
+      ],
+      "extractedField": "termination_fee",
+      "extractedValue": "$25,000",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    }
+  ],
+  "variables": [
+    {
+      "key": "renewal_locked",
+      "name": "Renewal locked-in",
+      "value": "Yes",
+      "unit": "boolean",
+      "source": "EV-014",
+      "meaning": "The notice deadline passed with no written notice on record, so the agreement renews.",
+      "inputs": [
+        {
+          "name": "decision_date",
+          "value": "2026-10-04",
+          "source": "contract.decisionDate"
+        },
+        {
+          "name": "renewal_date",
+          "value": "2026-11-18",
+          "source": "contract.renewalDate"
+        },
+        {
+          "name": "days_to_renewal",
+          "value": "45 days",
+          "source": "derived"
+        },
+        {
+          "name": "renewal_notice_days",
+          "value": "60 days",
+          "source": "EV-014"
+        },
+        {
+          "name": "notice_sent_before_deadline",
+          "value": "No",
+          "source": "contract.noticeRecordSource"
+        }
+      ]
+    },
+    {
+      "key": "renewal_term_months",
+      "name": "Renewal term",
+      "value": "24 months",
+      "unit": "months",
+      "source": "EV-019",
+      "meaning": "The price uplift and the minimum commitment persist for the whole simulated horizon.",
+      "inputs": [
+        {
+          "name": "renewal_term_months",
+          "value": "24",
+          "source": "EV-019"
+        },
+        {
+          "name": "simulation_weeks",
+          "value": "104",
+          "source": "simulation.weeks"
+        }
+      ]
+    },
+    {
+      "key": "effective_price_A",
+      "name": "Effective price A",
+      "value": "Base × 1.14",
+      "unit": "USD per unit",
+      "source": "EV-021",
+      "meaning": "Purchase cost is booked at base price; the {{evidence:EV-021}} uplift is reported separately as renewal premium.",
+      "inputs": [
+        {
+          "name": "base_price_A",
+          "value": "$12.00",
+          "source": "supplier_delivery_history.xlsx"
+        },
+        {
+          "name": "renewal_price_increase_pct",
+          "value": "14%",
+          "source": "EV-021"
+        }
+      ]
+    },
+    {
+      "key": "min_purchase_share_A",
+      "name": "Minimum share A",
+      "value": "60% of locked forecast",
+      "unit": "share",
+      "source": "EV-024",
+      "meaning": "{{contract:minPurchaseUnitsA}} must still be bought from A even if demand falls; D1 stays feasible, D2 pays the exit fee.",
+      "inputs": [
+        {
+          "name": "min_purchase_share_A",
+          "value": "60%",
+          "source": "EV-024"
+        },
+        {
+          "name": "forecast_basis",
+          "value": "locked at renewal",
+          "source": "contract.forecastBasis"
+        },
+        {
+          "name": "locked_forecast_units_24m",
+          "value": "26,000 units",
+          "source": "synthetic renewal-cycle forecast assumption; supplier_a_agreement.pdf p. 4 (not a sum of historical demand)"
+        }
+      ]
+    },
+    {
+      "key": "termination_fee",
+      "name": "Exit cost",
+      "value": "$25,000",
+      "unit": "USD",
+      "source": "EV-027",
+      "meaning": "Charged once when the renewed agreement is terminated (D2 only).",
+      "inputs": [
+        {
+          "name": "termination_fee",
+          "value": "$25,000",
+          "source": "EV-027"
+        },
+        {
+          "name": "renewal_locked",
+          "value": "Yes",
+          "source": "variables.renewal_locked"
+        }
+      ]
+    }
+  ],
+  "conditionalAutoRenewEvidenceId": "EV-020",
+  "integrationNote": "Internal candidate, NOT DatasetResult/ApiSuccess. Do not publish ready or LIVE. EV-020 remains internal; do not add it to the five public evidence IDs without team approval."
+}

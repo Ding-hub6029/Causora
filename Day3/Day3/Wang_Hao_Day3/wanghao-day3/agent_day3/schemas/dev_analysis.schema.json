@@ -1,0 +1,341 @@
+{
+  "$defs": {
+    "DevLineage": {
+      "additionalProperties": false,
+      "description": "Sanitized lineage emitted with the internal analysis; it contains no source paths.",
+      "properties": {
+        "kind": {
+          "const": "CAUSORA_UNREVIEWED_DEVELOPMENT_LINEAGE_V1",
+          "title": "Kind",
+          "type": "string"
+        },
+        "analysisDataVersion": {
+          "minLength": 1,
+          "title": "Analysisdataversion",
+          "type": "string"
+        },
+        "candidateDataVersion": {
+          "minLength": 1,
+          "title": "Candidatedataversion",
+          "type": "string"
+        },
+        "candidateScopeSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Candidatescopesha256",
+          "type": "string"
+        },
+        "candidateSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Candidatesha256",
+          "type": "string"
+        },
+        "engineSourceDataVersion": {
+          "minLength": 1,
+          "title": "Enginesourcedataversion",
+          "type": "string"
+        },
+        "previewId": {
+          "minLength": 1,
+          "title": "Previewid",
+          "type": "string"
+        },
+        "previewSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Previewsha256",
+          "type": "string"
+        },
+        "requestSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Requestsha256",
+          "type": "string"
+        },
+        "policySha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Policysha256",
+          "type": "string"
+        },
+        "contractSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Contractsha256",
+          "type": "string"
+        },
+        "evidenceSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidencesha256",
+          "type": "string"
+        },
+        "traceAuditSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Traceauditsha256",
+          "type": "string"
+        },
+        "engineSourceSha256": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "minProperties": 1,
+          "title": "Enginesourcesha256",
+          "type": "object"
+        },
+        "intermediateManifestSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Intermediatemanifestsha256",
+          "type": "string"
+        },
+        "traceAuditorSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Traceauditorsha256",
+          "type": "string"
+        },
+        "versionRelationship": {
+          "const": "DISTINCT_VERSIONS_SAME_RAW_SOURCE_BYTES_AND_CONTRACT; ENGINE_VERSION_NOT_REWRITTEN",
+          "title": "Versionrelationship",
+          "type": "string"
+        },
+        "humanReviewStatus": {
+          "const": "pending",
+          "title": "Humanreviewstatus",
+          "type": "string"
+        },
+        "policyReviewStatus": {
+          "const": "UNAPPROVED_TEST_INPUT",
+          "title": "Policyreviewstatus",
+          "type": "string"
+        },
+        "decisionReady": {
+          "const": false,
+          "title": "Decisionready",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "kind",
+        "analysisDataVersion",
+        "candidateDataVersion",
+        "candidateScopeSha256",
+        "candidateSha256",
+        "engineSourceDataVersion",
+        "previewId",
+        "previewSha256",
+        "requestSha256",
+        "policySha256",
+        "contractSha256",
+        "evidenceSha256",
+        "traceAuditSha256",
+        "engineSourceSha256",
+        "intermediateManifestSha256",
+        "traceAuditorSha256",
+        "versionRelationship",
+        "humanReviewStatus",
+        "policyReviewStatus",
+        "decisionReady"
+      ],
+      "title": "DevLineage",
+      "type": "object"
+    },
+    "DevRoleOutput": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "CFO",
+            "COO",
+            "Risk"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "availability": {
+          "enum": [
+            "DEV_ONLY",
+            "UNAVAILABLE"
+          ],
+          "title": "Availability",
+          "type": "string"
+        },
+        "headline": {
+          "maxLength": 300,
+          "minLength": 5,
+          "title": "Headline",
+          "type": "string"
+        },
+        "reasonText": {
+          "maxLength": 3000,
+          "minLength": 10,
+          "title": "Reasontext",
+          "type": "string"
+        },
+        "claimIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claimids",
+          "type": "array"
+        },
+        "metricRefs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Metricrefs",
+          "type": "array"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "metricBindings": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Metricbindings",
+          "type": "object"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "enum": [
+                "Aligned",
+                "Watch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Status"
+        },
+        "failure": {
+          "anyOf": [
+            {
+              "enum": [
+                "timeout",
+                "provider_error",
+                "cancelled",
+                "invalid_response"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Failure"
+        }
+      },
+      "required": [
+        "role",
+        "availability",
+        "headline",
+        "reasonText",
+        "claimIds",
+        "metricRefs",
+        "evidenceIds",
+        "metricBindings",
+        "status",
+        "failure"
+      ],
+      "title": "DevRoleOutput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Internal JSON only; deliberately not a public BoardroomResponse.",
+  "properties": {
+    "kind": {
+      "const": "CAUSORA_DAY3_UNREVIEWED_DEV_ANALYSIS_V1",
+      "title": "Kind",
+      "type": "string"
+    },
+    "humanReviewStatus": {
+      "const": "pending",
+      "title": "Humanreviewstatus",
+      "type": "string"
+    },
+    "decisionReady": {
+      "const": false,
+      "title": "Decisionready",
+      "type": "boolean"
+    },
+    "sourceMode": {
+      "const": "UNREVIEWED_DEV_COMPUTED",
+      "title": "Sourcemode",
+      "type": "string"
+    },
+    "commentaryMode": {
+      "const": "CODE_BOUND_CLAIM_SELECTION",
+      "title": "Commentarymode",
+      "type": "string"
+    },
+    "analysisDataVersion": {
+      "minLength": 1,
+      "title": "Analysisdataversion",
+      "type": "string"
+    },
+    "lineage": {
+      "$ref": "#/$defs/DevLineage"
+    },
+    "scenarioId": {
+      "minLength": 1,
+      "title": "Scenarioid",
+      "type": "string"
+    },
+    "providerKind": {
+      "minLength": 1,
+      "title": "Providerkind",
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "ALL_READY",
+        "PARTIAL",
+        "UNAVAILABLE"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "outputs": {
+      "items": {
+        "$ref": "#/$defs/DevRoleOutput"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Outputs",
+      "type": "array"
+    }
+  },
+  "required": [
+    "kind",
+    "humanReviewStatus",
+    "decisionReady",
+    "sourceMode",
+    "commentaryMode",
+    "analysisDataVersion",
+    "lineage",
+    "scenarioId",
+    "providerKind",
+    "state",
+    "outputs"
+  ],
+  "title": "DevAnalysis",
+  "type": "object"
+}

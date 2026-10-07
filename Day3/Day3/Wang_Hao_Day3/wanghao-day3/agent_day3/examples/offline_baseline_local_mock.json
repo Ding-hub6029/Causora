@@ -1,0 +1,80 @@
+{
+  "simulationId": "sim-day1-mock-0001",
+  "dataVersion": "demo-2026.10.04-v4",
+  "scenarioId": "baseline",
+  "sourceMode": "LOCAL_MOCK",
+  "providerKind": "OFFLINE_STUB",
+  "state": "ALL_READY",
+  "outputs": [
+    {
+      "role": "CFO",
+      "headline": "Financial tradeoffs need review",
+      "output": {
+        "role": "CFO",
+        "narrativeKey": "day3_cfo_analysis",
+        "reasonText": "This synthetic illustration points to a tradeoff; inspect the referenced fields before deciding.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "expectedTcoUsd:D0",
+          "cashOutflowP90Usd:D0"
+        ],
+        "evidenceIds": [],
+        "availability": "MOCK"
+      },
+      "stance": "Watch",
+      "failure": null
+    },
+    {
+      "role": "COO",
+      "headline": "Service continuity needs review",
+      "output": {
+        "role": "COO",
+        "narrativeKey": "day3_coo_analysis",
+        "reasonText": "This synthetic illustration points to a tradeoff; inspect the referenced fields before deciding.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "stockoutProbability:D0",
+          "serviceLevel:D0"
+        ],
+        "evidenceIds": [],
+        "availability": "MOCK"
+      },
+      "stance": "Watch",
+      "failure": null
+    },
+    {
+      "role": "Risk",
+      "headline": "Contract exposure needs review",
+      "output": {
+        "role": "Risk",
+        "narrativeKey": "day3_risk_analysis",
+        "reasonText": "This synthetic illustration points to a tradeoff; inspect the referenced fields before deciding.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "cashOutflowP90Usd:D0",
+          "cashOutflowP90Usd:D1"
+        ],
+        "evidenceIds": [
+          "EV-014"
+        ],
+        "availability": "MOCK"
+      },
+      "stance": "Watch",
+      "failure": null
+    }
+  ],
+  "criticStatus": "NOT_IMPLEMENTED_DAY3",
+  "decisionReady": false
+}

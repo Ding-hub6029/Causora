@@ -1,0 +1,11 @@
+{
+  "kind": "CAUSORA_DAY3_UNREVIEWED_MC_HTTP_VALIDATION_V1",
+  "devOnly": true,
+  "decisionReady": false,
+  "matrixCells": 9,
+  "sampleWeeks": 936,
+  "simulationId": "sim-dev-unreviewed-c41106036d3e3cbda147",
+  "dataVersion": "demo-2026.10.04-v4--UNREVIEWED_DEV_ONLY",
+  "requestSha256": "69ee7e23d9037b22b2113008082cb5f76a00be1f26f9cbb6cd718b4e2889c4d7",
+  "responseSha256": "3620e76945d340fac6d194453a32445f9a66299babe97fbf7841c56aa63f5b92"
+}

@@ -1,0 +1,768 @@
+{
+  "$defs": {
+    "ConstraintViolation": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "infeasible",
+            "stockout_threshold",
+            "cash_ceiling"
+          ],
+          "title": "Code",
+          "type": "string"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "optionId",
+        "code"
+      ],
+      "title": "ConstraintViolation",
+      "type": "object"
+    },
+    "ContractConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "daysToRenewal": {
+          "minimum": 0,
+          "title": "Daystorenewal",
+          "type": "integer"
+        },
+        "decisionDate": {
+          "title": "Decisiondate",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "forecastBasis": {
+          "enum": [
+            "locked-at-renewal",
+            "rolling"
+          ],
+          "title": "Forecastbasis",
+          "type": "string"
+        },
+        "lockedForecastUnits24m": {
+          "minimum": 0,
+          "title": "Lockedforecastunits24M",
+          "type": "integer"
+        },
+        "minPurchaseShareA": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Minpurchasesharea",
+          "type": "number"
+        },
+        "minPurchaseUnitsA": {
+          "minimum": 0,
+          "title": "Minpurchaseunitsa",
+          "type": "integer"
+        },
+        "noticeDeadline": {
+          "title": "Noticedeadline",
+          "type": "string"
+        },
+        "noticeRecordSource": {
+          "minLength": 1,
+          "title": "Noticerecordsource",
+          "type": "string"
+        },
+        "noticeSent": {
+          "title": "Noticesent",
+          "type": "boolean"
+        },
+        "renewalDate": {
+          "title": "Renewaldate",
+          "type": "string"
+        },
+        "renewalLocked": {
+          "title": "Renewallocked",
+          "type": "boolean"
+        },
+        "renewalNoticeDays": {
+          "minimum": 0,
+          "title": "Renewalnoticedays",
+          "type": "integer"
+        },
+        "renewalPriceIncreasePct": {
+          "minimum": 0,
+          "title": "Renewalpriceincreasepct",
+          "type": "number"
+        },
+        "renewalTermMonths": {
+          "exclusiveMinimum": 0,
+          "title": "Renewaltermmonths",
+          "type": "integer"
+        },
+        "terminationFeeUsd": {
+          "minimum": 0,
+          "title": "Terminationfeeusd",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "decisionDate",
+        "renewalDate",
+        "daysToRenewal",
+        "renewalNoticeDays",
+        "noticeDeadline",
+        "noticeSent",
+        "noticeRecordSource",
+        "renewalLocked",
+        "renewalTermMonths",
+        "renewalPriceIncreasePct",
+        "minPurchaseShareA",
+        "forecastBasis",
+        "lockedForecastUnits24m",
+        "minPurchaseUnitsA",
+        "terminationFeeUsd",
+        "evidenceIds"
+      ],
+      "title": "ContractConstraint",
+      "type": "object"
+    },
+    "CostBreakdown": {
+      "additionalProperties": false,
+      "properties": {
+        "holding": {
+          "title": "Holding",
+          "type": "integer"
+        },
+        "purchase": {
+          "title": "Purchase",
+          "type": "integer"
+        },
+        "renewalPremium": {
+          "title": "Renewalpremium",
+          "type": "integer"
+        },
+        "stockoutLoss": {
+          "title": "Stockoutloss",
+          "type": "integer"
+        },
+        "terminationFee": {
+          "title": "Terminationfee",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "purchase",
+        "holding",
+        "stockoutLoss",
+        "renewalPremium",
+        "terminationFee"
+      ],
+      "title": "CostBreakdown",
+      "type": "object"
+    },
+    "DecisionOption": {
+      "additionalProperties": false,
+      "properties": {
+        "allocation": {
+          "minLength": 1,
+          "title": "Allocation",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "shareA": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Sharea",
+          "type": "number"
+        },
+        "short": {
+          "minLength": 1,
+          "title": "Short",
+          "type": "string"
+        },
+        "terminateA": {
+          "title": "Terminatea",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "shareA",
+        "terminateA",
+        "allocation",
+        "short",
+        "description"
+      ],
+      "title": "DecisionOption",
+      "type": "object"
+    },
+    "EvidenceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "extractedField": {
+          "minLength": 1,
+          "title": "Extractedfield",
+          "type": "string"
+        },
+        "extractedValue": {
+          "minLength": 1,
+          "title": "Extractedvalue",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^EV-\\d{3}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "locatorBbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Locatorbbox"
+        },
+        "matchMethod": {
+          "enum": [
+            "exact",
+            "fuzzy"
+          ],
+          "title": "Matchmethod",
+          "type": "string"
+        },
+        "matchScore": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Matchscore",
+          "type": "number"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "quoteMatched": {
+          "title": "Quotematched",
+          "type": "boolean"
+        },
+        "sourceFile": {
+          "minLength": 1,
+          "title": "Sourcefile",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceFile",
+        "page",
+        "quote",
+        "locatorBbox",
+        "extractedField",
+        "extractedValue",
+        "matchMethod",
+        "matchScore",
+        "quoteMatched"
+      ],
+      "title": "EvidenceRecord",
+      "type": "object"
+    },
+    "MetricCell": {
+      "additionalProperties": false,
+      "properties": {
+        "breakdown": {
+          "$ref": "#/$defs/CostBreakdown"
+        },
+        "cashOutflowP90": {
+          "title": "Cashoutflowp90",
+          "type": "integer"
+        },
+        "expectedTco": {
+          "title": "Expectedtco",
+          "type": "integer"
+        },
+        "feasible": {
+          "title": "Feasible",
+          "type": "boolean"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "serviceLevel": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Servicelevel",
+          "type": "number"
+        },
+        "stockoutProbability": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Stockoutprobability",
+          "type": "number"
+        },
+        "tone": {
+          "enum": [
+            "neutral",
+            "recommended",
+            "risk"
+          ],
+          "title": "Tone",
+          "type": "string"
+        },
+        "unitsFromA": {
+          "minimum": 0,
+          "title": "Unitsfroma",
+          "type": "integer"
+        },
+        "unitsFromB": {
+          "minimum": 0,
+          "title": "Unitsfromb",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "optionId",
+        "feasible",
+        "expectedTco",
+        "stockoutProbability",
+        "serviceLevel",
+        "cashOutflowP90",
+        "breakdown",
+        "unitsFromA",
+        "unitsFromB",
+        "tone"
+      ],
+      "title": "MetricCell",
+      "type": "object"
+    },
+    "NoFeasibleScenarioSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "constraintViolations": {
+          "items": {
+            "$ref": "#/$defs/ConstraintViolation"
+          },
+          "title": "Constraintviolations",
+          "type": "array"
+        },
+        "recommendedOptionId": {
+          "title": "Recommendedoptionid",
+          "type": "null"
+        },
+        "scenarioId": {
+          "minLength": 1,
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "status": {
+          "const": "no_feasible_option",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "status",
+        "recommendedOptionId",
+        "constraintViolations"
+      ],
+      "title": "NoFeasibleScenarioSelection",
+      "type": "object"
+    },
+    "RealSimulationReference": {
+      "additionalProperties": false,
+      "description": "Reference supplied by the simulation owner, not generated by Day 3.",
+      "properties": {
+        "dataVersion": {
+          "minLength": 1,
+          "title": "Dataversion",
+          "type": "string"
+        },
+        "datasetId": {
+          "minLength": 1,
+          "title": "Datasetid",
+          "type": "string"
+        },
+        "optionIds": {
+          "items": {
+            "enum": [
+              "D0",
+              "D1",
+              "D2"
+            ],
+            "type": "string"
+          },
+          "maxItems": 3,
+          "minItems": 3,
+          "title": "Optionids",
+          "type": "array"
+        },
+        "scenarioId": {
+          "minLength": 1,
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "schemaVersion": {
+          "const": "causora.contract.v1",
+          "title": "Schemaversion",
+          "type": "string"
+        },
+        "simulationId": {
+          "minLength": 1,
+          "title": "Simulationid",
+          "type": "string"
+        },
+        "simulationSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Simulationsha256",
+          "type": "string"
+        },
+        "snapshotSha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Snapshotsha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "dataVersion",
+        "datasetId",
+        "simulationId",
+        "scenarioId",
+        "optionIds",
+        "simulationSha256",
+        "snapshotSha256"
+      ],
+      "title": "RealSimulationReference",
+      "type": "object"
+    },
+    "Scenario": {
+      "additionalProperties": false,
+      "properties": {
+        "demandShock": {
+          "title": "Demandshock",
+          "type": "number"
+        },
+        "demandUnits24m": {
+          "minimum": 0,
+          "title": "Demandunits24M",
+          "type": "integer"
+        },
+        "description": {
+          "minLength": 1,
+          "title": "Description",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "leadTime": {
+          "minLength": 1,
+          "title": "Leadtime",
+          "type": "string"
+        },
+        "leadTimeMultiplier": {
+          "exclusiveMinimum": 0,
+          "title": "Leadtimemultiplier",
+          "type": "number"
+        },
+        "tag": {
+          "minLength": 1,
+          "title": "Tag",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "tag",
+        "demandShock",
+        "demandUnits24m",
+        "leadTime",
+        "leadTimeMultiplier",
+        "description"
+      ],
+      "title": "Scenario",
+      "type": "object"
+    },
+    "SelectedScenarioSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "constraintViolations": {
+          "items": {
+            "$ref": "#/$defs/ConstraintViolation"
+          },
+          "title": "Constraintviolations",
+          "type": "array"
+        },
+        "recommendedOptionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Recommendedoptionid",
+          "type": "string"
+        },
+        "scenarioId": {
+          "minLength": 1,
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "status": {
+          "const": "selected",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "status",
+        "recommendedOptionId",
+        "constraintViolations"
+      ],
+      "title": "SelectedScenarioSelection",
+      "type": "object"
+    },
+    "SelectionLimits": {
+      "additionalProperties": false,
+      "properties": {
+        "budgetCeilingUsd": {
+          "minimum": 0,
+          "title": "Budgetceilingusd",
+          "type": "integer"
+        },
+        "riskThreshold": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Riskthreshold",
+          "type": "number"
+        }
+      },
+      "required": [
+        "riskThreshold",
+        "budgetCeilingUsd"
+      ],
+      "title": "SelectionLimits",
+      "type": "object"
+    },
+    "SimulationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "dataVersion": {
+          "minLength": 1,
+          "title": "Dataversion",
+          "type": "string"
+        },
+        "formulaVersion": {
+          "minLength": 1,
+          "title": "Formulaversion",
+          "type": "string"
+        },
+        "matrix": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/MetricCell"
+            },
+            "type": "array"
+          },
+          "minProperties": 1,
+          "title": "Matrix",
+          "type": "object"
+        },
+        "monteCarloRuns": {
+          "minimum": 0,
+          "title": "Montecarloruns",
+          "type": "integer"
+        },
+        "seed": {
+          "minimum": 0,
+          "title": "Seed",
+          "type": "integer"
+        },
+        "simulationId": {
+          "minLength": 1,
+          "title": "Simulationid",
+          "type": "string"
+        },
+        "unitPricesUsd": {
+          "$ref": "#/$defs/UnitPricesUsd"
+        },
+        "weeks": {
+          "exclusiveMinimum": 0,
+          "title": "Weeks",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "simulationId",
+        "seed",
+        "dataVersion",
+        "formulaVersion",
+        "weeks",
+        "monteCarloRuns",
+        "unitPricesUsd",
+        "matrix"
+      ],
+      "title": "SimulationResult",
+      "type": "object"
+    },
+    "UnitPricesUsd": {
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "minimum": 0,
+          "title": "A",
+          "type": "number"
+        },
+        "B": {
+          "minimum": 0,
+          "title": "B",
+          "type": "number"
+        }
+      },
+      "required": [
+        "A",
+        "B"
+      ],
+      "title": "UnitPricesUsd",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Typed, hash-bound external Jinzhu SimulationResult integration payload.",
+  "properties": {
+    "contract": {
+      "$ref": "#/$defs/ContractConstraint"
+    },
+    "dataVersion": {
+      "minLength": 1,
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceRecord"
+      },
+      "minItems": 1,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "options": {
+      "items": {
+        "$ref": "#/$defs/DecisionOption"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Options",
+      "type": "array"
+    },
+    "reference": {
+      "$ref": "#/$defs/RealSimulationReference"
+    },
+    "scenario": {
+      "$ref": "#/$defs/Scenario"
+    },
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "selection": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SelectedScenarioSelection"
+        },
+        {
+          "$ref": "#/$defs/NoFeasibleScenarioSelection"
+        }
+      ],
+      "title": "Selection"
+    },
+    "selectionLimits": {
+      "$ref": "#/$defs/SelectionLimits"
+    },
+    "simulation": {
+      "$ref": "#/$defs/SimulationResult"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "scenario",
+    "options",
+    "simulation",
+    "contract",
+    "evidence",
+    "selection",
+    "selectionLimits",
+    "reference"
+  ],
+  "title": "RealSnapshotInput",
+  "type": "object"
+}

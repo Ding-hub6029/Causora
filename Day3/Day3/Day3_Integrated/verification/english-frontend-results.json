@@ -1,0 +1,22 @@
+[
+  {
+    "name": "typecheck",
+    "exitCode": 0
+  },
+  {
+    "name": "lint",
+    "exitCode": 0
+  },
+  {
+    "name": "frontend-tests",
+    "exitCode": 0
+  },
+  {
+    "name": "build",
+    "exitCode": 0
+  },
+  {
+    "name": "production-tests",
+    "exitCode": 0
+  }
+]

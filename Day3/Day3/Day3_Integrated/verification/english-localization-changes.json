@@ -1,0 +1,170 @@
+[
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "INTEGRATION_TEST_REPORT.md",
+    "beforeSha256": "46738b80729aa58c030481f814e30cbe0034a35069cce5fb76e71333902e395e",
+    "afterSha256": "0d4f576ac00f2ab80b234f7a85c96c743e6fb837ac1c0e3b84299b742bf80353"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "README.md",
+    "beforeSha256": "797362718735b5852922d50653f96865d7bc365a73ffb31c9ddd85d66882ce59",
+    "afterSha256": "d509620236720e15e6f02c7b8156c86556455e1d65c1aef43a7ee9d21162242d"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "TECHNICAL_FIX_REPORT.md",
+    "beforeSha256": "574afc02d0376a1f240210a589cd224fe583edc094a1ec3ff1662b3989376a9f",
+    "afterSha256": "a91850c34b7e6def42401a9120a79631b3023167b82af6a554630b64c5c40793"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "agents/wanghao-day3/README.md",
+    "beforeSha256": "1f804050fe81fa5ccb10117d828b59470bafa39fc53eba3e4f128cfc23bf39a3",
+    "afterSha256": "ccad2f8296b15bbc86520b1789f5e3b5dc51d9b5ae81dae3edc969050c464cb1"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "agents/wanghao-day3/agent_day3/narrative_safety.py",
+    "beforeSha256": "a9dde873988a0a67e3e585286b3d0d0fbb3834fcd042b422fc729f65187c8d55",
+    "afterSha256": "d43ed5f44cd1ce583b5668d9095f40092c46a049f183875bb06d01aa02c6cb21"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "agents/wanghao-day3/agent_day3/tests/test_numeric_language.py",
+    "beforeSha256": "c559d1fd4d8056f5f0ed7daeccc28ab4ed45478d752227ff40ea59c1415370c5",
+    "afterSha256": "3460b392ab78d5628c53c42ed8207536c81ff858a4c3fddace74191f95df004a"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/README.md",
+    "beforeSha256": "3291a2c4aa8154d73467c87ea2ceffb9c94c952268637649a3a0bf6df8df5ee5",
+    "afterSha256": "dcb4c4f17c6c34f5b0d38f94faffc49f05b6fee11feece5f92fc850a9c843d80"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/DEV_UNREVIEWED_INTEGRATION.md",
+    "beforeSha256": "6cc5c27024838bdaab3fc7291026ab46ed4b948be827677806d7013e618c8a34",
+    "afterSha256": "51882fda5bd06375024ba543320dbb56f73755d14d15ecebcf813f2f6efcd6ac"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/README.md",
+    "beforeSha256": "0429e3f684f7b962aae63cbe00fb47f4a53db84a255bbdc8f202549eb10e94e8",
+    "afterSha256": "a0ea37a1b39ce7cb9beee939b97ccc2b47cda9613066e1cb5f651caeaaabd0d3"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/WINDOWS_ENCODING_AND_REPRODUCTION.md",
+    "beforeSha256": "27087db14144d064b7c09a097320293e9eb29efa05cdc458dc1a98d70d072ea4",
+    "afterSha256": "159da3397a5fc49be136d9e635688333941457f7795ff299753e792ce81aff1d"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day1/APPLY_TO_BASELINE.md",
+    "beforeSha256": "2612e6ff7e6f69817a8f34e5c427ec0c5fa06096092f2d9c1b3e21688e0a8e3a",
+    "afterSha256": "87e7e0f96401ba034aa196f59d4c8bb42ae96b1bcaf72a684cd8ab620a861a0e"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day1/DAY1_HANDOFF.md",
+    "beforeSha256": "cf5a25537b775f12b808141e73e03397b12d9777620e7dc9653d4e9d00dcbe7c",
+    "afterSha256": "36c1a0b5b79f60616f94ed502fa10aed5b78d44e52d15b62a2b0e60c916effd3"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day2/APPLY_TO_TEAM.md",
+    "beforeSha256": "7c0c9569692e2e43897a22209e48a17f0f4b9af0ba688385a8837ef703abe6f1",
+    "afterSha256": "56021b85cca712271996164710861975c4956b309df9a3ce0257a124e2e9de31"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day2/CONTRACT_ALIGNMENT.md",
+    "beforeSha256": "cca895c770ec5253b2f164279e3f6fee0c97fad4e3882091db7b10a9d22d221a",
+    "afterSha256": "a3cb1d69bb9f073e14681366161245537089d185cb86001c5536aee5c648d29f"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day2/DAY2_HANDOFF.md",
+    "beforeSha256": "681b0c54b8e4288776035501a53908948b8d558b106ebfebec640e0a4969567c",
+    "afterSha256": "c360d7db5ebc9870a2a1e545f0f71dce1b072e3ab3a78132018048e91bd4c08e"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day2/REVIEW_FINDINGS_FOR_WANG.md",
+    "beforeSha256": "2cae8824427f712c5ce9ce6d0693f8a580d513ee3fb1803124ddd97ddf7af463",
+    "afterSha256": "9a7392e8ab94690485755483d0f2c32ca159df6db7a659b9d3029ff8e45dc979"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day2/SOURCE_LINEAGE_P2_FIX.md",
+    "beforeSha256": "939edd726a3ff6b7adcda4464933b3c61262e05407aa142222c48f3ac5938791",
+    "afterSha256": "0af49a83bfc9f6dabb54046723c3cdd2b16b1e5c63da79fba981c6a795ac4856"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day2/WINDOWS_QUICKSTART.md",
+    "beforeSha256": "7b5357dc2fa0190fd0c9d3ddd7a3f0aa016501842802abdc77dda1d4aa248a41",
+    "afterSha256": "9027d8e19c3052b1c154269a96085b709cfd80b2f09b363fa3c8528bb2857470"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day3/DAY3_HANDOFF.md",
+    "beforeSha256": "0321c1e78a6398c435f060499e0441f1871fa9d3e166cb55bfed948a34fcf5a1",
+    "afterSha256": "f8f0d0839e0ed31305d92938fb10d22770955c471e5220d6cc3c21b7194fa3e4"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day3/G3_DECISIONS_PENDING.md",
+    "beforeSha256": "c66dae2533eb533f9b5f8af032e143ad2467068cde1db26c36e013a2c90d89df",
+    "afterSha256": "10f0990895086b30761b4074878ae1ca21ece8ea3740d8c0f1a0076a27efbf6c"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/simulation_day3/WINDOWS_QUICKSTART.md",
+    "beforeSha256": "222b9fec0c34a1f13520ffd1f8c212947af378a6bad008984c069ed24d958d1b",
+    "afterSha256": "6f4006a2b9369d1054fd2e58778e590c44fab9ff6216faa9ac7db0c50e8f137d"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "backend/backend/tests/test_reproduction_portability.py",
+    "beforeSha256": "668259cb603ded45b59e808b8a1ca5c341d36c81dcc2606c14921787f93e93b7",
+    "afterSha256": "5790d259ca9610234fc2ddfb9ecbda3afc599ddba1697fce2f730e121d957bc2"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "frontend/README.md",
+    "beforeSha256": "f27b500f9858c3ecdb984d9b5cd35212ed05f38b2ae7a4ef8766c68b998c4ef3",
+    "afterSha256": "3eac73f575838cdf3affa43f4528f5d12425bc0a3176fd0d0931ea1ee39cf667"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "frontend/USER_FEEDBACK_RESPONSE_DAY2.md",
+    "beforeSha256": "027bf68eaaf5d14479016cd6d854b62d560c5f74c7b209e1b884d66f739a111b",
+    "afterSha256": "e689539e2f490dca4a3995a94b5e4314b578aa02fd3940e60ddd8b56abb939f2"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "frontend/V4_1_VISUAL_FIX.md",
+    "beforeSha256": "94f4f31731198c4ee8fb4de051a099df26326b4b60df3b066651777ec875c31b",
+    "afterSha256": "adff4cc4fc5646e7779d774117de4bb61458c8b3ff22348f54cef2a6d293eb1e"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "frontend/DAY2_PREVIEW_AND_ACCEPTANCE.md",
+    "beforeSha256": "b5e3adf44f6c6bc4f43abf1e8ef00c24793411bbf772a7f82d474aa64a440b60",
+    "afterSha256": "6119d7b231f3d8124d4a944ed5d5b5d225c5a0254d73511a3620ec348f92b713"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "release-pending/README.md",
+    "beforeSha256": "13406468f02d710984a116a0cc67d2cae77264fb4ecc496f082dc96a993be2b3",
+    "afterSha256": "6b76006f976bf57e85ad34e09c83b5b41889c78546a9d87f7d591515f2aca16d"
+  },
+  {
+    "archive": "Hackathon.zip :: Hackathon/Day3.zip :: Day3/Day3_Integrated.zip",
+    "file": "verification/README.md",
+    "beforeSha256": "068bd8e33f72f3229e037b60c70487e1c84e04ddac7ce6525c76b7c52d264de2",
+    "afterSha256": "20c4cba03ac68a6f8030ab9d25fccee859f9aaa613ee57e3c4d9700cf8f55fd2"
+  }
+]

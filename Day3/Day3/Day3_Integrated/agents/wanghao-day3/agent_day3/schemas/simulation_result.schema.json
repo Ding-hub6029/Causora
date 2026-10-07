@@ -1,0 +1,192 @@
+{
+  "$defs": {
+    "CostBreakdown": {
+      "additionalProperties": false,
+      "properties": {
+        "holding": {
+          "title": "Holding",
+          "type": "integer"
+        },
+        "purchase": {
+          "title": "Purchase",
+          "type": "integer"
+        },
+        "renewalPremium": {
+          "title": "Renewalpremium",
+          "type": "integer"
+        },
+        "stockoutLoss": {
+          "title": "Stockoutloss",
+          "type": "integer"
+        },
+        "terminationFee": {
+          "title": "Terminationfee",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "purchase",
+        "holding",
+        "stockoutLoss",
+        "renewalPremium",
+        "terminationFee"
+      ],
+      "title": "CostBreakdown",
+      "type": "object"
+    },
+    "MetricCell": {
+      "additionalProperties": false,
+      "properties": {
+        "breakdown": {
+          "$ref": "#/$defs/CostBreakdown"
+        },
+        "cashOutflowP90": {
+          "title": "Cashoutflowp90",
+          "type": "integer"
+        },
+        "expectedTco": {
+          "title": "Expectedtco",
+          "type": "integer"
+        },
+        "feasible": {
+          "title": "Feasible",
+          "type": "boolean"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "serviceLevel": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Servicelevel",
+          "type": "number"
+        },
+        "stockoutProbability": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Stockoutprobability",
+          "type": "number"
+        },
+        "tone": {
+          "enum": [
+            "neutral",
+            "recommended",
+            "risk"
+          ],
+          "title": "Tone",
+          "type": "string"
+        },
+        "unitsFromA": {
+          "minimum": 0,
+          "title": "Unitsfroma",
+          "type": "integer"
+        },
+        "unitsFromB": {
+          "minimum": 0,
+          "title": "Unitsfromb",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "optionId",
+        "feasible",
+        "expectedTco",
+        "stockoutProbability",
+        "serviceLevel",
+        "cashOutflowP90",
+        "breakdown",
+        "unitsFromA",
+        "unitsFromB",
+        "tone"
+      ],
+      "title": "MetricCell",
+      "type": "object"
+    },
+    "UnitPricesUsd": {
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "minimum": 0,
+          "title": "A",
+          "type": "number"
+        },
+        "B": {
+          "minimum": 0,
+          "title": "B",
+          "type": "number"
+        }
+      },
+      "required": [
+        "A",
+        "B"
+      ],
+      "title": "UnitPricesUsd",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "dataVersion": {
+      "minLength": 1,
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "formulaVersion": {
+      "minLength": 1,
+      "title": "Formulaversion",
+      "type": "string"
+    },
+    "matrix": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/MetricCell"
+        },
+        "type": "array"
+      },
+      "minProperties": 1,
+      "title": "Matrix",
+      "type": "object"
+    },
+    "monteCarloRuns": {
+      "minimum": 0,
+      "title": "Montecarloruns",
+      "type": "integer"
+    },
+    "seed": {
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "simulationId": {
+      "minLength": 1,
+      "title": "Simulationid",
+      "type": "string"
+    },
+    "unitPricesUsd": {
+      "$ref": "#/$defs/UnitPricesUsd"
+    },
+    "weeks": {
+      "exclusiveMinimum": 0,
+      "title": "Weeks",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "simulationId",
+    "seed",
+    "dataVersion",
+    "formulaVersion",
+    "weeks",
+    "monteCarloRuns",
+    "unitPricesUsd",
+    "matrix"
+  ],
+  "title": "SimulationResult",
+  "type": "object"
+}

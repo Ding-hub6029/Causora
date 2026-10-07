@@ -1,0 +1,98 @@
+{
+  "kind": "CAUSORA_SYNTHETIC_HUMAN_REVIEW_REQUEST",
+  "scopeSha256": "568c0474a14a5c9d8fda25e69f1dc6014ccd1d12a8ae7b10b8bb8845a913a7d0",
+  "reviewerType": "human",
+  "reviewerName": "",
+  "reviewedAtUtc": "",
+  "sourceHashes": {
+    "fixtures/causora_day1_mock.json": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+    "fixtures/demo/historical_demand.csv": "654a22f3f5433e214611f3c5a69b625bedad2d11157dedfa9cd65bbb14d3499e",
+    "fixtures/demo/opening_inventory.csv": "c2ad7ff5d928623f69d2599fea47d20c008c3b1fdd4d3879d29dcc2799ffe067",
+    "fixtures/demo/supplier_a_agreement.pdf": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+    "fixtures/demo/supplier_correspondence_log.csv": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952",
+    "fixtures/demo/supplier_delivery_history.xlsx": "cabeaae5d3a9ba23f863734fca3b3080bc85d121b0dba75a7f6457fa76c56298",
+    "reference/API_CONTRACT.md": "e88c0bb2fb014338ed31dc55894f6aa0f9c99c31a4231c47d20a1c90497e8226",
+    "reference/contracts.ts": "2c4eb25fab520c76a8d0622df3425eea443d56440a067eafdd18f148c030176d"
+  },
+  "evidence": [
+    {
+      "id": "EV-014",
+      "expectedValue": "60 days",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-019",
+      "expectedValue": "24 months",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-021",
+      "expectedValue": "14%",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-024",
+      "expectedValue": "60%",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-027",
+      "expectedValue": "$25,000",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-020",
+      "expectedValue": "conditional auto-renew clause present",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "decisionDate",
+      "expectedValue": "2026-10-04",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "renewalDate",
+      "expectedValue": "2026-11-18",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "noticeSent",
+      "expectedValue": false,
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "forecastBasis",
+      "expectedValue": "locked-at-renewal",
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "lockedForecastUnits24m",
+      "expectedValue": 26000,
+      "decision": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    }
+  ]
+}

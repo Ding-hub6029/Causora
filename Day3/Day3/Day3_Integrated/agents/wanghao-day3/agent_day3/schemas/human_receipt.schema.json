@@ -1,0 +1,79 @@
+{
+  "additionalProperties": false,
+  "description": "Read-only proof-of-review receipt. It is not an HTTP contract field.",
+  "properties": {
+    "allApproved": {
+      "const": true,
+      "title": "Allapproved",
+      "type": "boolean"
+    },
+    "approvedAssumptionKeys": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5,
+      "minItems": 5,
+      "title": "Approvedassumptionkeys",
+      "type": "array"
+    },
+    "approvedEvidenceIds": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Approvedevidenceids",
+      "type": "array"
+    },
+    "datasetSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Datasetsha256",
+      "type": "string"
+    },
+    "kind": {
+      "const": "CAUSORA_HUMAN_REVIEW_RECEIPT_V1",
+      "title": "Kind",
+      "type": "string"
+    },
+    "reviewedAtUtc": {
+      "title": "Reviewedatutc",
+      "type": "string"
+    },
+    "reviewerName": {
+      "minLength": 3,
+      "title": "Reviewername",
+      "type": "string"
+    },
+    "reviewerType": {
+      "const": "human",
+      "title": "Reviewertype",
+      "type": "string"
+    },
+    "scopeSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Scopesha256",
+      "type": "string"
+    },
+    "sourceHashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "minProperties": 1,
+      "title": "Sourcehashes",
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "reviewerType",
+    "reviewerName",
+    "reviewedAtUtc",
+    "scopeSha256",
+    "datasetSha256",
+    "sourceHashes",
+    "allApproved",
+    "approvedEvidenceIds",
+    "approvedAssumptionKeys"
+  ],
+  "title": "HumanReceipt",
+  "type": "object"
+}

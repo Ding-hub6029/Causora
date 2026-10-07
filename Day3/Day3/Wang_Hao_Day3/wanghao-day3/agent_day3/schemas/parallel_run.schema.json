@@ -1,0 +1,209 @@
+{
+  "$defs": {
+    "AgentResult": {
+      "additionalProperties": false,
+      "properties": {
+        "failure": {
+          "anyOf": [
+            {
+              "enum": [
+                "provider_unavailable",
+                "timeout",
+                "invalid_response"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Failure"
+        },
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        },
+        "output": {
+          "$ref": "#/$defs/InternalAgentOutput"
+        },
+        "role": {
+          "enum": [
+            "CFO",
+            "COO",
+            "Risk"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "stance": {
+          "anyOf": [
+            {
+              "enum": [
+                "Aligned",
+                "Watch"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Stance"
+        }
+      },
+      "required": [
+        "role",
+        "headline",
+        "output"
+      ],
+      "title": "AgentResult",
+      "type": "object"
+    },
+    "InternalAgentOutput": {
+      "additionalProperties": false,
+      "description": "Local-only result. Mapping to frontend-shaped AgentOutput happens in adapter.py.",
+      "properties": {
+        "availability": {
+          "enum": [
+            "MOCK",
+            "LIVE",
+            "UNAVAILABLE"
+          ],
+          "title": "Availability",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "metricRefs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Metricrefs",
+          "type": "array"
+        },
+        "narrativeKey": {
+          "minLength": 1,
+          "title": "Narrativekey",
+          "type": "string"
+        },
+        "optionIds": {
+          "items": {
+            "enum": [
+              "D0",
+              "D1",
+              "D2"
+            ],
+            "type": "string"
+          },
+          "title": "Optionids",
+          "type": "array"
+        },
+        "reasonText": {
+          "maxLength": 700,
+          "minLength": 10,
+          "title": "Reasontext",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "CFO",
+            "COO",
+            "Risk"
+          ],
+          "title": "Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "narrativeKey",
+        "reasonText",
+        "optionIds",
+        "metricRefs",
+        "evidenceIds",
+        "availability"
+      ],
+      "title": "InternalAgentOutput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "criticStatus": {
+      "const": "NOT_IMPLEMENTED_DAY3",
+      "default": "NOT_IMPLEMENTED_DAY3",
+      "title": "Criticstatus",
+      "type": "string"
+    },
+    "dataVersion": {
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "decisionReady": {
+      "const": false,
+      "default": false,
+      "title": "Decisionready",
+      "type": "boolean"
+    },
+    "outputs": {
+      "items": {
+        "$ref": "#/$defs/AgentResult"
+      },
+      "title": "Outputs",
+      "type": "array"
+    },
+    "providerKind": {
+      "enum": [
+        "OFFLINE_STUB",
+        "MODEL_PROXY",
+        "TEST_DOUBLE"
+      ],
+      "title": "Providerkind",
+      "type": "string"
+    },
+    "scenarioId": {
+      "title": "Scenarioid",
+      "type": "string"
+    },
+    "simulationId": {
+      "title": "Simulationid",
+      "type": "string"
+    },
+    "sourceMode": {
+      "enum": [
+        "LOCAL_MOCK",
+        "SIMULATION_READY"
+      ],
+      "title": "Sourcemode",
+      "type": "string"
+    },
+    "state": {
+      "enum": [
+        "ALL_READY",
+        "PARTIAL",
+        "UNAVAILABLE",
+        "NO_FEASIBLE_OPTION"
+      ],
+      "title": "State",
+      "type": "string"
+    }
+  },
+  "required": [
+    "simulationId",
+    "dataVersion",
+    "scenarioId",
+    "sourceMode",
+    "providerKind",
+    "state",
+    "outputs"
+  ],
+  "title": "ParallelRun",
+  "type": "object"
+}

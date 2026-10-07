@@ -1,0 +1,5 @@
+# Runtime dependencies for this independent module only.
+# Test tooling (pytest) is intentionally owned by the repository-level test environment.
+pydantic>=2.8,<3
+# Optional: required only for `python -m agent_day3.cli model-mock-smoke`.
+openai>=2.0,<3

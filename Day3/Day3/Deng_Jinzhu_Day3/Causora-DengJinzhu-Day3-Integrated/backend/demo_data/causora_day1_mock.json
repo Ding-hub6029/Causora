@@ -1,0 +1,584 @@
+{
+  "meta": {
+    "schemaVersion": "causora.contract.v1",
+    "product": "Causora",
+    "version": "Day 1 Prototype",
+    "dataVersion": "demo-2026.10.04-v4",
+    "status": "verified-local-mock",
+    "seed": 1042026,
+    "notice": "All values are local Day 1 mock data. No live simulation or model call has run."
+  },
+  "intake": [
+    {
+      "id": "demand",
+      "label": "Historical demand",
+      "type": "CSV",
+      "detail": "104 weekly observations",
+      "size": "3.9 KB",
+      "status": "Ready",
+      "icon": "trend",
+      "path": "/demo/historical_demand.csv"
+    },
+    {
+      "id": "delivery",
+      "label": "Supplier delivery history",
+      "type": "XLSX",
+      "detail": "48 purchase orders",
+      "size": "6.6 KB",
+      "status": "Ready",
+      "icon": "truck",
+      "path": "/demo/supplier_delivery_history.xlsx"
+    },
+    {
+      "id": "inventory",
+      "label": "Opening inventory",
+      "type": "CSV",
+      "detail": "1,840 units on hand",
+      "size": "0.1 KB",
+      "status": "Ready",
+      "icon": "box",
+      "path": "/demo/opening_inventory.csv"
+    },
+    {
+      "id": "contract",
+      "label": "Supplier A agreement",
+      "type": "PDF",
+      "detail": "Machine-readable · 6 pages",
+      "size": "7.5 KB",
+      "status": "Matched",
+      "icon": "file",
+      "path": "/demo/supplier_a_agreement.pdf"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-014",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "If written notice is not received at least 60 days before renewal, the agreement automatically renews.",
+      "locatorBbox": null,
+      "extractedField": "renewal_notice_days",
+      "extractedValue": "60 days",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-019",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "locatorBbox": null,
+      "extractedField": "renewal_term_months",
+      "extractedValue": "24 months",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-021",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "locatorBbox": null,
+      "extractedField": "renewal_price_increase_pct",
+      "extractedValue": "14%",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-024",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "The renewed term has a minimum purchase commitment equal to 60% of forecast demand.",
+      "locatorBbox": null,
+      "extractedField": "min_purchase_share_A",
+      "extractedValue": "60%",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-027",
+      "sourceFile": "supplier_a_agreement.pdf",
+      "page": 4,
+      "quote": "Early exit during the renewed term incurs a fixed termination fee of $25,000.",
+      "locatorBbox": null,
+      "extractedField": "termination_fee",
+      "extractedValue": "$25,000",
+      "matchMethod": "exact",
+      "matchScore": 1.0,
+      "quoteMatched": true
+    }
+  ],
+  "contract": {
+    "decisionDate": "2026-10-04",
+    "renewalDate": "2026-11-18",
+    "daysToRenewal": 45,
+    "renewalNoticeDays": 60,
+    "noticeDeadline": "2026-09-19",
+    "noticeSent": false,
+    "noticeRecordSource": "supplier_correspondence_log.csv — no written notice entry before 2026-09-19 (mock input)",
+    "renewalLocked": true,
+    "renewalTermMonths": 24,
+    "renewalPriceIncreasePct": 0.14,
+    "minPurchaseShareA": 0.6,
+    "forecastBasis": "locked-at-renewal",
+    "lockedForecastUnits24m": 26000,
+    "minPurchaseUnitsA": 15600,
+    "terminationFeeUsd": 25000,
+    "evidenceIds": [
+      "EV-014",
+      "EV-019",
+      "EV-021",
+      "EV-024",
+      "EV-027"
+    ]
+  },
+  "variables": [
+    {
+      "key": "renewal_locked",
+      "name": "Renewal locked-in",
+      "value": "Yes",
+      "unit": "boolean",
+      "source": "EV-014",
+      "meaning": "The notice deadline passed with no written notice on record, so the agreement renews.",
+      "inputs": [
+        {
+          "name": "decision_date",
+          "value": "2026-10-04",
+          "source": "contract.decisionDate"
+        },
+        {
+          "name": "renewal_date",
+          "value": "2026-11-18",
+          "source": "contract.renewalDate"
+        },
+        {
+          "name": "days_to_renewal",
+          "value": "45 days",
+          "source": "derived"
+        },
+        {
+          "name": "renewal_notice_days",
+          "value": "60 days",
+          "source": "EV-014"
+        },
+        {
+          "name": "notice_sent_before_deadline",
+          "value": "No",
+          "source": "contract.noticeRecordSource"
+        }
+      ]
+    },
+    {
+      "key": "renewal_term_months",
+      "name": "Renewal term",
+      "value": "24 months",
+      "unit": "months",
+      "source": "EV-019",
+      "meaning": "The price uplift and the minimum commitment persist for the whole simulated horizon.",
+      "inputs": [
+        {
+          "name": "renewal_term_months",
+          "value": "24",
+          "source": "EV-019"
+        },
+        {
+          "name": "simulation_weeks",
+          "value": "104",
+          "source": "simulation.weeks"
+        }
+      ]
+    },
+    {
+      "key": "effective_price_A",
+      "name": "Effective price A",
+      "value": "Base × 1.14",
+      "unit": "USD per unit",
+      "source": "EV-021",
+      "meaning": "Purchase cost is booked at base price; the {{evidence:EV-021}} uplift is reported separately as renewal premium.",
+      "inputs": [
+        {
+          "name": "base_price_A",
+          "value": "$12.00",
+          "source": "supplier_delivery_history.xlsx"
+        },
+        {
+          "name": "renewal_price_increase_pct",
+          "value": "14%",
+          "source": "EV-021"
+        }
+      ]
+    },
+    {
+      "key": "min_purchase_share_A",
+      "name": "Minimum share A",
+      "value": "60% of locked forecast",
+      "unit": "share",
+      "source": "EV-024",
+      "meaning": "{{contract:minPurchaseUnitsA}} must still be bought from A even if demand falls; D1 stays feasible, D2 pays the exit fee.",
+      "inputs": [
+        {
+          "name": "min_purchase_share_A",
+          "value": "60%",
+          "source": "EV-024"
+        },
+        {
+          "name": "forecast_basis",
+          "value": "locked at renewal",
+          "source": "contract.forecastBasis"
+        },
+        {
+          "name": "locked_forecast_units_24m",
+          "value": "26,000 units",
+          "source": "synthetic renewal-cycle forecast assumption; supplier_a_agreement.pdf p. 4 (not a sum of historical demand)"
+        }
+      ]
+    },
+    {
+      "key": "termination_fee",
+      "name": "Exit cost",
+      "value": "$25,000",
+      "unit": "USD",
+      "source": "EV-027",
+      "meaning": "Charged once when the renewed agreement is terminated (D2 only).",
+      "inputs": [
+        {
+          "name": "termination_fee",
+          "value": "$25,000",
+          "source": "EV-027"
+        },
+        {
+          "name": "renewal_locked",
+          "value": "Yes",
+          "source": "variables.renewal_locked"
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "baseline",
+      "label": "Baseline",
+      "tag": "Reference case",
+      "demandShock": 0,
+      "demandUnits24m": 26000,
+      "leadTime": "Normal",
+      "leadTimeMultiplier": 1.0,
+      "description": "Expected demand and normal supplier lead-time variability."
+    },
+    {
+      "id": "demand-drop",
+      "label": "Demand −15%",
+      "tag": "Cash stress",
+      "demandShock": -15,
+      "demandUnits24m": 22100,
+      "leadTime": "Normal",
+      "leadTimeMultiplier": 1.0,
+      "description": "Demand contracts while the minimum purchase commitment remains active."
+    },
+    {
+      "id": "lead-stress",
+      "label": "Lead-time stress",
+      "tag": "Service risk",
+      "demandShock": 0,
+      "demandUnits24m": 26000,
+      "leadTime": "+30% variability",
+      "leadTimeMultiplier": 1.3,
+      "description": "Supplier A delivery variability rises under logistics pressure."
+    }
+  ],
+  "options": [
+    {
+      "id": "D0",
+      "label": "Keep A",
+      "shareA": 1.0,
+      "terminateA": false,
+      "allocation": "100% A · 0% B",
+      "short": "100% A",
+      "description": "Preserve the current supplier allocation."
+    },
+    {
+      "id": "D1",
+      "label": "Minimum A + Diversify B",
+      "shareA": 0.6,
+      "terminateA": false,
+      "allocation": "60% A · 40% B",
+      "short": "60% A / 40% B",
+      "description": "Respect the locked minimum while reducing concentration."
+    },
+    {
+      "id": "D2",
+      "label": "Exit A + Move to B",
+      "shareA": 0.0,
+      "terminateA": true,
+      "allocation": "0% A · 100% B",
+      "short": "Exit A / 100% B",
+      "description": "Exit the renewed agreement and include the contract fee."
+    }
+  ],
+  "simulation": {
+    "simulationId": "sim-day1-mock-0001",
+    "seed": 1042026,
+    "dataVersion": "demo-2026.10.04-v4",
+    "formulaVersion": "tco-v1",
+    "weeks": 104,
+    "monteCarloRuns": 0,
+    "matrix": {
+      "baseline": [
+        {
+          "optionId": "D0",
+          "feasible": true,
+          "expectedTco": 420000,
+          "stockoutProbability": 0.09,
+          "serviceLevel": 0.968,
+          "cashOutflowP90": 451000,
+          "breakdown": {
+            "purchase": 312000,
+            "holding": 38000,
+            "stockoutLoss": 26320,
+            "renewalPremium": 43680,
+            "terminationFee": 0
+          },
+          "unitsFromA": 26000,
+          "unitsFromB": 0,
+          "tone": "neutral"
+        },
+        {
+          "optionId": "D1",
+          "feasible": true,
+          "expectedTco": 411000,
+          "stockoutProbability": 0.05,
+          "serviceLevel": 0.981,
+          "cashOutflowP90": 430000,
+          "breakdown": {
+            "purchase": 318240,
+            "holding": 41500,
+            "stockoutLoss": 25052,
+            "renewalPremium": 26208,
+            "terminationFee": 0
+          },
+          "unitsFromA": 15600,
+          "unitsFromB": 10400,
+          "tone": "recommended"
+        },
+        {
+          "optionId": "D2",
+          "feasible": true,
+          "expectedTco": 445000,
+          "stockoutProbability": 0.03,
+          "serviceLevel": 0.988,
+          "cashOutflowP90": 471000,
+          "breakdown": {
+            "purchase": 327600,
+            "holding": 44000,
+            "stockoutLoss": 48400,
+            "renewalPremium": 0,
+            "terminationFee": 25000
+          },
+          "unitsFromA": 0,
+          "unitsFromB": 26000,
+          "tone": "neutral"
+        }
+      ],
+      "demand-drop": [
+        {
+          "optionId": "D0",
+          "feasible": true,
+          "expectedTco": 438000,
+          "stockoutProbability": 0.13,
+          "serviceLevel": 0.957,
+          "cashOutflowP90": 476000,
+          "breakdown": {
+            "purchase": 294000,
+            "holding": 76000,
+            "stockoutLoss": 26840,
+            "renewalPremium": 41160,
+            "terminationFee": 0
+          },
+          "unitsFromA": 24500,
+          "unitsFromB": 0,
+          "tone": "risk"
+        },
+        {
+          "optionId": "D1",
+          "feasible": true,
+          "expectedTco": 419000,
+          "stockoutProbability": 0.07,
+          "serviceLevel": 0.977,
+          "cashOutflowP90": 444000,
+          "breakdown": {
+            "purchase": 318240,
+            "holding": 48000,
+            "stockoutLoss": 26552,
+            "renewalPremium": 26208,
+            "terminationFee": 0
+          },
+          "unitsFromA": 15600,
+          "unitsFromB": 10400,
+          "tone": "recommended"
+        },
+        {
+          "optionId": "D2",
+          "feasible": true,
+          "expectedTco": 452000,
+          "stockoutProbability": 0.04,
+          "serviceLevel": 0.983,
+          "cashOutflowP90": 482000,
+          "breakdown": {
+            "purchase": 309960,
+            "holding": 90000,
+            "stockoutLoss": 27040,
+            "renewalPremium": 0,
+            "terminationFee": 25000
+          },
+          "unitsFromA": 0,
+          "unitsFromB": 24600,
+          "tone": "neutral"
+        }
+      ],
+      "lead-stress": [
+        {
+          "optionId": "D0",
+          "feasible": true,
+          "expectedTco": 451000,
+          "stockoutProbability": 0.2,
+          "serviceLevel": 0.924,
+          "cashOutflowP90": 489000,
+          "breakdown": {
+            "purchase": 312000,
+            "holding": 40000,
+            "stockoutLoss": 55320,
+            "renewalPremium": 43680,
+            "terminationFee": 0
+          },
+          "unitsFromA": 26000,
+          "unitsFromB": 0,
+          "tone": "risk"
+        },
+        {
+          "optionId": "D1",
+          "feasible": true,
+          "expectedTco": 430000,
+          "stockoutProbability": 0.1,
+          "serviceLevel": 0.966,
+          "cashOutflowP90": 455000,
+          "breakdown": {
+            "purchase": 318240,
+            "holding": 43500,
+            "stockoutLoss": 42052,
+            "renewalPremium": 26208,
+            "terminationFee": 0
+          },
+          "unitsFromA": 15600,
+          "unitsFromB": 10400,
+          "tone": "recommended"
+        },
+        {
+          "optionId": "D2",
+          "feasible": true,
+          "expectedTco": 463000,
+          "stockoutProbability": 0.06,
+          "serviceLevel": 0.979,
+          "cashOutflowP90": 497000,
+          "breakdown": {
+            "purchase": 327600,
+            "holding": 46000,
+            "stockoutLoss": 64400,
+            "renewalPremium": 0,
+            "terminationFee": 25000
+          },
+          "unitsFromA": 0,
+          "unitsFromB": 26000,
+          "tone": "neutral"
+        }
+      ]
+    },
+    "unitPricesUsd": {
+      "A": 12.0,
+      "B": 12.6
+    }
+  },
+  "boardroom": [
+    {
+      "role": "CFO",
+      "accent": "cobalt",
+      "focus": "Financial exposure",
+      "headline": "D1 improves expected cost while preserving cash headroom.",
+      "body": "The mock matrix places D1 {{delta_tco:baseline:D0:D1}} D0 in the baseline case and {{delta_tco:demand-drop:D0:D1}} D0 in the demand-contraction scenario.",
+      "metrics": [
+        "expected_24m_tco",
+        "cash_outflow_p90"
+      ],
+      "status": "Aligned"
+    },
+    {
+      "role": "COO",
+      "accent": "aqua",
+      "focus": "Service continuity",
+      "headline": "Diversification reduces the service impact of lead-time stress.",
+      "body": "D1 reduces mock stockout probability from {{stockout:lead-stress:D0}} to {{stockout:lead-stress:D1}} in the lead-time stress scenario while keeping a feasible allocation.",
+      "metrics": [
+        "stockout_probability",
+        "service_level"
+      ],
+      "status": "Aligned"
+    },
+    {
+      "role": "Risk",
+      "accent": "coral",
+      "focus": "Contract downside",
+      "headline": "The renewal lock creates a material concentration constraint.",
+      "body": "The {{evidence:EV-024}} minimum share and {{evidence:EV-021}} renewal premium are quote-matched. D2 remains possible only with the {{evidence:EV-027}} exit cost.",
+      "metrics": [
+        "min_purchase_share_A",
+        "termination_fee"
+      ],
+      "status": "Watch"
+    }
+  ],
+  "critic": {
+    "severity": "Compound risk",
+    "headline": "Demand decline × minimum purchase creates a cash-and-holding-cost trap.",
+    "body": "A standalone renewal review misses the combined effect. If demand changes by {{scenario:demand-drop:demandShock}} to {{scenario:demand-drop:demandUnits}}, the {{evidence:EV-024}} commitment is measured against the locked forecast, so D1 Supplier A purchases stay at {{contract:minPurchaseUnitsA}} while holding cost rises. D1 is the only mock option that moderates concentration without triggering the {{evidence:EV-027}} exit fee.",
+    "evidenceIds": [
+      "EV-014",
+      "EV-021",
+      "EV-024",
+      "EV-027"
+    ],
+    "mechanism": {
+      "scenarioId": "demand-drop",
+      "forecastBasis": "locked-at-renewal",
+      "lockedForecastUnits24m": 26000,
+      "minPurchaseUnitsA": 15600,
+      "scenarioDemandUnits24m": 22100,
+      "committedExcessUnits": 2340,
+      "holdingCostDeltaUsd": {
+        "D0": 38000,
+        "D1": 6500,
+        "D2": 46000
+      }
+    }
+  },
+  "brief": {
+    "recommendedOptionId": "D1",
+    "recommendation": "Minimum A + Diversify B",
+    "rationale": "Reduce supplier concentration while respecting the locked minimum commitment.",
+    "metricRefs": [
+      "delta_tco",
+      "stockout_probability",
+      "cash_outflow_p90"
+    ],
+    "formula": "Expected {{contract:renewalTermMonths}}m TCO = purchase cost (units × base unit price) + holding cost + stockout loss + renewal premium (Supplier A units × base price × {{evidence:EV-021}}) + termination fee (D2 only)",
+    "formulaVersion": "tco-v1",
+    "formulaNotes": [
+      "Purchase cost is always booked at base unit price; the {{evidence:EV-021}} uplift appears only once, as the renewal premium line. The two lines together equal purchases at the effective price.",
+      "Minimum purchase units for Supplier A are {{evidence:EV-024}} of the forecast locked at renewal ({{contract:lockedForecastUnits24m}}), not of realised demand.",
+      "Every cell's five breakdown lines sum exactly to its Expected {{contract:renewalTermMonths}}m TCO."
+    ],
+    "guardrail": "Only an existing simulated option ID may be recommended. Numbers are rendered from mock metrics, not model text."
+  }
+}
