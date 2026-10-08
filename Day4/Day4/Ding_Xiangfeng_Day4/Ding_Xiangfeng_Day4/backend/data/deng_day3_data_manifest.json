@@ -1,0 +1,28 @@
+{
+  "generatedAtUtc": "2026-10-06T17:41:20.850553Z",
+  "owner": "Deng Jinzhu",
+  "scope": "Day 3 simulation/data only",
+  "status": "UNREVIEWED_SYNTHETIC_TEST_ONLY_NO_PUBLIC_SUCCESS",
+  "reviewStatus": "PENDING_11_HUMAN_REVIEW_ROWS",
+  "policyStatus": "UNAPPROVED_TEST_INPUT",
+  "previewId": "mc-preview-23b1fb68e27d2cce45fb",
+  "sourceDataVersion": "demo-2026.10.04-v4",
+  "formulaVersion": "tco-v1",
+  "seed": 1042026,
+  "weeks": 104,
+  "monteCarloRuns": 1000,
+  "artifacts": {
+    "deng_day3_monte_carlo_full_UNAPPROVED.json": {
+      "bytes": 877175,
+      "sha256": "eb4dd2a10f385e54cedf9f3939a9b1289ea0f47976ed8c0175461bd8e2d5fb9c"
+    },
+    "deng_day3_matrix_deltas_UNAPPROVED.json": {
+      "bytes": 9868,
+      "sha256": "ac60090c535e11b7f9e82dfba6b87d36604e452bdfa6862c219820da3acf2412"
+    },
+    "deng_day3_formula_traces_UNAPPROVED.json": {
+      "bytes": 868505,
+      "sha256": "26923960586555fb7d06191b9e638a72c6d4665c097b91f241ce878c9b08142a"
+    }
+  }
+}

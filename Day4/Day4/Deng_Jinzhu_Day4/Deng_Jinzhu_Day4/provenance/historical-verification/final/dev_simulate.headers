@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+date: Thu, 08 Oct 2026 08:53:27 GMT
+server: uvicorn
+cache-control: no-store
+x-request-id: final-dev-simulate
+x-causora-review-status: unreviewed-development-only
+x-causora-trace-contract: causora.contract.v2-dev-unreviewed
+x-causora-execution-mode: unreviewed-development-only
+content-length: 645259
+content-type: application/json
+access-control-expose-headers: X-Causora-Review-Status, X-Causora-Trace-Contract, X-Causora-Execution-Mode, X-Request-Id, X-Causora-Provider-Mode, X-Causora-Critic-Status, X-Causora-Current-Simulation
+access-control-allow-origin: http://localhost:3000
+vary: Origin
+

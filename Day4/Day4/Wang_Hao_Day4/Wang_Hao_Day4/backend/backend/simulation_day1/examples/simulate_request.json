@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "causora.contract.v1",
+  "datasetId": "ds-001",
+  "scenarios": [
+    {
+      "id": "baseline",
+      "label": "Baseline",
+      "tag": "Reference case",
+      "demandShock": 0,
+      "demandUnits24m": 26000,
+      "leadTime": "Normal",
+      "leadTimeMultiplier": 1.0,
+      "description": "Expected demand and normal supplier lead-time variability."
+    },
+    {
+      "id": "demand-drop",
+      "label": "Demand −15%",
+      "tag": "Cash stress",
+      "demandShock": -15,
+      "demandUnits24m": 22100,
+      "leadTime": "Normal",
+      "leadTimeMultiplier": 1.0,
+      "description": "Demand contracts while the minimum purchase commitment remains active."
+    },
+    {
+      "id": "lead-stress",
+      "label": "Lead-time stress",
+      "tag": "Service risk",
+      "demandShock": 0,
+      "demandUnits24m": 26000,
+      "leadTime": "+30% variability",
+      "leadTimeMultiplier": 1.3,
+      "description": "Supplier A delivery variability rises under logistics pressure."
+    }
+  ],
+  "options": [
+    {
+      "id": "D0",
+      "label": "Keep A",
+      "shareA": 1.0,
+      "terminateA": false,
+      "allocation": "100% A · 0% B",
+      "short": "100% A",
+      "description": "Preserve the current supplier allocation."
+    },
+    {
+      "id": "D1",
+      "label": "Minimum A + Diversify B",
+      "shareA": 0.6,
+      "terminateA": false,
+      "allocation": "60% A · 40% B",
+      "short": "60% A / 40% B",
+      "description": "Respect the locked minimum while reducing concentration."
+    },
+    {
+      "id": "D2",
+      "label": "Exit A + Move to B",
+      "shareA": 0.0,
+      "terminateA": true,
+      "allocation": "0% A · 100% B",
+      "short": "Exit A / 100% B",
+      "description": "Exit the renewed agreement and include the contract fee."
+    }
+  ],
+  "seed": 1042026,
+  "riskThreshold": 0.12,
+  "budgetCeilingUsd": 480000
+}

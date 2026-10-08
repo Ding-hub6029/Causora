@@ -1,0 +1,98 @@
+{
+  "$defs": {
+    "CooOption": {
+      "additionalProperties": false,
+      "properties": {
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "serviceLevel": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Servicelevel",
+          "type": "number"
+        },
+        "stockoutProbability": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Stockoutprobability",
+          "type": "number"
+        },
+        "unitsFromA": {
+          "minimum": 0,
+          "title": "Unitsfroma",
+          "type": "integer"
+        },
+        "unitsFromB": {
+          "minimum": 0,
+          "title": "Unitsfromb",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "optionId",
+        "stockoutProbability",
+        "serviceLevel",
+        "unitsFromA",
+        "unitsFromB"
+      ],
+      "title": "CooOption",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "demandUnits24m": {
+      "minimum": 0,
+      "title": "Demandunits24M",
+      "type": "integer"
+    },
+    "leadTimeMultiplier": {
+      "exclusiveMinimum": 0,
+      "title": "Leadtimemultiplier",
+      "type": "number"
+    },
+    "options": {
+      "items": {
+        "$ref": "#/$defs/CooOption"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Options",
+      "type": "array"
+    },
+    "role": {
+      "const": "COO",
+      "default": "COO",
+      "title": "Role",
+      "type": "string"
+    },
+    "scenarioId": {
+      "title": "Scenarioid",
+      "type": "string"
+    },
+    "sourceMode": {
+      "enum": [
+        "LOCAL_MOCK",
+        "SIMULATION_READY"
+      ],
+      "title": "Sourcemode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenarioId",
+    "sourceMode",
+    "demandUnits24m",
+    "leadTimeMultiplier",
+    "options"
+  ],
+  "title": "CooView",
+  "type": "object"
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "CAUSORA_DAY4_FINAL_PACKAGE_VERIFICATION_V1",
+  "archive": "Deng_Jinzhu_Day4.zip",
+  "archiveBytes": 10389271,
+  "zipEntryCount": 671,
+  "manifestRows": 561,
+  "missingManifestFiles": [],
+  "mismatchedManifestFiles": [],
+  "forbiddenEntries": [],
+  "status": "PASS"
+}

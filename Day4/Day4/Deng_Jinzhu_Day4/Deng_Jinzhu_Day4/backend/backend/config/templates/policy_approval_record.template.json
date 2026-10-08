@@ -1,0 +1,44 @@
+{
+  "kind": "causora.day3.policy-approval-record.v1",
+  "status": "approved",
+  "approvalRecordId": "REPLACE-with-immutable-team-policy-record-id",
+  "policyConfigurationId": "REPLACE-with-versioned-policy-configuration-id",
+  "policySha256": "REPLACE-with-exact-64-char-policy-file-sha256",
+  "confirmedTopics": [
+    "renewal_date_opening_inventory_bridge",
+    "selling_price",
+    "lost_contribution_margin",
+    "holding_cost",
+    "safety_stock",
+    "target_stock",
+    "replenishment_and_minimum_purchase_schedule",
+    "purchase_and_cash_recognition_timing",
+    "supplier_b_lead_distribution",
+    "lead_stress_scope",
+    "stockout_probability_definition",
+    "service_level_definition",
+    "cash_p90_method_and_lines",
+    "money_and_mean_purchase_rounding",
+    "demand_bootstrap"
+  ],
+  "approvals": [
+    {
+      "role": "simulation_owner",
+      "actorId": "REPLACE",
+      "decision": "approved",
+      "recordedAtUtc": "REPLACE-ISO-UTC"
+    },
+    {
+      "role": "frontend_owner",
+      "actorId": "REPLACE",
+      "decision": "approved",
+      "recordedAtUtc": "REPLACE-ISO-UTC"
+    },
+    {
+      "role": "review_owner",
+      "actorId": "REPLACE",
+      "decision": "approved",
+      "recordedAtUtc": "REPLACE-ISO-UTC"
+    }
+  ]
+}

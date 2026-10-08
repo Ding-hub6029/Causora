@@ -1,0 +1,74 @@
+{
+  "kind": "CAUSORA_DAY3_UNREVIEWED_DEV_ANALYSIS_V1",
+  "humanReviewStatus": "pending",
+  "decisionReady": false,
+  "sourceMode": "UNREVIEWED_DEV_COMPUTED",
+  "commentaryMode": "CODE_BOUND_CLAIM_SELECTION",
+  "analysisDataVersion": "dev-analysis-ce965389ed7234676237",
+  "lineage": {
+    "kind": "CAUSORA_UNREVIEWED_DEVELOPMENT_LINEAGE_V1",
+    "analysisDataVersion": "dev-analysis-ce965389ed7234676237",
+    "candidateDataVersion": "demo-2026.10.04-v4-wang-ai-review-568c0474a14a",
+    "candidateScopeSha256": "568c0474a14a5c9d8fda25e69f1dc6014ccd1d12a8ae7b10b8bb8845a913a7d0",
+    "candidateSha256": "f5a588a94c9c22939230e801b81defa4cb31ffbc285b12be8b7c321bca0a4d5a",
+    "engineSourceDataVersion": "demo-2026.10.04-v4",
+    "previewId": "preview-day2-fd1c4e7f3ea4968929f3",
+    "previewSha256": "01cae32767ad5875bdfd766471cedf7ebe1edc11af3591fb1dd14cc5161a58af",
+    "requestSha256": "582d28b0bf83e45f65d91ceb262277c556c72bb232137c49659f4811095f5e11",
+    "policySha256": "b9ec1ef286b16ffe200243b4e64f71ef6a97ac0143427e303422571b25077de3",
+    "contractSha256": "affca2057f0cdea34de4f98fe87bc4af5d30d656a7f5c9a7c098b596ddcf68bd",
+    "evidenceSha256": "d07e83ff2bfe946223640fc8bdc1798ed1e9aa1fc391ea8bc2c327f8a8018401",
+    "traceAuditSha256": "780b725363489cd27c29777f245e2b6794f98af65f50b0a1faa202398ec6dca5",
+    "engineSourceSha256": {
+      "deterministic.py": "f0d244ebe88afce70449b6b1b8287bf7a93e92886783782cca3fd795a9cbd27c",
+      "models.py": "b71d83091478c1fdf47bf694e2ecda453157a4990c331592a13c0609aa7dcd62"
+    },
+    "intermediateManifestSha256": "607ae2aedc059b1b9bea8fe46874ebee1868b4569132e94e2319072dc751fc3a",
+    "traceAuditorSha256": "bdaaedb0ad200bfe2ffe245be83a85eec53ad7a6f90b013d32dcb11ca8ca41fe",
+    "versionRelationship": "DISTINCT_VERSIONS_SAME_RAW_SOURCE_BYTES_AND_CONTRACT; ENGINE_VERSION_NOT_REWRITTEN",
+    "humanReviewStatus": "pending",
+    "policyReviewStatus": "UNAPPROVED_TEST_INPUT",
+    "decisionReady": false
+  },
+  "scenarioId": "demand-drop",
+  "providerKind": "MODEL_PROXY",
+  "state": "UNAVAILABLE",
+  "outputs": [
+    {
+      "role": "CFO",
+      "availability": "UNAVAILABLE",
+      "headline": "Development analysis unavailable",
+      "reasonText": "No development claim selection was returned.",
+      "claimIds": [],
+      "metricRefs": [],
+      "evidenceIds": [],
+      "metricBindings": {},
+      "status": null,
+      "failure": "provider_error"
+    },
+    {
+      "role": "COO",
+      "availability": "UNAVAILABLE",
+      "headline": "Development analysis unavailable",
+      "reasonText": "No development claim selection was returned.",
+      "claimIds": [],
+      "metricRefs": [],
+      "evidenceIds": [],
+      "metricBindings": {},
+      "status": null,
+      "failure": "provider_error"
+    },
+    {
+      "role": "Risk",
+      "availability": "UNAVAILABLE",
+      "headline": "Development analysis unavailable",
+      "reasonText": "No development claim selection was returned.",
+      "claimIds": [],
+      "metricRefs": [],
+      "evidenceIds": [],
+      "metricBindings": {},
+      "status": null,
+      "failure": "provider_error"
+    }
+  ]
+}

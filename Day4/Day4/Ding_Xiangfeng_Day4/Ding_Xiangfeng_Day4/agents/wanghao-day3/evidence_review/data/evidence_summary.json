@@ -1,0 +1,167 @@
+{
+  "dataset_id": "ds-001",
+  "source_file": "supplier_a_agreement.pdf",
+  "records": [
+    {
+      "id": "EV-014",
+      "source_file": "supplier_a_agreement.pdf",
+      "source_sha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "page": 4,
+      "quote": "If written notice is not received at least 60 days before renewal, the agreement automatically renews.",
+      "source_quote": "If written notice is not received at least 60 days before renewal, the agreement automatically renews.",
+      "source_span": [
+        106,
+        208
+      ],
+      "locator_bbox": [
+        54.0,
+        170.1750030517578,
+        543.7199096679688,
+        185.28900146484375
+      ],
+      "extracted_field": "renewal_notice_days",
+      "extracted_value": 60,
+      "unit": "days",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-019",
+      "source_file": "supplier_a_agreement.pdf",
+      "source_sha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "source_quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "source_span": [
+        209,
+        285
+      ],
+      "locator_bbox": [
+        54.0,
+        198.1750030517578,
+        435.5019836425781,
+        213.28900146484375
+      ],
+      "extracted_field": "renewal_term_months",
+      "extracted_value": 24,
+      "unit": "months",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-021",
+      "source_file": "supplier_a_agreement.pdf",
+      "source_sha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "source_quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "source_span": [
+        209,
+        285
+      ],
+      "locator_bbox": [
+        54.0,
+        198.1750030517578,
+        435.5019836425781,
+        213.28900146484375
+      ],
+      "extracted_field": "renewal_price_increase_pct",
+      "extracted_value": 14,
+      "unit": "percent",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-024",
+      "source_file": "supplier_a_agreement.pdf",
+      "source_sha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "page": 4,
+      "quote": "The renewed term has a minimum purchase commitment equal to 60% of forecast demand.",
+      "source_quote": "The renewed term has a minimum purchase commitment equal to 60% of forecast demand.",
+      "source_span": [
+        286,
+        369
+      ],
+      "locator_bbox": [
+        54.0,
+        226.1750030517578,
+        499.676025390625,
+        241.28900146484375
+      ],
+      "extracted_field": "min_purchase_share_A",
+      "extracted_value": 0.6,
+      "unit": "share",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-027",
+      "source_file": "supplier_a_agreement.pdf",
+      "source_sha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "page": 4,
+      "quote": "Early exit during the renewed term incurs a fixed termination fee of $25,000.",
+      "source_quote": "Early exit during the renewed term incurs a fixed termination fee of $25,000.",
+      "source_span": [
+        370,
+        447
+      ],
+      "locator_bbox": [
+        54.0,
+        254.1750030517578,
+        423.2809753417969,
+        269.28900146484375
+      ],
+      "extracted_field": "termination_fee",
+      "extracted_value": 25000,
+      "unit": "USD",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    },
+    {
+      "id": "EV-020",
+      "source_file": "supplier_a_agreement.pdf",
+      "source_sha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "page": 4,
+      "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "source_quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+      "source_span": [
+        209,
+        285
+      ],
+      "locator_bbox": [
+        54.0,
+        198.1750030517578,
+        435.5019836425781,
+        213.28900146484375
+      ],
+      "extracted_field": "auto_renew",
+      "extracted_value": true,
+      "unit": "boolean",
+      "match_method": "exact",
+      "match_score": 100.0,
+      "quote_matched": true,
+      "manually_verified": false
+    }
+  ],
+  "business_variables": [],
+  "scenario_assumptions": {
+    "days_to_renewal": 45,
+    "decision_date": "2026-10-04",
+    "renewal_date": "2026-11-18",
+    "notice_sent": false,
+    "locked_forecast_units_24m": 26000,
+    "forecast_basis": "locked-at-renewal",
+    "notice_record_source": "supplier_correspondence_log.csv — no written notice entry before 2026-09-19 (mock input)"
+  },
+  "status": "MOCK_QUOTE_MATCHED_SYNTHETIC"
+}

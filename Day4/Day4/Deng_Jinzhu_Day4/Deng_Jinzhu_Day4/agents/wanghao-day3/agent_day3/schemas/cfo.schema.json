@@ -1,0 +1,100 @@
+{
+  "$defs": {
+    "CfoOption": {
+      "additionalProperties": false,
+      "properties": {
+        "cashOutflowP90Usd": {
+          "title": "Cashoutflowp90Usd",
+          "type": "integer"
+        },
+        "deltaTcoUsd": {
+          "title": "Deltatcousd",
+          "type": "integer"
+        },
+        "expectedTcoUsd": {
+          "title": "Expectedtcousd",
+          "type": "integer"
+        },
+        "holdingUsd": {
+          "title": "Holdingusd",
+          "type": "integer"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "purchaseUsd": {
+          "title": "Purchaseusd",
+          "type": "integer"
+        },
+        "renewalPremiumUsd": {
+          "title": "Renewalpremiumusd",
+          "type": "integer"
+        },
+        "stockoutLossUsd": {
+          "title": "Stockoutlossusd",
+          "type": "integer"
+        },
+        "terminationFeeUsd": {
+          "title": "Terminationfeeusd",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "optionId",
+        "expectedTcoUsd",
+        "cashOutflowP90Usd",
+        "deltaTcoUsd",
+        "purchaseUsd",
+        "holdingUsd",
+        "stockoutLossUsd",
+        "renewalPremiumUsd",
+        "terminationFeeUsd"
+      ],
+      "title": "CfoOption",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "options": {
+      "items": {
+        "$ref": "#/$defs/CfoOption"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Options",
+      "type": "array"
+    },
+    "role": {
+      "const": "CFO",
+      "default": "CFO",
+      "title": "Role",
+      "type": "string"
+    },
+    "scenarioId": {
+      "title": "Scenarioid",
+      "type": "string"
+    },
+    "sourceMode": {
+      "enum": [
+        "LOCAL_MOCK",
+        "SIMULATION_READY"
+      ],
+      "title": "Sourcemode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenarioId",
+    "sourceMode",
+    "options"
+  ],
+  "title": "CfoView",
+  "type": "object"
+}

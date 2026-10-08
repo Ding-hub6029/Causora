@@ -1,0 +1,162 @@
+{
+  "preview": "https://3000-i1t66nnenc24dtd3xsye3-aa4a5cab.sg2.manus.computer",
+  "api_base": "https://8000-i1t66nnenc24dtd3xsye3-aa4a5cab.sg2.manus.computer",
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "metrics": {
+        "viewport": 1440,
+        "pageWidth": 1440,
+        "bodyWidth": 1440,
+        "outOfBounds": [],
+        "localScrollers": []
+      },
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/matrix-1440x900.png"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "metrics": {
+        "viewport": 1280,
+        "pageWidth": 1280,
+        "bodyWidth": 1280,
+        "outOfBounds": [],
+        "localScrollers": []
+      },
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/matrix-1280x720.png"
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "metrics": {
+        "viewport": 768,
+        "pageWidth": 768,
+        "bodyWidth": 768,
+        "outOfBounds": [],
+        "localScrollers": []
+      },
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/matrix-768x1024.png"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "metrics": {
+        "viewport": 390,
+        "pageWidth": 390,
+        "bodyWidth": 390,
+        "outOfBounds": [],
+        "localScrollers": [
+          {
+            "className": "mobile-progress",
+            "client": 390,
+            "scroll": 539,
+            "overflowX": "auto"
+          },
+          {
+            "className": "panel matrix-panel",
+            "client": 352,
+            "scroll": 694,
+            "overflowX": "auto"
+          }
+        ]
+      },
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/matrix-390x844.png"
+    }
+  ],
+  "layout_issues": [],
+  "live_e2e": {
+    "simulation": {
+      "status": "passed",
+      "identity": "sim-dev-unreviewed-55e022c71fc1c62a5cdd",
+      "warning_visible": true,
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/live-matrix-1440x900.png"
+    },
+    "matrix_browse": {
+      "status": "passed",
+      "same_simulation_id": "sim-dev-unreviewed-492e97c52ca86b1f98ae",
+      "same_request_id": "req-b91934128fbc42a48ce5c32d387ae793",
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/matrix-browse-preserves-live-1440x900.png"
+    },
+    "assumption_edit": {
+      "status": "passed",
+      "demand_shock": {
+        "before": "0",
+        "after": "1"
+      },
+      "stale_result_cleared": true,
+      "new_simulation_id": "sim-dev-unreviewed-55e022c71fc1c62a5cdd",
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/scenario-input-invalidates-1440x900.png"
+    },
+    "simulation_retry_failure": {
+      "status": "passed",
+      "fault": "browser route injected HTTP 503 once; not a backend fixture",
+      "retained_simulation_id": "sim-dev-unreviewed-55e022c71fc1c62a5cdd",
+      "retained_matrix_and_trace": true,
+      "result_mode_label": "UNREVIEWED DEV · NOT DECISION-READY",
+      "latest_request_error_visible": true,
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/simulation-retry-preserves-live-1440x900.png"
+    },
+    "boardroom": {
+      "status": "correctly_blocked",
+      "reason": "unreviewed simulation; policy/release pending; no downstream backend endpoint",
+      "screenshots": [
+        "/home/ubuntu/day4_causora_source/verification/evidence/boardroom-gated-1440x900.png",
+        "/home/ubuntu/day4_causora_source/verification/evidence/boardroom-gate-details-1440x900.png"
+      ]
+    },
+    "brief": {
+      "status": "correctly_blocked",
+      "decision_actions": "not rendered before matching reviewed Boardroom",
+      "current_simulation_retained_for_view": "sim-dev-unreviewed-55e022c71fc1c62a5cdd",
+      "change_assumptions_navigated_to_scenario_lab": true,
+      "screenshots": [
+        "/home/ubuntu/day4_causora_source/verification/evidence/brief-gated-1440x900.png",
+        "/home/ubuntu/day4_causora_source/verification/evidence/brief-gate-details-1440x900.png"
+      ]
+    },
+    "evidence": {
+      "status": "passed",
+      "record": "EV-014",
+      "page": 4,
+      "locator": "exact source-text match; no API bbox supplied",
+      "pdf_fault_injected_before_retry": true,
+      "retry": "passed after disabling the injected 503",
+      "screenshots": [
+        "/home/ubuntu/day4_causora_source/verification/evidence/evidence-pdf-page-4-1440x900.png",
+        "/home/ubuntu/day4_causora_source/verification/evidence/evidence-pdf-page-4-390x844.png"
+      ]
+    },
+    "keyboard_modal": {
+      "status": "passed",
+      "focus_trap": true,
+      "escape_closed": true,
+      "restored_focus": "Open source quote"
+    },
+    "golden_health_shell": {
+      "status": "passed",
+      "health_probe": "browser-injected HTTP 503",
+      "wakeup_guidance": true,
+      "live_run_disabled_until_ready": true,
+      "unverified_saved_example_label": true,
+      "saved_example_read_only": true,
+      "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/golden-health-wakeup-fallback-1440x900.png"
+    }
+  },
+  "health": {
+    "status": 200,
+    "service": "ready",
+    "mode": "unreviewed_development_only",
+    "missing_reasons": [
+      "human_review_pending",
+      "simulation_policy_unapproved",
+      "trace_contract_unconfirmed"
+    ],
+    "banner": "UNREVIEWED — DEVELOPMENT ONLY. NOT DECISION-READY."
+  },
+  "browser_errors": [],
+  "expected_injected_503_console_errors": 3,
+  "browser_console_issues": []
+}
+
+EXIT_STATUS=0

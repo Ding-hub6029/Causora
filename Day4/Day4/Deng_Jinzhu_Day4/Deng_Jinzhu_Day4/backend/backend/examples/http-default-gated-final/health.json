@@ -1,0 +1,1 @@
+{"schemaVersion":"causora.contract.v1","dataVersion":"pending-review","requestId":"req-d4bd6802e7024d65b2c8f7dc7f6c28e6","data":{"service":"ready","simulation":"review_pending","evidence":"human_review_pending","missingReasons":["human_review_pending","simulation_policy_unapproved","trace_contract_unconfirmed"],"traceContract":"release-gated","provider":"not_required"}}

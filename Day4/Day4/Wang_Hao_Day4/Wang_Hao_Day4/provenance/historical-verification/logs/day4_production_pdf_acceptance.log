@@ -1,0 +1,16 @@
+{
+  "preview": "http://127.0.0.1:4173",
+  "status": "passed",
+  "evidence": "EV-014, source PDF page 4",
+  "worker_responses": [
+    {
+      "status": 200,
+      "content_type": "text/javascript; charset=utf-8",
+      "url": "http://127.0.0.1:4173/pdf.worker.min.mjs"
+    }
+  ],
+  "pdf_canvas_rendered": true,
+  "exact_quote_highlight": true,
+  "browser_errors": [],
+  "screenshot": "/home/ubuntu/day4_causora_source/verification/evidence/day4-production-evidence-pdf-1440x900.png"
+}

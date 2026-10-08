@@ -1,0 +1,59 @@
+{
+  "kind": "CAUSORA_UNREVIEWED_DEVELOPMENT_LINEAGE_V1",
+  "candidateDataVersion": "demo-2026.10.04-v4-wang-ai-review-568c0474a14a",
+  "candidateScopeSha256": "568c0474a14a5c9d8fda25e69f1dc6014ccd1d12a8ae7b10b8bb8845a913a7d0",
+  "candidateSha256": "f5a588a94c9c22939230e801b81defa4cb31ffbc285b12be8b7c321bca0a4d5a",
+  "engineSourceDataVersion": "demo-2026.10.04-v4",
+  "previewId": "preview-day2-fd1c4e7f3ea4968929f3",
+  "previewSha256": "01cae32767ad5875bdfd766471cedf7ebe1edc11af3591fb1dd14cc5161a58af",
+  "requestSha256": "582d28b0bf83e45f65d91ceb262277c556c72bb232137c49659f4811095f5e11",
+  "policySha256": "b9ec1ef286b16ffe200243b4e64f71ef6a97ac0143427e303422571b25077de3",
+  "contractSha256": "affca2057f0cdea34de4f98fe87bc4af5d30d656a7f5c9a7c098b596ddcf68bd",
+  "evidenceSha256": "d07e83ff2bfe946223640fc8bdc1798ed1e9aa1fc391ea8bc2c327f8a8018401",
+  "traceAuditSha256": "780b725363489cd27c29777f245e2b6794f98af65f50b0a1faa202398ec6dca5",
+  "sourceHashMapping": {
+    "fixtures/causora_day1_mock.json": {
+      "backendPath": "demo_data/causora_day1_mock.json",
+      "sha256": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56"
+    },
+    "fixtures/demo/historical_demand.csv": {
+      "backendPath": "public/demo/historical_demand.csv",
+      "sha256": "654a22f3f5433e214611f3c5a69b625bedad2d11157dedfa9cd65bbb14d3499e"
+    },
+    "fixtures/demo/opening_inventory.csv": {
+      "backendPath": "public/demo/opening_inventory.csv",
+      "sha256": "c2ad7ff5d928623f69d2599fea47d20c008c3b1fdd4d3879d29dcc2799ffe067"
+    },
+    "fixtures/demo/supplier_a_agreement.pdf": {
+      "backendPath": "public/demo/supplier_a_agreement.pdf",
+      "sha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f"
+    },
+    "fixtures/demo/supplier_correspondence_log.csv": {
+      "backendPath": "public/demo/supplier_correspondence_log.csv",
+      "sha256": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952"
+    },
+    "fixtures/demo/supplier_delivery_history.xlsx": {
+      "backendPath": "public/demo/supplier_delivery_history.xlsx",
+      "sha256": "cabeaae5d3a9ba23f863734fca3b3080bc85d121b0dba75a7f6457fa76c56298"
+    },
+    "reference/API_CONTRACT.md": {
+      "backendPath": "API_CONTRACT.md",
+      "sha256": "e88c0bb2fb014338ed31dc55894f6aa0f9c99c31a4231c47d20a1c90497e8226"
+    },
+    "reference/contracts.ts": {
+      "backendPath": "lib/contracts.ts",
+      "sha256": "2c4eb25fab520c76a8d0622df3425eea443d56440a067eafdd18f148c030176d"
+    }
+  },
+  "engineSourceSha256": {
+    "deterministic.py": "f0d244ebe88afce70449b6b1b8287bf7a93e92886783782cca3fd795a9cbd27c",
+    "models.py": "b71d83091478c1fdf47bf694e2ecda453157a4990c331592a13c0609aa7dcd62"
+  },
+  "intermediateManifestSha256": "607ae2aedc059b1b9bea8fe46874ebee1868b4569132e94e2319072dc751fc3a",
+  "traceAuditorSha256": "bdaaedb0ad200bfe2ffe245be83a85eec53ad7a6f90b013d32dcb11ca8ca41fe",
+  "versionRelationship": "DISTINCT_VERSIONS_SAME_RAW_SOURCE_BYTES_AND_CONTRACT; ENGINE_VERSION_NOT_REWRITTEN",
+  "humanReviewStatus": "pending",
+  "policyReviewStatus": "UNAPPROVED_TEST_INPUT",
+  "decisionReady": false,
+  "analysisDataVersion": "dev-analysis-ce965389ed7234676237"
+}

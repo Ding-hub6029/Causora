@@ -1,0 +1,210 @@
+{
+  "kind": "causora.wang.pending-contract-bundle.v1",
+  "datasetId": "ds-001",
+  "dataVersion": "demo-2026.10.04-v4-wang-ai-review-568c0474a14a",
+  "contract": {
+    "decisionDate": "2026-10-04",
+    "renewalDate": "2026-11-18",
+    "daysToRenewal": 45,
+    "renewalNoticeDays": 60,
+    "noticeDeadline": "2026-09-19",
+    "noticeSent": false,
+    "noticeRecordSource": "supplier_correspondence_log.csv — no written notice entry before 2026-09-19 (mock input)",
+    "renewalLocked": true,
+    "renewalTermMonths": 24,
+    "renewalPriceIncreasePct": 0.14,
+    "minPurchaseShareA": 0.6,
+    "forecastBasis": "locked-at-renewal",
+    "lockedForecastUnits24m": 26000,
+    "minPurchaseUnitsA": 15600,
+    "terminationFeeUsd": 25000,
+    "evidenceIds": [
+      "EV-014",
+      "EV-019",
+      "EV-021",
+      "EV-024",
+      "EV-027"
+    ]
+  },
+  "contractSource": {
+    "sourceFile": "public/demo/supplier_a_agreement.pdf",
+    "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f"
+  },
+  "fieldProvenance": {
+    "decisionDate": {
+      "evidenceId": "ASSUMPTION:decisionDate",
+      "sourceFile": "demo_data/causora_day1_mock.json",
+      "sourceSha256": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+      "reviewItemId": "decisionDate",
+      "derivedFromReviewItemIds": [
+        "decisionDate"
+      ],
+      "status": "pending"
+    },
+    "renewalDate": {
+      "evidenceId": "ASSUMPTION:renewalDate",
+      "sourceFile": "demo_data/causora_day1_mock.json",
+      "sourceSha256": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+      "reviewItemId": "renewalDate",
+      "derivedFromReviewItemIds": [
+        "renewalDate"
+      ],
+      "status": "pending"
+    },
+    "daysToRenewal": {
+      "evidenceId": "ASSUMPTION:decisionDate",
+      "sourceFile": "demo_data/causora_day1_mock.json",
+      "sourceSha256": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+      "reviewItemId": "decisionDate",
+      "derivedFromReviewItemIds": [
+        "decisionDate",
+        "renewalDate"
+      ],
+      "status": "pending"
+    },
+    "renewalNoticeDays": {
+      "evidenceId": "EV-014",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-014",
+      "derivedFromReviewItemIds": [
+        "EV-014"
+      ],
+      "status": "pending"
+    },
+    "noticeDeadline": {
+      "evidenceId": "EV-014",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-014",
+      "derivedFromReviewItemIds": [
+        "EV-014",
+        "renewalDate"
+      ],
+      "status": "pending"
+    },
+    "noticeSent": {
+      "evidenceId": "ASSUMPTION:noticeSent",
+      "sourceFile": "public/demo/supplier_correspondence_log.csv",
+      "sourceSha256": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952",
+      "reviewItemId": "noticeSent",
+      "derivedFromReviewItemIds": [
+        "noticeSent"
+      ],
+      "status": "pending"
+    },
+    "noticeRecordSource": {
+      "evidenceId": "ASSUMPTION:noticeSent",
+      "sourceFile": "public/demo/supplier_correspondence_log.csv",
+      "sourceSha256": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952",
+      "reviewItemId": "noticeSent",
+      "derivedFromReviewItemIds": [
+        "noticeSent"
+      ],
+      "status": "pending"
+    },
+    "renewalLocked": {
+      "evidenceId": "EV-020",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-020",
+      "derivedFromReviewItemIds": [
+        "EV-020",
+        "EV-014",
+        "decisionDate",
+        "renewalDate",
+        "noticeSent"
+      ],
+      "status": "pending"
+    },
+    "renewalTermMonths": {
+      "evidenceId": "EV-019",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-019",
+      "derivedFromReviewItemIds": [
+        "EV-019"
+      ],
+      "status": "pending"
+    },
+    "renewalPriceIncreasePct": {
+      "evidenceId": "EV-021",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-021",
+      "derivedFromReviewItemIds": [
+        "EV-021"
+      ],
+      "status": "pending"
+    },
+    "minPurchaseShareA": {
+      "evidenceId": "EV-024",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-024",
+      "derivedFromReviewItemIds": [
+        "EV-024"
+      ],
+      "status": "pending"
+    },
+    "forecastBasis": {
+      "evidenceId": "ASSUMPTION:forecastBasis",
+      "sourceFile": "demo_data/causora_day1_mock.json",
+      "sourceSha256": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+      "reviewItemId": "forecastBasis",
+      "derivedFromReviewItemIds": [
+        "forecastBasis"
+      ],
+      "status": "pending"
+    },
+    "lockedForecastUnits24m": {
+      "evidenceId": "ASSUMPTION:lockedForecastUnits24m",
+      "sourceFile": "demo_data/causora_day1_mock.json",
+      "sourceSha256": "7002888a4d9f831a7210ec0dbf6cfd556c4c22a134d41e2f0d9674689ceddf56",
+      "reviewItemId": "lockedForecastUnits24m",
+      "derivedFromReviewItemIds": [
+        "lockedForecastUnits24m"
+      ],
+      "status": "pending"
+    },
+    "minPurchaseUnitsA": {
+      "evidenceId": "EV-024",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-024",
+      "derivedFromReviewItemIds": [
+        "EV-024",
+        "forecastBasis",
+        "lockedForecastUnits24m"
+      ],
+      "status": "pending"
+    },
+    "terminationFeeUsd": {
+      "evidenceId": "EV-027",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-027",
+      "derivedFromReviewItemIds": [
+        "EV-027"
+      ],
+      "status": "pending"
+    },
+    "evidenceIds": {
+      "evidenceId": "EV-020",
+      "sourceFile": "public/demo/supplier_a_agreement.pdf",
+      "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+      "reviewItemId": "EV-014",
+      "derivedFromReviewItemIds": [
+        "EV-014",
+        "EV-019",
+        "EV-021",
+        "EV-024",
+        "EV-027",
+        "EV-020"
+      ],
+      "status": "pending"
+    }
+  },
+  "decisionReady": false,
+  "warning": "DRAFT ONLY. ASSUMPTION identifiers are not PDF evidence; derived dependencies need human review."
+}

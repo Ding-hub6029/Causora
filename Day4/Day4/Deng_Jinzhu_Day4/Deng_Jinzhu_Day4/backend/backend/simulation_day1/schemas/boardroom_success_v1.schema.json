@@ -1,0 +1,420 @@
+{
+  "$defs": {
+    "AgentOutput": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "enum": [
+            "CFO",
+            "COO",
+            "Risk"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "accent": {
+          "title": "Accent",
+          "type": "string"
+        },
+        "focus": {
+          "title": "Focus",
+          "type": "string"
+        },
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        },
+        "body": {
+          "title": "Body",
+          "type": "string"
+        },
+        "metrics": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Metrics",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "Aligned",
+            "Watch"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "accent",
+        "focus",
+        "headline",
+        "body",
+        "metrics",
+        "status"
+      ],
+      "title": "AgentOutput",
+      "type": "object"
+    },
+    "BoardroomResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "agentOutputs": {
+          "items": {
+            "$ref": "#/$defs/AgentOutput"
+          },
+          "title": "Agentoutputs",
+          "type": "array"
+        },
+        "criticIssues": {
+          "items": {
+            "$ref": "#/$defs/CriticIssue"
+          },
+          "title": "Criticissues",
+          "type": "array"
+        },
+        "brief": {
+          "discriminator": {
+            "mapping": {
+              "no_feasible_option": "#/$defs/NoFeasibleBrief",
+              "selected": "#/$defs/SelectedDecisionBriefRef"
+            },
+            "propertyName": "status"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/SelectedDecisionBriefRef"
+            },
+            {
+              "$ref": "#/$defs/NoFeasibleBrief"
+            }
+          ],
+          "title": "Brief"
+        },
+        "numericGuardrail": {
+          "$ref": "#/$defs/NumericGuardrail"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "agentOutputs",
+        "criticIssues",
+        "brief",
+        "numericGuardrail"
+      ],
+      "title": "BoardroomResponse",
+      "type": "object"
+    },
+    "ConstraintViolation": {
+      "additionalProperties": false,
+      "properties": {
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "code": {
+          "enum": [
+            "infeasible",
+            "stockout_threshold",
+            "cash_ceiling"
+          ],
+          "title": "Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "optionId",
+        "code"
+      ],
+      "title": "ConstraintViolation",
+      "type": "object"
+    },
+    "CriticIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "severity": {
+          "title": "Severity",
+          "type": "string"
+        },
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        },
+        "body": {
+          "title": "Body",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "mechanism": {
+          "$ref": "#/$defs/CriticMechanism"
+        }
+      },
+      "required": [
+        "severity",
+        "headline",
+        "body",
+        "evidenceIds",
+        "mechanism"
+      ],
+      "title": "CriticIssue",
+      "type": "object"
+    },
+    "CriticMechanism": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "forecastBasis": {
+          "enum": [
+            "locked-at-renewal",
+            "rolling"
+          ],
+          "title": "Forecastbasis",
+          "type": "string"
+        },
+        "lockedForecastUnits24m": {
+          "minimum": 0,
+          "title": "Lockedforecastunits24M",
+          "type": "integer"
+        },
+        "minPurchaseUnitsA": {
+          "minimum": 0,
+          "title": "Minpurchaseunitsa",
+          "type": "integer"
+        },
+        "scenarioDemandUnits24m": {
+          "minimum": 0,
+          "title": "Scenariodemandunits24M",
+          "type": "integer"
+        },
+        "committedExcessUnits": {
+          "title": "Committedexcessunits",
+          "type": "integer"
+        },
+        "holdingCostDeltaUsd": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "propertyNames": {
+            "enum": [
+              "D0",
+              "D1",
+              "D2"
+            ]
+          },
+          "title": "Holdingcostdeltausd",
+          "type": "object"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "forecastBasis",
+        "lockedForecastUnits24m",
+        "minPurchaseUnitsA",
+        "scenarioDemandUnits24m",
+        "committedExcessUnits",
+        "holdingCostDeltaUsd"
+      ],
+      "title": "CriticMechanism",
+      "type": "object"
+    },
+    "NoFeasibleBrief": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "status": {
+          "const": "no_feasible_option",
+          "title": "Status",
+          "type": "string"
+        },
+        "recommendedOptionId": {
+          "title": "Recommendedoptionid",
+          "type": "null"
+        },
+        "constraintViolations": {
+          "items": {
+            "$ref": "#/$defs/ConstraintViolation"
+          },
+          "title": "Constraintviolations",
+          "type": "array"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "status",
+        "recommendedOptionId",
+        "constraintViolations",
+        "message"
+      ],
+      "title": "NoFeasibleBrief",
+      "type": "object"
+    },
+    "NumericGuardrail": {
+      "additionalProperties": false,
+      "properties": {
+        "passed": {
+          "title": "Passed",
+          "type": "boolean"
+        },
+        "rejectedClaims": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Rejectedclaims",
+          "type": "array"
+        }
+      },
+      "required": [
+        "passed",
+        "rejectedClaims"
+      ],
+      "title": "NumericGuardrail",
+      "type": "object"
+    },
+    "SelectedDecisionBriefRef": {
+      "additionalProperties": false,
+      "properties": {
+        "recommendedOptionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Recommendedoptionid",
+          "type": "string"
+        },
+        "recommendation": {
+          "title": "Recommendation",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "metricRefs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Metricrefs",
+          "type": "array"
+        },
+        "formula": {
+          "title": "Formula",
+          "type": "string"
+        },
+        "formulaVersion": {
+          "const": "tco-v1",
+          "title": "Formulaversion",
+          "type": "string"
+        },
+        "formulaNotes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Formulanotes",
+          "type": "array"
+        },
+        "guardrail": {
+          "title": "Guardrail",
+          "type": "string"
+        },
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "status": {
+          "const": "selected",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "recommendedOptionId",
+        "recommendation",
+        "rationale",
+        "metricRefs",
+        "formula",
+        "formulaVersion",
+        "formulaNotes",
+        "guardrail",
+        "scenarioId",
+        "status"
+      ],
+      "title": "SelectedDecisionBriefRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "dataVersion": {
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "requestId": {
+      "title": "Requestid",
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/$defs/BoardroomResponse"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "requestId",
+    "data"
+  ],
+  "title": "ApiSuccess[BoardroomResponse]",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/boardroom_success_v1.schema.json"
+}

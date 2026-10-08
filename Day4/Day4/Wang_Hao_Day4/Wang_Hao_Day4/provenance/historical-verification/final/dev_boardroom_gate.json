@@ -1,0 +1,1 @@
+{"schemaVersion":"causora.contract.v1","requestId":"final-dev-boardroom","error":{"code":"simulation_failed","message":"A formal Boardroom review requires a reviewed, decision-ready simulation.","details":{"reason":"review_pending"},"requestId":"final-dev-boardroom"}}

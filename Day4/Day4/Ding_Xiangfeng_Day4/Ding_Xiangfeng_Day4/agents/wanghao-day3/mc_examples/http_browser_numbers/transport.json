@@ -1,0 +1,25 @@
+{
+  "kind": "WANG_REAL_HTTP_MC_CAPTURE_V1",
+  "source": "LIVE_HTTP_REQUEST_TO_SUPPLIED_JINZHU_DAY3_SERVICE",
+  "endpoint": "http://127.0.0.1:8008/api/simulate",
+  "fetchedAtUtc": "2026-10-06T19:53:38.362432+00:00",
+  "httpStatus": 200,
+  "requestId": "req-wang-mc-ff922579669d4eb69a4cda27ada65a2c",
+  "headers": {
+    "date": "Tue, 06 Oct 2026 19:53:37 GMT",
+    "server": "uvicorn",
+    "cache-control": "no-store",
+    "x-request-id": "req-wang-mc-ff922579669d4eb69a4cda27ada65a2c",
+    "x-causora-review-status": "unreviewed-development-only",
+    "x-causora-trace-contract": "causora.contract.v2-dev-unreviewed",
+    "x-causora-execution-mode": "unreviewed-development-only",
+    "content-length": "645261",
+    "content-type": "application/json",
+    "vary": "Origin",
+    "connection": "close"
+  },
+  "requestSha256": "582d28b0bf83e45f65d91ceb262277c556c72bb232137c49659f4811095f5e11",
+  "responseSha256": "40293656d38feb46c6362cac044ba9a751cbe1f202743d9ad55dfa0127aa09aa",
+  "validationStatus": "VALIDATED",
+  "decisionReady": false
+}

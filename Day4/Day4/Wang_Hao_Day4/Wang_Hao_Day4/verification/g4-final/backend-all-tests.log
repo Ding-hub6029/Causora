@@ -1,0 +1,8 @@
+............................................................................                                [100%]
+============================== warnings summary ===============================
+..\..\..\..\..\jinzhu-source-data-v1-deps\fastapi\testclient.py:1
+  C:\Users\11370\Documents\Codex\2026-10-04\referenced-chatgpt-conversation-this-is-an\work\jinzhu-source-data-v1-deps\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+76 passed, 1 warning, 37 subtests passed in 4.97s

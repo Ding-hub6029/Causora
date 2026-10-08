@@ -1,0 +1,12 @@
+{
+  "kind": "causora.team-authorization-attestation.v1",
+  "recordedAtUtc": "2026-10-08T12:22:44.034908+00:00",
+  "recordedBy": "Codex",
+  "attestedBy": "Ding Xiangfeng",
+  "method": "PROJECT_LEAD_ATTESTATION_OF_OWNER_AUTHORIZATION",
+  "source": "Explicit user reply in the current Codex conversation",
+  "originalReply": "已获得两人的确认和授权，按表中假设及当前接口记录团队批准",
+  "englishTranslation": "I have obtained both teammates' confirmation and authorization. Record team approval of the assumptions in the table and the current interface.",
+  "scope": "All 15 presented synthetic demonstration model assumptions and the current Matrix + Trace v2 interface release.",
+  "signatureDisclosure": "The project lead attested to the teammates' authorization. These are representative-transcribed approvals, not direct personal or cryptographic signatures. The timestamp records transcription, not an asserted individual signing time."
+}

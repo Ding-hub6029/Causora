@@ -1,0 +1,93 @@
+{
+  "configuration": {
+    "engineInputPreviewId": "mc-preview-5bb6302d391928bbea5c",
+    "engineSourceSha256": {
+      "models.py": "26504bc029e704fc125e6afb57bc6592f2caf111ea54ba4e05a81e9df462b5ca",
+      "monte_carlo.py": "daaaf84bb5abeeff7b89413ee9d0d5e4d6fd7e8da48bd1985daf360eac755da8",
+      "policy.py": "0dd84f4f390254a5897f73c6e96a9db54650b295d32ca8a85c9d0bc536dc9d47"
+    },
+    "monteCarloRuns": 10000,
+    "policySha256": "a4abe9e2ca445dad18c146b9346c48683b2f14980cdebee1edd4bf5938273661",
+    "requestSha256": "8b99f4cbd7b8f25d2ba9ea1e8a079ab2b69fc09c0160ce30656f0b9c0adc6adf",
+    "seed": 1042026,
+    "weeks": 104
+  },
+  "environment": {
+    "cpuCount": 6,
+    "numpy": "2.5.3",
+    "platform": "Linux-6.18.38+-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "kind": "CAUSORA_DAY4_MONTE_CARLO_PERFORMANCE_VERIFICATION_V1",
+  "measurements": {
+    "peakRssMiB": 116.977,
+    "wallClockSeconds": 1.610782
+  },
+  "notes": [
+    "N=1000 is the development-speed configuration; N=10000 is the PDF final-demo target.",
+    "The same fixed request/seed is used for both runs, but the policy hash and preview ID differ because monteCarloRuns is intentionally part of the configuration identity.",
+    "This benchmark uses only the unreviewed synthetic engine preview and cannot evidence human review, policy approval, contract release, Golden Run, or Boardroom readiness."
+  ],
+  "outputCheck": {
+    "formulaVersion": "tco-v1",
+    "matrixSummary": {
+      "baseline": {
+        "D0": {
+          "cashOutflowP90": 369751,
+          "expectedTco": 365925,
+          "stockoutProbability": 0.918
+        },
+        "D1": {
+          "cashOutflowP90": 348720,
+          "expectedTco": 348030,
+          "stockoutProbability": 0.0109
+        },
+        "D2": {
+          "cashOutflowP90": 361907,
+          "expectedTco": 356722,
+          "stockoutProbability": 0.9203
+        }
+      },
+      "demand-drop": {
+        "D0": {
+          "cashOutflowP90": 316146,
+          "expectedTco": 310726,
+          "stockoutProbability": 0.2725
+        },
+        "D1": {
+          "cashOutflowP90": 358829,
+          "expectedTco": 358143,
+          "stockoutProbability": 0.0
+        },
+        "D2": {
+          "cashOutflowP90": 312814,
+          "expectedTco": 306384,
+          "stockoutProbability": 0.9551
+        }
+      },
+      "lead-stress": {
+        "D0": {
+          "cashOutflowP90": 364931,
+          "expectedTco": 361512,
+          "stockoutProbability": 0.8978
+        },
+        "D1": {
+          "cashOutflowP90": 348152,
+          "expectedTco": 347635,
+          "stockoutProbability": 0.0058
+        },
+        "D2": {
+          "cashOutflowP90": 361907,
+          "expectedTco": 356722,
+          "stockoutProbability": 0.9203
+        }
+      }
+    },
+    "matrixSummarySha256": "835631c6b87f7d80119ccb7ac3845856b3f1d13a3ea3b4ea8780c52ade7e1e73",
+    "nineCellCount": 9,
+    "noCalculationMeaningWasChanged": true,
+    "traceWeekRecordCount": 936
+  },
+  "startedAtUtc": "2026-10-08T09:13:28.131051Z",
+  "status": "UNREVIEWED_ENGINE_BENCHMARK_ONLY_NOT_A_PUBLIC_SIMULATION"
+}

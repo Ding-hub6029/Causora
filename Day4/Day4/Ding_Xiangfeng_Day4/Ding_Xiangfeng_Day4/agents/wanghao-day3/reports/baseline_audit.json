@@ -1,0 +1,13 @@
+{
+  "baselineZip": "Causora_Day3_Ding_Fixed.zip",
+  "baselineZipSha256": "5fa6c5ff47241737ac2cd86f50519a50fdd792f0de56323fd6ef85fdb806cc07",
+  "sharedContractChanged": false,
+  "frontendChanged": false,
+  "numericSimulationComputed": false,
+  "syntheticReviewItems": 11,
+  "matchedEvidence": 6,
+  "humanApprovedItems": 0,
+  "criticDevCases": 12,
+  "criticHeldoutCases": 30,
+  "criticModelEvaluationPerformed": false
+}

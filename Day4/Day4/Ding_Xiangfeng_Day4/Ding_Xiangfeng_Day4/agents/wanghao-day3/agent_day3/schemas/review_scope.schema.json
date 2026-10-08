@@ -1,0 +1,43 @@
+{
+  "additionalProperties": false,
+  "description": "Sidecar scope for a manually signed/recorded review bundle (internal gate).",
+  "properties": {
+    "dataVersion": {
+      "minLength": 1,
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "datasetSha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Datasetsha256",
+      "type": "string"
+    },
+    "kind": {
+      "const": "CAUSORA_EVIDENCE_REVIEW_SCOPE_V1",
+      "title": "Kind",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "sourceHashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "minProperties": 1,
+      "title": "Sourcehashes",
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "schemaVersion",
+    "dataVersion",
+    "datasetSha256",
+    "sourceHashes"
+  ],
+  "title": "ReviewScope",
+  "type": "object"
+}

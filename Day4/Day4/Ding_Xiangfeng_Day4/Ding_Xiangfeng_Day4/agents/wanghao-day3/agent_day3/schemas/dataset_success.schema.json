@@ -1,0 +1,424 @@
+{
+  "$defs": {
+    "BusinessVariable": {
+      "additionalProperties": false,
+      "properties": {
+        "inputs": {
+          "items": {
+            "$ref": "#/$defs/BusinessVariableInput"
+          },
+          "title": "Inputs",
+          "type": "array"
+        },
+        "key": {
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "meaning": {
+          "minLength": 1,
+          "title": "Meaning",
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "key",
+        "name",
+        "value",
+        "unit",
+        "source",
+        "meaning",
+        "inputs"
+      ],
+      "title": "BusinessVariable",
+      "type": "object"
+    },
+    "BusinessVariableInput": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "minLength": 1,
+          "title": "Name",
+          "type": "string"
+        },
+        "source": {
+          "minLength": 1,
+          "title": "Source",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "value",
+        "source"
+      ],
+      "title": "BusinessVariableInput",
+      "type": "object"
+    },
+    "ContractConstraint": {
+      "additionalProperties": false,
+      "properties": {
+        "daysToRenewal": {
+          "minimum": 0,
+          "title": "Daystorenewal",
+          "type": "integer"
+        },
+        "decisionDate": {
+          "title": "Decisiondate",
+          "type": "string"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "forecastBasis": {
+          "enum": [
+            "locked-at-renewal",
+            "rolling"
+          ],
+          "title": "Forecastbasis",
+          "type": "string"
+        },
+        "lockedForecastUnits24m": {
+          "minimum": 0,
+          "title": "Lockedforecastunits24M",
+          "type": "integer"
+        },
+        "minPurchaseShareA": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Minpurchasesharea",
+          "type": "number"
+        },
+        "minPurchaseUnitsA": {
+          "minimum": 0,
+          "title": "Minpurchaseunitsa",
+          "type": "integer"
+        },
+        "noticeDeadline": {
+          "title": "Noticedeadline",
+          "type": "string"
+        },
+        "noticeRecordSource": {
+          "minLength": 1,
+          "title": "Noticerecordsource",
+          "type": "string"
+        },
+        "noticeSent": {
+          "title": "Noticesent",
+          "type": "boolean"
+        },
+        "renewalDate": {
+          "title": "Renewaldate",
+          "type": "string"
+        },
+        "renewalLocked": {
+          "title": "Renewallocked",
+          "type": "boolean"
+        },
+        "renewalNoticeDays": {
+          "minimum": 0,
+          "title": "Renewalnoticedays",
+          "type": "integer"
+        },
+        "renewalPriceIncreasePct": {
+          "minimum": 0,
+          "title": "Renewalpriceincreasepct",
+          "type": "number"
+        },
+        "renewalTermMonths": {
+          "exclusiveMinimum": 0,
+          "title": "Renewaltermmonths",
+          "type": "integer"
+        },
+        "terminationFeeUsd": {
+          "minimum": 0,
+          "title": "Terminationfeeusd",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "decisionDate",
+        "renewalDate",
+        "daysToRenewal",
+        "renewalNoticeDays",
+        "noticeDeadline",
+        "noticeSent",
+        "noticeRecordSource",
+        "renewalLocked",
+        "renewalTermMonths",
+        "renewalPriceIncreasePct",
+        "minPurchaseShareA",
+        "forecastBasis",
+        "lockedForecastUnits24m",
+        "minPurchaseUnitsA",
+        "terminationFeeUsd",
+        "evidenceIds"
+      ],
+      "title": "ContractConstraint",
+      "type": "object"
+    },
+    "DatasetResult": {
+      "additionalProperties": false,
+      "properties": {
+        "contract": {
+          "$ref": "#/$defs/ContractConstraint"
+        },
+        "dataVersion": {
+          "minLength": 1,
+          "title": "Dataversion",
+          "type": "string"
+        },
+        "datasetId": {
+          "minLength": 1,
+          "title": "Datasetid",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceRecord"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        },
+        "intake": {
+          "items": {
+            "$ref": "#/$defs/IntakeFile"
+          },
+          "title": "Intake",
+          "type": "array"
+        },
+        "preprocessStatus": {
+          "const": "ready",
+          "title": "Preprocessstatus",
+          "type": "string"
+        },
+        "variables": {
+          "items": {
+            "$ref": "#/$defs/BusinessVariable"
+          },
+          "title": "Variables",
+          "type": "array"
+        }
+      },
+      "required": [
+        "datasetId",
+        "preprocessStatus",
+        "dataVersion",
+        "intake",
+        "evidence",
+        "contract",
+        "variables"
+      ],
+      "title": "DatasetResult",
+      "type": "object"
+    },
+    "EvidenceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "extractedField": {
+          "minLength": 1,
+          "title": "Extractedfield",
+          "type": "string"
+        },
+        "extractedValue": {
+          "minLength": 1,
+          "title": "Extractedvalue",
+          "type": "string"
+        },
+        "id": {
+          "pattern": "^EV-\\d{3}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "locatorBbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Locatorbbox"
+        },
+        "matchMethod": {
+          "enum": [
+            "exact",
+            "fuzzy"
+          ],
+          "title": "Matchmethod",
+          "type": "string"
+        },
+        "matchScore": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Matchscore",
+          "type": "number"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "minLength": 1,
+          "title": "Quote",
+          "type": "string"
+        },
+        "quoteMatched": {
+          "title": "Quotematched",
+          "type": "boolean"
+        },
+        "sourceFile": {
+          "minLength": 1,
+          "title": "Sourcefile",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "sourceFile",
+        "page",
+        "quote",
+        "locatorBbox",
+        "extractedField",
+        "extractedValue",
+        "matchMethod",
+        "matchScore",
+        "quoteMatched"
+      ],
+      "title": "EvidenceRecord",
+      "type": "object"
+    },
+    "IntakeFile": {
+      "additionalProperties": false,
+      "properties": {
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "icon": {
+          "minLength": 1,
+          "title": "Icon",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "minLength": 1,
+          "title": "Label",
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "size": {
+          "minLength": 1,
+          "title": "Size",
+          "type": "string"
+        },
+        "status": {
+          "minLength": 1,
+          "title": "Status",
+          "type": "string"
+        },
+        "type": {
+          "minLength": 1,
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "type",
+        "detail",
+        "size",
+        "status",
+        "icon",
+        "path"
+      ],
+      "title": "IntakeFile",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "$ref": "#/$defs/DatasetResult"
+    },
+    "dataVersion": {
+      "minLength": 1,
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "requestId": {
+      "minLength": 1,
+      "title": "Requestid",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "requestId",
+    "data"
+  ],
+  "title": "DatasetSuccessEnvelope",
+  "type": "object"
+}

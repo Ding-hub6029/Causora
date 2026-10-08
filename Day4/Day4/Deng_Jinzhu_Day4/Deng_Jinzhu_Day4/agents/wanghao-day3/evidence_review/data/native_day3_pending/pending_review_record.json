@@ -1,0 +1,80 @@
+{
+  "kind": "causora.wang.review-record.v1",
+  "status": "pending",
+  "reviewId": "",
+  "reviewerRole": "contract_reviewer",
+  "reviewerId": "",
+  "recordedAtUtc": "",
+  "contractPayloadSha256": "affca2057f0cdea34de4f98fe87bc4af5d30d656a7f5c9a7c098b596ddcf68bd",
+  "fieldProvenanceSha256": "215e139ecc6ba8b82b6f7bc7b77e14d37639ed006e2b96ebfc48c59d7bd91cc0",
+  "reviewedItems": [
+    {
+      "id": "EV-014",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-019",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-021",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-024",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-027",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "EV-020",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "decisionDate",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "renewalDate",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "noticeSent",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "forecastBasis",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    },
+    {
+      "id": "lockedForecastUnits24m",
+      "status": "pending",
+      "confirmedValue": null,
+      "notes": "The PDF requires a separate human field review; no human attestation was provided. Real supplier facts are outside this synthetic review."
+    }
+  ],
+  "decisionReady": false,
+  "origin": "AI_CANDIDATE_MAPPING_NOT_A_HUMAN_ATTESTATION"
+}

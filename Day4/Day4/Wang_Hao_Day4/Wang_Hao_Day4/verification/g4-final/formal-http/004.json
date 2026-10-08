@@ -1,0 +1,35 @@
+{
+  "path": "/api/evidence/EV-024",
+  "method": "GET",
+  "status": 200,
+  "requestCorsHeaders": {},
+  "request": null,
+  "response": {
+    "schemaVersion": "causora.contract.v1",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "requestId": "causora-ev-d2dfe951-ae12-4d36-aab9-42b5764cd8cf",
+    "data": {
+      "evidence": {
+        "id": "EV-024",
+        "sourceFile": "supplier_a_agreement.pdf",
+        "page": 4,
+        "quote": "The renewed term has a minimum purchase commitment equal to 60% of forecast demand.",
+        "locatorBbox": [
+          54.0,
+          550.711,
+          499.676,
+          565.825
+        ],
+        "extractedField": "min_purchase_share_A",
+        "extractedValue": "60%",
+        "matchMethod": "exact",
+        "matchScore": 1.0,
+        "quoteMatched": true
+      }
+    }
+  },
+  "headers": {
+    "x-request-id": "causora-ev-d2dfe951-ae12-4d36-aab9-42b5764cd8cf",
+    "x-causora-current-simulation": "sim-4ff6c803c309c2a34874eee8"
+  }
+}

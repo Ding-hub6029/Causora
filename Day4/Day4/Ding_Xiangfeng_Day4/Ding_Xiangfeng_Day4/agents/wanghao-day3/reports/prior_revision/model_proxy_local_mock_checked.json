@@ -1,0 +1,102 @@
+{
+  "simulationId": "sim-day1-mock-0001",
+  "dataVersion": "demo-2026.10.04-v4",
+  "scenarioId": "demand-drop",
+  "sourceMode": "LOCAL_MOCK",
+  "providerKind": "MODEL_PROXY",
+  "state": "ALL_READY",
+  "outputs": [
+    {
+      "role": "CFO",
+      "headline": "Summary of cost and cash implications across options",
+      "output": {
+        "role": "CFO",
+        "narrativeKey": "day3_cfo_analysis",
+        "reasonText": "Option cost and cash differences are driven by purchase, holding, and termination line items and reflected in expected TCO and cash outflow metrics. The reported deltaTco and cashOutflowP ninety metrics capture relative TCO change and short run cash stress for each option.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "expectedTcoUsd:D0",
+          "cashOutflowP90Usd:D0",
+          "deltaTcoUsd:D0",
+          "purchaseUsd:D0",
+          "holdingUsd:D0",
+          "stockoutLossUsd:D0",
+          "renewalPremiumUsd:D0",
+          "terminationFeeUsd:D0"
+        ],
+        "evidenceIds": [],
+        "availability": "MOCK"
+      },
+      "stance": "Watch",
+      "failure": null
+    },
+    {
+      "role": "COO",
+      "headline": "Tradeoff among service, stockout risk, and source allocation",
+      "output": {
+        "role": "COO",
+        "narrativeKey": "day3_coo_analysis",
+        "reasonText": "Options show higher service level with lower stockout probability as allocation shifts from A to B, and total supply aligns with demand under the given lead time multiplier.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "stockoutProbability:D0",
+          "serviceLevel:D0",
+          "unitsFromA:D0",
+          "unitsFromB:D0",
+          "stockoutProbability:D1",
+          "serviceLevel:D1",
+          "unitsFromA:D1",
+          "unitsFromB:D1"
+        ],
+        "evidenceIds": [],
+        "availability": "MOCK"
+      },
+      "stance": "Watch",
+      "failure": null
+    },
+    {
+      "role": "Risk",
+      "headline": "Locked forecast and renewal terms create constrained downside exposure and limited flexibility",
+      "output": {
+        "role": "Risk",
+        "narrativeKey": "day3_risk_analysis",
+        "reasonText": "Contract clauses lock forecast volumes at renewal and impose a binding minimum purchase share, while renewal timing and price change are fixed; this raises downside cash exposure and residual stockout risk under the supplied demand scenario.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "cashOutflowP90Usd:D0",
+          "cashOutflowP90Usd:D1",
+          "cashOutflowP90Usd:D2",
+          "stockoutProbability:D0",
+          "stockoutProbability:D1",
+          "stockoutProbability:D2",
+          "renewalLocked",
+          "renewalNoticeDays"
+        ],
+        "evidenceIds": [
+          "EV-014",
+          "EV-019",
+          "EV-021",
+          "EV-024",
+          "EV-027"
+        ],
+        "availability": "MOCK"
+      },
+      "stance": "Watch",
+      "failure": null
+    }
+  ],
+  "criticStatus": "NOT_IMPLEMENTED_DAY3",
+  "decisionReady": false
+}

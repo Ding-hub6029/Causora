@@ -1,0 +1,35 @@
+{
+  "path": "/api/evidence/EV-020",
+  "method": "GET",
+  "status": 200,
+  "requestCorsHeaders": {},
+  "request": null,
+  "response": {
+    "schemaVersion": "causora.contract.v1",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "requestId": "causora-ev-883dadd6-0f1b-4984-a5dc-30d0cfa6f46d",
+    "data": {
+      "evidence": {
+        "id": "EV-020",
+        "sourceFile": "supplier_a_agreement.pdf",
+        "page": 4,
+        "quote": "The agreement automatically renews for 24 months at a 14% higher unit price.",
+        "locatorBbox": [
+          54.0,
+          578.711,
+          435.502,
+          593.825
+        ],
+        "extractedField": "auto_renew",
+        "extractedValue": "automatically renews",
+        "matchMethod": "exact",
+        "matchScore": 1.0,
+        "quoteMatched": true
+      }
+    }
+  },
+  "headers": {
+    "x-request-id": "causora-ev-883dadd6-0f1b-4984-a5dc-30d0cfa6f46d",
+    "x-causora-current-simulation": "sim-4ff6c803c309c2a34874eee8"
+  }
+}

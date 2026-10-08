@@ -1,0 +1,148 @@
+{
+  "$defs": {
+    "AgentOutput": {
+      "additionalProperties": false,
+      "description": "The frozen contract's AgentOutput shape, held only inside a Day 3 draft.",
+      "properties": {
+        "accent": {
+          "minLength": 1,
+          "title": "Accent",
+          "type": "string"
+        },
+        "body": {
+          "maxLength": 700,
+          "minLength": 10,
+          "title": "Body",
+          "type": "string"
+        },
+        "focus": {
+          "minLength": 1,
+          "title": "Focus",
+          "type": "string"
+        },
+        "headline": {
+          "maxLength": 120,
+          "minLength": 5,
+          "title": "Headline",
+          "type": "string"
+        },
+        "metrics": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Metrics",
+          "type": "array"
+        },
+        "role": {
+          "enum": [
+            "CFO",
+            "COO",
+            "Risk"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "Aligned",
+            "Watch"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "accent",
+        "focus",
+        "headline",
+        "body",
+        "metrics",
+        "status"
+      ],
+      "title": "AgentOutput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A handoff containing only three role AgentOutput values.\n\nNo Critic, Brief, numeric guardrail, API envelope, or decision approval is\nincluded. Consumers must not cast this model to BoardroomResponse.",
+  "properties": {
+    "agentOutputs": {
+      "items": {
+        "$ref": "#/$defs/AgentOutput"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Agentoutputs",
+      "type": "array"
+    },
+    "criticStatus": {
+      "const": "NOT_IMPLEMENTED_DAY3",
+      "default": "NOT_IMPLEMENTED_DAY3",
+      "title": "Criticstatus",
+      "type": "string"
+    },
+    "dataVersion": {
+      "minLength": 1,
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "decisionReady": {
+      "const": false,
+      "default": false,
+      "title": "Decisionready",
+      "type": "boolean"
+    },
+    "kind": {
+      "const": "CAUSORA_WANG_DAY3_AGENT_DRAFT_V1",
+      "default": "CAUSORA_WANG_DAY3_AGENT_DRAFT_V1",
+      "title": "Kind",
+      "type": "string"
+    },
+    "providerKind": {
+      "enum": [
+        "OFFLINE_STUB",
+        "MODEL_PROXY",
+        "TEST_DOUBLE"
+      ],
+      "title": "Providerkind",
+      "type": "string"
+    },
+    "scenarioId": {
+      "minLength": 1,
+      "title": "Scenarioid",
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "default": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "simulationId": {
+      "minLength": 1,
+      "title": "Simulationid",
+      "type": "string"
+    },
+    "sourceMode": {
+      "enum": [
+        "LOCAL_MOCK",
+        "SIMULATION_READY"
+      ],
+      "title": "Sourcemode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "dataVersion",
+    "simulationId",
+    "scenarioId",
+    "sourceMode",
+    "providerKind",
+    "agentOutputs"
+  ],
+  "title": "Day3AgentDraft",
+  "type": "object"
+}

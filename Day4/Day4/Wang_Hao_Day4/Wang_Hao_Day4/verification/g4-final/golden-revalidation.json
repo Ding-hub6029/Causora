@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "simulationId": "sim-4ff6c803c309c2a34874eee8",
+  "scenarioId": "baseline",
+  "sha256": "43b050bf7c5d8d72e4460e500d287ba275c388241ca3ec9ae847270534ff6aa8",
+  "evidenceCount": 4,
+  "tamperRejected": true,
+  "scope": "OFFLINE_REVALIDATION_OF_CAPTURED_REAL_E2E; NOT_A_NEW_MODEL_CALL_OR_BUSINESS_SIGNATURE"
+}

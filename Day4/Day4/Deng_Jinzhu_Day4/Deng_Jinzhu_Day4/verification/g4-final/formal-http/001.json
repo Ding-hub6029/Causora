@@ -1,0 +1,18 @@
+{
+  "path": "/api/simulate",
+  "method": "OPTIONS",
+  "status": 200,
+  "requestCorsHeaders": {
+    "access-control-request-method": "POST",
+    "access-control-request-headers": "content-type",
+    "origin": "http://127.0.0.1:3044"
+  },
+  "request": null,
+  "response": null,
+  "headers": {
+    "access-control-allow-methods": "GET, POST, OPTIONS",
+    "access-control-max-age": "600",
+    "access-control-allow-headers": "Accept, Accept-Language, Content-Language, Content-Type, X-Request-Id",
+    "access-control-allow-origin": "http://127.0.0.1:3044"
+  }
+}

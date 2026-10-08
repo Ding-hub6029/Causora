@@ -1,0 +1,49 @@
+{
+  "kind": "CAUSORA_WANG_DAY3_AGENT_DRAFT_V1",
+  "schemaVersion": "causora.contract.v1",
+  "dataVersion": "demo-2026.10.04-v4",
+  "simulationId": "sim-day1-mock-0001",
+  "scenarioId": "demand-drop",
+  "sourceMode": "LOCAL_MOCK",
+  "providerKind": "OFFLINE_STUB",
+  "agentOutputs": [
+    {
+      "role": "CFO",
+      "accent": "cobalt",
+      "focus": "Financial exposure",
+      "headline": "Financial tradeoffs need review",
+      "body": "This synthetic illustration points to a tradeoff; inspect the referenced fields before deciding.",
+      "metrics": [
+        "expectedTcoUsd:D0",
+        "cashOutflowP90Usd:D0"
+      ],
+      "status": "Watch"
+    },
+    {
+      "role": "COO",
+      "accent": "aqua",
+      "focus": "Service continuity",
+      "headline": "Service continuity needs review",
+      "body": "This synthetic illustration points to a tradeoff; inspect the referenced fields before deciding.",
+      "metrics": [
+        "stockoutProbability:D0",
+        "serviceLevel:D0"
+      ],
+      "status": "Watch"
+    },
+    {
+      "role": "Risk",
+      "accent": "coral",
+      "focus": "Contract downside",
+      "headline": "Contract exposure needs review",
+      "body": "This synthetic illustration points to a tradeoff; inspect the referenced fields before deciding.",
+      "metrics": [
+        "cashOutflowP90Usd:D0",
+        "cashOutflowP90Usd:D1"
+      ],
+      "status": "Watch"
+    }
+  ],
+  "criticStatus": "NOT_IMPLEMENTED_DAY3",
+  "decisionReady": false
+}

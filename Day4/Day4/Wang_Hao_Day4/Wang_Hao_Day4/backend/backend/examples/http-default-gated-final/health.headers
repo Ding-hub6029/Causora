@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+date: Tue, 06 Oct 2026 19:25:31 GMT
+server: uvicorn
+cache-control: no-store
+x-request-id: req-d4bd6802e7024d65b2c8f7dc7f6c28e6
+x-causora-review-status: pending
+x-causora-trace-contract: release-gated-v2-pending
+x-causora-execution-mode: review-gated
+content-length: 372
+content-type: application/json
+vary: Origin
+

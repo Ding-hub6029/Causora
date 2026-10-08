@@ -1,0 +1,34 @@
+{
+  "kind": "causora.trace-contract-release-record.v1",
+  "schemaVersion": "causora.contract.v2",
+  "traceSchemaVersion": "causora.formula-trace.v1",
+  "approvals": [
+    {
+      "role": "simulation_owner",
+      "actorId": "",
+      "decision": "pending",
+      "recordedAtUtc": ""
+    },
+    {
+      "role": "frontend_owner",
+      "actorId": "",
+      "decision": "pending",
+      "recordedAtUtc": ""
+    },
+    {
+      "role": "review_owner",
+      "actorId": "",
+      "decision": "pending",
+      "recordedAtUtc": ""
+    }
+  ],
+  "status": "pending",
+  "contractApprovalReference": "",
+  "artifacts": {
+    "backendJsonSchema": "7eb78481a7eeebcf91ee2b844ad70548b60e35d0225ccb73267d1d860638b06d",
+    "pythonPydanticModel": "958eccff2b98206ac0f0bcd19e5831223f92746411e2384d6b24c15c1402ac96",
+    "commonApiContract": "c00114a5fe79dfee61d4489f898d0411c15c880e2a2a9f44fc14e531914634c9",
+    "typescriptTypes": "2bccbd340b475e4759fdf42ebfd5748f3b65006ff792bf11fca2060113e054af",
+    "frontendValidator": "402223b43f51667ea8732ffd5879314b0062f4500e881ec3c666d7e65c247808"
+  }
+}

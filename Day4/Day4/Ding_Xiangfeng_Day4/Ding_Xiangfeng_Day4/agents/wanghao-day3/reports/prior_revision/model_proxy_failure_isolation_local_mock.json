@@ -1,0 +1,89 @@
+{
+  "simulationId": "sim-day1-mock-0001",
+  "dataVersion": "demo-2026.10.04-v4",
+  "scenarioId": "demand-drop",
+  "sourceMode": "LOCAL_MOCK",
+  "providerKind": "MODEL_PROXY",
+  "state": "PARTIAL",
+  "outputs": [
+    {
+      "role": "CFO",
+      "headline": "Analysis unavailable",
+      "output": {
+        "role": "CFO",
+        "narrativeKey": "day3_cfo_unavailable",
+        "reasonText": "Analysis unavailable; validated data remains separately accessible.",
+        "optionIds": [],
+        "metricRefs": [],
+        "evidenceIds": [],
+        "availability": "UNAVAILABLE"
+      },
+      "stance": null,
+      "failure": "invalid_response"
+    },
+    {
+      "role": "COO",
+      "headline": "Higher service level comes with greater supply shift toward alternate source",
+      "output": {
+        "role": "COO",
+        "narrativeKey": "day3_coo_analysis",
+        "reasonText": "Option Dn tradeoffs show lower stockout risk when more units come from source B, and higher reliance on A increases stockout probability. The comparison uses the option specific serviceLevel and stockoutProbability and the unitsFromA and unitsFromB allocations.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "stockoutProbability:D0",
+          "serviceLevel:D0",
+          "unitsFromA:D0",
+          "unitsFromB:D0",
+          "stockoutProbability:D1",
+          "serviceLevel:D1",
+          "unitsFromA:D1",
+          "unitsFromB:D1"
+        ],
+        "evidenceIds": [],
+        "availability": "MOCK"
+      },
+      "stance": "Aligned",
+      "failure": null
+    },
+    {
+      "role": "Risk",
+      "headline": "Locking forecast at renewal raises cash and stockout tradeoffs across options",
+      "output": {
+        "role": "Risk",
+        "narrativeKey": "day3_risk_analysis",
+        "reasonText": "Option comparisons show a lower cash exposure but higher stockout risk for one option and a higher cash exposure with the lowest stockout risk for another; the locked forecast and renewal terms create uncertainty in demand alignment.",
+        "optionIds": [
+          "D0",
+          "D1",
+          "D2"
+        ],
+        "metricRefs": [
+          "cashOutflowP90Usd:D0",
+          "cashOutflowP90Usd:D1",
+          "cashOutflowP90Usd:D2",
+          "stockoutProbability:D0",
+          "stockoutProbability:D1",
+          "stockoutProbability:D2",
+          "renewalLocked",
+          "renewalNoticeDays"
+        ],
+        "evidenceIds": [
+          "EV-014",
+          "EV-019",
+          "EV-021",
+          "EV-024",
+          "EV-027"
+        ],
+        "availability": "MOCK"
+      },
+      "stance": "Watch",
+      "failure": null
+    }
+  ],
+  "criticStatus": "NOT_IMPLEMENTED_DAY3",
+  "decisionReady": false
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "causora.contract.v1",
+  "requestId": "req-day2-not-run-001",
+  "error": {
+    "code": "simulation_failed",
+    "message": "104-week simulation is not available; required model inputs or approved assumptions are missing.",
+    "details": {
+      "missingInputs": [
+        "holdingCostPerUnitPerWeek",
+        "lostContributionMarginPerUnit",
+        "safetyStockPolicy",
+        "targetStockPolicy",
+        "cashPaymentTiming"
+      ]
+    },
+    "requestId": "req-day2-not-run-001"
+  }
+}

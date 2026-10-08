@@ -1,0 +1,32 @@
+{
+  "path": "/api/boardroom",
+  "method": "POST",
+  "status": 503,
+  "requestCorsHeaders": {
+    "origin": "http://127.0.0.1:3044"
+  },
+  "request": {
+    "schemaVersion": "causora.contract.v1",
+    "simulationId": "sim-ef8b5f02cee6ceb156b21e04",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "scenarioId": "baseline"
+  },
+  "response": {
+    "schemaVersion": "causora.contract.v1",
+    "requestId": "causora-br-5be24c98-a756-4cbf-9425-cf3d35a167a6",
+    "error": {
+      "code": "simulation_failed",
+      "message": "Boardroom provider configuration is unavailable.",
+      "details": {
+        "reason": "provider_unavailable"
+      },
+      "requestId": "causora-br-5be24c98-a756-4cbf-9425-cf3d35a167a6"
+    }
+  },
+  "headers": {
+    "x-request-id": "causora-br-5be24c98-a756-4cbf-9425-cf3d35a167a6",
+    "x-causora-current-simulation": "sim-ef8b5f02cee6ceb156b21e04",
+    "access-control-expose-headers": "X-Causora-Review-Status, X-Causora-Trace-Contract, X-Causora-Execution-Mode, X-Request-Id, X-Causora-Provider-Mode, X-Causora-Critic-Status, X-Causora-Current-Simulation",
+    "access-control-allow-origin": "http://127.0.0.1:3044"
+  }
+}

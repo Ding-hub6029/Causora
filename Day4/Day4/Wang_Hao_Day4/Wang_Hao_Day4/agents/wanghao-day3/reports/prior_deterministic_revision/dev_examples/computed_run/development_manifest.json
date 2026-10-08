@@ -1,0 +1,13 @@
+{
+  "kind": "CAUSORA_UNREVIEWED_DEVELOPMENT_MANIFEST_V1",
+  "decisionReady": false,
+  "humanReviewStatus": "pending",
+  "filesSha256": {
+    "development_bundle.json": "201c266d057a6a3f26936a472459838b703433dda0e62cccc23dbd4b44278b94",
+    "computed_deterministic_preview_UNREVIEWED.json": "5a4fdba63f6b363c27684685b9af9a98570af536d5a5ebaa2965304cfcf03f9c",
+    "trace_audit.json": "10f66254e56dd9618b646421e33ecfcc10d609e7958e75cb41454b8946335dce",
+    "lineage.json": "4de7dba841d4eba9f5fa9136521f667b7831d1b10f6cd1d5166de4b77178497f",
+    "simulate_request.json": "20af82c3bdf5502f4c6d41a74f8d9e9fa5c6c6f87f8014977ccb9135ccae9b23",
+    "UNAPPROVED_TEST_POLICY.json": "ba138a97d1203a2717fb3971e31a794506eb28b4a2983206cc6ee845bd6858c3"
+  }
+}
