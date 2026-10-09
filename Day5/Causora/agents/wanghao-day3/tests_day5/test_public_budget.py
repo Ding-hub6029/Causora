@@ -3,7 +3,7 @@ import copy
 import threading
 from decimal import Decimal
 import pytest
-from agent_day4.postgres_budget import PostgresBudget, SCOPE, CALL_CAP
+from agent_day4.postgres_budget import PostgresBudget, SCOPE, CALL_CAP, BALANCE_AUTHORIZATION
 from agent_day4.openrouter_provider import JOURNAL_KIND
 from agent_day4.provider import ProviderFailure
 
@@ -109,4 +109,29 @@ def test_third_supplement_has_independent_cap():
     reserve(instance, '0.25')
     with pytest.raises(ProviderFailure, match='supplement_budget_exhausted'):
         reserve(instance)
+
+def test_existing_balance_mode_has_no_cumulative_call_cap():
+    store = Store()
+    store.data['metadata'] = {}
+    instance = budget(store)
+    store.data['authorization'] = copy.deepcopy(BALANCE_AUTHORIZATION)
+    for count in range(CALL_CAP + 10):
+        if count % 6 == 0:
+            instance = budget(store)
+        reserve(instance)
+    assert len(store.data['entries']) == CALL_CAP + 10
+    instance.require_complete_review_capacity()
+
+def test_existing_balance_ceiling_cannot_expand_after_topup():
+    store = Store()
+    store.data['metadata'] = {}
+    instance = budget(store)
+    store.data['authorization'] = copy.deepcopy(BALANCE_AUTHORIZATION)
+    instance.configure_current_available(Decimal('0.20'))
+    captured = store.data['metadata']['existingBalanceCeiling']
+    budget(store).configure_current_available(Decimal('100'))
+    assert store.data['metadata']['existingBalanceCeiling'] == captured
+    instance = budget(store)
+    with pytest.raises(ProviderFailure, match='usd_budget_exhausted'):
+        reserve(instance, '0.16')
 

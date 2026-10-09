@@ -19,6 +19,7 @@ SECOND_SUPPLEMENT_START = 34
 SECOND_SUPPLEMENT_USD = Decimal('0.50')
 THIRD_SUPPLEMENT_START = 42
 THIRD_SUPPLEMENT_USD = Decimal('0.25')
+BALANCE_AUTHORIZATION = {'scope': SCOPE, 'maxCalls': None, 'maxUsd': 'EXISTING_KEY_BALANCE', 'mode': 'existing_key_balance_no_topup'}
 
 
 class PostgresBudget(OpenRouterBudget):
@@ -28,6 +29,43 @@ class PostgresBudget(OpenRouterBudget):
         super().__init__(journal_path=Path("DATABASE_ONLY_NOT_A_FILE"))
         self._connection_url = connection_url
         self._session_calls = 0
+        self._session_reserved = Decimal('0')
+
+    def configure_current_available(self, current_available):
+        # Retain the six-call / one-dollar bound for each individual review.
+        ceiling = super().configure_current_available(current_available)
+        def action(journal):
+            if journal.get('authorization') == BALANCE_AUTHORIZATION:
+                self._reconcile_metadata(journal)
+                return None, True
+            return None, False
+        self._locked_journal_transaction(action)
+        return ceiling
+
+    def _reconcile_metadata(self, journal):
+        if journal.get('authorization') != BALANCE_AUTHORIZATION:
+            return super()._reconcile_metadata(journal)
+        metadata = journal.get('metadata')
+        if not isinstance(metadata, dict):
+            raise ProviderFailure('openrouter_budget_journal_invalid')
+        captured = metadata.get('existingBalanceCeiling')
+        if captured is None:
+            if self.current_available_usd is None:
+                raise ProviderFailure('openrouter_preflight_required')
+            captured = self._journal_total(journal['entries']) + self.current_available_usd - self.margin_usd
+            metadata['existingBalanceCeiling'] = str(captured)
+            metadata['balanceAtActivationUsd'] = str(self.current_available_usd)
+        try:
+            ceiling = Decimal(str(captured))
+        except Exception:
+            raise ProviderFailure('openrouter_budget_journal_invalid') from None
+        if not ceiling.is_finite() or ceiling <= 0:
+            raise ProviderFailure('openrouter_budget_journal_invalid')
+        if self.current_available_usd is not None:
+            ceiling = min(ceiling, self._journal_total(journal['entries']) + self.current_available_usd - self.margin_usd)
+            metadata['existingBalanceCeiling'] = str(ceiling)
+        metadata['currentCeiling'] = str(ceiling)
+        return ceiling, True
 
     def _locked_journal_transaction(self, action):
         try:
@@ -43,7 +81,7 @@ class PostgresBudget(OpenRouterBudget):
                         raise ProviderFailure("openrouter_budget_journal_unavailable")
                     journal = row[0]
                     if (not isinstance(journal, dict) or journal.get("kind") != JOURNAL_KIND
-                            or journal.get("authorization") != {"scope": SCOPE, "maxCalls": CALL_CAP, "maxUsd": "1.00"}
+                            or journal.get("authorization") not in ({"scope": SCOPE, "maxCalls": CALL_CAP, "maxUsd": "1.00"}, BALANCE_AUTHORIZATION)
                             or not isinstance(journal.get("entries"), list)):
                         raise ProviderFailure("openrouter_budget_journal_invalid")
                     for entry in journal["entries"]:
@@ -61,18 +99,21 @@ class PostgresBudget(OpenRouterBudget):
     def _reserve_persistently(self, entry, amount):
         if self._session_calls >= 6:
             raise ProviderFailure("provider_call_budget_exhausted")
+        if self._session_reserved + amount > self.max_usd:
+            raise ProviderFailure('openrouter_usd_budget_exhausted')
 
         def action(journal):
             ceiling, _ = self._reconcile_metadata(journal)
             entries = journal["entries"]
             committed = self._journal_total(entries)
-            if len(entries) >= CALL_CAP:
+            balance_mode = journal.get('authorization') == BALANCE_AUTHORIZATION
+            if not balance_mode and len(entries) >= CALL_CAP:
                 raise ProviderFailure("provider_call_budget_exhausted")
-            if len(entries)>=SUPPLEMENT_START and self._journal_total(entries[SUPPLEMENT_START:]) + amount > SUPPLEMENT_USD:
+            if not balance_mode and len(entries)>=SUPPLEMENT_START and self._journal_total(entries[SUPPLEMENT_START:]) + amount > SUPPLEMENT_USD:
                 raise ProviderFailure("openrouter_supplement_budget_exhausted")
-            if len(entries)>=SECOND_SUPPLEMENT_START and self._journal_total(entries[SECOND_SUPPLEMENT_START:]) + amount > SECOND_SUPPLEMENT_USD:
+            if not balance_mode and len(entries)>=SECOND_SUPPLEMENT_START and self._journal_total(entries[SECOND_SUPPLEMENT_START:]) + amount > SECOND_SUPPLEMENT_USD:
                 raise ProviderFailure("openrouter_supplement_budget_exhausted")
-            if len(entries)>=THIRD_SUPPLEMENT_START and self._journal_total(entries[THIRD_SUPPLEMENT_START:]) + amount > THIRD_SUPPLEMENT_USD:
+            if not balance_mode and len(entries)>=THIRD_SUPPLEMENT_START and self._journal_total(entries[THIRD_SUPPLEMENT_START:]) + amount > THIRD_SUPPLEMENT_USD:
                 raise ProviderFailure("openrouter_supplement_budget_exhausted")
             if journal["metadata"].get("overCap") is True or committed + amount > ceiling:
                 raise ProviderFailure("openrouter_usd_budget_exhausted")
@@ -81,11 +122,12 @@ class PostgresBudget(OpenRouterBudget):
 
         result = self._locked_journal_transaction(action)
         self._session_calls += 1
+        self._session_reserved += amount
         return result
 
     def require_complete_review_capacity(self):
         def action(journal):
-            if CALL_CAP - len(journal['entries']) < 5:
+            if journal.get('authorization') != BALANCE_AUTHORIZATION and CALL_CAP - len(journal['entries']) < 5:
                 raise ProviderFailure('provider_call_budget_exhausted')
             return None, False
         self._locked_journal_transaction(action)
