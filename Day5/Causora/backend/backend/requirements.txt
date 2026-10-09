@@ -12,3 +12,6 @@ pytest>=8,<10
 httpx>=0.27,<1
 jsonschema>=4,<5
 openpyxl>=3.1,<4
+
+# Transactional persistent public AI budget
+psycopg[binary]>=3.2,<4

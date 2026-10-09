@@ -63,6 +63,14 @@ _PERCENT_RE = re.compile(
     rf"(?<![A-Za-z0-9_.]){_SIGN}?\s*{_CORE}\s*(?:%|percent(?:age)?s?)(?![A-Za-z0-9_])",
     re.IGNORECASE,
 )
+# A percentage-point delta is not an interchangeable display of a probability
+# fraction.  The current registry has no ``percentage_points`` kind, so retain
+# it as a separate span and let the normal typed verifier reject it rather than
+# silently treating ``8.7 percentage points`` as ``8.7%``.
+_PERCENTAGE_POINT_RE = re.compile(
+    rf"(?<![A-Za-z0-9_.]){_SIGN}?\s*{_CORE}\s*(?:percentage\s+points?|percent\s+points?|%\s*(?:points?|pts?)|pp|ppt)(?![A-Za-z0-9_])",
+    re.IGNORECASE,
+)
 # A compact suffix without a dollar marker is still a normal compact monetary
 # display ("419k"), but only a claimed money field may use it.
 _COMPACT_RE = re.compile(
@@ -188,6 +196,14 @@ def scan_text(
             # _validate_claims reported this once; retaining this branch makes
             # direct use safe if callers later change claim validation.
             continue
+        if entry['kind'] in {'units', 'integer'}:
+            suffix = re.match(r'\s+(units?|weeks?|days?|months?)\b', text[span.end:], re.I)
+            if suffix:
+                shown_unit = suffix.group(1).lower().rstrip('s')
+                expected_unit = entry['unit'].lower().rstrip('s')
+                if expected_unit in {'unit', 'week', 'day', 'month'} and shown_unit != expected_unit:
+                    violations.append(f"unit {shown_unit!r} does not match {expected_unit!r} for ref {ref!r} at {_where(span)}")
+                    continue
         message = _verify_span(span, ref, entry)
         if message:
             violations.append(f"{message} at {_where(span)}")
@@ -290,6 +306,7 @@ def _find_spans(text: str, token_ranges: list[tuple[int, int]], allowed: set[str
     add_matches(_TECHNICAL_VERSION_RE, "technical_version")
     add_matches(_GENERIC_NUMERIC_ID_RE, "id")
     add_matches(_CURRENCY_RE, "money")
+    add_matches(_PERCENTAGE_POINT_RE, "percentage_points")
     add_matches(_PERCENT_RE, "percent")
     add_matches(_COMPACT_RE, "compact")
     # Decimal must precede ordinary integers.  The matched decimals are

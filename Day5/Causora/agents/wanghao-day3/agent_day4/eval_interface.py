@@ -36,10 +36,17 @@ def load_blind_inputs(path:Path|str)->list[dict]:
 
 
 def model_payload(record):
-    """Reuse the existing safe model loader: input only, no IDs/metadata/labels."""
+    """Return an independent, answer-free model payload.
+
+    This boundary must keep working when the historical ``agent_day3.evals``
+    package is absent.  It intentionally does not import a scorer, generator,
+    label file, provider, or environment configuration.
+    """
     _reject_labels(record)
-    from agent_day3.evals.scoring import prompt_payload
-    return prompt_payload(record)
+    value=record.get('input')
+    if not isinstance(value,dict) or not value:raise ValueError('Evaluation input requires a non-empty object input')
+    _reject_labels(value,('input',))
+    return json.loads(json.dumps(value,ensure_ascii=False,sort_keys=True,separators=(',',':'),allow_nan=False))
 
 
 def prediction_record(*,case_id:str,input_record:dict,issues:list[dict],provider:str,model:str,run_id:str,status='ok')->dict:

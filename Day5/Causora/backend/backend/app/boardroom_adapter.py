@@ -713,6 +713,34 @@ def _validated_success(envelope: dict[str, Any], *, request_id: str,
 
 async def _run_formal_pipeline(request_dict: dict[str, Any], record: RegisteredSimulation,
                                request_id: str) -> tuple[dict[str, Any], str, str]:
+    selection = record.success["data"]["selections"].get(request_dict["scenarioId"])
+    if selection and selection["status"] == "no_feasible_option":
+        # This branch is derived solely from the already registered, source-
+        # verified current Matrix.  It must not import the independently owned
+        # AI package, construct a provider, or fabricate a recommendation.
+        # The historical pipeline uses the same typed no-feasible envelope and
+        # transport labels; they mean no dispatch took place, not AI success.
+        envelope = {
+            "schemaVersion": SCHEMA_VERSION_V1,
+            "dataVersion": record.data_version,
+            "requestId": request_id,
+            "data": {
+                "scenarioId": request_dict["scenarioId"],
+                "agentOutputs": [],
+                "criticIssues": [],
+                "brief": {
+                    "scenarioId": request_dict["scenarioId"],
+                    "status": "no_feasible_option",
+                    "recommendedOptionId": None,
+                    "constraintViolations": _thaw(selection["constraintViolations"]),
+                    "message": "No simulated option meets the current constraints. Revise inputs and run the simulator again.",
+                },
+                "numericGuardrail": {"passed": True, "rejectedClaims": []},
+            },
+        }
+        return _validated_success(envelope, request_id=request_id, record=record,
+                                  scenario_id=request_dict["scenarioId"]), "primary", "complete"
+
     inputs_module, pipeline_module, wire_module = _agent_modules()
     runner = getattr(pipeline_module, "run_boardroom", None)
     pipeline_config_type = getattr(wire_module, "PipelineConfig", None)
@@ -720,12 +748,7 @@ async def _run_formal_pipeline(request_dict: dict[str, Any], record: RegisteredS
         raise BoardroomAdapterError("boardroom_pipeline_unavailable", "Boardroom review is not configured.",
                                     status=503, code="simulation_failed")
     run = _make_verified_run(record, inputs_module)
-    selection = record.success["data"]["selections"].get(request_dict["scenarioId"])
-    if selection and selection["status"] == "no_feasible_option":
-        provider = critic_provider = fallback_provider = None
-        config = pipeline_config_type()
-    else:
-        provider, critic_provider, fallback_provider, config = _load_formal_runtime(pipeline_config_type)
+    provider, critic_provider, fallback_provider, config = _load_formal_runtime(pipeline_config_type)
     try:
         result = await runner(request_dict, run=run, provider=provider, critic_provider=critic_provider,
                               fallback_provider=fallback_provider, correlation_id=request_id, config=config)

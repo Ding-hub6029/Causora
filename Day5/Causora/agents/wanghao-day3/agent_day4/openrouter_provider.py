@@ -859,6 +859,8 @@ class OpenRouterProvider:
             record["parsedOutput"] = record["rawParsedOutput"]
             record["status"] = "returned"
             await self.budget.mark(reservation_id, "returned", verified_cost)
+            if hasattr(self.budget, "save_receipt"):
+                await asyncio.to_thread(self.budget.save_receipt, reservation_id, record)
             return value
         except asyncio.CancelledError:
             record["status"] = "cancelled"
@@ -930,7 +932,12 @@ def providers_from_openrouter_env():
         retries=0,
         max_calls=MAX_PROCESS_CALLS,
     )
-    session = OpenRouterSession(api_key=api_key, config=config)
+    database_url = os.getenv("CAUSORA_AI_BUDGET_DATABASE_URL", "").strip()
+    budget = None
+    if database_url:
+        from .postgres_budget import PostgresBudget
+        budget = PostgresBudget(connection_url=database_url)
+    session = OpenRouterSession(api_key=api_key, config=config, budget=budget)
     primary = OpenRouterProvider(PRIMARY_MODEL, session=session, config=config, timeout=config.stage_timeout)
     critic = OpenRouterProvider(CRITIC_MODEL, session=session, config=config, timeout=config.critic_timeout)
     fallback = OpenRouterProvider(PRIMARY_MODEL, session=session, config=config, timeout=config.critic_timeout)

@@ -36,10 +36,12 @@ def _validate_request(request,run,correlation):
 
 def _scan_fields(value,fields,claims,registry,refs,ids):
     from .numeric import scan_text
+    from .evidence_support import check_evidence_prose
     errors=[]
     for field in fields:
         text=value.get(field)
         if not isinstance(text,str) or not text.strip():errors.append(field+':missing_text');continue
+        check_evidence_prose(text, stage=field)
         field_claims=[{k:c[k] for k in ('start','end','ref')} for c in claims if c['field']==field]
         errors.extend(field+':'+e for e in scan_text(text,registry=registry,declared_refs=refs,claims=field_claims,allowed_ids=ids))
     if any(c['field'] not in fields for c in claims):errors.append('claim_for_unknown_field')
@@ -134,8 +136,9 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
         if os.getenv('CAUSORA_OPENROUTER_PAID_AUTHORIZED')!='YES' or os.getenv('OPENROUTER_SCOPED_KEY_CONFIRMED')!='YES':
             raise PipelineError('openrouter_paid_dispatch_not_authorized',status=503)
         journal=os.getenv('CAUSORA_OPENROUTER_BUDGET_JOURNAL')
-        if not journal:raise PipelineError('openrouter_persistent_budget_required',status=503)
-        session.budget.set_journal_path(Path(journal))
+        if not getattr(session.budget, 'durable_database', False):
+            if not journal:raise PipelineError('openrouter_persistent_budget_required',status=503)
+            session.budget.set_journal_path(Path(journal))
         await asyncio.wait_for(session.preflight(),max(0.001,execution.remaining()))
         session.authorize(scoped_key_confirmed=True)
         audit['openrouterReadOnlyPreflight']=copy.deepcopy(session.preflight_summary)
@@ -253,10 +256,14 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
                 critic_payload={**critic_payload,'formatFeedback':'Reformat without changing facts. No numerical words, including One option, two roles, first or second. Say A sourcing alternative and Contributing functions. No digits or quantities in prose; IDs only in structured arrays, claims empty. The previous draft was rejected, not accepted.'}
             except Exception:raise PipelineError('critic_unavailable',status=503,retryable=True) from None
         headers['X-Causora-Provider-Mode']='same-family-fallback'
+    # Labels and descriptions are opaque request text, not facts required for a
+    # code-bound recommendation.  Never forward them to a provider: they could
+    # contain adversarial instructions despite an otherwise valid simulation.
+    safe_options=[{key:o[key] for key in ('id','shareA','terminateA')} for o in run.simulation_request['options']]
     synthesis_payload={'identity':critic_payload['identity'],'roleOutputs':[d.model_dump() for d in outputs],
         'criticIssues':[i.model_dump() for i in critic.issues],'mechanism':mechanism,
-        'options':[{key:o[key] for key in ('id','shareA','terminateA','label','description')} for o in run.simulation_request['options']],
-        'selectedOption':next(copy.deepcopy(o) for o in run.simulation_request['options'] if o['id']==option_id),
+        'options':safe_options,
+        'selectedOption':next(copy.deepcopy(o) for o in safe_options if o['id']==option_id),
         'currentScenarioMatrix':copy.deepcopy(sim['matrix'][scenario_id]),
         'validatedConstraints':critic_payload['constraints'],
         'verifiedBusinessFacts':business_facts,

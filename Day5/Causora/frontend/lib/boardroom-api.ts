@@ -193,6 +193,9 @@ export async function postBoardroom(
   }
   const request: BoardroomRequest = { schemaVersion: SCHEMA_VERSION, simulationId: liveRun.response.data.simulation.simulationId, dataVersion: liveRun.response.data.simulation.dataVersion, scenarioId };
   const requestId = requestIdOverride ?? createBoardroomRequestId();
+  if (externalSignal?.aborted) {
+    throw new Day4ApiError("stale_response", "Boardroom request was cancelled because the run changed.", { requestId, retryable: false });
+  }
   const controller = new AbortController();
   const timeout = globalThis.setTimeout(() => controller.abort(new DOMException("Boardroom request timed out.", "TimeoutError")), REQUEST_TIMEOUT_MS);
   const forwardAbort = () => controller.abort(externalSignal?.reason);
@@ -207,6 +210,9 @@ export async function postBoardroom(
       signal: controller.signal
     });
     const responseRequestId = response.headers.get("x-request-id") ?? undefined;
+    if (response.ok && responseRequestId !== requestId) {
+      throw new Day4ApiError("stale_response", "Boardroom response request-id header does not match this request.", { requestId: responseRequestId, retryable: false });
+    }
     let payload: unknown;
     try { payload = await response.json(); }
     catch { throw new Day4ApiError("malformed_response", "Boardroom returned unreadable JSON; the simulation remains available.", { requestId: responseRequestId, retryable: false }); }

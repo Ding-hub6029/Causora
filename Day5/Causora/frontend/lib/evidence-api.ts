@@ -85,6 +85,9 @@ export async function fetchEvidenceRecord(
 ): Promise<{ evidence: EvidenceRecord; requestId: string }> {
   if (!/^EV-\d{3}$/.test(evidenceId)) throw new Day4ApiError("not_found", "Evidence id is invalid.");
   const ownRequestId = requestId();
+  if (externalSignal?.aborted) {
+    throw new Day4ApiError("stale_response", "Evidence lookup was cancelled because the active run changed.", { requestId: ownRequestId, retryable: false });
+  }
   const controller = new AbortController();
   const timeout = globalThis.setTimeout(() => controller.abort(new DOMException("Evidence request timed out.", "TimeoutError")), REQUEST_TIMEOUT_MS);
   const forwardAbort = () => controller.abort(externalSignal?.reason);
@@ -107,6 +110,9 @@ export async function fetchEvidenceRecord(
       throw new Day4ApiError(failureCode(response.status, payload), response.status === 404 ? `Evidence endpoint or record ${evidenceId} was not found.` : message, { requestId: envelope?.error?.requestId ?? responseRequestId, retryable: response.status >= 500 || response.status === 408 });
     }
     const validated = validateEvidenceSuccess(payload, evidenceId, dataVersion);
+    if (responseRequestId !== validated.requestId || validated.requestId !== ownRequestId) {
+      throw new Day4ApiError("stale_response", "Evidence response header and envelope do not match the current outbound request.", { requestId: responseRequestId ?? validated.requestId, retryable: false });
+    }
     return { evidence: validated.data.evidence, requestId: validated.requestId };
   } catch (error) {
     if (error instanceof Day4ApiError) throw error;
