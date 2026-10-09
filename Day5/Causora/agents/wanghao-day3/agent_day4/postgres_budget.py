@@ -12,7 +12,7 @@ from .openrouter_provider import OpenRouterBudget, JOURNAL_KIND
 from .provider import ProviderFailure
 
 SCOPE = "public-day5-20261010"
-CALL_CAP = 48
+CALL_CAP = 58
 SUPPLEMENT_START = 26
 SUPPLEMENT_USD = Decimal('0.60')
 SECOND_SUPPLEMENT_START = 34

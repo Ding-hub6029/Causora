@@ -39,7 +39,7 @@ agents/wanghao-day3/tests_day5/test_day5_numeric_claims.py,4319
 agents/wanghao-day3/tests_day5/test_day5_openrouter.py,19846
 agents/wanghao-day3/tests_day5/test_day5_pipeline_reliability.py,10189
 agents/wanghao-day3/tests_day5/test_gemini_request_bound.py,947
-agents/wanghao-day3/tests_day5/test_public_budget.py,3839
+agents/wanghao-day3/tests_day5/test_public_budget.py,3838
 agents/wanghao-day3/tests_day5/test_role_correction.py,1882
 backend/backend/.env.example,2040
 backend/backend/.gitattributes,71

@@ -35,10 +35,10 @@ def reserve(value, amount='0.001'):
 
 def test_global_cap_survives_new_sessions_and_unknown_cost():
     store = Store()
-    for _ in range(CALL_CAP // 6):
-        instance = budget(store)
-        for _ in range(6):
-            reserve(instance)
+    for count in range(CALL_CAP):
+        if count % 6 == 0:
+            instance = budget(store)
+        reserve(instance)
     restored = budget(store)
     assert restored.snapshot()['callCount'] == CALL_CAP
     assert restored.snapshot()['unknownCosts']['count'] == CALL_CAP
