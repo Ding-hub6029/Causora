@@ -3,7 +3,7 @@ path,bytes
 .gitignore,396
 API_CONTRACT_V2.md,2445
 DEPLOYMENT_GUIDE.md,1313
-PUBLIC_AI_DEPLOYMENT.md,1613
+PUBLIC_AI_DEPLOYMENT.md,2211
 PUBLIC_DELIVERY_SCOPE.md,469
 PUBLIC_DELIVERY_VALIDATION.md,339
 README.md,1733
@@ -20,7 +20,7 @@ agents/wanghao-day3/agent_day4/evidence_support.py,2389
 agents/wanghao-day3/agent_day4/inputs.py,64590
 agents/wanghao-day3/agent_day4/numeric.py,25879
 agents/wanghao-day3/agent_day4/openrouter_provider.py,46181
-agents/wanghao-day3/agent_day4/pipeline.py,35504
+agents/wanghao-day3/agent_day4/pipeline.py,37053
 agents/wanghao-day3/agent_day4/postgres_budget.py,4075
 agents/wanghao-day3/agent_day4/provider.py,9608
 agents/wanghao-day3/agent_day4/wire.py,6300
@@ -31,6 +31,7 @@ agents/wanghao-day3/tests_day5/README.md,2741
 agents/wanghao-day3/tests_day5/__init__.py,55
 agents/wanghao-day3/tests_day5/day5_fixtures.py,8387
 agents/wanghao-day3/tests_day5/run_offline_ai_evaluation.py,13805
+agents/wanghao-day3/tests_day5/test_brief_format_correction.py,1812
 agents/wanghao-day3/tests_day5/test_day5_budget_portability.py,14217
 agents/wanghao-day3/tests_day5/test_day5_evidence_support.py,1883
 agents/wanghao-day3/tests_day5/test_day5_identity_binding.py,1177

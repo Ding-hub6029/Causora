@@ -274,6 +274,25 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
     if common_allocation[option_id]['mixedSuppliers']:
         synthesis_payload['task']='Recommend the server-selected mixed A/B option with its exact rebalance_suppliers action. Explain retained minimum purchase obligations and the supplied cost, service and cash tradeoffs qualitatively. The selected mix uses both A and B and reduces concentration versus the all-A baseline. It does not terminate A, incur an exit fee or use B-only sourcing. Do not add an exit phrase to this recommendation. cash_ceiling_enforced=true acknowledges the existing simulation check. No quantities, digits, number words or tokens in prose. claims must be empty. challenges only for verified unresolved selected-plan issues.'
     synthesis=await execution.call(provider,'Synthesizer',synthesis_payload,SynthesisDraft,reserve=return_reserve)
+    # A returned draft is not a validated brief. Allow one explicit formatting
+    # correction within the same deadline and call ledger, never a transport
+    # retry or an unchecked template substitution.
+    def validate_synthesis_numbers(draft):
+        value=draft.model_dump()
+        _scan_fields(value,['recommendation','rationale'],[c for c in value['claims'] if c['field']!='challenges'],registry,draft.metric_refs,sorted(option_ids))
+        for challenge in draft.challenges:
+            _scan_fields({'body':challenge},['body'],[],registry,[],sorted(option_ids))
+    try:
+        validate_synthesis_numbers(synthesis)
+    except PipelineError as rejected:
+        if rejected.reason!='numeric_guardrail_rejected' or execution.calls>=config.max_calls:
+            raise
+        correction=copy.deepcopy(synthesis_payload)
+        correction['rejectedDraft']=synthesis.model_dump()
+        correction['formattingErrors']=rejected.details.get('rejectedClaims',[])
+        correction['correctionTask']='Rewrite the rejected draft in qualitative English. Remove every quantity, numeric identifier, metric placeholder and numerical word, including one, first, second and one-time. Use fixed instead of one-time. Preserve the verified selection, action and factual meaning. Return claims empty. This is the only correction attempt; an invalid correction will be rejected.'
+        synthesis=await execution.call(provider,'Synthesizer',correction,SynthesisDraft,retry=False,reserve=return_reserve)
+        validate_synthesis_numbers(synthesis)
     if synthesis.option_id not in synthesis_payload['eligibleOptionIds']:raise PipelineError('invalid_synthesizer_option')
     _check_refs(synthesis.metric_refs,TOKENS,'metric');raw=synthesis.model_dump()
     _scan_fields(raw,['recommendation','rationale'],[c for c in raw['claims'] if c['field']!='challenges'],registry,synthesis.metric_refs,sorted(option_ids))
