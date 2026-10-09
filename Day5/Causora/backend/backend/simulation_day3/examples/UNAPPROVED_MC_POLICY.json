@@ -1,0 +1,36 @@
+{
+  "policyStatus": "UNAPPROVED_TEST_INPUT",
+  "monteCarloRuns": 1000,
+  "demandMethod": "empirical_weekly_bootstrap",
+  "supplierALeadMethod": "empirical_po_bootstrap",
+  "supplierBLeadMethod": "user_assumed_triangular",
+  "cashP90Method": "nearest_rank_ceil_0.90N",
+  "meanCostRounding": "whole_usd_half_even_after_mean",
+  "supplierBLeadFallback": {
+    "minDays": 10,
+    "modeDays": 14,
+    "maxDays": 17,
+    "provenance": "USER_ASSUMED_UNAPPROVED",
+    "explanation": "Illustrative triangular parameters only; Supplier B has 12 historical synthetic POs, below the 30-PO empirical-bootstrap threshold. Team must approve them."
+  },
+  "operatingPolicy": {
+    "assumptionStatus": "UNAPPROVED_TEST_INPUT",
+    "horizonStartDate": "2026-11-18",
+    "openingInventoryEffectiveDate": "2026-11-18",
+    "openingInventoryUnits": 1200,
+    "openingInventorySource": "UNAPPROVED_HYPOTHETICAL_2026-11-18_BRIDGE_ESTIMATE; NOT 2026-10-04_OPENING_INVENTORY_CSV",
+    "sellingPriceUsdPerUnit": "20",
+    "lostContributionMarginUsdPerUnit": "5",
+    "holdingCostUsdPerUnitWeek": "0.05",
+    "safetyStockUnits": 100,
+    "targetStockUnits": 1800,
+    "cashTiming": "at_order",
+    "roundingMode": "half_even",
+    "demandMode": "empirical_weekly_bootstrap",
+    "leadTimeMode": "empirical_po_bootstrap_with_explicit_B_fallback",
+    "leadStressAppliesTo": "A_only",
+    "commitmentSchedule": "linear_weekly",
+    "purchaseRecognition": "at_order",
+    "holdingBasis": "available_ending_average"
+  }
+}
