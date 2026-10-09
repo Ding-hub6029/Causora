@@ -3,7 +3,7 @@ path,bytes
 .gitignore,396
 API_CONTRACT_V2.md,2445
 DEPLOYMENT_GUIDE.md,1313
-PUBLIC_AI_DEPLOYMENT.md,2414
+PUBLIC_AI_DEPLOYMENT.md,3056
 PUBLIC_DELIVERY_SCOPE.md,469
 PUBLIC_DELIVERY_VALIDATION.md,339
 README.md,1733
@@ -20,7 +20,7 @@ agents/wanghao-day3/agent_day4/evidence_support.py,2389
 agents/wanghao-day3/agent_day4/inputs.py,64590
 agents/wanghao-day3/agent_day4/numeric.py,25879
 agents/wanghao-day3/agent_day4/openrouter_provider.py,46181
-agents/wanghao-day3/agent_day4/pipeline.py,37054
+agents/wanghao-day3/agent_day4/pipeline.py,38662
 agents/wanghao-day3/agent_day4/postgres_budget.py,4075
 agents/wanghao-day3/agent_day4/provider.py,9608
 agents/wanghao-day3/agent_day4/wire.py,6302
@@ -39,6 +39,7 @@ agents/wanghao-day3/tests_day5/test_day5_numeric_claims.py,4319
 agents/wanghao-day3/tests_day5/test_day5_openrouter.py,19846
 agents/wanghao-day3/tests_day5/test_day5_pipeline_reliability.py,10189
 agents/wanghao-day3/tests_day5/test_public_budget.py,2251
+agents/wanghao-day3/tests_day5/test_role_correction.py,1882
 backend/backend/.env.example,2040
 backend/backend/.gitattributes,71
 backend/backend/REFERENCE_contracts_v1.ts,8392

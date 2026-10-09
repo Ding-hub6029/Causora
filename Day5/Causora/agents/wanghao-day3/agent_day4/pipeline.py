@@ -147,6 +147,17 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
         if role_checkpoint.get('simulationSnapshotSha256')!=snapshot_sha:raise PipelineError('checkpoint_input_mismatch')
         if getattr(provider,'kind',None)!='LIVE_PROVIDER':raise PipelineError('checkpoint_provider_not_live')
         audit['stageReuse']='EXPLICIT_PRIOR_ACTUAL_RESULTS_NOT_NEW_PROVIDER_CALLS'
+    rejected_role_drafts={}
+    def validate_role(draft,role):
+        if draft.role!=role:raise PipelineError('role_identity_mismatch')
+        _check_refs(draft.metric_refs,ROLE_TOKENS[role],'metric');_check_refs(draft.option_ids,option_ids,'option')
+        if set(draft.option_ids)!=option_ids:raise PipelineError('role_option_coverage_incomplete')
+        _check_refs(draft.evidence_ids,evidence_ids if role=='Risk' else set(),'evidence')
+        raw=draft.model_dump();_scan_fields(raw,['headline','body'],raw['claims'],registry,draft.metric_refs,sorted(set(draft.option_ids)|set(draft.evidence_ids)))
+        if '{{' in draft.headline:raise PipelineError('numeric_guardrail_rejected',details={'rejectedClaims':['Headline tokens cannot be rendered']})
+        if '{{' in draft.body and set(re.findall(r'\bD[012]\b',draft.body))-{option_id}:raise PipelineError('numeric_guardrail_rejected',details={'rejectedClaims':['Public token names a non-selected option']})
+        check_cash_prose(draft.headline+' '+draft.body,stage=role)
+        for field in ('headline','body'):check_prose(getattr(draft,field),facts=allocation_context,default_option_id=option_id,stage=role+' '+field)
     async def role_task(role):
         payload=copy.deepcopy(prepared_views[role])
         payload={**payload,'allowedMetricRefs':sorted(ROLE_TOKENS[role]),'allowedEvidenceIds':sorted(evidence_ids) if role=='Risk' else [],
@@ -177,15 +188,11 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
                     draft=RoleDraft.model_validate(copy.deepcopy(proof['parsedOutput']))
                     audit.setdefault('reusedRoleInputHashes',{})[role]=proof['inputSha256']
                 else:draft=await execution.call(provider,role,payload,RoleDraft,retry=False)
-                if draft.role!=role:raise PipelineError('role_identity_mismatch')
-                _check_refs(draft.metric_refs,ROLE_TOKENS[role],'metric');_check_refs(draft.option_ids,option_ids,'option')
-                if set(draft.option_ids)!=option_ids:raise PipelineError('role_option_coverage_incomplete')
-                _check_refs(draft.evidence_ids,evidence_ids if role=='Risk' else set(),'evidence')
-                raw=draft.model_dump();_scan_fields(raw,['headline','body'],raw['claims'],registry,draft.metric_refs,sorted(set(draft.option_ids)|set(draft.evidence_ids)))
-                if '{{' in draft.headline:raise PipelineError('numeric_guardrail_rejected',details={'rejectedClaims':['Headline tokens cannot be rendered']})
-                if '{{' in draft.body and set(re.findall(r'\bD[012]\b',draft.body))-{option_id}:raise PipelineError('numeric_guardrail_rejected',details={'rejectedClaims':['Public token names a non-selected option']})
-                check_cash_prose(draft.headline+' '+draft.body,stage=role)
-                for field in ('headline','body'):check_prose(getattr(draft,field),facts=allocation_context,default_option_id=option_id,stage=role+' '+field)
+                try:validate_role(draft,role)
+                except PipelineError as rejected:
+                    if rejected.reason in {'numeric_guardrail_rejected','business_semantic_contradiction'}:
+                        rejected_role_drafts[role]=(copy.deepcopy(payload),draft.model_dump(),rejected)
+                    raise
                 return draft
             except (PipelineError,ProviderFailure) as rejected:
                 reason=getattr(rejected,'reason','provider_unavailable')
@@ -198,6 +205,18 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
         for task in tasks:task.cancel()
         await asyncio.gather(*tasks,return_exceptions=True);raise
     failures=[ROLES[i] for i,value in enumerate(outputs) if isinstance(value,BaseException)]
+    # Repair only a returned invalid draft, never a timeout or transport failure.
+    # Preserve calls for Critic and Synthesizer under the same whole-run cap.
+    if len(failures)==1 and failures[0] in rejected_role_drafts and not role_checkpoint and execution.calls+3<=config.max_calls:
+        role=failures[0];payload,draft,rejected=rejected_role_drafts[role]
+        payload['rejectedDraft']=draft
+        payload['validationErrors']=copy.deepcopy(rejected.details)
+        payload['correctionTask']='Rewrite this rejected role draft using only its supplied role facts. Remove contradictory affirmative claims identified by validationErrors. Do not claim shortages are eliminated, a mixed allocation is B-only, or cash constraints are absent. Preserve independent analysis and structured reference coverage. Use qualitative English without quantities or number words. This correction is checked by all original validators.'
+        audit.setdefault('rejectedModelDrafts',[]).append({'stage':role,'reason':rejected.reason,'details':rejected.details})
+        corrected=await execution.call(provider,role,payload,RoleDraft,retry=False,reserve=synthesis_reserve+return_reserve)
+        validate_role(corrected,role)
+        outputs[ROLES.index(role)]=corrected
+        failures=[]
     if failures:
         numeric_failure=next((v for v in outputs if isinstance(v,PipelineError) and v.reason=='numeric_guardrail_rejected'),None)
         if numeric_failure:raise numeric_failure
