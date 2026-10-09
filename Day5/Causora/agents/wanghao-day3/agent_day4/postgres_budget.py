@@ -12,11 +12,13 @@ from .openrouter_provider import OpenRouterBudget, JOURNAL_KIND
 from .provider import ProviderFailure
 
 SCOPE = "public-day5-20261010"
-CALL_CAP = 42
+CALL_CAP = 48
 SUPPLEMENT_START = 26
-SUPPLEMENT_USD = Decimal('0.35')
+SUPPLEMENT_USD = Decimal('0.60')
 SECOND_SUPPLEMENT_START = 34
-SECOND_SUPPLEMENT_USD = Decimal('0.25')
+SECOND_SUPPLEMENT_USD = Decimal('0.50')
+THIRD_SUPPLEMENT_START = 42
+THIRD_SUPPLEMENT_USD = Decimal('0.25')
 
 
 class PostgresBudget(OpenRouterBudget):
@@ -70,6 +72,8 @@ class PostgresBudget(OpenRouterBudget):
                 raise ProviderFailure("openrouter_supplement_budget_exhausted")
             if len(entries)>=SECOND_SUPPLEMENT_START and self._journal_total(entries[SECOND_SUPPLEMENT_START:]) + amount > SECOND_SUPPLEMENT_USD:
                 raise ProviderFailure("openrouter_supplement_budget_exhausted")
+            if len(entries)>=THIRD_SUPPLEMENT_START and self._journal_total(entries[THIRD_SUPPLEMENT_START:]) + amount > THIRD_SUPPLEMENT_USD:
+                raise ProviderFailure("openrouter_supplement_budget_exhausted")
             if journal["metadata"].get("overCap") is True or committed + amount > ceiling:
                 raise ProviderFailure("openrouter_usd_budget_exhausted")
             entries.append(entry)
@@ -78,6 +82,13 @@ class PostgresBudget(OpenRouterBudget):
         result = self._locked_journal_transaction(action)
         self._session_calls += 1
         return result
+
+    def require_complete_review_capacity(self):
+        def action(journal):
+            if CALL_CAP - len(journal['entries']) < 5:
+                raise ProviderFailure('provider_call_budget_exhausted')
+            return None, False
+        self._locked_journal_transaction(action)
 
     def set_journal_path(self, path):
         raise ProviderFailure("openrouter_budget_storage_switch_forbidden")

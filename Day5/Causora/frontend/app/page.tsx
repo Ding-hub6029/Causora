@@ -337,7 +337,7 @@ function Workspace() {
       if (sequence !== boardroomSequence.current || controller.signal.aborted || !isSameActiveRun(run, requestKey) || scenarioId !== requestedScenarioId) return;
       const failure = asDay4Failure(error, requestId);
       setBoardroomState({ status: "error", identity, failure });
-      setToast(`Boardroom unavailable (${failure.code}). The validated Matrix and Formula Trace remain available.`);
+      setToast(`${failure.message} The validated Matrix and Formula Trace remain available.`);
     } finally {
       if (boardroomAbortRef.current === controller) boardroomAbortRef.current = null;
     }

@@ -626,6 +626,9 @@ class OpenRouterSession:
 
     async def preflight(self) -> dict[str, Any]:
         """Read /models then /key.  This never creates a chat completion request."""
+        capacity_check = getattr(self.budget, 'require_complete_review_capacity', None)
+        if capacity_check is not None:
+            capacity_check()
         models_document = await self._get("/models")
         models = self._validate_models(models_document)
         key_document = await self._get("/key")

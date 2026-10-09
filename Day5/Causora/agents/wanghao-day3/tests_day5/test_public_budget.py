@@ -60,7 +60,7 @@ def test_supplemental_spend_cap_remains_independent_of_original_dollar():
         for _ in range(6):reserve(instance)
     instance=budget(store)
     reserve(instance);reserve(instance)
-    reserve(instance,'0.35')
+    reserve(instance,'0.60')
     with pytest.raises(ProviderFailure,match='supplement_budget_exhausted'):
         reserve(instance)
 
@@ -72,7 +72,7 @@ def test_second_supplement_has_its_own_quarter_dollar_cap():
     instance=budget(store)
     for _ in range(4):reserve(instance)
     instance=budget(store)
-    reserve(instance,'0.25')
+    reserve(instance,'0.50')
     with pytest.raises(ProviderFailure,match='supplement_budget_exhausted'):
         reserve(instance)
 
@@ -87,3 +87,26 @@ def test_actual_cost_above_cap_poisoned_and_cannot_reset():
         reserve(budget(store))
     with pytest.raises(ProviderFailure, match='storage_switch_forbidden'):
         value.set_journal_path('other')
+
+def test_complete_review_preflight_blocks_partial_spend():
+    store = Store()
+    for count in range(CALL_CAP - 4):
+        if count % 6 == 0:
+            instance = budget(store)
+        reserve(instance)
+    before = copy.deepcopy(store.data)
+    with pytest.raises(ProviderFailure, match='provider_call_budget_exhausted'):
+        budget(store).require_complete_review_capacity()
+    assert store.data == before
+
+def test_third_supplement_has_independent_cap():
+    store = Store()
+    for count in range(42):
+        if count % 6 == 0:
+            instance = budget(store)
+        reserve(instance)
+    instance = budget(store)
+    reserve(instance, '0.25')
+    with pytest.raises(ProviderFailure, match='supplement_budget_exhausted'):
+        reserve(instance)
+

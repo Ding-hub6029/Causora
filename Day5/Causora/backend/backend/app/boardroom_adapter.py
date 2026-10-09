@@ -658,6 +658,8 @@ def _pipeline_error(exc: Exception) -> BoardroomAdapterError:
         return BoardroomAdapterError("provider_timeout", "Boardroom provider timed out.", status=504,
                                      code="provider_timeout", headers={"X-Causora-Provider-Mode": "unavailable"})
     reason = str(getattr(exc, "reason", "boardroom_pipeline_failed"))
+    if reason in {'provider_call_budget_exhausted', 'openrouter_supplement_budget_exhausted', 'openrouter_usd_budget_exhausted'}:
+        return BoardroomAdapterError(reason, 'AI review authorization is exhausted or insufficient for a complete review. No complete Boardroom result was produced. The validated simulation remains available.', status=429, code='validation_error')
     safe_reason = reason if _SAFE_REASON.fullmatch(reason) else "boardroom_pipeline_failed"
     details = getattr(exc, "details", {})
     failure_reasons = details.get("failureReasons", {}) if isinstance(details, Mapping) else {}

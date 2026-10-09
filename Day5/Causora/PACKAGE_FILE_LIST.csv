@@ -19,9 +19,9 @@ agents/wanghao-day3/agent_day4/evidence.py,22830
 agents/wanghao-day3/agent_day4/evidence_support.py,2389
 agents/wanghao-day3/agent_day4/inputs.py,64590
 agents/wanghao-day3/agent_day4/numeric.py,25879
-agents/wanghao-day3/agent_day4/openrouter_provider.py,46410
+agents/wanghao-day3/agent_day4/openrouter_provider.py,46566
 agents/wanghao-day3/agent_day4/pipeline.py,39274
-agents/wanghao-day3/agent_day4/postgres_budget.py,4638
+agents/wanghao-day3/agent_day4/postgres_budget.py,5224
 agents/wanghao-day3/agent_day4/provider.py,9608
 agents/wanghao-day3/agent_day4/wire.py,6302
 agents/wanghao-day3/requirements-day4.txt,135
@@ -39,13 +39,13 @@ agents/wanghao-day3/tests_day5/test_day5_numeric_claims.py,4319
 agents/wanghao-day3/tests_day5/test_day5_openrouter.py,19846
 agents/wanghao-day3/tests_day5/test_day5_pipeline_reliability.py,10189
 agents/wanghao-day3/tests_day5/test_gemini_request_bound.py,947
-agents/wanghao-day3/tests_day5/test_public_budget.py,3069
+agents/wanghao-day3/tests_day5/test_public_budget.py,3839
 agents/wanghao-day3/tests_day5/test_role_correction.py,1882
 backend/backend/.env.example,2040
 backend/backend/.gitattributes,71
 backend/backend/REFERENCE_contracts_v1.ts,8392
 backend/backend/app/__init__.py,48
-backend/backend/app/boardroom_adapter.py,45985
+backend/backend/app/boardroom_adapter.py,46363
 backend/backend/app/config.py,2941
 backend/backend/app/contracts_v2.py,14359
 backend/backend/app/contracts_v2_draft.py,602
@@ -199,7 +199,7 @@ frontend/app.config.ts,50
 frontend/app/globals.css,109642
 frontend/app/icon.svg,1077
 frontend/app/layout.tsx,441
-frontend/app/page.tsx,33082
+frontend/app/page.tsx,33060
 frontend/components/app-shell.tsx,14330
 frontend/components/context-deck.tsx,8625
 frontend/components/decision-moment.tsx,2568
