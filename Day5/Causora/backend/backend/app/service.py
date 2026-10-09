@@ -32,10 +32,12 @@ from app.gates import (
     resolve_verified_inputs,
 )
 from app.reviewed_success import build_reviewed_success_v2
+from app.review_admission import ReviewAdmissionMiddleware
 from app.unreviewed_development import build_unreviewed_development_success_v2
 from simulation_day1.interfaces import ContractInputError, validate_request
 
 app = FastAPI(title="Causora Day 3 Gated Simulation API", version="0.5.0-reviewed-and-dev")
+app.add_middleware(ReviewAdmissionMiddleware)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=cors_origins(),

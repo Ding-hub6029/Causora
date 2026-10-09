@@ -249,7 +249,9 @@ test("Evidence client performs GET with omitted credentials and no-store, and ma
   let observed;
   const result = await evidence.fetchEvidenceRecord("EV-021", version, async (url, init) => {
     observed = { url, init };
-    return new Response(JSON.stringify(evidenceEnvelope()), { status: 200, headers: { "x-request-id": "ev-req-test" } });
+    const payload = evidenceEnvelope();
+    payload.requestId = init.headers["X-Request-Id"];
+    return new Response(JSON.stringify(payload), { status: 200, headers: { "x-request-id": payload.requestId } });
   });
   assert.equal(result.evidence.id, "EV-021");
   assert.equal(observed.url, "/api/evidence/EV-021");

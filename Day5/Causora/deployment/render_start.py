@@ -25,6 +25,7 @@ def enforce_openrouter_mode(environ: dict[str, str] | None = None) -> None:
     # An inherited OPENAI_API_KEY/OPENAI_API_BASE must never select the legacy
     # generic provider when an operator omitted this non-secret selector.
     env["CAUSORA_AI_PROVIDER"] = "openrouter"
+    env["CAUSORA_PUBLIC_REVIEW_ADMISSION"] = "YES"
 
 
 def production_address(environ: dict[str, str] | None = None) -> tuple[str, int]:
