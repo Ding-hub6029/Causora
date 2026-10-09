@@ -23,7 +23,7 @@ for line in manifest.read_text(encoding='utf-8').splitlines():
         failures.append(relative + ': missing or outside package')
     elif hashlib.sha256(path.read_bytes()).hexdigest() != expected:
         failures.append(relative + ': changed bytes')
-ignored = {'node_modules', '.next', '.venv', 'venv', '.git', '__pycache__', '.pytest_cache', '.runtime'}
+ignored = {'node_modules', '.next', '.venv', 'venv', '.git', '__pycache__', '.pytest_cache', '.runtime', 'out', 'builds'}
 actual = set()
 for current, dirs, names in os.walk(root):
     dirs[:] = [name for name in dirs if name not in ignored]
