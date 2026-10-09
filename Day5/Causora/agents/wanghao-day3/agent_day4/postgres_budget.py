@@ -12,9 +12,11 @@ from .openrouter_provider import OpenRouterBudget, JOURNAL_KIND
 from .provider import ProviderFailure
 
 SCOPE = "public-day5-20261010"
-CALL_CAP = 36
+CALL_CAP = 42
 SUPPLEMENT_START = 26
-SUPPLEMENT_USD = Decimal('0.10')
+SUPPLEMENT_USD = Decimal('0.35')
+SECOND_SUPPLEMENT_START = 34
+SECOND_SUPPLEMENT_USD = Decimal('0.25')
 
 
 class PostgresBudget(OpenRouterBudget):
@@ -64,7 +66,9 @@ class PostgresBudget(OpenRouterBudget):
             committed = self._journal_total(entries)
             if len(entries) >= CALL_CAP:
                 raise ProviderFailure("provider_call_budget_exhausted")
-            if self._journal_total(entries[SUPPLEMENT_START:]) + amount > SUPPLEMENT_USD:
+            if len(entries)>=SUPPLEMENT_START and self._journal_total(entries[SUPPLEMENT_START:]) + amount > SUPPLEMENT_USD:
+                raise ProviderFailure("openrouter_supplement_budget_exhausted")
+            if len(entries)>=SECOND_SUPPLEMENT_START and self._journal_total(entries[SECOND_SUPPLEMENT_START:]) + amount > SECOND_SUPPLEMENT_USD:
                 raise ProviderFailure("openrouter_supplement_budget_exhausted")
             if journal["metadata"].get("overCap") is True or committed + amount > ceiling:
                 raise ProviderFailure("openrouter_usd_budget_exhausted")

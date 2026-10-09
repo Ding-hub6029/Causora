@@ -60,7 +60,19 @@ def test_supplemental_spend_cap_remains_independent_of_original_dollar():
         for _ in range(6):reserve(instance)
     instance=budget(store)
     reserve(instance);reserve(instance)
-    reserve(instance,'0.10')
+    reserve(instance,'0.35')
+    with pytest.raises(ProviderFailure,match='supplement_budget_exhausted'):
+        reserve(instance)
+
+def test_second_supplement_has_its_own_quarter_dollar_cap():
+    store=Store()
+    for _ in range(5):
+        instance=budget(store)
+        for _ in range(6):reserve(instance)
+    instance=budget(store)
+    for _ in range(4):reserve(instance)
+    instance=budget(store)
+    reserve(instance,'0.25')
     with pytest.raises(ProviderFailure,match='supplement_budget_exhausted'):
         reserve(instance)
 
