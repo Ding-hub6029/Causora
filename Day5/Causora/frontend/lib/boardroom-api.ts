@@ -7,7 +7,7 @@ const SCHEMA_VERSION = "causora.contract.v1" as const;
 const ALLOWED_METRIC_REFS = new Set(["delta_tco", "stockout_probability", "cash_outflow_p90"]);
 const OPTION_IDS: OptionId[] = ["D0", "D1", "D2"];
 const ROLES = ["CFO", "COO", "Risk"] as const;
-const REQUEST_TIMEOUT_MS = 45_000;
+const REQUEST_TIMEOUT_MS = 150_000;
 
 export class Day4ApiError extends Error {
   readonly code: Day4FailureCode;

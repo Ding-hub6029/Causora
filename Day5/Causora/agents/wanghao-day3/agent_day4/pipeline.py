@@ -109,7 +109,7 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
     execution=_Execution(config,started=overall_started);audit={'simulationId':sim['simulationId'],'dataVersion':sim['dataVersion'],'scenarioId':scenario_id,
        'formulaVersion':sim['formulaVersion'],'simulationRequestId':run.simulation_response['requestId'],'boardroomRequestId':correlation_id,
        'inputSha256':snapshot_sha,'numericOrigin':'CURRENT_SIMULATION_AND_VETTED_EVIDENCE','events':execution.events,'formalTransport':require_reviewed,
-       'timeouts':{'totalSeconds':config.total_timeout,'stageSeconds':config.stage_timeout,'criticSeconds':config.critic_timeout,'frontendSeconds':45,'sdkMatchesEffectiveDeadline':True}}
+       'timeouts':{'totalSeconds':config.total_timeout,'stageSeconds':config.stage_timeout,'criticSeconds':config.critic_timeout,'frontendSeconds':150,'sdkMatchesEffectiveDeadline':True}}
     if selection['status']=='no_feasible_option':
         body={'scenarioId':scenario_id,'agentOutputs':[],'criticIssues':[],'brief':{'scenarioId':scenario_id,'status':'no_feasible_option',
             'recommendedOptionId':None,'constraintViolations':copy.deepcopy(selection['constraintViolations']),

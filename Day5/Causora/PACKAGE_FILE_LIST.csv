@@ -3,7 +3,7 @@ path,bytes
 .gitignore,396
 API_CONTRACT_V2.md,2445
 DEPLOYMENT_GUIDE.md,1313
-PUBLIC_AI_DEPLOYMENT.md,2211
+PUBLIC_AI_DEPLOYMENT.md,2414
 PUBLIC_DELIVERY_SCOPE.md,469
 PUBLIC_DELIVERY_VALIDATION.md,339
 README.md,1733
@@ -20,10 +20,10 @@ agents/wanghao-day3/agent_day4/evidence_support.py,2389
 agents/wanghao-day3/agent_day4/inputs.py,64590
 agents/wanghao-day3/agent_day4/numeric.py,25879
 agents/wanghao-day3/agent_day4/openrouter_provider.py,46181
-agents/wanghao-day3/agent_day4/pipeline.py,37053
+agents/wanghao-day3/agent_day4/pipeline.py,37054
 agents/wanghao-day3/agent_day4/postgres_budget.py,4075
 agents/wanghao-day3/agent_day4/provider.py,9608
-agents/wanghao-day3/agent_day4/wire.py,6300
+agents/wanghao-day3/agent_day4/wire.py,6302
 agents/wanghao-day3/requirements-day4.txt,135
 agents/wanghao-day3/requirements-tested.txt,748
 agents/wanghao-day3/requirements.txt,115
@@ -211,7 +211,7 @@ frontend/demo_data/causora_day1_mock.json,18390
 frontend/demo_data/supplier_correspondence_log.csv,414
 frontend/eslint.config.mjs,863
 frontend/golden/golden_run.json,19774
-frontend/lib/boardroom-api.ts,17579
+frontend/lib/boardroom-api.ts,17580
 frontend/lib/boardroom-template.ts,2549
 frontend/lib/contracts-v2-dev.ts,4136
 frontend/lib/contracts-v2.ts,1121

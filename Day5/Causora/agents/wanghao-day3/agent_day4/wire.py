@@ -15,13 +15,13 @@ class PipelineError(ValueError):
 
 @dataclass(frozen=True)
 class PipelineConfig:
-    total_timeout:float=40.0
-    stage_timeout:float=10.0
-    critic_timeout:float=15.0
+    total_timeout:float=110.0
+    stage_timeout:float=30.0
+    critic_timeout:float=35.0
     retries:int=1
     max_calls:int=10
     def __post_init__(self):
-        if not 0<self.total_timeout<=40 or not 0<self.stage_timeout<=15 or not 0<self.critic_timeout<=20:
+        if not 0<self.total_timeout<=120 or not 0<self.stage_timeout<=45 or not 0<self.critic_timeout<=45:
             raise ValueError('Bounded timeouts must stay below the frontend request deadline')
         if not 0<=self.retries<=1 or not 5<=self.max_calls<=12:raise ValueError('Finite retry/call bounds required')
 
