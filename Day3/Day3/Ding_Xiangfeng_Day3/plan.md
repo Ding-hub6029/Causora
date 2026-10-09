@@ -17,12 +17,12 @@ The product is deliberately opinionated: it presents traceable decision preparat
 
 ### Core principles
 1. **Traceability is visual:** evidence IDs, formula links, status chips, and a persistent decision trail make provenance visible instead of burying it in text.
-2. **Motion communicates state:** page changes move along the decision sequence; feedback never exists merely as decoration.
-3. **Sophistication through density with purpose:** deliberate negative space, precise typography, and one luminous accent frame meaningful evidence, comparisons, and decisions; no page has a large empty content area.
+2. **Motion communicates state:** page changes move along the decision sequence. Feedback never exists merely as decoration.
+3. **Sophistication through density with purpose:** deliberate negative space, precise typography, and one luminous accent frame meaningful evidence, comparisons, and decisions. No page has a large empty content area.
 4. **Human authority is explicit:** recommendation and approval controls are visually distinct, preventing an AI suggestion from looking like an automated action.
 
 ### Color philosophy
-A deep ink foundation suggests diligence and confidentiality. Pearl and glacier panels preserve readability. **Signal Lime (`#C8FF6B`)** is the ownable Causora action color, reserved for verified, ready, and approved states. Electric cobalt communicates computation; coral indicates a challenge or constraint.
+A deep ink foundation suggests diligence and confidentiality. Pearl and glacier panels preserve readability. **Signal Lime (`#C8FF6B`)** is the ownable Causora action color, reserved for verified, ready, and approved states. Electric cobalt communicates computation. Coral indicates a challenge or constraint.
 
 ### Layout paradigm
 A **decision rail** anchors five stages at the left on desktop and becomes a horizontal progress navigator on compact screens. The main content is a layered canvas: a slim intelligence header, an asymmetric hero band, a central working surface, and contextual side intelligence. This avoids a generic centered-card dashboard while retaining clear task flow.
@@ -37,12 +37,12 @@ A **decision rail** anchors five stages at the left on desktop and becomes a hor
 - Stage navigation slides content horizontally according to workflow direction while respecting `prefers-reduced-motion`.
 - Buttons use short spring feedback, never exaggerated bounce.
 - Data cards reveal source meaning on focus/hover and remain fully keyboard operable.
-- Toasts confirm human decisions; a visible reset restores the ordinary local mock. Open Golden Run explicitly to inspect its independent frozen snapshot.
+- Toasts confirm human decisions. A visible reset restores the ordinary local mock. Open Golden Run explicitly to inspect its independent frozen snapshot.
 
 ### Typography system
 - **Manrope** provides a compact, analytical interface voice.
 - **DM Mono** marks evidence IDs, metrics, source tags, and computed values.
-- Headline hierarchy uses high-contrast sizing and tight tracking; body text uses readable line height.
+- Headline hierarchy uses high-contrast sizing and tight tracking. Body text uses readable line height.
 
 ### Brand essence
 **Causora turns evidence into inspectable business choices for teams that must defend every decision.**
@@ -63,16 +63,16 @@ The supplied motion references were analysed as interaction principles, not temp
 
 ### Day 1 visual-storytelling refinement
 
-The second-pass experience introduces a persistent **Proof Engine** above the five stage views. Three code-rendered perspective stations embody the same objects throughout the flow: the document excerpt `EV-014`, the contract constraint `60 days / 60% / +14%`, and the D0–D2 option matrix. They occupy separate flex tracks rather than overlapping layers; the luminous connection travels only through the gutters, never across text. A travelling signal changes emphasis rather than replacing the entire illustration, so users see *evidence become a variable and then a comparison*. This is an original, data-specific visual system, not a copied 3D scene.
+The second-pass experience introduces a persistent **Proof Engine** above the five stage views. Three code-rendered perspective stations embody the same objects throughout the flow: the document excerpt `EV-014`, the contract constraint `60 days / 60% / +14%`, and the D0–D2 option matrix. They occupy separate flex tracks rather than overlapping layers. The luminous connection travels only through the gutters, never across text. A travelling signal changes emphasis rather than replacing the entire illustration, so users see *evidence become a variable and then a comparison*. This is an original, data-specific visual system, not a copied 3D scene.
 
-The opening frame is deliberately memorable: large editorial type is paired with a luminous, perspective-tilted proof engine that exposes real mock IDs and values. Its three labelled Evidence / Variable / Matrix controls navigate to the corresponding workflow stages. A subtle pointer-responsive tilt adds depth on capable devices, but all information is readable without pointer movement. At the final Brief, Approve or Reject triggers a short, stateful light-path resolution and a stable visible decision seal, not merely a toast. The persistent engine remains mounted across stages; Framer Motion interpolates geometry, emphasis and labels so transitions have shared context. Reduced-motion users see the same states without travelling animation.
+The opening frame is deliberately memorable: large editorial type is paired with a luminous, perspective-tilted proof engine that exposes real mock IDs and values. Its three labelled Evidence / Variable / Matrix controls navigate to the corresponding workflow stages. A subtle pointer-responsive tilt adds depth on capable devices, but all information is readable without pointer movement. At the final Brief, Approve or Reject triggers a short, stateful light-path resolution and a stable visible decision seal, not merely a toast. The persistent engine remains mounted across stages. Framer Motion interpolates geometry, emphasis and labels so transitions have shared context. Reduced-motion users see the same states without travelling animation.
 
 Each stage adds a three-card **Decision Thread** tied to actual mock source IDs, selected scenario, metric cells or reviewer roles, so page density comes from decision content rather than ornamental filler. Data Intake places the dark input chamber next to its import register in one row and the source quote below: it does not stretch a mostly empty panel across unrelated rows. The Scenario sliders are explicitly labelled draft-only and do not imply a live simulation. The Brief derives its mock deltas from the currently selected scenario, invalidates an earlier human approval after edits, and blocks new approval until unsimulated drafts are restored to a preset.
 
-- **Framework:** Next.js App Router, TypeScript, global CSS, Framer Motion, Lucide icons. The frontend is statically exported to `out/` for a runnable, backend-free ZIP preview; no public publication is implied.
-- **Data:** `demo_data/causora_day1_mock.json` is the primary runtime mock source; `golden/golden_run.json` embeds a complete independent hashed snapshot. Both contain typed evidence, renewal dates and notice assumption, five Business Variables, D0/D1/D2, three scenarios, nine balanced mock metric cells, Boardroom/Critic and Brief. `public/demo/` supplies four inspectable synthetic inputs plus an explicit synthetic notice register. `API_CONTRACT.md` and `lib/contracts.ts` specify a proposed backend v1 boundary for Day 2 owner approval.
+- **Framework:** Next.js App Router, TypeScript, global CSS, Framer Motion, Lucide icons. The frontend is statically exported to `out/` for a runnable, backend-free ZIP preview. No public publication is implied.
+- **Data:** `demo_data/causora_day1_mock.json` is the primary runtime mock source. `golden/golden_run.json` embeds a complete independent hashed snapshot. Both contain typed evidence, renewal dates and notice assumption, five Business Variables, D0/D1/D2, three scenarios, nine balanced mock metric cells, Boardroom/Critic and Brief. `public/demo/` supplies four inspectable synthetic inputs plus an explicit synthetic notice register. `API_CONTRACT.md` and `lib/contracts.ts` specify a proposed backend v1 boundary for Day 2 owner approval.
 - **State:** client-side `useState` manages stage navigation, simulated loading/error/empty states, scenario selection, Golden Run visibility, formula trace, evidence detail, and human decision feedback.
-- **Responsive strategy:** a legible, viewport-sticky desktop rail above 830px; a compact horizontal navigator at and below 830px. At 831–1199px, a readable three-card evidence projection replaces compressed perspective typography; 621–830px uses full-width cards; at and below 620px the projection becomes the compact mobile evidence chain. At 1200px and above the three dimensional stations retain real separation even at the narrowest perspective breakpoint. No critical interaction depends on hover.
+- **Responsive strategy:** a legible, viewport-sticky desktop rail above 830px. A compact horizontal navigator at and below 830px. At 831–1199px, a readable three-card evidence projection replaces compressed perspective typography. 621–830px uses full-width cards. At and below 620px the projection becomes the compact mobile evidence chain. At 1200px and above the three dimensional stations retain real separation even at the narrowest perspective breakpoint. No critical interaction depends on hover.
 - **Accessibility:** semantic page regions, keyboard-capable controls, labelled dialogs, visible focus rings, contrast-aware colours, and reduced-motion handling.
 - **Quality evidence:** build, lint, type check, route-manifest verification, mock-flow browser smoke test, and a project self-audit record are included in the final ZIP.
 

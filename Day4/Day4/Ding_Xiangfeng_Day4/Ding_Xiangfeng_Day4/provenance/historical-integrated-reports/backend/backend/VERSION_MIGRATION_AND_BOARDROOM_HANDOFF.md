@@ -5,8 +5,8 @@
 | HTTP outcome | Request schema | Response schema | Meaning |
 | --- | --- | --- | --- |
 | malformed request | `causora.contract.v1` | `causora.contract.v1` error envelope, HTTP 422 | Existing v1 wire validation failed |
-| missing/stale review, policy or release | `causora.contract.v1` | `causora.contract.v1` error envelope, HTTP 503 | Pending/error; never apply mock data as a result |
-| explicit unreviewed development launcher | `causora.contract.v1` | `causora.contract.v2`, HTTP 200 | UI/API shape test only; `executionContext.decisionReady=false` |
+| missing/stale review, policy or release | `causora.contract.v1` | `causora.contract.v1` error envelope, HTTP 503 | Pending/error. Never apply mock data as a result |
+| explicit unreviewed development launcher | `causora.contract.v1` | `causora.contract.v2`, HTTP 200 | UI/API shape test only. `executionContext.decisionReady=false` |
 | reviewed calculation succeeds | `causora.contract.v1` | **`causora.contract.v2`**, HTTP 200 | Real reviewed Matrix + Delta + Selection + Trace response |
 
 `POST /api/simulate` and its request body do **not** change. Only the verified-success envelope changes because `data.traces` is a required nested response structure rather than an optional display decoration. Day1/Day2 v1 mock, Golden, request DTO and original materials remain unchanged.
@@ -22,14 +22,14 @@ The v2 success body is exactly:
 
 `simulation`, `deltas` and `selections` retain their v1 names, units and rules. Each of the nine traces adds:
 
-- matching `simulationId`, `dataVersion`, `formulaVersion`, scenario and option identity;
-- a run identity bound to **separate** review-record, contract-payload, policy-configuration and v2-release records;
-- field-specific contract evidence provenance, distinct source-file hash and review-record hash;
-- five formula components with resolved `inputKeys`, raw Monte Carlo mean, displayed whole-USD value and displayed-minus-raw difference;
-- probability, service and P90 denominators/definitions; and
+- matching `simulationId`, `dataVersion`, `formulaVersion`, scenario and option identity.
+- a run identity bound to **separate** review-record, contract-payload, policy-configuration and v2-release records.
+- field-specific contract evidence provenance, distinct source-file hash and review-record hash.
+- five formula components with resolved `inputKeys`, raw Monte Carlo mean, displayed whole-USD value and displayed-minus-raw difference.
+- probability, service and P90 denominators/definitions. And
 - one 104-week `sampleRunIndex=0` realised path marked not an average/expectation/aggregate.
 
-Confirm this candidate with Deng, Ding and Wang before creating the trace release record. The canonical backend schema is `contracts/causora.contract.v2.schema.json`; the TypeScript recommendation is `contracts/causora.contract.v2.ts`.
+Confirm this candidate with Deng, Ding and Wang before creating the trace release record. The canonical backend schema is `contracts/causora.contract.v2.schema.json`. The TypeScript recommendation is `contracts/causora.contract.v2.ts`.
 
 ## Boardroom handoff
 

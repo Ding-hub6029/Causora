@@ -5,7 +5,7 @@ The incoming Ding frontend changelog is retained at `provenance/ding/incoming_fr
 ## 2026-10-08 integrated changes
 
 - Retained Ding's public frontend flow, runtime contract checks, PDF.js viewer, and strict development/reviewed labels.
-- Connected Ding's existing Evidence buttons to the same v1 Evidence endpoint when a current live development run exists. The change only enables source-locator inspection; it does not change a public DTO, accept an unreviewed Boardroom response, create a Brief, or enable a decision.
+- Connected Ding's existing Evidence buttons to the same v1 Evidence endpoint when a current live development run exists. The change only enables source-locator inspection. It does not change a public DTO, accept an unreviewed Boardroom response, create a Brief, or enable a decision.
 - Kept Deng's service/v2 Matrix + Formula Trace implementation and registered each successful run once for downstream Evidence/Boardroom correlation.
 - Integrated Deng's real source registry and coordinate conversion. The server uses PyMuPDF for quote location, converts to PDF user-space, and the existing PDF.js viewer highlights it after viewport conversion.
 - Imported Wang's latest `agent_day4` module and OpenRouter adapter behind the formal reviewed-run boundary. It preserves validated outputs, evidence validation, numeric guardrails, total deadline, cancellation propagation, process call cap, budget cap, and Windows-safe journal locking.

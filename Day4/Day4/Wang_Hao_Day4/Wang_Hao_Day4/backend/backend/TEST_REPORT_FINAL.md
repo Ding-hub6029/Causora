@@ -9,7 +9,7 @@ This incoming document is preserved as history and is superseded by the root REA
 **Executed:** 2026-10-07, Sandbox Linux  
 **Dataset ID:** `ds-001`  
 **Nominal HTTP port:** `8000` (smoke-test ports `8030` / `8031`)  
-**Production status:** no real Wang bundle/policy/release record supplied; default service correctly stays v1 503.
+**Production status:** no real Wang bundle/policy/release record supplied. Default service correctly stays v1 503.
 
 ## Final verification results
 
@@ -29,13 +29,13 @@ This incoming document is preserved as history and is superseded by the root REA
 | Tamper detection | mutate one trace component after output | **PASS —** Pydantic rejects response |
 | Zero-revenue / no-feasible case | zero-demand scenario with zero budget | **PASS —** invalid gross-margin internal status and `no_feasible_option` selections |
 | Engine/data reproduction | `scripts/reproduce_deng_day3_data.py --expected-manifest ...` | **PASS —** previewId plus all 3 JSON SHA-256 values match |
-| Exact opt-in guard | `CAUSORA_DEV_UNREVIEWED_MODE=true` vs exact `UNREVIEWED_DEV_ONLY` | **PASS —** `true` remains 503; only exact literal enters development mode |
+| Exact opt-in guard | `CAUSORA_DEV_UNREVIEWED_MODE=true` vs exact `UNREVIEWED_DEV_ONLY` | **PASS —** `true` remains 503. Only exact literal enters development mode |
 | Development v2 HTTP entry | `scripts/start_unreviewed_dev.py` + real seeded engine, port 8030 | **PASS — HTTP 200 v2**, 9 traces, CORS and Pydantic validation |
 | Development labels | HTTP headers, response `executionContext`, trace run identity/provenance | **PASS —** unreviewed status, no review record, `decisionReady:false` |
-| Default route after dev addition | normal Uvicorn startup, port 8031 | **PASS — HTTP 503 v1**, `human_review_pending`; default did not become permissive |
+| Default route after dev addition | normal Uvicorn startup, port 8031 | **PASS — HTTP 503 v1**, `human_review_pending`. Default did not become permissive |
 | Windows-safe JSON write | byte checks plus path containing spaces | **PASS —** UTF-8 without BOM, LF-only files and all 3 delivered hashes match |
 
-The only observed warning is FastAPI/Starlette's upstream `TestClient` deprecation warning for the installed HTTPX compatibility path; it does not affect test results.
+The only observed warning is FastAPI/Starlette's upstream `TestClient` deprecation warning for the installed HTTPX compatibility path. It does not affect test results.
 
 ## Fresh-install package versions
 
@@ -55,10 +55,10 @@ The normal startup captures in `examples/http-default-gated-final/` show the def
 
 The direct development launcher captures in `examples/http-dev-unreviewed/` show the explicitly named `127.0.0.1:8030` development-only service: HTTP 200, v2 Matrix + 9 Traces, CORS headers and:
 
-- `X-Causora-Review-Status: unreviewed-development-only`;
-- `X-Causora-Execution-Mode: unreviewed-development-only`;
-- `data.executionContext.decisionReady: false`;
-- data version containing `UNREVIEWED_DEV_ONLY`;
+- `X-Causora-Review-Status: unreviewed-development-only`.
+- `X-Causora-Execution-Mode: unreviewed-development-only`.
+- `data.executionContext.decisionReady: false`.
+- data version containing `UNREVIEWED_DEV_ONLY`.
 - no review record in any trace run identity.
 
 These development captures are not Wang-reviewed, policy-approved, contract-released or Boardroom evidence. They exist solely to allow UI/API integration before the real owner records are available.

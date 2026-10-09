@@ -13,7 +13,7 @@ This is not a real contract verification, procurement approval, legal interpreta
 - **Confirmed synthetic value:** `locked-at-renewal`
 - **Decision:** `reviewed_synthetic`
 - **Primary source:** `supplier_a_agreement.pdf`, p. 4, final paragraph: “For the synthetic scenario only, the renewal-cycle forecast is fixed at 26,000 units for the coming term.”
-- **Structured source:** `causora_day1_mock.json`, `contract.forecastBasis` = `locked-at-renewal`; `contract.lockedForecastUnits24m` = `26000`.
+- **Structured source:** `causora_day1_mock.json`, `contract.forecastBasis` = `locked-at-renewal`. `contract.lockedForecastUnits24m` = `26000`.
 
 The 26,000-unit value is a frozen renewal-cycle demonstration assumption. It is **not** represented as a sum of historical demand and is not claimed to be the output of a forecasting model. The API contract further states that historical demand totals 25,936 units and that no estimator turning that history into 26,000 is claimed (`API_CONTRACT.md`, v4 boundary-correction text).
 
@@ -25,10 +25,10 @@ All six requested evidence items point to page 4 and match the supplied syntheti
 |---|---|---|---|---|
 | `EV-014` | `renewal_notice_days` | 60 days | `supplier_a_agreement.pdf`, p. 4: “If written notice is not received at least 60 days before renewal, the agreement automatically renews.” | Supported |
 | `EV-019` | `renewal_term_months` | 24 months | `supplier_a_agreement.pdf`, p. 4: “The agreement automatically renews for 24 months at a 14% higher unit price.” | Supported |
-| `EV-021` | `renewal_price_increase_pct` | 14% | Same p. 4 sentence as `EV-019`; the uplift is 14%. | Supported |
+| `EV-021` | `renewal_price_increase_pct` | 14% | Same p. 4 sentence as `EV-019`. The uplift is 14%. | Supported |
 | `EV-024` | `min_purchase_share_A` | 60% | `supplier_a_agreement.pdf`, p. 4: “The renewed term has a minimum purchase commitment equal to 60% of forecast demand.” | Supported |
 | `EV-027` | `termination_fee` | $25,000 | `supplier_a_agreement.pdf`, p. 4: “Early exit during the renewed term incurs a fixed termination fee of $25,000.” | Supported |
-| `EV-020` | `auto_renew` | conditional auto-renew clause present | The clause is conditional on written notice not being received at least 60 days before renewal; it must not be described as unconditional automatic locking. The frozen mock links `contract.renewalLocked` to the synthetic dates and notice record. | Supported as conditional only |
+| `EV-020` | `auto_renew` | conditional auto-renew clause present | The clause is conditional on written notice not being received at least 60 days before renewal. It must not be described as unconditional automatic locking. The frozen mock links `contract.renewalLocked` to the synthetic dates and notice record. | Supported as conditional only |
 
 The frozen mock records exact quote matches for `EV-014`, `EV-019`, `EV-021`, `EV-024`, and `EV-027` under `evidence[*]`, each with `matchMethod: exact`, `matchScore: 1.0`, `page: 4`, and `quoteMatched: true`. `EV-020` is the requested conditional interpretation of the auto-renew language and is not evidence of an unconditional renewal.
 
@@ -44,14 +44,14 @@ The frozen mock records exact quote matches for `EV-014`, `EV-019`, `EV-021`, `E
 1. The PDF is expressly marked “SYNTHETIC DEMO DATA,” “not signed, enforceable or associated with any real supplier” (p. 1), and “SYNTHETIC / NOT A REAL CONTRACT” on its pages. No real contract, counterparty, signature, or legal enforceability was verified.
 2. `noticeSent=false` is only a conclusion about the supplied synthetic notice register. It is not a statement about the real world or proof that no notice exists.
 3. The renewal result is conditional: an earlier valid written notice would change the outcome even within the 60-day window. Real notice ingestion and verification remain pending.
-4. `decisionDate` and `renewalDate` are configured demonstration assumptions; this review does not independently substantiate them from the PDF.
+4. `decisionDate` and `renewalDate` are configured demonstration assumptions. This review does not independently substantiate them from the PDF.
 5. Human review required by the specification, real contract verification, counsel review, and any production or procurement sign-off remain pending. No claim of `manually_verified=true` is made.
 6. The 26,000 locked forecast is not a historical-demand sum and not a model forecast output. Any real forecasting or sourcing decision requires independently verified data and methodology.
 
 ## Source files reviewed
 
 - `review_request.json`: evidence expectations, assumptions, and source hashes.
-- `supplier_a_agreement.pdf`: pp. 1–5 reviewed; p. 4 contains the renewal, minimum-purchase, termination-fee, and fixed 26,000-unit synthetic scenario language.
+- `supplier_a_agreement.pdf`: pp. 1–5 reviewed. P. 4 contains the renewal, minimum-purchase, termination-fee, and fixed 26,000-unit synthetic scenario language.
 - `causora_day1_mock.json`: `contract`, `evidence`, `variables`, and relevant scenario/constraint fields reviewed.
 - `supplier_correspondence_log.csv`: all three synthetic notice-register rows reviewed.
 - `API_CONTRACT.md`: evidence provenance, synthetic notice handling, conditional renewal-lock logic, and 26,000-unit boundary correction reviewed.

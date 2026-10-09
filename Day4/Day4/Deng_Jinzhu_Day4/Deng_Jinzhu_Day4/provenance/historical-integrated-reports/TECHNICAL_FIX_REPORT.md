@@ -29,7 +29,7 @@ CAUSORA_DAY3_BACKEND=/absolute/path/to/Deng_Jinzhu_Day4/backend/backend python -
 
 Actual result: **294 passed in 71.72s**, zero skipped. The captured log is `verification/final-repair/wang_default_pytest_with_backend.log`.
 
-Without `CAUSORA_DAY3_BACKEND`, three legacy source-file-integration checks correctly skip because they require an explicit original backend path; that behavior is documented in `wang_default_pytest_skip_reasons.log` and is not a Day 4 coverage omission.
+Without `CAUSORA_DAY3_BACKEND`, three legacy source-file-integration checks correctly skip because they require an explicit original backend path. That behavior is documented in `wang_default_pytest_skip_reasons.log` and is not a Day 4 coverage omission.
 
 ## Fix 2 — Windows-compatible Monte Carlo performance telemetry
 

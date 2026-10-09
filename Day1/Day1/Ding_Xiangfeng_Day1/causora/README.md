@@ -9,9 +9,9 @@ Causora is a decision-intelligence product concept that converts business eviden
 The prototype uses local mock JSON to demonstrate the required Day 1 flow:
 
 1. **Data Intake** — four downloadable synthetic files: 104-week demand CSV, 48-order delivery XLSX, opening-inventory CSV, and a six-page machine-readable agreement with all five evidence quotes on page 4.
-2. **Scenario Lab** — quote-matched evidence becomes explicit Business Variables; mock scenario assumptions can be inspected and adjusted.
+2. **Scenario Lab** — quote-matched evidence becomes explicit Business Variables. Mock scenario assumptions can be inspected and adjusted.
 3. **Decision Matrix** — fixed D0, D1, and D2 options are compared under baseline, demand-drop, and lead-time-stress scenarios. Each mock cell has a five-line numeric TCO breakdown, versioned accounting convention, and cell-specific Formula Trace.
-4. **AI Boardroom** — mock CFO, COO, and Risk perspectives are intentionally limited in scope; a Critic shows a cross-view compound risk.
+4. **AI Boardroom** — mock CFO, COO, and Risk perspectives are intentionally limited in scope. A Critic shows a cross-view compound risk.
 5. **Decision Brief** — a predefined option is recommended through code-bound mock metric references, then a human can approve, reject, or change assumptions.
 
 It also includes visible **loading**, **empty**, and **error** state previews for every stage, plus a local **CACHED · VERIFIED GOLDEN RUN** fallback containing an independently frozen complete mock snapshot. Changing inputs removes the Golden label. "Verified" refers to the local snapshot integrity checks, **not** a past successful live backend run.
@@ -20,7 +20,7 @@ The persistent **Proof Engine** makes the same document, variable, and matrix ob
 
 ## Day 1 Scope Boundary
 
-This is intentionally **not** a production decision system. It does **not** perform runtime PDF extraction/validation, simulation, Monte Carlo, LLM calls, persistence, authentication, or supplier action. All five evidence quotes were manually checked on page 4 of the bundled **synthetic** PDF, but the UI does not claim a live extraction engine. Values in the Matrix and Brief are local mock data that demonstrate the required UI/data contract only. Scenario presets select fixed mock rows; free slider adjustments are draft UI state and **do not recalculate** the Matrix. Brief deltas are derived from the selected preset mock rows, not from a simulation engine. **Approval is disabled while unsimulated draft assumptions are present.**
+This is intentionally **not** a production decision system. It does **not** perform runtime PDF extraction/validation, simulation, Monte Carlo, LLM calls, persistence, authentication, or supplier action. All five evidence quotes were manually checked on page 4 of the bundled **synthetic** PDF, but the UI does not claim a live extraction engine. Values in the Matrix and Brief are local mock data that demonstrate the required UI/data contract only. Scenario presets select fixed mock rows. Free slider adjustments are draft UI state and **do not recalculate** the Matrix. Brief deltas are derived from the selected preset mock rows, not from a simulation engine. **Approval is disabled while unsimulated draft assumptions are present.**
 
 `API_CONTRACT.md` and `lib/contracts.ts` define a freezeable **proposal** for the Day 2 backend boundary, including units, errors and schema version. The next development stages will replace `demo_data/causora_day1_mock.json` with a deterministic simulation, Evidence Validator, Agent orchestration and runtime Numeric Guardrail after the three owners sign the interface. This ZIP is **not** full G1 sign-off.
 
@@ -48,9 +48,9 @@ python3 -m http.server 3000 --directory out
 
 Then open `http://localhost:3000`. Serve `out/` over HTTP rather than opening `index.html` with a `file://` URL.
 
-Alternatively, after `npm ci && npm run build`, run **`npm start`**; unlike the previous ZIP, its start command now serves the static `out/` directory rather than calling incompatible `next start`. Set `PORT` and `HOST` if necessary. To self-host on a CDN or static host, publish **the contents of `out/` as the site root**, not the repository root. No API server is included. The Google Fonts used by the visual design load from an external service; local fallback fonts work if that service is blocked.
+Alternatively, after `npm ci && npm run build`, run **`npm start`**. Unlike the previous ZIP, its start command now serves the static `out/` directory rather than calling incompatible `next start`. Set `PORT` and `HOST` if necessary. To self-host on a CDN or static host, publish **the contents of `out/` as the site root**, not the repository root. No API server is included. The Google Fonts used by the visual design load from an external service. Local fallback fonts work if that service is blocked.
 
-Synthetic source fixtures live in `public/demo/` (included in the static export) and may be regenerated with `python3 scripts/generate-demo-fixtures.py` after installing `reportlab` and `openpyxl`. The correspondence register is separately labelled synthetic; absence of an entry there is a **mock assumption**, not proof that a real party never sent notice.
+Synthetic source fixtures live in `public/demo/` (included in the static export) and may be regenerated with `python3 scripts/generate-demo-fixtures.py` after installing `reportlab` and `openpyxl`. The correspondence register is separately labelled synthetic. Absence of an entry there is a **mock assumption**, not proof that a real party never sent notice.
 
 Useful quality commands:
 
@@ -109,7 +109,7 @@ The interface deliberately follows the specification's trust boundaries:
 - Unsimulated slider drafts remain visible in the Brief and **block approval** until the preset inputs are restored.
 - The selected scenario's Brief deltas are computed from the currently selected preset mock matrix, avoiding stale baseline numbers.
 - The Golden Run is clearly identified as a cached local snapshot, is rendered from its own complete data copy and is immediately de-labelled when an input is edited.
-- The v1 TCO trace uses base-price purchases plus a separate renewal premium **once**; all nine cells balance to the dollar.
+- The v1 TCO trace uses base-price purchases plus a separate renewal premium **once**. All nine cells balance to the dollar.
 
 ## Accessibility and Responsive Behaviour
 
@@ -119,7 +119,7 @@ The interface deliberately follows the specification's trust boundaries:
 - No meaning is conveyed by colour alone.
 - `prefers-reduced-motion` reduces transitions and ambient motion.
 - The desktop decision rail uses larger, higher-contrast stage titles and captions and remains visible while scrolling. At 830px and below it becomes a horizontal workflow navigator.
-- Between 831px and 1199px, the dimensional scene gives way to three readable causal cards rather than compressing or overlapping the Matrix object; the same source/variable/matrix information remains available.
+- Between 831px and 1199px, the dimensional scene gives way to three readable causal cards rather than compressing or overlapping the Matrix object. The same source/variable/matrix information remains available.
 
 ## Data, Privacy, and Disclaimer
 
@@ -145,12 +145,12 @@ The prototype does not claim live model reliability, real supplier notice verifi
 
 ## v4 delivery
 
-This release corrects the external v3 audit. Read `V4_DELIVERY_NOTES.md` first. Shared API DTOs now distinguish selected/no-feasible results per scenario, and the v1 upload contract is synchronous. The runtime validates the complete bundled mock and Golden data before rendering; Golden activation also verifies SHA-256. Cost text follows increases/decreases, fractional percentage-point deltas preserve precision, and the Critic distinguishes the rolling-floor benchmark from total procurement excess. PDF/CSV/XLSX sources have correct MIME types under `npm start`.
+This release corrects the external v3 audit. Read `V4_DELIVERY_NOTES.md` first. Shared API DTOs now distinguish selected/no-feasible results per scenario, and the v1 upload contract is synchronous. The runtime validates the complete bundled mock and Golden data before rendering. Golden activation also verifies SHA-256. Cost text follows increases/decreases, fractional percentage-point deltas preserve precision, and the Critic distinguishes the rolling-floor benchmark from total procurement excess. PDF/CSV/XLSX sources have correct MIME types under `npm start`.
 
 State Studio includes a **No feasible option** preview with no winner and unavailable approval. This is a UI/API boundary fixture, not a backend computation. Existing sliders remain explicitly unsimulated drafts and block approval.
 
-Run `npm run build` before `npm test` when working from a Git checkout without `out/`; the ZIP already includes it. The 21-test suite includes a real HTTP static-server check. Backend response adapters must validate the approved HTTP DTOs before use; the local `MockData` adapter represents a successful mock only.
+Run `npm run build` before `npm test` when working from a Git checkout without `out/`. The ZIP already includes it. The 21-test suite includes a real HTTP static-server check. Backend response adapters must validate the approved HTTP DTOs before use. The local `MockData` adapter represents a successful mock only.
 
-`artifacts/history-v3/` contains old screenshots retained as labelled historical references. They do not prove v4 behavior. Current browser observations are recorded in `V4_DELIVERY_NOTES.md`. Source fixtures retain their original synthetic-document version because the underlying PDF/CSV/XLSX content did not change; the UI dataset version is `demo-2026.10.04-v4`.
+`artifacts/history-v3/` contains old screenshots retained as labelled historical references. They do not prove v4 behavior. Current browser observations are recorded in `V4_DELIVERY_NOTES.md`. Source fixtures retain their original synthetic-document version because the underlying PDF/CSV/XLSX content did not change. The UI dataset version is `demo-2026.10.04-v4`.
 
 No live deployment, backend, real simulator or participant booking is included. Team review/signatures and 2–3 confirmed participant slots are real human tasks, not software claims.

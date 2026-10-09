@@ -12,7 +12,7 @@ This package contains Deng's two Python modules and Ding's byte-identical synthe
 | `public/demo/` | Ding's original demand, deliveries, inventory, notice and agreement fixtures | 5 |
 | `API_CONTRACT.md` | Ding's shared original, read-only | 1 |
 
-`JINZHU_TESTABLE_MANIFEST.sha256` records sources and fixtures. Those four fixture directories matched the supplied Ding Day 2 package byte for byte before English documentation localization. They are attributed to Ding, not Deng. No `app/`, `components/`, `evidence_day2/` or `causora_day1/` implementation is included. No integration/deployment is performed. Frozen Day 1 manifest and raw CSV remain matched; sources cannot be silently replaced.
+`JINZHU_TESTABLE_MANIFEST.sha256` records sources and fixtures. Those four fixture directories matched the supplied Ding Day 2 package byte for byte before English documentation localization. They are attributed to Ding, not Deng. No `app/`, `components/`, `evidence_day2/` or `causora_day1/` implementation is included. No integration/deployment is performed. Frozen Day 1 manifest and raw CSV remain matched. Sources cannot be silently replaced.
 
 ## Windows CMD
 
@@ -28,6 +28,6 @@ py -3.12 -m pip install -r simulation_day1\requirements-test.txt "pytest>=8,<10"
 py -3.12 -m pytest -q simulation_day1\tests simulation_day2\tests
 ```
 
-If unavailable, replace `py -3.12` with the same `python` for installation and execution. PowerShell uses `Set-Location 'C:\your-path\causora'`. `simulation_day1` is a valid namespace package without `__init__.py`; check `wire_models.py`. Do not run from the tests subdirectory.
+If unavailable, replace `py -3.12` with the same `python` for installation and execution. PowerShell uses `Set-Location 'C:\your-path\causora'`. `simulation_day1` is a valid namespace package without `__init__.py`. Check `wire_models.py`. Do not run from the tests subdirectory.
 
-Historical fresh Linux extraction: 37 passed, 25 subtests (Day 1:16; Day 2:21); missing-module/file errors resolved. Windows-host testing was not performed for that delivery. Original Day 1 schema generation leaves a read-only XLSX resource unclosed and may warn with strict `-W error`; its source is bound to Wang's scope and was not silently changed. The standard commands do not enable `-W error`. Fixes affecting that scope require coordinated version/review updates. Eleven review items were pending at Day 2; model inputs remained unapproved. Passing tests does not release official probability/P90 or recommendations.
+Historical fresh Linux extraction: 37 passed, 25 subtests (Day 1:16. Day 2:21). Missing-module/file errors resolved. Windows-host testing was not performed for that delivery. Original Day 1 schema generation leaves a read-only XLSX resource unclosed and may warn with strict `-W error`. Its source is bound to Wang's scope and was not silently changed. The standard commands do not enable `-W error`. Fixes affecting that scope require coordinated version/review updates. Eleven review items were pending at Day 2. Model inputs remained unapproved. Passing tests does not release official probability/P90 or recommendations.

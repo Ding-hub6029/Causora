@@ -2,9 +2,9 @@
 
 ## Please confirm
 
-1. Keep `POST /api/simulate` request as `causora.contract.v1`; v1 remains the only error/pending envelope.
+1. Keep `POST /api/simulate` request as `causora.contract.v1`. V1 remains the only error/pending envelope.
 2. Use `causora.contract.v2` only for reviewed HTTP 200 success, with required `data.simulation`, `data.deltas`, `data.selections`, `data.traces[scenarioId][optionId]`.
-3. Require exactly nine traces, one for every scenario × D0/D1/D2 cell; do not add a GET-trace endpoint.
+3. Require exactly nine traces, one for every scenario × D0/D1/D2 cell. Do not add a GET-trace endpoint.
 4. Accept the field-level source vs review-record separation and the raw-mean/displayed-value/difference audit for every cost component.
 5. Confirm all model-policy topics in `MODEL_POLICY_CONFIRMATIONS.md` through the three-owner policy record.
 6. Confirm that Boardroom will receive `simulationId` and `dataVersion` only from a validated v2 success response.

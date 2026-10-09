@@ -11,6 +11,6 @@ python3 -m simulation_day1.interfaces
 python3 -m unittest discover -s simulation_day1/tests -v
 ```
 
-On Windows use the same available `py`/`python` interpreter for installation and execution. JSON reads explicitly use UTF-8. Non-UTF-8 default testing passed; verify the target Windows host too.
+On Windows use the same available `py`/`python` interpreter for installation and execution. JSON reads explicitly use UTF-8. Non-UTF-8 default testing passed. Verify the target Windows host too.
 
-Read section 4 of [handoff](DAY1_HANDOFF.md); the three owners must agree before shared baseline changes. `demo_inputs_v1.json` is an internal synthetic manifest, not a dataset API payload. Generated schemas mirror v1, not replacements for TS contracts. LOCAL_MOCK examples run without a server and are not real results. Only frozen scenarios/options are accepted; risk/budget can rescreen the fixed cells.
+Read section 4 of [handoff](DAY1_HANDOFF.md). The three owners must agree before shared baseline changes. `demo_inputs_v1.json` is an internal synthetic manifest, not a dataset API payload. Generated schemas mirror v1, not replacements for TS contracts. LOCAL_MOCK examples run without a server and are not real results. Only frozen scenarios/options are accepted. Risk/budget can rescreen the fixed cells.

@@ -1,13 +1,13 @@
 # Causora Day 2 — External User Test Kit
 
-**Status: prepared, not conducted.** This package records no participant, consent, booked slot, session, observation, or feedback. The target is **2–3 people outside the build team**; a teammate's walkthrough is QA, not a substitute for external testing.
+**Status: prepared, not conducted.** This package records no participant, consent, booked slot, session, observation, or feedback. The target is **2–3 people outside the build team**. A teammate's walkthrough is QA, not a substitute for external testing.
 
 ## 15-minute setup
 
 - Use the Day2 local prototype and its synthetic fixtures only. Do not ask for confidential purchasing, supplier, or personal data.
 - Ask permission to take notes. Use a participant code and a role/perspective (for example, procurement, operations, finance, analytics, or decision-maker) rather than collecting unnecessary identity details.
 - Give a task, then observe quietly. Do not point to controls or define “scenario” and “option” before the participant explains their understanding. Record any assistance you provide.
-- The opening should establish that this is a prototype using synthetic data and that no real supplier or business decision will be enacted. Do not coach the participant into the UI's intended explanation; record whether the on-screen mock disclosures are noticed and understood.
+- The opening should establish that this is a prototype using synthetic data and that no real supplier or business decision will be enacted. Do not coach the participant into the UI's intended explanation. Record whether the on-screen mock disclosures are noticed and understood.
 
 ## Copy-ready invitation
 
@@ -15,7 +15,7 @@
 
 Hi [Name],
 
-I am testing an early prototype of Causora, a workspace for inspecting business evidence and comparing decision choices. Could you join a 15-minute session at [time option 1] or [time option 2]? No preparation is needed. I will ask you to try a few short tasks while thinking aloud. The prototype uses synthetic data and cannot enact a real supplier or business decision. With your permission, I will note your role/perspective and feedback; please do not share confidential information.
+I am testing an early prototype of Causora, a workspace for inspecting business evidence and comparing decision choices. Could you join a 15-minute session at [time option 1] or [time option 2]? No preparation is needed. I will ask you to try a few short tasks while thinking aloud. The prototype uses synthetic data and cannot enact a real supplier or business decision. With your permission, I will note your role/perspective and feedback. Please do not share confidential information.
 
 Thank you,\
 Ding Xiangfeng
@@ -30,7 +30,7 @@ Ding Xiangfeng
 
 ## Moderator opening (about 45 seconds)
 
-“Thanks for helping. This is an early prototype using synthetic data, not a production system. I am testing whether the product is clear, not testing you. Please think aloud. No real supplier or business action will happen. With your permission, I will take notes on your role/perspective and feedback; you can skip any task or stop at any time.”
+“Thanks for helping. This is an early prototype using synthetic data, not a production system. I am testing whether the product is clear, not testing you. Please think aloud. No real supplier or business action will happen. With your permission, I will take notes on your role/perspective and feedback. You can skip any task or stop at any time.”
 
 ## Core tasks (about 10 minutes)
 
@@ -52,7 +52,7 @@ If time permits, ask the participant to return to the Brief and explain which pa
 
 ## Observation record
 
-Record one row per important moment in `USER_TEST_FEEDBACK_DAY2.csv`: task, success/partial/stuck outcome, observed action, exact quote (verbatim; otherwise mark `paraphrase`), help given, severity, likely cause, suggested change, owner, and whether a follow-up validated that change. Never turn a moderator interpretation into a participant quotation.
+Record one row per important moment in `USER_TEST_FEEDBACK_DAY2.csv`: task, success/partial/stuck outcome, observed action, exact quote (verbatim. Otherwise mark `paraphrase`), help given, severity, likely cause, suggested change, owner, and whether a follow-up validated that change. Never turn a moderator interpretation into a participant quotation.
 
 ### Severity guide
 
@@ -62,4 +62,4 @@ Record one row per important moment in `USER_TEST_FEEDBACK_DAY2.csv`: task, succ
 
 ## Prioritize after sessions
 
-Rank issues by impact and frequency. Fix trust misunderstandings first, then blocked tasks, then repeated confusion. Add an evidence-backed change to the Day2 change log; do not mark it user-validated until a participant completes a follow-up check.
+Rank issues by impact and frequency. Fix trust misunderstandings first, then blocked tasks, then repeated confusion. Add an evidence-backed change to the Day2 change log. Do not mark it user-validated until a participant completes a follow-up check.

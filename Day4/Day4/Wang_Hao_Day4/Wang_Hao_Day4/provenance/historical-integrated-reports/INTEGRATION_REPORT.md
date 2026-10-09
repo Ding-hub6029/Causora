@@ -3,7 +3,7 @@
 **Date:** 2026-10-08  
 **Package:** `Deng_Jinzhu_Day4`  
 **Scope:** Ding frontend baseline + Deng simulation/Evidence service + Wang Day 4 AI module.  
-**Status:** technical integration complete; formal G4 acceptance pending human and release conditions.
+**Status:** technical integration complete. Formal G4 acceptance pending human and release conditions.
 
 ## 1. Integration decisions
 
@@ -15,16 +15,16 @@
 
 ### Kept from Deng
 
-- The existing Monte Carlo engine and Day 1/2 v1 data remain intact; no model meaning was changed for performance work.
+- The existing Monte Carlo engine and Day 1/2 v1 data remain intact. No model meaning was changed for performance work.
 - The FastAPI service retains v1 request/error plus v2 Matrix/Trace success behavior, exact run registration, source verification, deterministic Formula Traces, and review/policy/release gates.
 - The previous PyMuPDF-to-PDF.js ambiguity is fixed by `app/evidence_locator.py`: it converts top-left PyMuPDF extraction rectangles to bottom-left PDF user-space points. The Ding PDF.js viewer then applies page rotation and viewport scaling itself.
-- A current live development run can use the already-public `GET /api/evidence/{id}` route solely to inspect its source locator. This is a minimal callback selection change in `frontend/app/page.tsx`; it changes neither public DTO nor page flow. It does not open Boardroom/Brief or enable a decision.
+- A current live development run can use the already-public `GET /api/evidence/{id}` route solely to inspect its source locator. This is a minimal callback selection change in `frontend/app/page.tsx`. It changes neither public DTO nor page flow. It does not open Boardroom/Brief or enable a decision.
 
 ### Kept from Wang
 
 - The newest `agent_day4` pipeline, strict output validation, critic/synthesizer sequence, same-family fallback labels, source enrichment, Numeric Guardrail, OpenRouter transport, and Windows-safe persistent budget journal are imported under `agents/wanghao-day3/`.
 - `app.boardroom_adapter` lazy-loads that module only after resolving a retained reviewed, decision-ready simulation. Development output fails `review_pending` before any provider import or call.
-- The pipeline owns one monotonic request deadline. Each role call receives only the remaining budget; it does not get a new full timeout. Cancellation propagates, while the immutable Monte Carlo record remains retained and is never recomputed for an AI retry.
+- The pipeline owns one monotonic request deadline. Each role call receives only the remaining budget. It does not get a new full timeout. Cancellation propagates, while the immutable Monte Carlo record remains retained and is never recomputed for an AI retry.
 
 ## 2. End-to-end call chain
 
@@ -47,15 +47,15 @@ The packaged evidence document is `frontend/public/demo/supplier_a_agreement.pdf
 | Browser outcome | The PDF viewer showed **Server-provided PDF bounding box highlighted** over the exact 60% minimum-purchase quote. |
 | Run mode | `unreviewed_development_only`, `decisionReady:false` |
 
-The actual local HTTP capture is in `verification/final/dev_ev024.json`; the clean browser screenshot is `verification/final/browser_ev024_live_api_bbox.webp`. This is evidence-location verification only, not legal approval.
+The actual local HTTP capture is in `verification/final/dev_ev024.json`. The clean browser screenshot is `verification/final/browser_ev024_live_api_bbox.webp`. This is evidence-location verification only, not legal approval.
 
 ## 4. Timeout, cancellation, and provider protection
 
-- `agent_day4.pipeline._Execution` starts one monotonic clock per Boardroom request. Role/critic/synthesizer calls receive the minimum of their stage setting and the remaining total time; retry attempts use the remaining time rather than a fresh stage budget.
-- Provider calls are wrapped with `asyncio.wait_for`; request cancellation is re-raised through `boardroom_adapter` and does not delete the stored simulation.
+- `agent_day4.pipeline._Execution` starts one monotonic clock per Boardroom request. Role/critic/synthesizer calls receive the minimum of their stage setting and the remaining total time. Retry attempts use the remaining time rather than a fresh stage budget.
+- Provider calls are wrapped with `asyncio.wait_for`. Request cancellation is re-raised through `boardroom_adapter` and does not delete the stored simulation.
 - A timed-out or cancelled provider reservation remains conservatively recorded by the OpenRouter budget journal because a remote request may have reached the provider.
 - The service returns a typed failure (`provider_timeout`, unavailable Critic, stale run, source mismatch, or validation failure) and leaves client-side Matrix/Trace state intact.
-- The browser timeout is independent only for its HTTP wait; it never causes a re-run of Monte Carlo.
+- The browser timeout is independent only for its HTTP wait. It never causes a re-run of Monte Carlo.
 
 ## 5. AI provider status and cost boundary
 
@@ -69,7 +69,7 @@ Wang's imported code is configured for OpenRouter only when all of these are del
 - `OPENROUTER_SCOPED_KEY_CONFIRMED=YES`
 - `CAUSORA_OPENROUTER_BUDGET_JOURNAL=/private/writable/path.json`
 
-It also performs read-only `/models` and `/key` preflight, limits a process to six calls and USD 1.00 maximum authorized spend, reserves budget before dispatch, and persists reservations under a cross-platform lock. Historic Wang reports are preserved as provenance only; they do not prove a new integrated end-to-end provider call.
+It also performs read-only `/models` and `/key` preflight, limits a process to six calls and USD 1.00 maximum authorized spend, reserves budget before dispatch, and persists reservations under a cross-platform lock. Historic Wang reports are preserved as provenance only. They do not prove a new integrated end-to-end provider call.
 
 ## 6. Current performance verification
 
@@ -86,17 +86,17 @@ Both files explicitly state `UNREVIEWED_ENGINE_BENCHMARK_ONLY_NOT_A_PUBLIC_SIMUL
 
 | Area | Result | Boundary |
 | --- | --- | --- |
-| Wang Day 4 AI module offline suite | Historical initial run: `195 passed`; repaired default entry: `294 passed` with `CAUSORA_DAY3_BACKEND` set to this integrated backend | No new paid provider dispatch. |
+| Wang Day 4 AI module offline suite | Historical initial run: `195 passed`. Repaired default entry: `294 passed` with `CAUSORA_DAY3_BACKEND` set to this integrated backend | No new paid provider dispatch. |
 | Ding frontend type/lint/tests/build | typecheck + lint + `49` tests + production build passed | Public UI contract validation. |
 | Deng backend gated/trace regressions | prior integrated backend suite passed | Includes source-backed Evidence, tamper, gate, and Boardroom rejection cases. |
 | Real local browser flow | passed | Development-only simulation → Matrix → Trace → EV-024 service locator → Boardroom/Brief gate. No console output. |
 | Current HTTP smoke | passed | 9 Matrix cells, 9 traces, converted EV-024 bbox, CORS preflight, Boardroom `503 review_pending`. |
 
-The final archive is re-tested after documentation and manifest creation; the current full result and the two post-review portability/pytest repairs are recorded in `FINAL_VALIDATION_REPORT.md` and `TECHNICAL_FIX_REPORT.md`.
+The final archive is re-tested after documentation and manifest creation. The current full result and the two post-review portability/pytest repairs are recorded in `FINAL_VALIDATION_REPORT.md` and `TECHNICAL_FIX_REPORT.md`.
 
 ## 8. Limits and required next steps
 
-1. Wang must provide/operate the real reviewed contract bundle; no hand-entered approval field may substitute for it.
+1. Wang must provide/operate the real reviewed contract bundle. No hand-entered approval field may substitute for it.
 2. All three owners must approve the model-policy configuration and Trace-v2 release record with current artifact hashes.
 3. An authorized owner must supply a private OpenRouter credential and explicitly authorize a formal paid call. A formal preflight/dispatch test must be recorded separately.
 4. Ding must run the reviewed browser acceptance flow after the above inputs exist. The test must confirm a matching Boardroom response and Brief but must not relabel development output as Golden.

@@ -6,21 +6,21 @@ The incoming planning document is preserved at `provenance/ding/incoming_fronten
 
 | Workstream | Completion evidence |
 | --- | --- |
-| Three-way merge | Ding frontend preserved; Deng service/engine and Wang AI module selectively integrated. |
+| Three-way merge | Ding frontend preserved. Deng service/engine and Wang AI module selectively integrated. |
 | Simulation/Trace identity | v2 response contains current Matrix, Delta, selection, traces, and per-run correlation. |
 | PDF Evidence | EV-024 source quote, current-run locator conversion, and browser highlight completed. |
-| AI boundary | Current Wang module lazy-loads only for formal reviewed runs; development Boardroom is rejected. |
+| AI boundary | Current Wang module lazy-loads only for formal reviewed runs. Development Boardroom is rejected. |
 | Deadline/budget controls | Wang pipeline/provider code and offline tests retained. |
 | Performance | Fixed-seed current-engine N=1,000 and N=10,000 captures complete. |
-| Documentation | Current merge, interface, startup, G4, and validation reports added; historic reports preserved. |
+| Documentation | Current merge, interface, startup, G4, and validation reports added. Historic reports preserved. |
 
 ## Remaining release workflow
 
-1. Install Wang's actual reviewed contract bundle; run normal reviewed simulation and verify changed reviewed fields alter the calculation.
+1. Install Wang's actual reviewed contract bundle. Run normal reviewed simulation and verify changed reviewed fields alter the calculation.
 2. Record the three-owner policy approval and Trace-v2 release record against the current package hashes.
 3. Run normal reviewed service mode and verify a reviewed v2 Matrix/Trace response.
-4. Obtain explicit authorization and a private OpenRouter key; run one bounded preflight and formal Boardroom request with a persistent journal.
-5. Run Ding's reviewed browser E2E test for the same run; inspect cited Evidence, Boardroom/Critic, Brief, and human decision state.
+4. Obtain explicit authorization and a private OpenRouter key. Run one bounded preflight and formal Boardroom request with a persistent journal.
+5. Run Ding's reviewed browser E2E test for the same run. Inspect cited Evidence, Boardroom/Critic, Brief, and human decision state.
 6. Obtain actual team G4 acceptance outside the application.
 
 ## Invariants

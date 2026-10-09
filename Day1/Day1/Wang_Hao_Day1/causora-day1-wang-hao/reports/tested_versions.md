@@ -17,6 +17,6 @@
 | Next.js | 15.5.27 | Baseline and adapted preview production builds |
 | Git | 2.43.0 | Available, but no team repo was changed |
 
-`requirements.txt` specifies compatible Python ranges rather than exact frozen transitive versions. Re-run the suite after installing in a new environment. The TS/Next versions came from Xiangfeng's existing lockfile with `npm ci`; they are not dependencies of Wang's Python-only checks. No Node modules or virtual environments are shipped in the ZIP.
+`requirements.txt` specifies compatible Python ranges rather than exact frozen transitive versions. Re-run the suite after installing in a new environment. The TS/Next versions came from Xiangfeng's existing lockfile with `npm ci`. They are not dependencies of Wang's Python-only checks. No Node modules or virtual environments are shipped in the ZIP.
 
-**Encoding verification:** This Ubuntu host was tested with both its ordinary UTF-8 default and `LC_ALL=C PYTHONCOERCECLOCALE=0 PYTHONUTF8=0 PYTHONIOENCODING=utf-8`; each passed all 50. This emulates the default-decoding failure reported on Windows but **does not claim execution on an actual Windows computer**.
+**Encoding verification:** This Ubuntu host was tested with both its ordinary UTF-8 default and `LC_ALL=C PYTHONCOERCECLOCALE=0 PYTHONUTF8=0 PYTHONIOENCODING=utf-8`. Each passed all 50. This emulates the default-decoding failure reported on Windows but **does not claim execution on an actual Windows computer**.

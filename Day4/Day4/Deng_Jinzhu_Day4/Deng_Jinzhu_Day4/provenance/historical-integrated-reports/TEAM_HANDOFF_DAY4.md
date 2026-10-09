@@ -6,10 +6,10 @@
 
 | Route | Contract | Current rule |
 | --- | --- | --- |
-| `POST /api/simulate` | v1 request / v2 Matrix + Trace success | Registers one exact run; v1 errors remain typed and fail closed. |
+| `POST /api/simulate` | v1 request / v2 Matrix + Trace success | Registers one exact run. V1 errors remain typed and fail closed. |
 | `GET /api/evidence/{EV-###}` | v1 Evidence DTO | Re-verifies the physical source and returns PDF.js-compatible coordinates for the current retained run. |
-| `POST /api/boardroom` | v1 simulation identity | Requires an exact retained reviewed decision-ready run; development runs return `review_pending`. |
-| `GET /health` | v1 health DTO | Reports service/gate state; reachability is not approval. |
+| `POST /api/boardroom` | v1 simulation identity | Requires an exact retained reviewed decision-ready run. Development runs return `review_pending`. |
+| `GET /health` | v1 health DTO | Reports service/gate state. Reachability is not approval. |
 
 The browser must preserve `simulationId`, `dataVersion`, `scenarioId`, option identity, and request ID. A later request, changed scenario, or changed data version is stale and cannot be substituted.
 

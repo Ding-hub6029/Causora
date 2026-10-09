@@ -22,4 +22,4 @@ This convention was selected because PDF.js consumes bottom-left PDF user-space 
 
 ## Scope
 
-The source file, page, quote, and `quoteMatched: true` are revalidated against the physical PDF before a simulation is accepted as a Boardroom input. The evidence endpoint calculates the locator from the retained current run; it does not trust a stale bbox from a JSON fixture.
+The source file, page, quote, and `quoteMatched: true` are revalidated against the physical PDF before a simulation is accepted as a Boardroom input. The evidence endpoint calculates the locator from the retained current run. It does not trust a stale bbox from a JSON fixture.

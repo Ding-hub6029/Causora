@@ -7,7 +7,7 @@ The supplied videos were treated as a study of interaction quality, not as artwo
 | Observed quality | Causora translation |
 | --- | --- |
 | Smooth context-preserving transitions | Each workflow stage moves along a persistent decision rail and a visible evidence thread. |
-| Progressive disclosure | A conclusion appears first; source quote, formula, role scope, and variable meaning open only when requested. |
+| Progressive disclosure | A conclusion appears first. Source quote, formula, role scope, and variable meaning open only when requested. |
 | Small, affirmative micro-feedback | Controls acknowledge the selected option, local state, Golden Run, and human decision with compact feedback. |
 | Stable navigation | The desktop rail and mobile step navigator preserve orientation through the full decision sequence. |
 | High-quality surface hierarchy | Fine borders, luminous data chambers, controlled depth, and restrained accent use produce premium contrast without noise. |

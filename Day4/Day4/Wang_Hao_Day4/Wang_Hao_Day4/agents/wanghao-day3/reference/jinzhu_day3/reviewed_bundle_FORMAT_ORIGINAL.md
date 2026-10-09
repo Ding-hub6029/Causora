@@ -1,6 +1,6 @@
 # Wang reviewed-bundle file format
 
-Create a directory and point `CAUSORA_REVIEW_BUNDLE_DIR` at it. It must contain `reviewed_contract.json` and `review_record.json`; both are required.
+Create a directory and point `CAUSORA_REVIEW_BUNDLE_DIR` at it. It must contain `reviewed_contract.json` and `review_record.json`. Both are required.
 
 ## reviewed_contract.json
 

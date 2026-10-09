@@ -21,4 +21,4 @@ python .\scripts\reproduce_deng_day3_data.py `
 
 Expected: `REPRODUCTION_PASS: previewId and all three delivered data-file SHA-256 values match.`
 
-Files deng_day3_monte_carlo_full_UNAPPROVED.json, deng_day3_matrix_deltas_UNAPPROVED.json and deng_day3_formula_traces_UNAPPROVED.json must be UTF-8/no BOM/LF and match bytes/SHA in ../data/deng_day3_data_manifest.json. A new generation timestamp affects only the new manifest, not these three computed files. .gitattributes pins source/JSON/Markdown/CSV/TS to LF; Windows .cmd launchers retain CRLF for CMD compatibility.
+Files deng_day3_monte_carlo_full_UNAPPROVED.json, deng_day3_matrix_deltas_UNAPPROVED.json and deng_day3_formula_traces_UNAPPROVED.json must be UTF-8/no BOM/LF and match bytes/SHA in ../data/deng_day3_data_manifest.json. A new generation timestamp affects only the new manifest, not these three computed files. .gitattributes pins source/JSON/Markdown/CSV/TS to LF. Windows .cmd launchers retain CRLF for CMD compatibility.

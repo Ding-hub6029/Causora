@@ -15,7 +15,7 @@ This intentional version combination preserves the frozen Day1/Day2 request/erro
 
 Each successful `/api/simulate` response is persisted under `CAUSORA_RUN_RECORD_DIR` (default `artifacts/runs/`) with the exact request, response, reviewed contract copy, execution context, request/response SHA-256, creation time, and expiry. Boardroom resolves **only** the requested `simulationId` and requires the exact matching `dataVersion`. Unknown, corrupted, expired, stale, development-only, and non-selected runs fail explicitly. The default TTL is one hour (`CAUSORA_RUN_RECORD_TTL_SECONDS`, 1–86400).
 
-Editing any scenario, seed, threshold, cash ceiling, reviewed contract, policy, or release produces a different simulation identity/fingerprint. The frontend must use the new ID; it must not request Boardroom for a prior response after assumptions change.
+Editing any scenario, seed, threshold, cash ceiling, reviewed contract, policy, or release produces a different simulation identity/fingerprint. The frontend must use the new ID. It must not request Boardroom for a prior response after assumptions change.
 
 ## Boardroom gate order
 

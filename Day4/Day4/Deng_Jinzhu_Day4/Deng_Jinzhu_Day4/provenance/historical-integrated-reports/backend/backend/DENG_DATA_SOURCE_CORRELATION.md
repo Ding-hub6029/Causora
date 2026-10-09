@@ -36,7 +36,7 @@ Expected terminal result:
 REPRODUCTION_PASS: previewId and all three delivered data-file SHA-256 values match.
 ```
 
-The script first refuses to run if the three recorded engine source hashes do not match. It then regenerates all three JSON data files and compares each SHA-256 plus `previewId`. It writes **UTF-8 without BOM and LF-only JSON bytes**, preventing Windows `CRLF` conversion from changing the hashes. It reproduces the data only; it does not assert a human review, decision approval or HTTP API success. See `WINDOWS_ENCODING_AND_REPRODUCTION.md`.
+The script first refuses to run if the three recorded engine source hashes do not match. It then regenerates all three JSON data files and compares each SHA-256 plus `previewId`. It writes **UTF-8 without BOM and LF-only JSON bytes**, preventing Windows `CRLF` conversion from changing the hashes. It reproduces the data only. It does not assert a human review, decision approval or HTTP API success. See `WINDOWS_ENCODING_AND_REPRODUCTION.md`.
 
 ## Service link
 

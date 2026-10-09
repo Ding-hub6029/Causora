@@ -38,8 +38,8 @@ python -m agent_day3.mc_cli review-draft --enable-unreviewed-dev \
 - Contract clauses use their original EV identifiers and PDF SHA.
 - Demonstration dates and locked forecast use **`ASSUMPTION:<key>`** identifiers and frozen synthetic JSON, not fabricated PDF evidence.
 - Notice status/source use the correspondence log and the `noticeSent` review item.
-- Derived `daysToRenewal`, `noticeDeadline`, `renewalLocked`, `minPurchaseUnitsA` and `evidenceIds` retain an explicit `derivedFromReviewItemIds` dependency list; one primary evidence ID is not claimed to prove all dependencies.
-- The conditional clause EV-020 remains an internal human-review requirement; no new frontend evidence field is added.
+- Derived `daysToRenewal`, `noticeDeadline`, `renewalLocked`, `minPurchaseUnitsA` and `evidenceIds` retain an explicit `derivedFromReviewItemIds` dependency list. One primary evidence ID is not claimed to prove all dependencies.
+- The conditional clause EV-020 remains an internal human-review requirement. No new frontend evidence field is added.
 
 The draft's extra pending/dependency fields are **internal review worksheet metadata**, not public API amendments. Jinzhu's present verifier accepts nonempty source identifiers for assumption provenance, but the human reviewer/owners should confirm the semantic mapping before completing the formal pair. No claim is made that an assumption has become a legal clause or observed real-world fact.
 
@@ -49,6 +49,6 @@ The retained `review_compat.py` still verifies an original Day2 manifest/receipt
 
 An old manifest or an AI candidate **cannot automatically become the native reviewed pair**: native field provenance, record bindings and derived-item dependencies must be explicitly supplied/checked. The provided safe compatibility route maps the existing candidate into the **pending** native worksheet. It preserves its candidate dataVersion and does not relabel it as the current MC output's dataVersion. Once the real human signs off, the owners should create the required native pair from that agreed source/provenance, then run the actual verifier. No positive old-to-native auto-approval converter is included.
 
-The older formal v1 snapshot route still requires a reviewed DatasetSuccess/evidence snapshot and a non-trivial simulation-owner verifier. A native two-file contract record alone is not a full DatasetSuccess; this revision does not fabricate missing public evidence/variable DTOs to make that older route pass. The new MC development route cannot enter that formal path.
+The older formal v1 snapshot route still requires a reviewed DatasetSuccess/evidence snapshot and a non-trivial simulation-owner verifier. A native two-file contract record alone is not a full DatasetSuccess. This revision does not fabricate missing public evidence/variable DTOs to make that older route pass. The new MC development route cannot enter that formal path.
 
 See `LEGACY_DAY2_REVIEW_FORMAT.md` only for historical workflow details. Genuine human review, team policy approval and the three-owner v2 release remain deferred. Development HTTP calculations use none of these approvals.

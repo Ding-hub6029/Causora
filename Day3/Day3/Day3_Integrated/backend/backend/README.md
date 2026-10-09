@@ -17,11 +17,11 @@ This is a runnable FastAPI backend for the Day 3 104-week Monte Carlo simulation
 
 ## What is implemented
 
-- Reads Wang's separately supplied reviewed contract bundle and uses the reviewed contract fields and data version in the engine; no mock contract relabeling.
+- Reads Wang's separately supplied reviewed contract bundle and uses the reviewed contract fields and data version in the engine. No mock contract relabeling.
 - Requires an independently recorded three-owner model-policy confirmation with exact policy hash and all required modelling topics.
 - Requires a three-owner v2 release record binding backend JSON Schema/Pydantic model, common contract, TypeScript DTO and frontend validator hashes.
 - Generates nine Matrix-bound Formula Traces with five component formulas, resolvable parameters, field-level source evidence, a separate review-record reference, statistical bases and 104-week single-trial sample paths.
-- Retains raw Monte Carlo means, displayed accounting values and their difference per component; it never claims they are always identical.
+- Retains raw Monte Carlo means, displayed accounting values and their difference per component. It never claims they are always identical.
 - Uses review, contract, policy configuration and release identities in `simulationId` and trace run identity.
 
 ## Start here
@@ -55,7 +55,7 @@ python scripts/start_unreviewed_dev.py --port 8000
 # Windows CMD: scripts\start_unreviewed_dev.cmd --port 8000
 ```
 
-It sets the exact opt-in value `CAUSORA_DEV_UNREVIEWED_MODE=UNREVIEWED_DEV_ONLY`, clears approval-related environment variables and returns an actual seeded calculation using packaged synthetic inputs. Every successful response/header/trace is labelled `UNREVIEWED — DEVELOPMENT ONLY`; `data.executionContext.decisionReady` is always `false`. See [DEV_UNREVIEWED_INTEGRATION.md](DEV_UNREVIEWED_INTEGRATION.md) and [WINDOWS_ENCODING_AND_REPRODUCTION.md](WINDOWS_ENCODING_AND_REPRODUCTION.md).
+It sets the exact opt-in value `CAUSORA_DEV_UNREVIEWED_MODE=UNREVIEWED_DEV_ONLY`, clears approval-related environment variables and returns an actual seeded calculation using packaged synthetic inputs. Every successful response/header/trace is labelled `UNREVIEWED — DEVELOPMENT ONLY`. `data.executionContext.decisionReady` is always `false`. See [DEV_UNREVIEWED_INTEGRATION.md](DEV_UNREVIEWED_INTEGRATION.md) and [WINDOWS_ENCODING_AND_REPRODUCTION.md](WINDOWS_ENCODING_AND_REPRODUCTION.md).
 
 ## Tests and package evidence
 

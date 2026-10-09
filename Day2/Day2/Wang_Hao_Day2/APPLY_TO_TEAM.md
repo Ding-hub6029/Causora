@@ -22,11 +22,11 @@ python -m unittest discover -s simulation_day1/tests -q
 python -m evidence_day2.cli preprocess --project-root . --out /tmp/causora-wang-day2-pending
 ```
 
-On Windows use `py -3.12 -m venv .venv`, then `.venv\Scripts\python.exe -m pip install -r evidence_day2\requirements-test.txt` and `.venv\Scripts\python.exe -m pytest -q evidence_day2\tests`. To preprocess use a **new empty directory path** such as `C:\temp\causora-wang-day2-pending` instead of `/tmp/...`. The source code explicitly reads UTF-8; our non-UTF-8 test was emulated on Linux, not executed on a Windows host. `evidence_day2/requirements-tested.txt` records exact top-level versions observed in our test environment; its dependencies are not hash-pinned.
+On Windows use `py -3.12 -m venv .venv`, then `.venv\Scripts\python.exe -m pip install -r evidence_day2\requirements-test.txt` and `.venv\Scripts\python.exe -m pytest -q evidence_day2\tests`. To preprocess use a **new empty directory path** such as `C:\temp\causora-wang-day2-pending` instead of `/tmp/...`. The source code explicitly reads UTF-8. Our non-UTF-8 test was emulated on Linux, not executed on a Windows host. `evidence_day2/requirements-tested.txt` records exact top-level versions observed in our test environment. Its dependencies are not hash-pinned.
 
-**Expected:** 38 Wang Day 2 tests pass, Jinzhu Day 1's 16 tests pass; PDF page 4 gives six quote matches (five v1 UI evidence IDs and internal EV-020). The pending output has **zero** approvals and **no** `dataset_success.json`. The exact pending form shipped with this ZIP is bound to the supplied Ding/Jinzhu source byte hashes and Wang's code/DTO version; if either owner changed a source fixture or contract since this build, **do not edit the digest**: review/version the changes and regenerate the request.
+**Expected:** 38 Wang Day 2 tests pass, Jinzhu Day 1's 16 tests pass. PDF page 4 gives six quote matches (five v1 UI evidence IDs and internal EV-020). The pending output has **zero** approvals and **no** `dataset_success.json`. The exact pending form shipped with this ZIP is bound to the supplied Ding/Jinzhu source byte hashes and Wang's code/DTO version. If either owner changed a source fixture or contract since this build, **do not edit the digest**: review/version the changes and regenerate the request.
 
-Optional Ding static frontend checks (run in the merged `causora/` root with Node.js 22): `npm ci && npm run typecheck && npm run lint && npm test && npm run build && npm run test:production`. These are the frontend owner's existing checks; Wang does not change or claim ownership of their UI.
+Optional Ding static frontend checks (run in the merged `causora/` root with Node.js 22): `npm ci && npm run typecheck && npm run lint && npm test && npm run build && npm run test:production`. These are the frontend owner's existing checks. Wang does not change or claim ownership of their UI.
 
 ## Review is not automated
 
@@ -40,4 +40,4 @@ python -m evidence_day2.cli promote \
 python -m evidence_day2.cli verify --project-root . --bundle /path/to/NEW_reviewed_dataset
 ```
 
-The post-review dataset is a **separate, self-attested synthetic** version; it cannot be paired with Jinzhu's unchanged Day 1 static matrix or silently injected into Ding's static frontend. No direct HTTP backend or production authentication is included. Jinzhu's 104-week deterministic Day 2 engine and joint G2 signoff remain separate team dependencies, not Wang code in this archive.
+The post-review dataset is a **separate, self-attested synthetic** version. It cannot be paired with Jinzhu's unchanged Day 1 static matrix or silently injected into Ding's static frontend. No direct HTTP backend or production authentication is included. Jinzhu's 104-week deterministic Day 2 engine and joint G2 signoff remain separate team dependencies, not Wang code in this archive.

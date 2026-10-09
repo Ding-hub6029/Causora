@@ -15,11 +15,11 @@ This document supersedes the earlier draft narrative. The executable final candi
 
 Each trace is identity-bound to the matching matrix cell and carries:
 
-1. same simulation/data/formula/scenario/option identifiers;
-2. separate review-record, source-contract, policy-configuration and release-record identities;
-3. field-level contract evidence; `sourceSha256` identifies source evidence while `reviewRecordSha256` identifies a different review record;
-4. all five components with formula, resolvable `inputKeys`, raw mean, displayed integer USD and displayed-minus-raw difference;
-5. exact per-cell component/matrix equality, stockout trial count, service quantity count and P90 rank/component inclusion;
+1. same simulation/data/formula/scenario/option identifiers.
+2. separate review-record, source-contract, policy-configuration and release-record identities.
+3. field-level contract evidence. `sourceSha256` identifies source evidence while `reviewRecordSha256` identifies a different review record.
+4. all five components with formula, resolvable `inputKeys`, raw mean, displayed integer USD and displayed-minus-raw difference.
+5. exact per-cell component/matrix equality, stockout trial count, service quantity count and P90 rank/component inclusion.
 6. a 104-week `sampleRunIndex=0` path explicitly marked one realised trial—not an average, expectation or aggregate.
 
 ## Required recorded confirmation

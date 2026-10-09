@@ -63,7 +63,7 @@ export CAUSORA_TRACE_ARTIFACT_DIR=/absolute/path/to/writable/audit-artifacts
 uvicorn app.service:app --host 0.0.0.0 --port 8000
 ```
 
-The normal endpoint succeeds only after the three verifiers pass. A reviewed `200` uses actual reviewed contract values/data version and registers that exact run. If engine, source verification, or release validation fails, it returns a typed error; it never falls back to mock success.
+The normal endpoint succeeds only after the three verifiers pass. A reviewed `200` uses actual reviewed contract values/data version and registers that exact run. If engine, source verification, or release validation fails, it returns a typed error. It never falls back to mock success.
 
 ## Formal OpenRouter Boardroom enablement
 
@@ -71,11 +71,11 @@ Only an authorized owner may configure this in a private environment after revie
 
 ```bash
 export CAUSORA_AI_PROVIDER=openrouter
-export OPENROUTER_API_KEY='private value; never commit or send in chat'
+export OPENROUTER_API_KEY='private value, never commit or send in chat'
 export CAUSORA_OPENROUTER_PAID_AUTHORIZED=YES
 export OPENROUTER_SCOPED_KEY_CONFIRMED=YES
 export CAUSORA_OPENROUTER_BUDGET_JOURNAL=/absolute/private/writable/openrouter-budget.json
-# Optional bounded timing values; pipeline uses one decreasing total deadline.
+# Optional bounded timing values, pipeline uses one decreasing total deadline.
 export CAUSORA_AI_TOTAL_TIMEOUT=30
 export CAUSORA_AI_STAGE_TIMEOUT=12
 export CAUSORA_CRITIC_TIMEOUT=12
@@ -96,4 +96,4 @@ python scripts/benchmark_monte_carlo.py --runs 1000 --out ../../verification/day
 python scripts/benchmark_monte_carlo.py --runs 10000 --out ../../verification/day4_integration/performance_n10000.json
 ```
 
-The benchmark outputs are explicitly labelled unreviewed engine performance evidence. On Windows, where Python does not provide the POSIX `resource` module, elapsed time still runs; the report explicitly sets `peakRssMiB` to `null` and `peakRssStatus` to `unavailable`. They must not be used as a review, release, Golden, Boardroom, or procurement attestation.
+The benchmark outputs are explicitly labelled unreviewed engine performance evidence. On Windows, where Python does not provide the POSIX `resource` module, elapsed time still runs. The report explicitly sets `peakRssMiB` to `null` and `peakRssStatus` to `unavailable`. They must not be used as a review, release, Golden, Boardroom, or procurement attestation.

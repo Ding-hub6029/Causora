@@ -1,6 +1,6 @@
 # Causora: Deng Jinzhu Day 3 Integrated Backend Delivery
 
-Backend source, runnable interface, v2 schemas/proposals, verifier configuration, tests, reproducible data and regeneration script are combined in this directory. No separate data download is needed. Current team status is in the parent integrated TECHNICAL_FIX_REPORT.md; historical unreviewed fixtures retain their labels.
+Backend source, runnable interface, v2 schemas/proposals, verifier configuration, tests, reproducible data and regeneration script are combined in this directory. No separate data download is needed. Current team status is in the parent integrated TECHNICAL_FIX_REPORT.md. Historical unreviewed fixtures retain their labels.
 
 ```text
 Causora-DengJinzhu-Day3-Integrated/
@@ -10,10 +10,10 @@ Causora-DengJinzhu-Day3-Integrated/
   INTEGRATED_MANIFEST.sha256
 ```
 
-1. Enter backend/, read RUNBOOK.md, install dependencies; normal startup is `uvicorn app.service:app --host 0.0.0.0 --port 8000`.
-2. Run `pytest -q`. Original delivery reported 63 passed/37 subtests in TEST_REPORT_FINAL.md; the later technical fixes report 70/37.
+1. Enter backend/, read RUNBOOK.md, install dependencies. Normal startup is `uvicorn app.service:app --host 0.0.0.0 --port 8000`.
+2. Run `pytest -q`. Original delivery reported 63 passed/37 subtests in TEST_REPORT_FINAL.md. The later technical fixes report 70/37.
 3. Default POST /api/simulate accepts shared v1 and correctly returns review-gated v1 503. The success path exists but requires validated records.
-4. For immediate development-shape testing, run `python scripts/start_unreviewed_dev.py --port 8000` from backend/ (or `python backend/scripts/start_unreviewed_dev.py --port 8000` from this wrapper). It returns v2 200 labelled UNREVIEWED DEVELOPMENT ONLY with decisionReady=false; see DEV_UNREVIEWED_INTEGRATION.md.
+4. For immediate development-shape testing, run `python scripts/start_unreviewed_dev.py --port 8000` from backend/ (or `python backend/scripts/start_unreviewed_dev.py --port 8000` from this wrapper). It returns v2 200 labelled UNREVIEWED DEVELOPMENT ONLY with decisionReady=false. See DEV_UNREVIEWED_INTEGRATION.md.
 5. Real Wang review, Deng/Ding/Wang policy and common-release records must validate per CONFIGURATION_AND_VERIFIERS.md before formal v2 matrix/deltas/selections/nine traces.
 6. Reproduce unreviewed delivered data from backend/:
 

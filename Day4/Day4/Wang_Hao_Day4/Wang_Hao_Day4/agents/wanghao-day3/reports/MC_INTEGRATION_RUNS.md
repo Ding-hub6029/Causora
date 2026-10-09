@@ -9,7 +9,7 @@ All runs used the supplied latest Day3 service, synthetic unreviewed inputs, 1,0
 | http_lead_changed | `sim-dev-unreviewed-c41106036d3e3cbda147` | True |
 | http_browser_numbers | `sim-dev-unreviewed-492e97c52ca86b1f98ae` | False |
 
-DataVersion correctly remains `demo-2026.10.04-v4--UNREVIEWED_DEV_ONLY` because the source dataset is unchanged. Changed computational inputs have new simulation IDs; all new HTTP captures have distinct request IDs and bound request/result hashes. Browser-style integer numeric spelling changes the canonical request identity but not numerical results.
+DataVersion correctly remains `demo-2026.10.04-v4--UNREVIEWED_DEV_ONLY` because the source dataset is unchanged. Changed computational inputs have new simulation IDs. All new HTTP captures have distinct request IDs and bound request/result hashes. Browser-style integer numeric spelling changes the canonical request identity but not numerical results.
 
 | Run / scenario | Option | Expected TCO (USD) | Cash P90 (USD) | Stockout probability | Service level |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -31,4 +31,4 @@ DataVersion correctly remains `demo-2026.10.04-v4--UNREVIEWED_DEV_ONLY` because 
 
 All three scenarios were analysed for each of the four HTTP captures: twelve scenario analyses, each returning CFO/COO/Risk DEV_ONLY. Those saved OFFLINE_SELECTOR analyses use a deterministic claim selector and are not AI prose. A separate saved MODEL_PROXY analysis used actual concurrent model calls on the base demand-drop result.
 
-The 104-week sample path in each trace is exactly one realised trial. It cannot reproduce the aggregate probability, average costs or P90 by itself; validation checks counter/denominator/rank identities and binds statistics to matrix/trace. No independent full-trial P90 recomputation is claimed.
+The 104-week sample path in each trace is exactly one realised trial. It cannot reproduce the aggregate probability, average costs or P90 by itself. Validation checks counter/denominator/rank identities and binds statistics to matrix/trace. No independent full-trial P90 recomputation is claimed.
