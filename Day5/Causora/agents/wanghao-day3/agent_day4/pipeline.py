@@ -251,6 +251,7 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
             for field in ('headline','body'):check_prose(getattr(issue,field),facts=allocation_context,default_option_id=option_id,stage='Critic '+field)
         return value
     fallback_reason=None
+    preferred_draft=None
     try:
         if getattr(critic_provider,'family',None)!='google-gemini':raise PipelineError('preferred_critic_not_gemini',status=503)
         if role_checkpoint:
@@ -258,11 +259,16 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
             if proof.get('source')!='ACTUAL_PROVIDER_REQUEST' or proof.get('status')!='returned' or proof.get('model')!=getattr(critic_provider,'model',None):raise PipelineError('checkpoint_critic_proof_mismatch')
             audit['preferredCriticStageReuse']='Prior actual response revalidated, not a new request'
             critic=check_critic(CriticDraft.model_validate(copy.deepcopy(proof['parsedOutput'])))
-        else:critic=check_critic(await execution.call(critic_provider,'Critic',critic_payload,CriticDraft,timeout=config.critic_timeout,retry=False,
-            reserve=fallback_reserve+synthesis_reserve+return_reserve))
+        else:
+            preferred_draft=await execution.call(critic_provider,'Critic',critic_payload,CriticDraft,timeout=config.critic_timeout,retry=False,
+                reserve=fallback_reserve+synthesis_reserve+return_reserve)
+            critic=check_critic(preferred_draft)
     except asyncio.CancelledError:raise
     except (PipelineError,ProviderFailure) as error:
         fallback_reason=getattr(error,'reason','critic_failed')
+        if preferred_draft is not None:
+            critic_payload={**critic_payload,'rejectedDraft':preferred_draft.model_dump(),'validationErrors':getattr(error,'details',{}),
+                'correctionTask':'The preferred Critic returned a rejected draft. Independently review the roles and remove the identified contradictions or numeric claims. All original evidence, business, coverage and numeric validators remain mandatory.'}
         if getattr(fallback_provider,'family',None)!=getattr(provider,'family',None):raise PipelineError('fallback_not_same_family',status=503)
         for correction_attempt in range(config.retries+1):
             try:
@@ -270,7 +276,7 @@ async def _execute(request,*,run,provider,critic_provider,fallback_provider,corr
                     reserve=synthesis_reserve+return_reserve));break
             except asyncio.CancelledError:raise
             except PipelineError as rejected:
-                if correction_attempt>=config.retries or rejected.reason!='numeric_guardrail_rejected':raise PipelineError('critic_unavailable',status=503,retryable=True) from None
+                if correction_attempt>=config.retries or rejected.reason!='numeric_guardrail_rejected':raise PipelineError('critic_unavailable',status=503,retryable=True,details={'criticFailureReasons':{'preferred':fallback_reason,'fallback':rejected.reason}}) from None
                 audit.setdefault('rejectedModelDrafts',[]).append({'stage':'same-family-Critic','reason':rejected.reason,'details':rejected.details})
                 critic_payload={**critic_payload,'formatFeedback':'Reformat without changing facts. No numerical words, including One option, two roles, first or second. Say A sourcing alternative and Contributing functions. No digits or quantities in prose; IDs only in structured arrays, claims empty. The previous draft was rejected, not accepted.'}
             except Exception:raise PipelineError('critic_unavailable',status=503,retryable=True) from None

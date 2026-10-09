@@ -729,7 +729,10 @@ class OpenRouterProvider:
         if self.family == "google-gemini":
             system += "\nReturn a JSON object matching this exact schema. Include every required property. " + _json_bytes(schema).decode("utf-8")
         serialized_schema = _json_bytes(schema)
-        input_bytes = len(body.encode("utf-8")) + len(serialized_schema) + len(system.encode("utf-8"))
+        # Gemini receives the schema in system text, not response_format.
+        # Count that actual copy once; retain the byte-per-token upper bound.
+        schema_bytes = 0 if self.family == "google-gemini" else len(serialized_schema)
+        input_bytes = len(body.encode("utf-8")) + schema_bytes + len(system.encode("utf-8"))
         if input_bytes > MAX_REQUEST_BYTES:
             raise ProviderFailure("openrouter_request_too_large")
         input_bound = input_bytes + INPUT_FRAMING_TOKENS

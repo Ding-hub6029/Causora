@@ -666,6 +666,11 @@ def _pipeline_error(exc: Exception) -> BoardroomAdapterError:
         if role in {"CFO", "COO", "Risk"} and isinstance(value, str) and _SAFE_REASON.fullmatch(value)
     } if isinstance(failure_reasons, Mapping) else {}
     logging.getLogger(__name__).warning("Boardroom failure reason=%s roleFailures=%s", safe_reason, safe_failures)
+    critic_reasons = details.get('criticFailureReasons', {}) if isinstance(details, Mapping) else {}
+    if isinstance(critic_reasons, Mapping):
+        safe_critic = {key: value for key, value in critic_reasons.items()
+                       if key in {'preferred', 'fallback'} and isinstance(value, str) and _SAFE_REASON.fullmatch(value)}
+        if safe_critic:logging.getLogger(__name__).warning('Boardroom Critic failure reasons=%s', safe_critic)
     if reason in {"critic_unavailable", "critic_timeout"}:
         return BoardroomAdapterError("critic_unavailable", "Boardroom Critic is unavailable.", status=503,
                                      code="simulation_failed", headers={"X-Causora-Critic-Status": "unavailable"})
