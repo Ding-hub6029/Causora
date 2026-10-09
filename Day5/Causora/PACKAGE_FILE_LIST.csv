@@ -1,4 +1,5 @@
 path,bytes
+.gitattributes,79
 .gitignore,396
 API_CONTRACT_V2.md,2445
 DEPLOYMENT_GUIDE.md,1313
@@ -25,7 +26,7 @@ agents/wanghao-day3/agent_day4/pipeline.py,35405
 agents/wanghao-day3/agent_day4/provider.py,9608
 agents/wanghao-day3/agent_day4/wire.py,6300
 backend/backend/.env.example,2040
-backend/backend/.gitattributes,245
+backend/backend/.gitattributes,71
 backend/backend/pytest.ini,108
 backend/backend/REFERENCE_contracts_v1.ts,8392
 backend/backend/requirements.txt,339
@@ -41,6 +42,10 @@ backend/backend/app/release_verifiers.py,18875
 backend/backend/app/reviewed_success.py,16115
 backend/backend/app/service.py,13234
 backend/backend/app/unreviewed_development.py,15235
+backend/backend/app/__pycache__/__init__.cpython-312.pyc,304
+backend/backend/app/__pycache__/config.cpython-312.pyc,5118
+backend/backend/app/__pycache__/gates.cpython-312.pyc,10583
+backend/backend/app/__pycache__/release_verifiers.cpython-312.pyc,21916
 backend/backend/artifacts/traces/sim-dev-unreviewed-9d1891657ae72d846c4e.json,1231448
 backend/backend/config/templates/policy_approval_record.template.json,1299
 backend/backend/config/templates/reviewed_bundle_FORMAT.md,1568
@@ -91,6 +96,7 @@ backend/backend/scripts/start_day4_reviewed.py,1833
 backend/backend/scripts/start_review_gated.py,829
 backend/backend/scripts/start_unreviewed_dev.cmd,174
 backend/backend/scripts/start_unreviewed_dev.py,2236
+backend/backend/scripts/__pycache__/start_day4_reviewed.cpython-312.pyc,3279
 backend/backend/simulation_day1/APPLY_TO_BASELINE.md,1133
 backend/backend/simulation_day1/build_day1_schemas.py,6821
 backend/backend/simulation_day1/build_oracle.py,5959
@@ -117,6 +123,8 @@ backend/backend/simulation_day1/schemas/simulate_request_v1.schema.json,3592
 backend/backend/simulation_day1/schemas/simulate_success_v1.schema.json,9191
 backend/backend/simulation_day1/schemas/simulate_v1.schema.json,7344
 backend/backend/simulation_day1/source_snapshot/historical_demand.csv,3989
+backend/backend/simulation_day1/__pycache__/interfaces.cpython-312.pyc,22688
+backend/backend/simulation_day1/__pycache__/wire_models.cpython-312.pyc,22211
 backend/backend/simulation_day2/__init__.py,81
 backend/backend/simulation_day2/api_boundary.py,5067
 backend/backend/simulation_day2/APPLY_TO_TEAM.md,867
@@ -147,11 +155,14 @@ backend/backend/simulation_day3/WINDOWS_QUICKSTART.md,1456
 backend/backend/simulation_day3/examples/UNAPPROVED_MC_POLICY.json,1491
 backend/backend/simulation_day3/schemas/internal_mc_preview.schema.json,20648
 backend/backend/simulation_day3/schemas/unapproved_mc_policy.schema.json,6713
+backend/backend/simulation_day3/__pycache__/__init__.cpython-312.pyc,347
+backend/backend/simulation_day3/__pycache__/policy.cpython-312.pyc,6171
 backend/backend/tests/test_boardroom_safe_diagnostics.py,728
 backend/backend/tests/test_day4_provider_configuration_failure.py,1063
 backend/backend/tests/test_day4_three_owner_integration.py,4167
 backend/backend/tests/test_gated_service.py,18005
 deployment/render_start.py,3391
+deployment/__pycache__/render_start.cpython-312.pyc,5028
 frontend/.env.example,738
 frontend/.env.unreviewed-dev.example,272
 frontend/.gitattributes,54
@@ -165,7 +176,7 @@ frontend/next.config.ts,334
 frontend/package-lock.json,211149
 frontend/package.json,1807
 frontend/tsconfig.json,563
-frontend/vercel.json,418
+frontend/vercel.json,414
 frontend/app/globals.css,109642
 frontend/app/icon.svg,1077
 frontend/app/layout.tsx,441
