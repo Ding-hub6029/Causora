@@ -35,13 +35,13 @@ def reserve(value, amount='0.001'):
 
 def test_global_cap_survives_new_sessions_and_unknown_cost():
     store = Store()
-    for _ in range(5):
+    for _ in range(CALL_CAP // 6):
         instance = budget(store)
         for _ in range(6):
             reserve(instance)
     restored = budget(store)
-    assert restored.snapshot()['callCount'] == 30
-    assert restored.snapshot()['unknownCosts']['count'] == 30
+    assert restored.snapshot()['callCount'] == CALL_CAP
+    assert restored.snapshot()['unknownCosts']['count'] == CALL_CAP
     with pytest.raises(ProviderFailure, match='provider_call_budget_exhausted'):
         reserve(restored)
 
@@ -52,6 +52,17 @@ def test_one_pipeline_cannot_use_more_than_six():
         reserve(value)
     with pytest.raises(ProviderFailure, match='provider_call_budget_exhausted'):
         reserve(value)
+
+def test_supplemental_spend_cap_remains_independent_of_original_dollar():
+    store=Store()
+    for _ in range(4):
+        instance=budget(store)
+        for _ in range(6):reserve(instance)
+    instance=budget(store)
+    reserve(instance);reserve(instance)
+    reserve(instance,'0.10')
+    with pytest.raises(ProviderFailure,match='supplement_budget_exhausted'):
+        reserve(instance)
 
 
 def test_actual_cost_above_cap_poisoned_and_cannot_reset():

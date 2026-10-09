@@ -23,7 +23,7 @@ def provision():
             history = json.loads((root / 'deployment' / 'prior_authorization_receipts.json').read_text())
             for name, record in history.items():
                 conn.execute('INSERT INTO causora_ai_prior_authorizations (id,payload) VALUES (%s,%s) ON CONFLICT (id) DO NOTHING', (name, Jsonb(record)))
-        print('Public budget provisioned: scope=public-day5-20261010 maxCalls=30 maxUsd=1.00; prior grants preserved', flush=True)
+        print(f'Public budget provisioned: scope={SCOPE} maxCalls={CALL_CAP} maxUsd=1.00; prior grants preserved', flush=True)
     except Exception:
         raise RuntimeError('Public budget provisioning failed; no model dispatch') from None
 
