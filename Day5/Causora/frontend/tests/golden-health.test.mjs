@@ -111,3 +111,18 @@ test("health probe reports a short timeout and aborts its request", async () => 
     else process.env.NEXT_PUBLIC_CAUSORA_STATIC_ONLY = previousStaticOnly;
   }
 });
+
+test("initial health probe accepts a server that wakes after the previous short timeout", async () => {
+  const previous = process.env.NEXT_PUBLIC_CAUSORA_STATIC_ONLY;
+  process.env.NEXT_PUBLIC_CAUSORA_STATIC_ONLY = "false";
+  try {
+    const result = await healthApi.probeBackendHealth(() => new Promise(resolve => {
+      setTimeout(() => resolve(new Response(JSON.stringify(good), { status: 200 })), 2600);
+    }));
+    assert.equal(result.requestId, good.requestId);
+    assert.deepEqual(result.missingReasons, good.data.missingReasons);
+  } finally {
+    if (previous === undefined) delete process.env.NEXT_PUBLIC_CAUSORA_STATIC_ONLY;
+    else process.env.NEXT_PUBLIC_CAUSORA_STATIC_ONLY = previous;
+  }
+});

@@ -1,4 +1,5 @@
-export const HEALTH_CHECK_TIMEOUT_MS = 2_500;
+// Free hosting may need about a minute to wake; keep the first request alive.
+export const HEALTH_CHECK_TIMEOUT_MS = 75_000;
 
 export type BackendHealth = {
   requestId: string;
