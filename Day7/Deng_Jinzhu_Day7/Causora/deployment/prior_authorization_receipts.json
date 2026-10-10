@@ -1,0 +1,149 @@
+{
+  "local-ai-round2": {
+    "entries": [
+      {
+        "finalizedAtUtc": "2026-10-09T17:29:08.471784Z",
+        "maxInputTokensBound": 12258,
+        "maxOutputTokens": 2048,
+        "model": "openai/gpt-5-mini",
+        "reservationId": "e1ab6c5dd7e144b99d5eb300699b300c",
+        "reservedAtUtc": "2026-10-09T17:29:04.477285Z",
+        "reservedUsd": "0.00716050",
+        "stage": "CFO",
+        "status": "returned",
+        "verifiedCostUsd": "0.00076225"
+      },
+      {
+        "finalizedAtUtc": "2026-10-09T17:29:09.225568Z",
+        "maxInputTokensBound": 12160,
+        "maxOutputTokens": 2048,
+        "model": "openai/gpt-5-mini",
+        "reservationId": "650506f555f846278bb0f9a5501b6689",
+        "reservedAtUtc": "2026-10-09T17:29:06.366614Z",
+        "reservedUsd": "0.00713600",
+        "stage": "COO",
+        "status": "returned",
+        "verifiedCostUsd": "0.00074625"
+      },
+      {
+        "finalizedAtUtc": "2026-10-09T17:29:08.578246Z",
+        "maxInputTokensBound": 13187,
+        "maxOutputTokens": 2048,
+        "model": "openai/gpt-5-mini",
+        "reservationId": "344ffdc882e94d56b4898d9c985c0b93",
+        "reservedAtUtc": "2026-10-09T17:29:06.450957Z",
+        "reservedUsd": "0.00739275",
+        "stage": "Risk",
+        "status": "returned",
+        "verifiedCostUsd": "0.00087875"
+      },
+      {
+        "finalizedAtUtc": "2026-10-09T17:29:13.760349Z",
+        "maxInputTokensBound": 19835,
+        "maxOutputTokens": 4096,
+        "model": "google/gemini-3.1-pro-preview",
+        "reservationId": "3ecf33af80614f9484b0175d89b3c48b",
+        "reservedAtUtc": "2026-10-09T17:29:09.389183Z",
+        "reservedUsd": "0.088822",
+        "stage": "Critic",
+        "status": "returned",
+        "verifiedCostUsd": "0.010652"
+      },
+      {
+        "finalizedAtUtc": "2026-10-09T17:29:16.101109Z",
+        "maxInputTokensBound": 16957,
+        "maxOutputTokens": 2048,
+        "model": "openai/gpt-5-mini",
+        "reservationId": "a1d4e842ea9e49a18b80ca00016ec986",
+        "reservedAtUtc": "2026-10-09T17:29:13.768336Z",
+        "reservedUsd": "0.00833525",
+        "stage": "Synthesizer",
+        "status": "returned",
+        "verifiedCostUsd": "0.00110175"
+      }
+    ],
+    "kind": "OPENROUTER_USD_ONE_RESERVATION_JOURNAL",
+    "metadata": {
+      "authorizedUsd": "1.00",
+      "currentAvailableUsd": "9.583515529",
+      "currentCeiling": "0.95",
+      "margin": "0.05"
+    }
+  },
+  "local-benchmark": {
+    "maxCalls": 2,
+    "maxUsd": 0.1,
+    "entries": [
+      {
+        "method": "plain_llm",
+        "reservedUsd": 0.04,
+        "status": "returned",
+        "startedAtUtc": "2026-10-09T17:37:15.330651+00:00",
+        "exactRequestSha256": "f792241a140ffeba707f829ba89624c71dc7b432a253c5db504ce6e8076a10b4",
+        "httpStatus": 200,
+        "finishedAtUtc": "2026-10-09T17:37:36.543211+00:00",
+        "usage": {
+          "prompt_tokens": 1846,
+          "completion_tokens": 3555,
+          "total_tokens": 5401,
+          "cost": 0.0075715,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0075715,
+            "upstream_inference_prompt_cost": 0.0004615,
+            "upstream_inference_completions_cost": 0.00711
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 2624,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "model": "openai/gpt-5-mini",
+        "runId": "gen-1791567435-suBrvdlhjLRhWubkk4eI",
+        "outputSha256": "d4819dc639b1273664906acfe136c038339208f7847e9d01b499c0c42dc6e0ce"
+      },
+      {
+        "method": "llm_plus_code",
+        "reservedUsd": 0.04,
+        "status": "returned",
+        "startedAtUtc": "2026-10-09T17:37:36.547417+00:00",
+        "exactRequestSha256": "e6e54f5aacaa4174cfd0dfff232bb60fa9770c952a25bf690210ddbfe8c06d8b",
+        "httpStatus": 200,
+        "finishedAtUtc": "2026-10-09T17:38:26.526945+00:00",
+        "usage": {
+          "prompt_tokens": 1912,
+          "completion_tokens": 8224,
+          "total_tokens": 10136,
+          "cost": 0.016926,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.016926,
+            "upstream_inference_prompt_cost": 0.000478,
+            "upstream_inference_completions_cost": 0.016448
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 3776,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "model": "openai/gpt-5-mini",
+        "runId": "gen-1791567456-aJ12Gd3omLSacjuXfI4g",
+        "outputSha256": "66c72c113071c71989acf8dc07700e897f2582615b61b61d50ad4b8d12d3a54e"
+      }
+    ]
+  }
+}

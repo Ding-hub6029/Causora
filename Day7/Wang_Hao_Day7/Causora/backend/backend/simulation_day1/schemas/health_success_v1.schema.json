@@ -1,0 +1,62 @@
+{
+  "$defs": {
+    "HealthData": {
+      "additionalProperties": false,
+      "properties": {
+        "service": {
+          "title": "Service",
+          "type": "string"
+        },
+        "simulation": {
+          "title": "Simulation",
+          "type": "string"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        }
+      },
+      "required": [
+        "service",
+        "simulation",
+        "evidence",
+        "provider"
+      ],
+      "title": "HealthData",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "dataVersion": {
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "requestId": {
+      "title": "Requestid",
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/$defs/HealthData"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "requestId",
+    "data"
+  ],
+  "title": "ApiSuccess[HealthData]",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/health_success_v1.schema.json"
+}

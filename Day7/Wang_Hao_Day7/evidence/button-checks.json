@@ -1,0 +1,225 @@
+[
+  {
+    "action": "Open source quote",
+    "pass": true
+  },
+  {
+    "action": "Inspect EV-014",
+    "pass": true
+  },
+  {
+    "action": "State preview loading",
+    "pass": true
+  },
+  {
+    "action": "State preview empty",
+    "pass": true
+  },
+  {
+    "action": "State preview error",
+    "pass": true
+  },
+  {
+    "action": "State preview No feasible option",
+    "pass": true
+  },
+  {
+    "action": "Scenario EV-014",
+    "pass": true
+  },
+  {
+    "action": "Scenario EV-019",
+    "pass": true
+  },
+  {
+    "action": "Scenario EV-021",
+    "pass": true
+  },
+  {
+    "action": "Scenario EV-024",
+    "pass": true
+  },
+  {
+    "action": "Scenario EV-027",
+    "pass": true
+  },
+  {
+    "action": "Scenario tab Demand −15% Cash stress",
+    "pass": true
+  },
+  {
+    "action": "Scenario tab Lead-time stress Service risk",
+    "pass": true
+  },
+  {
+    "action": "Scenario tab Baseline Reference case",
+    "pass": true
+  },
+  {
+    "action": "Demand/risk/cash controls",
+    "pass": true
+  },
+  {
+    "action": "Restore preset request inputs",
+    "pass": true
+  },
+  {
+    "action": "Navigation 03 Decision Matrix Options compared",
+    "pass": true
+  },
+  {
+    "action": "Navigation 04 AI Boardroom Views challenged",
+    "pass": true
+  },
+  {
+    "action": "Navigation 05 Decision Brief Human decision",
+    "pass": true
+  },
+  {
+    "action": "Saved example approval/rejection disabled",
+    "pass": true
+  },
+  {
+    "action": "Evidence stack row",
+    "pass": true
+  },
+  {
+    "action": "Verified Golden export",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 1",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 2",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 3",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 4",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 5",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 6",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 7",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 8",
+    "pass": true
+  },
+  {
+    "action": "Matrix cell 9",
+    "pass": true
+  },
+  {
+    "action": "Formula dialog Escape closes",
+    "pass": true
+  },
+  {
+    "action": "Navigation verified Separate uncertainty from control.",
+    "pass": true
+  },
+  {
+    "action": "Navigation verified See the trade-off before the story.",
+    "pass": true
+  },
+  {
+    "action": "Navigation verified Invite challenge into the room.",
+    "pass": true
+  },
+  {
+    "action": "Navigation verified A recommendation ready for challenge.",
+    "pass": true
+  },
+  {
+    "action": "Navigation verified Bring the record into focus.",
+    "pass": true
+  },
+  {
+    "action": "Proof-chain 02 Variable",
+    "pass": true
+  },
+  {
+    "action": "Proof-chain 03 Matrix",
+    "pass": true
+  },
+  {
+    "action": "Proof-chain 01 Evidence",
+    "pass": true
+  },
+  {
+    "action": "Open Formula Trace for D1",
+    "pass": true
+  },
+  {
+    "action": "Inspect D1 formulas",
+    "pass": true
+  },
+  {
+    "action": "Open D1 formula trace",
+    "pass": true
+  },
+  {
+    "action": "Inspect exit clause",
+    "pass": true
+  },
+  {
+    "check": "Latest deployment: cached simulation button disabled",
+    "pass": true
+  },
+  {
+    "check": "Latest deployment: critic rolling benchmark label",
+    "pass": false
+  },
+  {
+    "check": "Cached operations/contract cards collapse and expand; matching Brief navigation",
+    "pass": true
+  },
+  {
+    "check": "Open verified Evidence retains cached identity",
+    "pass": true
+  },
+  {
+    "check": "Retest after transition: latest critic rolling benchmark label",
+    "pass": true
+  },
+  {
+    "check": "Exit readonly snapshot routes to Scenario; Reset restores fresh local demo",
+    "pass": true
+  },
+  {
+    "check": "Incident retest primary review complete",
+    "passed": true,
+    "request": "causora-br-f6e79d05-18d3-45d9-9f61-37ba05f2344d"
+  },
+  {
+    "check": "Incident retest matching Brief numeric guardrail",
+    "passed": true,
+    "rejectedClaims": 0
+  },
+  {
+    "check": "Incident current approval and rejection enabled",
+    "passed": true,
+    "interaction": "enabled check; final human choice left unrecorded"
+  },
+  {
+    "check": "Incident live Formula Trace same simulation",
+    "passed": true
+  },
+  {
+    "check": "Incident EV-024 live Evidence PDF page four bbox",
+    "passed": true
+  }
+]

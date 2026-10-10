@@ -1,0 +1,19 @@
+{
+  "kind": "causora.trace-contract-release-record.v1",
+  "status": "released",
+  "schemaVersion": "causora.contract.v2",
+  "traceSchemaVersion": "causora.formula-trace.v1",
+  "contractApprovalReference": "REPLACE-with-immutable-v2-release-reference",
+  "artifacts": {
+    "backendJsonSchema": "REPLACE-with-64-char-sha256",
+    "pythonPydanticModel": "REPLACE-with-64-char-sha256",
+    "commonApiContract": "REPLACE-with-64-char-sha256",
+    "typescriptTypes": "REPLACE-with-64-char-sha256",
+    "frontendValidator": "REPLACE-with-64-char-sha256"
+  },
+  "approvals": [
+    {"role": "simulation_owner", "actorId": "REPLACE", "decision": "approved", "recordedAtUtc": "REPLACE-ISO-UTC"},
+    {"role": "frontend_owner", "actorId": "REPLACE", "decision": "approved", "recordedAtUtc": "REPLACE-ISO-UTC"},
+    {"role": "review_owner", "actorId": "REPLACE", "decision": "approved", "recordedAtUtc": "REPLACE-ISO-UTC"}
+  ]
+}

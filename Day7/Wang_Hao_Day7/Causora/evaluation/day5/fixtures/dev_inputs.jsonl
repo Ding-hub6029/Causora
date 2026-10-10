@@ -1,0 +1,2 @@
+{"caseId":"dev-visible-001","split":"author_visible_dev_only","source":"AUTHOR_VISIBLE_UNIT_TEST_FIXTURE_NOT_HELDOUT","input":{"scenario":"unit-test","evidence":[{"ref":"ev-a","text":"known test fact"}],"claim":"test malformed critic path"}}
+{"caseId":"dev-visible-002","split":"author_visible_dev_only","source":"AUTHOR_VISIBLE_UNIT_TEST_FIXTURE_NOT_HELDOUT","input":{"scenario":"unit-test","evidence":[{"ref":"ev-b","text":"known test fact"}],"claim":"test clean timeout path"}}

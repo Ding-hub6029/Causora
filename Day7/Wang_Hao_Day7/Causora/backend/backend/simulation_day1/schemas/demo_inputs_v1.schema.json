@@ -1,0 +1,410 @@
+{
+  "$defs": {
+    "ContractAssumptions": {
+      "additionalProperties": false,
+      "properties": {
+        "sourceFile": {
+          "const": "public/demo/supplier_a_agreement.pdf",
+          "title": "Sourcefile",
+          "type": "string"
+        },
+        "sourceSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sourcesha256",
+          "type": "string"
+        },
+        "evidencePage": {
+          "const": 4,
+          "title": "Evidencepage",
+          "type": "integer"
+        },
+        "forecastBasis": {
+          "const": "locked-at-renewal",
+          "title": "Forecastbasis",
+          "type": "string"
+        },
+        "lockedForecastUnits24m": {
+          "const": 26000,
+          "title": "Lockedforecastunits24M",
+          "type": "integer"
+        },
+        "forecastSource": {
+          "title": "Forecastsource",
+          "type": "string"
+        },
+        "humanReviewed": {
+          "const": false,
+          "title": "Humanreviewed",
+          "type": "boolean"
+        },
+        "status": {
+          "const": "quote_matched_synthetic_not_human_reviewed",
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sourceFile",
+        "sourceSha256",
+        "evidencePage",
+        "forecastBasis",
+        "lockedForecastUnits24m",
+        "forecastSource",
+        "humanReviewed",
+        "status"
+      ],
+      "title": "ContractAssumptions",
+      "type": "object"
+    },
+    "DeliveryHistory": {
+      "additionalProperties": false,
+      "properties": {
+        "sourceFile": {
+          "const": "public/demo/supplier_delivery_history.xlsx",
+          "title": "Sourcefile",
+          "type": "string"
+        },
+        "sourceSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sourcesha256",
+          "type": "string"
+        },
+        "orderCount": {
+          "const": 48,
+          "title": "Ordercount",
+          "type": "integer"
+        },
+        "orders": {
+          "items": {
+            "$ref": "#/$defs/SupplierOrder"
+          },
+          "maxItems": 48,
+          "minItems": 48,
+          "title": "Orders",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sourceFile",
+        "sourceSha256",
+        "orderCount",
+        "orders"
+      ],
+      "title": "DeliveryHistory",
+      "type": "object"
+    },
+    "HistoricalDemand": {
+      "additionalProperties": false,
+      "properties": {
+        "dataVersion": {
+          "const": "demo-2026.10.04-v4",
+          "title": "Dataversion",
+          "type": "string"
+        },
+        "sourceFile": {
+          "const": "public/demo/historical_demand.csv",
+          "title": "Sourcefile",
+          "type": "string"
+        },
+        "sourceSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sourcesha256",
+          "type": "string"
+        },
+        "provenance": {
+          "const": "synthetic_day1_fixture",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "weekCount": {
+          "const": 104,
+          "title": "Weekcount",
+          "type": "integer"
+        },
+        "totalUnits": {
+          "minimum": 0,
+          "title": "Totalunits",
+          "type": "integer"
+        },
+        "meanWeeklyUnits": {
+          "minimum": 0,
+          "title": "Meanweeklyunits",
+          "type": "number"
+        },
+        "lockedForecastUnits24m": {
+          "minimum": 0,
+          "title": "Lockedforecastunits24M",
+          "type": "integer"
+        },
+        "lockedForecastProvenance": {
+          "title": "Lockedforecastprovenance",
+          "type": "string"
+        },
+        "observations": {
+          "items": {
+            "$ref": "#/$defs/Observation"
+          },
+          "maxItems": 104,
+          "minItems": 104,
+          "title": "Observations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "dataVersion",
+        "sourceFile",
+        "sourceSha256",
+        "provenance",
+        "weekCount",
+        "totalUnits",
+        "meanWeeklyUnits",
+        "lockedForecastUnits24m",
+        "lockedForecastProvenance",
+        "observations"
+      ],
+      "title": "HistoricalDemand",
+      "type": "object"
+    },
+    "NoticeEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "channel": {
+          "title": "Channel",
+          "type": "string"
+        },
+        "recipient": {
+          "title": "Recipient",
+          "type": "string"
+        },
+        "event": {
+          "title": "Event",
+          "type": "string"
+        },
+        "validWrittenNonrenewalNotice": {
+          "title": "Validwrittennonrenewalnotice",
+          "type": "boolean"
+        },
+        "provenance": {
+          "const": "synthetic_mock_not_a_real_supplier_record",
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "date",
+        "channel",
+        "recipient",
+        "event",
+        "validWrittenNonrenewalNotice",
+        "provenance"
+      ],
+      "title": "NoticeEntry",
+      "type": "object"
+    },
+    "NoticeRegister": {
+      "additionalProperties": false,
+      "properties": {
+        "sourceFile": {
+          "const": "public/demo/supplier_correspondence_log.csv",
+          "title": "Sourcefile",
+          "type": "string"
+        },
+        "sourceSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sourcesha256",
+          "type": "string"
+        },
+        "noticeSent": {
+          "title": "Noticesent",
+          "type": "boolean"
+        },
+        "entries": {
+          "items": {
+            "$ref": "#/$defs/NoticeEntry"
+          },
+          "minItems": 1,
+          "title": "Entries",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sourceFile",
+        "sourceSha256",
+        "noticeSent",
+        "entries"
+      ],
+      "title": "NoticeRegister",
+      "type": "object"
+    },
+    "Observation": {
+      "additionalProperties": false,
+      "properties": {
+        "weekStart": {
+          "format": "date",
+          "title": "Weekstart",
+          "type": "string"
+        },
+        "unitsDemanded": {
+          "minimum": 0,
+          "title": "Unitsdemanded",
+          "type": "integer"
+        },
+        "provenance": {
+          "const": "synthetic_day1_fixture",
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "weekStart",
+        "unitsDemanded",
+        "provenance"
+      ],
+      "title": "Observation",
+      "type": "object"
+    },
+    "OpeningInventory": {
+      "additionalProperties": false,
+      "properties": {
+        "sourceFile": {
+          "const": "public/demo/opening_inventory.csv",
+          "title": "Sourcefile",
+          "type": "string"
+        },
+        "sourceSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Sourcesha256",
+          "type": "string"
+        },
+        "asOfDate": {
+          "format": "date",
+          "title": "Asofdate",
+          "type": "string"
+        },
+        "sku": {
+          "title": "Sku",
+          "type": "string"
+        },
+        "unitsOnHand": {
+          "minimum": 0,
+          "title": "Unitsonhand",
+          "type": "integer"
+        },
+        "provenance": {
+          "const": "synthetic_day1_fixture",
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sourceFile",
+        "sourceSha256",
+        "asOfDate",
+        "sku",
+        "unitsOnHand",
+        "provenance"
+      ],
+      "title": "OpeningInventory",
+      "type": "object"
+    },
+    "SupplierOrder": {
+      "additionalProperties": false,
+      "properties": {
+        "orderId": {
+          "title": "Orderid",
+          "type": "string"
+        },
+        "supplier": {
+          "enum": [
+            "A",
+            "B"
+          ],
+          "title": "Supplier",
+          "type": "string"
+        },
+        "orderDate": {
+          "format": "date",
+          "title": "Orderdate",
+          "type": "string"
+        },
+        "arrivalDate": {
+          "format": "date",
+          "title": "Arrivaldate",
+          "type": "string"
+        },
+        "units": {
+          "minimum": 0,
+          "title": "Units",
+          "type": "integer"
+        },
+        "basePriceUsd": {
+          "minimum": 0,
+          "title": "Basepriceusd",
+          "type": "number"
+        },
+        "provenance": {
+          "const": "synthetic_day1_fixture",
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "orderId",
+        "supplier",
+        "orderDate",
+        "arrivalDate",
+        "units",
+        "basePriceUsd",
+        "provenance"
+      ],
+      "title": "SupplierOrder",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "dataVersion": {
+      "const": "demo-2026.10.04-v4",
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "fixtureStatus": {
+      "const": "synthetic_local_mock_not_engine_input_verified",
+      "title": "Fixturestatus",
+      "type": "string"
+    },
+    "historicalDemand": {
+      "$ref": "#/$defs/HistoricalDemand"
+    },
+    "supplierDelivery": {
+      "$ref": "#/$defs/DeliveryHistory"
+    },
+    "openingInventory": {
+      "$ref": "#/$defs/OpeningInventory"
+    },
+    "noticeRegister": {
+      "$ref": "#/$defs/NoticeRegister"
+    },
+    "contractAssumptions": {
+      "$ref": "#/$defs/ContractAssumptions"
+    }
+  },
+  "required": [
+    "dataVersion",
+    "fixtureStatus",
+    "historicalDemand",
+    "supplierDelivery",
+    "openingInventory",
+    "noticeRegister",
+    "contractAssumptions"
+  ],
+  "title": "DemoInputs",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/demo_inputs_v1.schema.json"
+}

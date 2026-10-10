@@ -1,0 +1,12 @@
+{
+  "schema": "causora.day5.source-corpus-identity.v1",
+  "corpusStatus": "AUTHOR_VISIBLE_DEV_FIXTURE_NOT_HELDOUT_NOT_FORMAL",
+  "description": "Author-visible loader/scorer test fixture. Ineligible as an official unseen corpus or model-performance sample.",
+  "labelApproval": "AUTHOR_DRAFT_NEEDS_INDEPENDENT_REVIEW",
+  "formalEligibility": {
+    "freshIndependent": false,
+    "labelsHeldSeparately": false,
+    "notUsedForDebug": false,
+    "evaluatorHasNotSeenLabels": false
+  }
+}

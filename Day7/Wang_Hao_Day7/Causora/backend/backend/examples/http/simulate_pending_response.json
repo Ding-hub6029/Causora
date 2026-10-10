@@ -1,0 +1,1 @@
+{"schemaVersion":"causora.contract.v1","requestId":"req-http-smoke-pending","error":{"code":"simulation_failed","message":"Contract evidence review bundle is not configured.","details":{"reason":"human_review_pending","traceContract":"causora.contract.v2 (draft, not active)"},"requestId":"req-http-smoke-pending"}}

@@ -1,0 +1,41 @@
+{
+  "kind": "DAY6_POST_DEPLOY_REAL_PROVIDER_VERIFICATION",
+  "releaseCommit": "c54571240cb07d36815ff9cd8ed40151ef4acc20",
+  "simulationRequestId": "req-255f3846c6fa4db18bf66b59b1f9324b",
+  "boardroomRequestId": "causora-br-6105a4eb-46ff-4a64-a94f-f08c5441b43a",
+  "returnedStages": [
+    "CFO",
+    "COO",
+    "Risk",
+    "Critic",
+    "Synthesizer"
+  ],
+  "modelCalls": 5,
+  "verifiedCostUsd": "0.02016645",
+  "firstReservationToLastFinalizationSeconds": 22.497204,
+  "timingScope": "Provider ledger interval, excludes cold start, preflight, browser and network display delay. Not a full end-to-end latency benchmark.",
+  "preferredCriticModel": "google/gemini-3.1-pro-preview",
+  "liveConcurrentRejection": {
+    "status": 429,
+    "body": {
+      "schemaVersion": "causora.contract.v1",
+      "requestId": "req-c09781fec66e4436a7c847889f753c08",
+      "error": {
+        "code": "validation_error",
+        "requestId": "req-c09781fec66e4436a7c847889f753c08",
+        "message": "Another AI review is running. Retry after it finishes.",
+        "details": {
+          "reason": "review_busy"
+        }
+      }
+    },
+    "cors": "https://causora-one.vercel.app",
+    "retryAfter": "1"
+  },
+  "evidence": "EV-021 page 4 matched exact 100%, server bbox highlight visibly loaded",
+  "limitations": [
+    "One new successful real review, not ten consecutive online successes.",
+    "Offline fallback exercise is separate from live preferred-critic success.",
+    "No internal model reasoning is claimed visible."
+  ]
+}

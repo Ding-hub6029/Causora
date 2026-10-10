@@ -1,0 +1,1025 @@
+{
+  "dataVersion": "demo-2026.10.04-v4",
+  "fixtureStatus": "synthetic_local_mock_not_engine_input_verified",
+  "historicalDemand": {
+    "dataVersion": "demo-2026.10.04-v4",
+    "sourceFile": "public/demo/historical_demand.csv",
+    "sourceSha256": "654a22f3f5433e214611f3c5a69b625bedad2d11157dedfa9cd65bbb14d3499e",
+    "provenance": "synthetic_day1_fixture",
+    "weekCount": 104,
+    "totalUnits": 25936,
+    "meanWeeklyUnits": 249.3846153846154,
+    "lockedForecastUnits24m": 26000,
+    "lockedForecastProvenance": "Synthetic renewal-cycle forecast assumption: supplier_a_agreement.pdf p.4 and baseline contract.lockedForecastUnits24m; NOT the sum of historical demand",
+    "observations": [
+      {
+        "weekStart": "2024-10-07",
+        "unitsDemanded": 250,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-10-14",
+        "unitsDemanded": 279,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-10-21",
+        "unitsDemanded": 247,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-10-28",
+        "unitsDemanded": 218,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-11-04",
+        "unitsDemanded": 237,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-11-11",
+        "unitsDemanded": 241,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-11-18",
+        "unitsDemanded": 228,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-11-25",
+        "unitsDemanded": 243,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-12-02",
+        "unitsDemanded": 263,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-12-09",
+        "unitsDemanded": 273,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-12-16",
+        "unitsDemanded": 265,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-12-23",
+        "unitsDemanded": 255,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2024-12-30",
+        "unitsDemanded": 221,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-01-06",
+        "unitsDemanded": 254,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-01-13",
+        "unitsDemanded": 219,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-01-20",
+        "unitsDemanded": 271,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-01-27",
+        "unitsDemanded": 260,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-02-03",
+        "unitsDemanded": 224,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-02-10",
+        "unitsDemanded": 238,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-02-17",
+        "unitsDemanded": 286,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-02-24",
+        "unitsDemanded": 246,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-03-03",
+        "unitsDemanded": 226,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-03-10",
+        "unitsDemanded": 241,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-03-17",
+        "unitsDemanded": 271,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-03-24",
+        "unitsDemanded": 218,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-03-31",
+        "unitsDemanded": 238,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-04-07",
+        "unitsDemanded": 246,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-04-14",
+        "unitsDemanded": 242,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-04-21",
+        "unitsDemanded": 277,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-04-28",
+        "unitsDemanded": 216,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-05-05",
+        "unitsDemanded": 260,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-05-12",
+        "unitsDemanded": 259,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-05-19",
+        "unitsDemanded": 243,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-05-26",
+        "unitsDemanded": 246,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-06-02",
+        "unitsDemanded": 214,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-06-09",
+        "unitsDemanded": 217,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-06-16",
+        "unitsDemanded": 281,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-06-23",
+        "unitsDemanded": 230,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-06-30",
+        "unitsDemanded": 228,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-07-07",
+        "unitsDemanded": 290,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-07-14",
+        "unitsDemanded": 273,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-07-21",
+        "unitsDemanded": 254,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-07-28",
+        "unitsDemanded": 272,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-08-04",
+        "unitsDemanded": 260,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-08-11",
+        "unitsDemanded": 241,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-08-18",
+        "unitsDemanded": 271,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-08-25",
+        "unitsDemanded": 244,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-09-01",
+        "unitsDemanded": 219,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-09-08",
+        "unitsDemanded": 271,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-09-15",
+        "unitsDemanded": 260,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-09-22",
+        "unitsDemanded": 278,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-09-29",
+        "unitsDemanded": 232,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-10-06",
+        "unitsDemanded": 245,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-10-13",
+        "unitsDemanded": 218,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-10-20",
+        "unitsDemanded": 259,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-10-27",
+        "unitsDemanded": 264,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-11-03",
+        "unitsDemanded": 253,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-11-10",
+        "unitsDemanded": 285,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-11-17",
+        "unitsDemanded": 239,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-11-24",
+        "unitsDemanded": 256,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-12-01",
+        "unitsDemanded": 250,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-12-08",
+        "unitsDemanded": 274,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-12-15",
+        "unitsDemanded": 278,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-12-22",
+        "unitsDemanded": 237,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2025-12-29",
+        "unitsDemanded": 241,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-01-05",
+        "unitsDemanded": 287,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-01-12",
+        "unitsDemanded": 220,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-01-19",
+        "unitsDemanded": 229,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-01-26",
+        "unitsDemanded": 233,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-02-02",
+        "unitsDemanded": 234,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-02-09",
+        "unitsDemanded": 286,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-02-16",
+        "unitsDemanded": 241,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-02-23",
+        "unitsDemanded": 247,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-03-02",
+        "unitsDemanded": 225,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-03-09",
+        "unitsDemanded": 226,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-03-16",
+        "unitsDemanded": 253,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-03-23",
+        "unitsDemanded": 232,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-03-30",
+        "unitsDemanded": 230,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-04-06",
+        "unitsDemanded": 273,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-04-13",
+        "unitsDemanded": 226,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-04-20",
+        "unitsDemanded": 256,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-04-27",
+        "unitsDemanded": 237,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-05-04",
+        "unitsDemanded": 238,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-05-11",
+        "unitsDemanded": 273,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-05-18",
+        "unitsDemanded": 284,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-05-25",
+        "unitsDemanded": 233,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-06-01",
+        "unitsDemanded": 240,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-06-08",
+        "unitsDemanded": 266,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-06-15",
+        "unitsDemanded": 256,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-06-22",
+        "unitsDemanded": 235,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-06-29",
+        "unitsDemanded": 249,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-07-06",
+        "unitsDemanded": 249,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-07-13",
+        "unitsDemanded": 222,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-07-20",
+        "unitsDemanded": 223,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-07-27",
+        "unitsDemanded": 277,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-08-03",
+        "unitsDemanded": 258,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-08-10",
+        "unitsDemanded": 246,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-08-17",
+        "unitsDemanded": 245,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-08-24",
+        "unitsDemanded": 275,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-08-31",
+        "unitsDemanded": 277,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-09-07",
+        "unitsDemanded": 268,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-09-14",
+        "unitsDemanded": 272,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-09-21",
+        "unitsDemanded": 239,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "weekStart": "2026-09-28",
+        "unitsDemanded": 241,
+        "provenance": "synthetic_day1_fixture"
+      }
+    ]
+  },
+  "supplierDelivery": {
+    "sourceFile": "public/demo/supplier_delivery_history.xlsx",
+    "sourceSha256": "cabeaae5d3a9ba23f863734fca3b3080bc85d121b0dba75a7f6457fa76c56298",
+    "orderCount": 48,
+    "orders": [
+      {
+        "orderId": "PO-001",
+        "supplier": "B",
+        "orderDate": "2025-10-05",
+        "arrivalDate": "2025-10-21",
+        "units": 181,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-002",
+        "supplier": "A",
+        "orderDate": "2025-10-12",
+        "arrivalDate": "2025-11-02",
+        "units": 110,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-003",
+        "supplier": "A",
+        "orderDate": "2025-10-19",
+        "arrivalDate": "2025-11-07",
+        "units": 139,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-004",
+        "supplier": "A",
+        "orderDate": "2025-10-26",
+        "arrivalDate": "2025-11-11",
+        "units": 160,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-005",
+        "supplier": "B",
+        "orderDate": "2025-11-02",
+        "arrivalDate": "2025-11-12",
+        "units": 102,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-006",
+        "supplier": "A",
+        "orderDate": "2025-11-09",
+        "arrivalDate": "2025-11-24",
+        "units": 124,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-007",
+        "supplier": "A",
+        "orderDate": "2025-11-16",
+        "arrivalDate": "2025-12-03",
+        "units": 187,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-008",
+        "supplier": "A",
+        "orderDate": "2025-11-23",
+        "arrivalDate": "2025-12-11",
+        "units": 171,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-009",
+        "supplier": "B",
+        "orderDate": "2025-11-30",
+        "arrivalDate": "2025-12-10",
+        "units": 149,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-010",
+        "supplier": "A",
+        "orderDate": "2025-12-07",
+        "arrivalDate": "2025-12-23",
+        "units": 178,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-011",
+        "supplier": "A",
+        "orderDate": "2025-12-14",
+        "arrivalDate": "2025-12-30",
+        "units": 159,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-012",
+        "supplier": "A",
+        "orderDate": "2025-12-21",
+        "arrivalDate": "2026-01-05",
+        "units": 190,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-013",
+        "supplier": "B",
+        "orderDate": "2025-12-28",
+        "arrivalDate": "2026-01-12",
+        "units": 125,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-014",
+        "supplier": "A",
+        "orderDate": "2026-01-04",
+        "arrivalDate": "2026-01-23",
+        "units": 205,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-015",
+        "supplier": "A",
+        "orderDate": "2026-01-11",
+        "arrivalDate": "2026-01-25",
+        "units": 201,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-016",
+        "supplier": "A",
+        "orderDate": "2026-01-18",
+        "arrivalDate": "2026-02-08",
+        "units": 146,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-017",
+        "supplier": "B",
+        "orderDate": "2026-01-25",
+        "arrivalDate": "2026-02-11",
+        "units": 203,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-018",
+        "supplier": "A",
+        "orderDate": "2026-02-01",
+        "arrivalDate": "2026-02-19",
+        "units": 202,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-019",
+        "supplier": "A",
+        "orderDate": "2026-02-08",
+        "arrivalDate": "2026-02-20",
+        "units": 106,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-020",
+        "supplier": "A",
+        "orderDate": "2026-02-15",
+        "arrivalDate": "2026-02-28",
+        "units": 199,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-021",
+        "supplier": "B",
+        "orderDate": "2026-02-22",
+        "arrivalDate": "2026-03-09",
+        "units": 162,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-022",
+        "supplier": "A",
+        "orderDate": "2026-03-01",
+        "arrivalDate": "2026-03-21",
+        "units": 183,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-023",
+        "supplier": "A",
+        "orderDate": "2026-03-08",
+        "arrivalDate": "2026-03-22",
+        "units": 153,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-024",
+        "supplier": "A",
+        "orderDate": "2026-03-15",
+        "arrivalDate": "2026-04-03",
+        "units": 114,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-025",
+        "supplier": "B",
+        "orderDate": "2026-03-22",
+        "arrivalDate": "2026-04-03",
+        "units": 101,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-026",
+        "supplier": "A",
+        "orderDate": "2026-03-29",
+        "arrivalDate": "2026-04-14",
+        "units": 112,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-027",
+        "supplier": "A",
+        "orderDate": "2026-04-05",
+        "arrivalDate": "2026-04-19",
+        "units": 172,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-028",
+        "supplier": "A",
+        "orderDate": "2026-04-12",
+        "arrivalDate": "2026-05-03",
+        "units": 148,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-029",
+        "supplier": "B",
+        "orderDate": "2026-04-19",
+        "arrivalDate": "2026-05-06",
+        "units": 111,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-030",
+        "supplier": "A",
+        "orderDate": "2026-04-26",
+        "arrivalDate": "2026-05-17",
+        "units": 186,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-031",
+        "supplier": "A",
+        "orderDate": "2026-05-03",
+        "arrivalDate": "2026-05-22",
+        "units": 101,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-032",
+        "supplier": "A",
+        "orderDate": "2026-05-10",
+        "arrivalDate": "2026-05-22",
+        "units": 221,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-033",
+        "supplier": "B",
+        "orderDate": "2026-05-17",
+        "arrivalDate": "2026-05-28",
+        "units": 203,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-034",
+        "supplier": "A",
+        "orderDate": "2026-05-24",
+        "arrivalDate": "2026-06-12",
+        "units": 100,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-035",
+        "supplier": "A",
+        "orderDate": "2026-05-31",
+        "arrivalDate": "2026-06-14",
+        "units": 203,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-036",
+        "supplier": "A",
+        "orderDate": "2026-06-07",
+        "arrivalDate": "2026-06-22",
+        "units": 226,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-037",
+        "supplier": "B",
+        "orderDate": "2026-06-14",
+        "arrivalDate": "2026-06-30",
+        "units": 106,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-038",
+        "supplier": "A",
+        "orderDate": "2026-06-21",
+        "arrivalDate": "2026-07-07",
+        "units": 219,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-039",
+        "supplier": "A",
+        "orderDate": "2026-06-28",
+        "arrivalDate": "2026-07-10",
+        "units": 191,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-040",
+        "supplier": "A",
+        "orderDate": "2026-07-05",
+        "arrivalDate": "2026-07-26",
+        "units": 112,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-041",
+        "supplier": "B",
+        "orderDate": "2026-07-12",
+        "arrivalDate": "2026-07-26",
+        "units": 132,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-042",
+        "supplier": "A",
+        "orderDate": "2026-07-19",
+        "arrivalDate": "2026-08-03",
+        "units": 134,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-043",
+        "supplier": "A",
+        "orderDate": "2026-07-26",
+        "arrivalDate": "2026-08-07",
+        "units": 142,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-044",
+        "supplier": "A",
+        "orderDate": "2026-08-02",
+        "arrivalDate": "2026-08-21",
+        "units": 223,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-045",
+        "supplier": "B",
+        "orderDate": "2026-08-09",
+        "arrivalDate": "2026-08-23",
+        "units": 111,
+        "basePriceUsd": 12.6,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-046",
+        "supplier": "A",
+        "orderDate": "2026-08-16",
+        "arrivalDate": "2026-09-06",
+        "units": 201,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-047",
+        "supplier": "A",
+        "orderDate": "2026-08-23",
+        "arrivalDate": "2026-09-10",
+        "units": 199,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      },
+      {
+        "orderId": "PO-048",
+        "supplier": "A",
+        "orderDate": "2026-08-30",
+        "arrivalDate": "2026-09-20",
+        "units": 123,
+        "basePriceUsd": 12.0,
+        "provenance": "synthetic_day1_fixture"
+      }
+    ]
+  },
+  "openingInventory": {
+    "sourceFile": "public/demo/opening_inventory.csv",
+    "sourceSha256": "c2ad7ff5d928623f69d2599fea47d20c008c3b1fdd4d3879d29dcc2799ffe067",
+    "asOfDate": "2026-10-04",
+    "sku": "DEMO-SKU-A",
+    "unitsOnHand": 1840,
+    "provenance": "synthetic_day1_fixture"
+  },
+  "noticeRegister": {
+    "sourceFile": "public/demo/supplier_correspondence_log.csv",
+    "sourceSha256": "25dcd672d60ff549d870f4b7169f9df1f4b84e0320d8861f06de3b15b43e6952",
+    "noticeSent": false,
+    "entries": [
+      {
+        "date": "2026-09-01",
+        "channel": "email",
+        "recipient": "supplier_a",
+        "event": "quarterly_planning_check",
+        "validWrittenNonrenewalNotice": false,
+        "provenance": "synthetic_mock_not_a_real_supplier_record"
+      },
+      {
+        "date": "2026-09-19",
+        "channel": "register",
+        "recipient": "supplier_a",
+        "event": "notice_deadline_audit_no_notice_entry",
+        "validWrittenNonrenewalNotice": false,
+        "provenance": "synthetic_mock_not_a_real_supplier_record"
+      },
+      {
+        "date": "2026-10-04",
+        "channel": "register",
+        "recipient": "supplier_a",
+        "event": "decision_date_register_audit_no_notice_entry",
+        "validWrittenNonrenewalNotice": false,
+        "provenance": "synthetic_mock_not_a_real_supplier_record"
+      }
+    ]
+  },
+  "contractAssumptions": {
+    "sourceFile": "public/demo/supplier_a_agreement.pdf",
+    "sourceSha256": "1e816c38cae6a045ef8b05426bb4c87ed160f119a52ac8adc65be074ef8c183f",
+    "evidencePage": 4,
+    "forecastBasis": "locked-at-renewal",
+    "lockedForecastUnits24m": 26000,
+    "forecastSource": "Synthetic renewal-cycle forecast: agreement PDF p.4 and baseline contract, not derived from historical demand",
+    "humanReviewed": false,
+    "status": "quote_matched_synthetic_not_human_reviewed"
+  }
+}

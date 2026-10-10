@@ -1,0 +1,64 @@
+{
+  "$defs": {
+    "ApiError": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "validation_error",
+            "not_found",
+            "provider_timeout",
+            "simulation_failed",
+            "internal_error"
+          ],
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "details": {
+          "additionalProperties": true,
+          "title": "Details",
+          "type": "object"
+        },
+        "requestId": {
+          "title": "Requestid",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "requestId"
+      ],
+      "title": "ApiError",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "requestId": {
+      "title": "Requestid",
+      "type": "string"
+    },
+    "error": {
+      "$ref": "#/$defs/ApiError"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "requestId",
+    "error"
+  ],
+  "title": "ApiFailure",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/api_failure_v1.schema.json"
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Causora Day 1 synthetic historical weekly-demand snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["dataVersion", "sourceFile", "sourceSha256", "provenance", "weekCount", "totalUnits", "meanWeeklyUnits", "lockedForecastUnits24m", "lockedForecastProvenance", "observations"],
+  "properties": {
+    "dataVersion": {"const": "demo-2026.10.04-v4"},
+    "sourceFile": {"const": "public/demo/historical_demand.csv"},
+    "sourceSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "provenance": {"const": "synthetic_day1_fixture"},
+    "weekCount": {"const": 104},
+    "totalUnits": {"type": "integer", "minimum": 0},
+    "meanWeeklyUnits": {"type": "number", "minimum": 0},
+    "lockedForecastUnits24m": {"type": "integer", "minimum": 0},
+    "lockedForecastProvenance": {"type": "string", "minLength": 1},
+    "observations": {
+      "type": "array", "minItems": 104, "maxItems": 104,
+      "items": {"type": "object", "additionalProperties": false,
+        "required": ["weekStart", "unitsDemanded", "provenance"],
+        "properties": {
+          "weekStart": {"type": "string", "format": "date"},
+          "unitsDemanded": {"type": "integer", "minimum": 0},
+          "provenance": {"const": "synthetic_day1_fixture"}
+        }}
+    }
+  }
+}

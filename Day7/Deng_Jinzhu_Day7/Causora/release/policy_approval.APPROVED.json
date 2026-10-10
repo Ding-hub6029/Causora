@@ -1,0 +1,58 @@
+{
+  "kind": "causora.day3.policy-approval-record.v1",
+  "status": "approved",
+  "approvalRecordId": "causora-team-policy-2026-10-08",
+  "policyConfigurationId": "causora-model-policy-candidate-v1",
+  "policySha256": "fc524acc87bfd86f62f3eb1d9594b5a605f343c71d28e27bdc7d5d1c9f11faba",
+  "confirmedTopics": [
+    "renewal_date_opening_inventory_bridge",
+    "selling_price",
+    "lost_contribution_margin",
+    "holding_cost",
+    "safety_stock",
+    "target_stock",
+    "replenishment_and_minimum_purchase_schedule",
+    "purchase_and_cash_recognition_timing",
+    "supplier_b_lead_distribution",
+    "lead_stress_scope",
+    "stockout_probability_definition",
+    "service_level_definition",
+    "cash_p90_method_and_lines",
+    "money_and_mean_purchase_rounding",
+    "demand_bootstrap"
+  ],
+  "approvals": [
+    {
+      "role": "simulation_owner",
+      "actorId": "Deng Jinzhu",
+      "decision": "approved",
+      "recordedAtUtc": "2026-10-08T12:22:44.034908+00:00",
+      "recordedBy": "Codex",
+      "authorizedRepresentative": "Ding Xiangfeng",
+      "confirmationMethod": "PROJECT_LEAD_ATTESTATION_OF_OWNER_AUTHORIZATION",
+      "sourceRecord": "TEAM_APPROVAL_SOURCE.json"
+    },
+    {
+      "role": "frontend_owner",
+      "actorId": "Ding Xiangfeng",
+      "decision": "approved",
+      "recordedAtUtc": "2026-10-08T12:22:44.034908+00:00",
+      "recordedBy": "Codex",
+      "authorizedRepresentative": "Ding Xiangfeng",
+      "confirmationMethod": "PROJECT_LEAD_ATTESTATION_OF_OWNER_AUTHORIZATION",
+      "sourceRecord": "TEAM_APPROVAL_SOURCE.json"
+    },
+    {
+      "role": "review_owner",
+      "actorId": "Wang Hao",
+      "decision": "approved",
+      "recordedAtUtc": "2026-10-08T12:22:44.034908+00:00",
+      "recordedBy": "Codex",
+      "authorizedRepresentative": "Ding Xiangfeng",
+      "confirmationMethod": "PROJECT_LEAD_ATTESTATION_OF_OWNER_AUTHORIZATION",
+      "sourceRecord": "TEAM_APPROVAL_SOURCE.json"
+    }
+  ],
+  "authorizationSource": "TEAM_APPROVAL_SOURCE.json",
+  "authorizationSourceSha256": "23148dc8a75a642790cd7bbc5793f7454963d1f24afb1a8c742c080e65154b39"
+}

@@ -1,0 +1,135 @@
+{
+  "$defs": {
+    "EvidenceRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "sourceFile": {
+          "title": "Sourcefile",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        },
+        "locatorBbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Locatorbbox"
+        },
+        "extractedField": {
+          "title": "Extractedfield",
+          "type": "string"
+        },
+        "extractedValue": {
+          "title": "Extractedvalue",
+          "type": "string"
+        },
+        "matchMethod": {
+          "enum": [
+            "exact",
+            "fuzzy"
+          ],
+          "title": "Matchmethod",
+          "type": "string"
+        },
+        "matchScore": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Matchscore",
+          "type": "number"
+        },
+        "quoteMatched": {
+          "title": "Quotematched",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "sourceFile",
+        "page",
+        "quote",
+        "locatorBbox",
+        "extractedField",
+        "extractedValue",
+        "matchMethod",
+        "matchScore",
+        "quoteMatched"
+      ],
+      "title": "EvidenceRecord",
+      "type": "object"
+    },
+    "EvidenceResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "$ref": "#/$defs/EvidenceRecord"
+        }
+      },
+      "required": [
+        "evidence"
+      ],
+      "title": "EvidenceResponse",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "dataVersion": {
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "requestId": {
+      "title": "Requestid",
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/$defs/EvidenceResponse"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "requestId",
+    "data"
+  ],
+  "title": "ApiSuccess[EvidenceResponse]",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/evidence_success_v1.schema.json"
+}

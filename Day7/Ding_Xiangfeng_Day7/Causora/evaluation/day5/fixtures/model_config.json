@@ -1,0 +1,6 @@
+{
+  "schema": "causora.day5.model-config.v1",
+  "method": "causora_pipeline",
+  "modelId": "NO_PROVIDER_TEST_ONLY",
+  "parameters": {"temperature": 0, "maxOutputTokens": 1024}
+}
