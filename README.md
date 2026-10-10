@@ -30,3 +30,13 @@ The user-supplied packages were recursively expanded into source, documents and 
 [Imported file hashes](DELIVERY_FILES.json) preserve the original extracted bytes. [Original archive hashes](DELIVERY_ARCHIVES.json) retain provenance only. Existing Day5/Causora remains the production deployment root and is not overwritten. This upload does not establish final video or competition submission as complete.
 
 Live: https://causora-one.vercel.app/
+
+## Day7 Expanded Deliveries
+
+The three final Day7 packages were extracted on October 10, 2026. This directory contains browsable files rather than ZIP archives. Each report uses plain titles without Markdown heading markers.
+
+- [Ding_Xiangfeng_Day7](Day7/Ding_Xiangfeng_Day7)
+- [Deng_Jinzhu_Day7](Day7/Deng_Jinzhu_Day7)
+- [Wang_Hao_Day7](Day7/Wang_Hao_Day7)
+
+Each package includes the integrated source snapshot, individual report, public links, submission copy, separate slides and speeches, and historical verification evidence. The team-selected final video is https://www.youtube.com/watch?v=p5eHs-XzPVk. The video binary is supplied separately and is not duplicated in the repository. Actual competition submission is not asserted.
