@@ -1,11 +1,11 @@
 {
-  "video_url": "https://www.youtube.com/watch?v=p5eHs-XzPVk",
-  "original_filename": "a30ad4f14369e0195c87cec7fb4232ed_raw.mp4",
-  "bytes": 811022490,
-  "sha256": "659ca93e6f5e1e8286fc9a0e1a4213303b83f78a1016423df9f30963a56b0aa0",
-  "duration_seconds": 957.52127,
-  "resolution": "3840x2160",
+  "video_url": "https://youtu.be/3CfcZoZjfAs?is=ND5gm1v3V_9uuhLr",
+  "original_filename": "Causora_Day7_Final_Under_4_Minutes.mp4",
+  "bytes": 16016521,
+  "sha256": "a4a4478714298b56c7d7cbdc3b127f04e9d178eaff8d4ae37e95bf1d40d07c41",
+  "duration_seconds": 234.961882,
+  "resolution": "1920x1080",
   "team_selected_final": true,
   "binary_included": false,
-  "delivery": "Public video link. Original video remains separate."
+  "delivery": "Final short demo, approximately four minutes. Public video link. Video binary remains separate."
 }

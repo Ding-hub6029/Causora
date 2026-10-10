@@ -4,7 +4,7 @@ Package focus: Simulation and AI verification handoff.
 
 Numerical replay, historical provider receipts, validated run evidence and regression records.
 
-The team selected the supplied video as its final demo on 2026-10-10. The final video is supplied by public link instead of repeating an 811 MB file in each ZIP.
+The team selected the short video as its final demo on 2026-10-10. Its runtime is approximately four minutes (3 minutes 54.96 seconds). The final video is supplied by public link and is not duplicated in this package.
 
 ## Contents
 

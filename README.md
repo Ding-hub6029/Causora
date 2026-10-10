@@ -39,4 +39,4 @@ The three final Day7 packages were extracted on October 10, 2026. This directory
 - [Deng_Jinzhu_Day7](Day7/Deng_Jinzhu_Day7)
 - [Wang_Hao_Day7](Day7/Wang_Hao_Day7)
 
-Each package includes the integrated source snapshot, individual report, public links, submission copy, separate slides and speeches, and historical verification evidence. The team-selected final video is https://www.youtube.com/watch?v=p5eHs-XzPVk. The video binary is supplied separately and is not duplicated in the repository. Actual competition submission is not asserted.
+Each package includes the integrated source snapshot, individual report, public links, submission copy, separate slides and speeches, and historical verification evidence. The team-selected final video is https://youtu.be/3CfcZoZjfAs?is=ND5gm1v3V_9uuhLr (approximately four minutes, 3 minutes 54.96 seconds). The video binary is supplied separately and is not duplicated in the repository. Actual competition submission is not asserted.

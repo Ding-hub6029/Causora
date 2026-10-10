@@ -8,7 +8,7 @@ Focus: Demo and presentation handoff.
 
 Final video link, clean algorithm slides and separate speaking scripts.
 
-The supplied demo video is the team-selected final version. All three packages carry the same integrated source, public links and submission description to keep the handoff consistent. Slides and scripts are separate files.
+The approximately four-minute short demo (3 minutes 54.96 seconds) is the team-selected final version. All three packages carry the same integrated source, public links and submission description to keep the handoff consistent. Slides and scripts are separate files.
 
 Evidence boundary
 
@@ -18,4 +18,4 @@ Only Wang Hao's recorded user feedback is included. No additional participant te
 
 Submission status
 
-Website, GitHub and final video links are supplied. Actual competition submission and member-account confirmation remain actions outside this ZIP. Competition-specific video duration limits have not been independently confirmed here.
+Website, GitHub and final video links are supplied. Actual competition submission and member-account confirmation remain actions outside this ZIP. The short demo is below the four-minute maximum specified by the team.

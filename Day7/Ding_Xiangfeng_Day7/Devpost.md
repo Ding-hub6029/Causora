@@ -37,6 +37,6 @@ Next.js, React, TypeScript, Python, FastAPI, NumPy, OpenRouter, OpenAI GPT-5 min
 Live: https://causora-one.vercel.app/
 GitHub: https://github.com/Ding-hub6029/Causora
 Team display names to verify against actual accounts: Ding Xiangfeng / Deng Jinzhu / Wang Hao.
-Demo video: https://www.youtube.com/watch?v=p5eHs-XzPVk
+Demo video: https://youtu.be/3CfcZoZjfAs?is=ND5gm1v3V_9uuhLr
 
-The team selected this video as the final demo on 2026-10-10. This text is ready-to-copy submission material. Actual Devpost submission and member-account confirmation are not recorded in this package.
+The team selected this approximately four-minute short video (3 minutes 54.96 seconds) as the final demo on 2026-10-10. This text is ready-to-copy submission material. Actual Devpost submission and member-account confirmation are not recorded in this package.
