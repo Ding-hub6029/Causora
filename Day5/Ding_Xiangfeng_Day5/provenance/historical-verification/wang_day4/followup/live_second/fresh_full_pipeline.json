@@ -1,0 +1,269 @@
+{
+  "kind": "CAUSORA_DAY4_UNREVIEWED_PROVIDER_DEVELOPMENT_ONLY",
+  "decisionReady": false,
+  "executionContext": {
+    "mode": "unreviewed_development_only",
+    "banner": "UNREVIEWED — DEVELOPMENT ONLY. NOT HUMAN-REVIEWED, NOT POLICY-APPROVED, NOT CONTRACT-RELEASED, NOT DECISION-READY.",
+    "humanReviewStatus": "not_reviewed_development_only",
+    "policyStatus": "unapproved_development_only",
+    "contractReleaseStatus": "not_released_development_only",
+    "decisionReady": false
+  },
+  "draft": {
+    "scenarioId": "demand-drop",
+    "agentOutputs": [
+      {
+        "role": "CFO",
+        "accent": "emerald",
+        "focus": "Finance and cash",
+        "headline": "Selected action reduces supplier exposure and shifts risk profile",
+        "body": "Terminate supplier A to stop ongoing exposure and accept exit costs as modeled. Inspect current cash tail risk {{cash_outflow_p90}} before final execution. Consider modeled impact on long term procurement cost {{delta_tco}} as a planning input.",
+        "metrics": [
+          "cash_outflow_p90",
+          "delta_tco"
+        ],
+        "status": "Aligned"
+      },
+      {
+        "role": "COO",
+        "accent": "blue",
+        "focus": "Operations and continuity",
+        "headline": "Evaluate supplier exit risks and service impacts",
+        "body": "Assess impact on service reliability and supply resilience after termination. Inspect stockout exposure {{stockout_probability}} for the selected action before committing. Review contingency plans for rapid sourcing and inventory adjustments. Confirm contractual exit costs and operational readiness for the change. Model renewal as a conditional branch only when testing retained alternatives.",
+        "metrics": [
+          "stockout_probability"
+        ],
+        "status": "Watch"
+      },
+      {
+        "role": "Risk",
+        "accent": "amber",
+        "focus": "Contract and downside",
+        "headline": "Supplier exit raises delivery and contract risks",
+        "body": "Terminating supplier A risks severe supply loss unless replacement capacity is assured. Inspect residual cash tail risk {{cash_outflow_p90}} and the very high stockout likelihood {{stockout_probability}} before finalizing termination. Continuing or rebalancing each keep different contractual exposures and renewal conditionalities that must be modeled separately.",
+        "metrics": [
+          "cash_outflow_p90",
+          "stockout_probability"
+        ],
+        "status": "Watch"
+      }
+    ],
+    "criticIssues": [
+      {
+        "severity": "High",
+        "headline": "Cross functional sourcing and forecast mismatch",
+        "body": "Locked commitment for supplier A remains above the rolling forecast benchmark and interacts with operational and treasury choices to create a joint vulnerability across functions. Procurement cannot reduce the locked floor without incurring exit costs, operations faces sharply increased delivery risk if replacement supply is delayed, and finance must carry the sustained cash tail while renewal terms stay binding. This linkage concentrates execution, service, and cash pressure into a single decision point that requires coordinated mitigation across roles.",
+        "evidenceIds": [
+          "EV-024",
+          "EV-019",
+          "EV-027"
+        ],
+        "mechanism": {
+          "scenarioId": "demand-drop",
+          "forecastBasis": "locked-at-renewal",
+          "lockedForecastUnits24m": 26000,
+          "minPurchaseUnitsA": 15600,
+          "scenarioDemandUnits24m": 22100,
+          "committedExcessUnits": 2340,
+          "holdingCostDeltaUsd": {
+            "D0": 0,
+            "D1": 9655,
+            "D2": 252
+          }
+        }
+      },
+      {
+        "severity": "Medium",
+        "headline": "Contingency sourcing plans are underspecified",
+        "body": "Operational guidance lacks a firm staged sourcing and inventory playbook to fill the gap if supplier A is reduced or removed. The roles note stockout exposure but do not specify trigger conditions for rapid buys, supplier qualification steps, or interim inventory targets, leaving a gap between risk recognition and executable mitigation.",
+        "evidenceIds": [
+          "EV-014",
+          "EV-020"
+        ],
+        "mechanism": {
+          "scenarioId": "demand-drop",
+          "forecastBasis": "locked-at-renewal",
+          "lockedForecastUnits24m": 26000,
+          "minPurchaseUnitsA": 15600,
+          "scenarioDemandUnits24m": 22100,
+          "committedExcessUnits": 2340,
+          "holdingCostDeltaUsd": {
+            "D0": 0,
+            "D1": 9655,
+            "D2": 252
+          }
+        }
+      },
+      {
+        "severity": "Medium",
+        "headline": "Cost versus service tradeoff across renewal enforcement and exit economics",
+        "body": "Finance emphasis on minimizing expected total cost conflicts with operations emphasis on preserving service continuity when renewal terms and minimum purchase share lock purchasing. The simulated exit carries a modeled termination cost that reduces cash tail but raises service exposure, producing divergent preferred actions without an explicit joint decision rule to reconcile the tradeoff.",
+        "evidenceIds": [
+          "EV-021",
+          "EV-027"
+        ],
+        "mechanism": {
+          "scenarioId": "demand-drop",
+          "forecastBasis": "locked-at-renewal",
+          "lockedForecastUnits24m": 26000,
+          "minPurchaseUnitsA": 15600,
+          "scenarioDemandUnits24m": 22100,
+          "committedExcessUnits": 2340,
+          "holdingCostDeltaUsd": {
+            "D0": 0,
+            "D1": 9655,
+            "D2": 252
+          }
+        }
+      }
+    ],
+    "brief": {
+      "scenarioId": "demand-drop",
+      "status": "selected",
+      "recommendedOptionId": "D2",
+      "recommendation": "Terminate supplier A and shift procurement to the alternative supplier while accounting for the fixed contract exit fee.",
+      "rationale": "Terminating supplier A reduces concentration and closes the locked commitment exposure, but requires absorbing the fixed contract exit fee and ensuring replacement supply and operational readiness to preserve service.",
+      "metricRefs": [
+        "delta_tco",
+        "stockout_probability",
+        "cash_outflow_p90"
+      ],
+      "formula": "TCO = purchase + holding + stockout loss + renewal premium + termination fee",
+      "formulaVersion": "tco-v1",
+      "formulaNotes": [
+        "All costs and risk measures originate from this verified simulation; cash tail risk is separate from expected total cost."
+      ],
+      "guardrail": "All displayed claims passed field-bound numeric and evidence validation."
+    },
+    "numericGuardrail": {
+      "passed": true,
+      "rejectedClaims": []
+    }
+  },
+  "audit": {
+    "simulationId": "sim-dev-unreviewed-a4f7ff5684fb077daa27",
+    "dataVersion": "demo-2026.10.04-v4--UNREVIEWED_DEV_ONLY",
+    "scenarioId": "demand-drop",
+    "formulaVersion": "tco-v1",
+    "simulationRequestId": "sim-wang-day4-changed-lead",
+    "boardroomRequestId": "br-wang-day4-fresh-followup-second",
+    "inputSha256": "de971bc68e26f67505bec6a2a8702733d752abeb2e1f0ea157c2fc85c565f17e",
+    "numericOrigin": "CURRENT_SIMULATION_AND_VETTED_EVIDENCE",
+    "events": [
+      {
+        "stage": "CFO",
+        "attempt": 1,
+        "model": "gpt-5-mini",
+        "family": "openai-gpt",
+        "startedOffsetSeconds": 0.50871,
+        "configuredTimeoutSeconds": 10.0,
+        "effectiveTimeoutSeconds": 10.0,
+        "reservedAfterSeconds": 0.0,
+        "status": "returned",
+        "elapsedSeconds": 3.54824
+      },
+      {
+        "stage": "COO",
+        "attempt": 1,
+        "model": "gpt-5-mini",
+        "family": "openai-gpt",
+        "startedOffsetSeconds": 0.95362,
+        "configuredTimeoutSeconds": 10.0,
+        "effectiveTimeoutSeconds": 10.0,
+        "reservedAfterSeconds": 0.0,
+        "status": "returned",
+        "elapsedSeconds": 2.7615
+      },
+      {
+        "stage": "Risk",
+        "attempt": 1,
+        "model": "gpt-5-mini",
+        "family": "openai-gpt",
+        "startedOffsetSeconds": 0.95625,
+        "configuredTimeoutSeconds": 10.0,
+        "effectiveTimeoutSeconds": 10.0,
+        "reservedAfterSeconds": 0.0,
+        "status": "returned",
+        "elapsedSeconds": 2.67355
+      },
+      {
+        "stage": "Critic",
+        "attempt": 1,
+        "model": "gemini-3.1-pro-preview",
+        "family": "google-gemini",
+        "startedOffsetSeconds": 4.154,
+        "configuredTimeoutSeconds": 15.0,
+        "effectiveTimeoutSeconds": 15.0,
+        "reservedAfterSeconds": 11.0,
+        "status": "provider_bad_request",
+        "elapsedSeconds": 2.62001
+      },
+      {
+        "stage": "Critic",
+        "attempt": 1,
+        "model": "gpt-5-mini",
+        "family": "openai-gpt",
+        "startedOffsetSeconds": 6.77404,
+        "configuredTimeoutSeconds": 15.0,
+        "effectiveTimeoutSeconds": 15.0,
+        "reservedAfterSeconds": 6.0,
+        "status": "returned",
+        "elapsedSeconds": 4.56762
+      },
+      {
+        "stage": "Synthesizer",
+        "attempt": 1,
+        "model": "gpt-5-mini",
+        "family": "openai-gpt",
+        "startedOffsetSeconds": 11.34358,
+        "configuredTimeoutSeconds": 10.0,
+        "effectiveTimeoutSeconds": 10.0,
+        "reservedAfterSeconds": 1.0,
+        "status": "returned",
+        "elapsedSeconds": 2.97781
+      }
+    ],
+    "formalTransport": false,
+    "timeouts": {
+      "totalSeconds": 40.0,
+      "stageSeconds": 10.0,
+      "criticSeconds": 15.0,
+      "frontendSeconds": 45,
+      "sdkMatchesEffectiveDeadline": true
+    },
+    "providerCalls": 6,
+    "providerMode": "same-family-fallback",
+    "criticStatus": "complete",
+    "fallbackReason": "provider_bad_request",
+    "synthesisChallenge": null,
+    "challenges": [
+      "Operations needs a concrete staged sourcing and interim inventory playbook to prevent service disruption after termination.",
+      "Procurement and finance must coordinate to reconcile cost and service priorities under the renewal and exit economics.",
+      "Risk and operations must validate replacement supplier qualification and lead times before executing termination."
+    ],
+    "businessConsistency": {
+      "selectedAction": "terminate_supplier_a",
+      "cashCeilingEnforced": true,
+      "checkedKnownContradictions": true,
+      "proposedAction": "terminate_supplier_a"
+    },
+    "elapsedSeconds": 14.4279,
+    "outputSha256": "2b0ebabee74ea41c093c1388bb6d94c684213ae747d7395794904ba59072a1d0"
+  },
+  "warning": "Actual model calls on development inputs are not formal team E2E approval.",
+  "simulationUnchanged": true,
+  "allModelStagesFresh": true,
+  "wallSeconds": 14.432827685002849,
+  "verifiedFinalCodeSha256": {
+    "agents/wanghao-day3/agent_day4/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "agents/wanghao-day3/agent_day4/business.py": "cad89fa8153335bf68c1c6aaafefcf715465d2d8e1bc2f90ca30b52538cbf644",
+    "agents/wanghao-day3/agent_day4/cli.py": "543b4cdef7d7917c22b2f5df7a256c444299af5fec81ece2a2b5c0ba8f33e6b1",
+    "agents/wanghao-day3/agent_day4/eval_interface.py": "e872aef436779e92812429a681d74363adae3b3f47ea2775cd416338383e320e",
+    "agents/wanghao-day3/agent_day4/evidence.py": "d8647599b13b2db984a77f9899895eb01b338ac84f8d11fa983f215e98b27c09",
+    "agents/wanghao-day3/agent_day4/inputs.py": "47db7f61fc55fa91e9fc843ca2a6514658b551593b79b5a6edbede29e181dc30",
+    "agents/wanghao-day3/agent_day4/numeric.py": "efcd45b4b394a07489845762e59b18ff717a48936b2df98181c546926d690c47",
+    "agents/wanghao-day3/agent_day4/pipeline.py": "b56147c578fb059718cbaf740205e5da85bbf4eb54bd19c88116428ea41ffc3e",
+    "agents/wanghao-day3/agent_day4/provider.py": "195dfcbc8912ae5c14bf7371dbf896cd7cd53846b5f0fffdd947d1e875d8dbb4",
+    "agents/wanghao-day3/agent_day4/wire.py": "a974b7a7fafbd785ae2a86e3e69c21779c1576578b2bc432117c11299477b132"
+  }
+}

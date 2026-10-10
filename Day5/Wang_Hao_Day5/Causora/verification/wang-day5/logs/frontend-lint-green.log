@@ -1,0 +1,6 @@
+
+> causora-day5-ding@0.5.0 lint
+> eslint . --max-warnings=0
+
+
+EXIT_STATUS=0

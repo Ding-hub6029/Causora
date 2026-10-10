@@ -1,0 +1,466 @@
+{
+  "kind": "OPENROUTER_USD_ONE_RESERVATION_JOURNAL",
+  "entries": [
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "CFO",
+      "status": "returned",
+      "reservedUsd": "0.00715750",
+      "reservationId": "ec541868f6284b1d8d1507be00ce6a0e",
+      "reservedAtUtc": "2026-10-09T20:18:06.582504Z",
+      "finalizedAtUtc": "2026-10-09T20:18:13.157650Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577091-PDyf8UzBzE9xO5IQdRle",
+        "tokenUsage": {
+          "cost": 0.00073125,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00073125,
+            "upstream_inference_prompt_cost": 0.00044125,
+            "upstream_inference_completions_cost": 0.00029
+          },
+          "total_tokens": 1910,
+          "prompt_tokens": 1765,
+          "completion_tokens": 145,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "82026c509ae526a823c13f034a411a1479d4dce19961046418f51e75007ad74f",
+        "usageCostUsd": "0.00073125",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.00073125",
+      "maxInputTokensBound": 12246
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "COO",
+      "status": "returned",
+      "reservedUsd": "0.00713150",
+      "reservationId": "ed670003b8b74fa98f944e39ff5cba03",
+      "reservedAtUtc": "2026-10-09T20:18:10.882084Z",
+      "finalizedAtUtc": "2026-10-09T20:18:12.638089Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577091-5DxOqP5jFAeL69Wysfbz",
+        "tokenUsage": {
+          "cost": 0.00070375,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00070375,
+            "upstream_inference_prompt_cost": 0.00042775,
+            "upstream_inference_completions_cost": 0.000276
+          },
+          "total_tokens": 1849,
+          "prompt_tokens": 1711,
+          "completion_tokens": 138,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "e70d65d5f06cbd22c19c17de8301e338384a6baadb62bb7a32cdeb8f71d5bdee",
+        "usageCostUsd": "0.00070375",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.00070375",
+      "maxInputTokensBound": 12142
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "Risk",
+      "status": "returned",
+      "reservedUsd": "0.00738975",
+      "reservationId": "7d13d2b5acad4dffad485fb525c92638",
+      "reservedAtUtc": "2026-10-09T20:18:10.996134Z",
+      "finalizedAtUtc": "2026-10-09T20:18:13.507749Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577091-2dajQ8aDKjwavtHLbRag",
+        "tokenUsage": {
+          "cost": 0.00092175,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00092175,
+            "upstream_inference_prompt_cost": 0.00049575,
+            "upstream_inference_completions_cost": 0.000426
+          },
+          "total_tokens": 2196,
+          "prompt_tokens": 1983,
+          "completion_tokens": 213,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "703cbbf45aac1a54190b1adaada74e220c321ce6098e0cead405d59d8bf492c8",
+        "usageCostUsd": "0.00092175",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.00092175",
+      "maxInputTokensBound": 13175
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "stage": "Critic",
+      "status": "returned",
+      "reservedUsd": "0.088140",
+      "reservationId": "cacb3a25224c4b09acb8fe587bc092a8",
+      "reservedAtUtc": "2026-10-09T20:18:14.179047Z",
+      "finalizedAtUtc": "2026-10-09T20:18:18.348706Z",
+      "maxOutputTokens": 4096,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577094-zfOWu4jMnvzj6IwI0wEP",
+        "tokenUsage": {
+          "cost": 0.01018,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.01018,
+            "upstream_inference_prompt_cost": 0.006856,
+            "upstream_inference_completions_cost": 0.003324
+          },
+          "total_tokens": 3705,
+          "prompt_tokens": 3428,
+          "completion_tokens": 277,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "d91b0aeb5ecd4157ec9752e6283689c4cbecde1c54d63a59ce54e3b07c4a0c58",
+        "usageCostUsd": "0.01018",
+        "returnedModel": "google/gemini-3.1-pro-preview",
+        "providerReturned": "Google"
+      },
+      "verifiedCostUsd": "0.01018",
+      "maxInputTokensBound": 19494
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "Synthesizer",
+      "status": "returned",
+      "reservedUsd": "0.00812475",
+      "reservationId": "88e472c1df524212ae00677958711965",
+      "reservedAtUtc": "2026-10-09T20:18:18.501880Z",
+      "finalizedAtUtc": "2026-10-09T20:18:20.832656Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577098-Mf43W0JJwc2kHIme8dBF",
+        "tokenUsage": {
+          "cost": 0.00112025,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00112025,
+            "upstream_inference_prompt_cost": 0.00067025,
+            "upstream_inference_completions_cost": 0.00045
+          },
+          "total_tokens": 2906,
+          "prompt_tokens": 2681,
+          "completion_tokens": 225,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "bef0fd8969ae78c543aa08b4a808f472e6739f14082be1563d83157230a9e5ac",
+        "usageCostUsd": "0.00112025",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.00112025",
+      "maxInputTokensBound": 16115
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "CFO",
+      "status": "returned",
+      "reservedUsd": "0.00715800",
+      "reservationId": "dc60e8b6a0744b35b96511feccd7a229",
+      "reservedAtUtc": "2026-10-09T20:22:25.997445Z",
+      "finalizedAtUtc": "2026-10-09T20:22:28.597935Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577346-PmcNbDuZpzy3vKvL4BZh",
+        "tokenUsage": {
+          "cost": 0.0007415,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0007415,
+            "upstream_inference_prompt_cost": 0.0004415,
+            "upstream_inference_completions_cost": 0.0003
+          },
+          "total_tokens": 1916,
+          "prompt_tokens": 1766,
+          "completion_tokens": 150,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "8414d410e105c8c4a2a676137349a2184022d250527696001ab816896600b126",
+        "usageCostUsd": "0.0007415",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.0007415",
+      "maxInputTokensBound": 12248
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "COO",
+      "status": "returned",
+      "reservedUsd": "0.00712800",
+      "reservationId": "76f58dd51719495c87ad41df13568013",
+      "reservedAtUtc": "2026-10-09T20:22:26.095794Z",
+      "finalizedAtUtc": "2026-10-09T20:22:28.007408Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577346-j7gcNAux0cbjkSCnZlcE",
+        "tokenUsage": {
+          "cost": 0.000759,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.000759,
+            "upstream_inference_prompt_cost": 0.000427,
+            "upstream_inference_completions_cost": 0.000332
+          },
+          "total_tokens": 1874,
+          "prompt_tokens": 1708,
+          "completion_tokens": 166,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "2bb00fb80d9639b1113292a479d237ca00a0109357fe3b4998ff7008a247be0f",
+        "usageCostUsd": "0.000759",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.000759",
+      "maxInputTokensBound": 12128
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "Risk",
+      "status": "returned",
+      "reservedUsd": "0.00739000",
+      "reservationId": "9ef5fc607f9d44c39ca6108348ac9235",
+      "reservedAtUtc": "2026-10-09T20:22:26.205140Z",
+      "finalizedAtUtc": "2026-10-09T20:22:28.203189Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577346-7Gb94sZO5lvh7VE8luOZ",
+        "tokenUsage": {
+          "cost": 0.00082825,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.00082825,
+            "upstream_inference_prompt_cost": 0.00049625,
+            "upstream_inference_completions_cost": 0.000332
+          },
+          "total_tokens": 2151,
+          "prompt_tokens": 1985,
+          "completion_tokens": 166,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "a4279f978bdcfe00d92f275f626b30b7b9e66cd0f310e255a52c03f4f5631da5",
+        "usageCostUsd": "0.00082825",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.00082825",
+      "maxInputTokensBound": 13176
+    },
+    {
+      "model": "google/gemini-3.1-pro-preview",
+      "stage": "Critic",
+      "status": "returned",
+      "reservedUsd": "0.088174",
+      "reservationId": "6678836be37b4a1480a01dfa45c1407a",
+      "reservedAtUtc": "2026-10-09T20:22:29.282621Z",
+      "finalizedAtUtc": "2026-10-09T20:22:33.315609Z",
+      "maxOutputTokens": 4096,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577349-09c0QfETTIhWtmNNavZ6",
+        "tokenUsage": {
+          "cost": 0.009742,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.009742,
+            "upstream_inference_prompt_cost": 0.006838,
+            "upstream_inference_completions_cost": 0.002904
+          },
+          "total_tokens": 3661,
+          "prompt_tokens": 3419,
+          "completion_tokens": 242,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "d19497883e68e930e790f751e3a40ad08765214a6703c698994005bd461b4ca0",
+        "usageCostUsd": "0.009742",
+        "returnedModel": "google/gemini-3.1-pro-preview",
+        "providerReturned": "Google"
+      },
+      "verifiedCostUsd": "0.009742",
+      "maxInputTokensBound": 19511
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "stage": "Synthesizer",
+      "status": "returned",
+      "reservedUsd": "0.00807300",
+      "reservationId": "8b19788e21bc4af5820f59f1c166a8da",
+      "reservedAtUtc": "2026-10-09T20:22:33.422527Z",
+      "finalizedAtUtc": "2026-10-09T20:22:35.980115Z",
+      "maxOutputTokens": 2048,
+      "providerReceipt": {
+        "status": "returned",
+        "requestId": "gen-1791577353-CFqb304nqf60vClLyZNy",
+        "tokenUsage": {
+          "cost": 0.0011155,
+          "is_byok": false,
+          "cost_details": {
+            "upstream_inference_cost": 0.0011155,
+            "upstream_inference_prompt_cost": 0.0006615,
+            "upstream_inference_completions_cost": 0.000454
+          },
+          "total_tokens": 2873,
+          "prompt_tokens": 2646,
+          "completion_tokens": 227,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "video_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "reasoning_tokens": 0,
+            "accepted_prediction_tokens": null,
+            "rejected_prediction_tokens": null
+          }
+        },
+        "outputSha256": "1ed42bccef8d9334dd51afdc7f85b39a371c76743ac151a071d981f186d37dbf",
+        "usageCostUsd": "0.0011155",
+        "returnedModel": "openai/gpt-5-mini",
+        "providerReturned": "OpenAI"
+      },
+      "verifiedCostUsd": "0.0011155",
+      "maxInputTokensBound": 15908
+    }
+  ],
+  "metadata": {
+    "margin": "0.05",
+    "authorizedUsd": "1.00",
+    "currentCeiling": "0.95",
+    "currentAvailableUsd": "9.531220029"
+  },
+  "authorization": {
+    "scope": "public-day5-20261010",
+    "maxUsd": "1.00",
+    "maxCalls": 30
+  }
+}

@@ -1,0 +1,718 @@
+{
+  "kind": "DAY6_MATH_REPLAY_AND_CAPTURED_GOLDEN_RECONCILIATION",
+  "sameSeedReproducible": true,
+  "crossSeedMaximumStockoutDifferencePercentagePoints": 0.7799999999999974,
+  "crossSeedWithin2pp": true,
+  "runsPerBenchmark": 10000,
+  "publicGoldenRuns": 1000,
+  "goldenSimulationId": "sim-4ff6c803c309c2a34874eee8",
+  "goldenNineCostTotalsReconciled": true,
+  "benchmarkResults": [
+    {
+      "seed": 1042026,
+      "seconds": 0.501780399994459,
+      "matrix": {
+        "baseline": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 365925,
+            "stockoutProbability": 0.918,
+            "serviceLevel": 0.997542520164361,
+            "cashOutflowP90": 369751,
+            "breakdown": {
+              "purchase": 317328,
+              "holding": 3851,
+              "stockoutLoss": 320,
+              "renewalPremium": 44426,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26444,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 348030,
+            "stockoutProbability": 0.0109,
+            "serviceLevel": 0.9999873430691295,
+            "cashOutflowP90": 348720,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3580,
+              "stockoutLoss": 2,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356722,
+            "stockoutProbability": 0.9203,
+            "serviceLevel": 0.9920462364136046,
+            "cashOutflowP90": 361907,
+            "breakdown": {
+              "purchase": 326390,
+              "holding": 4296,
+              "stockoutLoss": 1036,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25904,
+            "tone": "neutral"
+          }
+        ],
+        "demand-drop": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 310726,
+            "stockoutProbability": 0.2725,
+            "serviceLevel": 0.9996984703301512,
+            "cashOutflowP90": 316146,
+            "breakdown": {
+              "purchase": 268980,
+              "holding": 4056,
+              "stockoutLoss": 33,
+              "renewalPremium": 37657,
+              "terminationFee": 0
+            },
+            "unitsFromA": 22415,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 358143,
+            "stockoutProbability": 0.0,
+            "serviceLevel": 1.0,
+            "cashOutflowP90": 358829,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 13695,
+              "stockoutLoss": 0,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 306384,
+            "stockoutProbability": 0.9551,
+            "serviceLevel": 0.9898290571209019,
+            "cashOutflowP90": 312814,
+            "breakdown": {
+              "purchase": 275953,
+              "holding": 4307,
+              "stockoutLoss": 1124,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 21901,
+            "tone": "neutral"
+          }
+        ],
+        "lead-stress": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 361512,
+            "stockoutProbability": 0.8978,
+            "serviceLevel": 0.9970337852730634,
+            "cashOutflowP90": 364931,
+            "breakdown": {
+              "purchase": 313692,
+              "holding": 3517,
+              "stockoutLoss": 386,
+              "renewalPremium": 43917,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26141,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 347635,
+            "stockoutProbability": 0.0058,
+            "serviceLevel": 0.9999964171976632,
+            "cashOutflowP90": 348152,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3187,
+              "stockoutLoss": 0,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356722,
+            "stockoutProbability": 0.9203,
+            "serviceLevel": 0.9920462364136046,
+            "cashOutflowP90": 361907,
+            "breakdown": {
+              "purchase": 326390,
+              "holding": 4296,
+              "stockoutLoss": 1036,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25904,
+            "tone": "neutral"
+          }
+        ]
+      },
+      "matrixSha256": "4a0274354b520c2dcec34eb54ae1edfd679e9e1118c78796eb57f5354d37f892"
+    },
+    {
+      "seed": 1042026,
+      "seconds": 0.49380379999638535,
+      "matrix": {
+        "baseline": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 365925,
+            "stockoutProbability": 0.918,
+            "serviceLevel": 0.997542520164361,
+            "cashOutflowP90": 369751,
+            "breakdown": {
+              "purchase": 317328,
+              "holding": 3851,
+              "stockoutLoss": 320,
+              "renewalPremium": 44426,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26444,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 348030,
+            "stockoutProbability": 0.0109,
+            "serviceLevel": 0.9999873430691295,
+            "cashOutflowP90": 348720,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3580,
+              "stockoutLoss": 2,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356722,
+            "stockoutProbability": 0.9203,
+            "serviceLevel": 0.9920462364136046,
+            "cashOutflowP90": 361907,
+            "breakdown": {
+              "purchase": 326390,
+              "holding": 4296,
+              "stockoutLoss": 1036,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25904,
+            "tone": "neutral"
+          }
+        ],
+        "demand-drop": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 310726,
+            "stockoutProbability": 0.2725,
+            "serviceLevel": 0.9996984703301512,
+            "cashOutflowP90": 316146,
+            "breakdown": {
+              "purchase": 268980,
+              "holding": 4056,
+              "stockoutLoss": 33,
+              "renewalPremium": 37657,
+              "terminationFee": 0
+            },
+            "unitsFromA": 22415,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 358143,
+            "stockoutProbability": 0.0,
+            "serviceLevel": 1.0,
+            "cashOutflowP90": 358829,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 13695,
+              "stockoutLoss": 0,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 306384,
+            "stockoutProbability": 0.9551,
+            "serviceLevel": 0.9898290571209019,
+            "cashOutflowP90": 312814,
+            "breakdown": {
+              "purchase": 275953,
+              "holding": 4307,
+              "stockoutLoss": 1124,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 21901,
+            "tone": "neutral"
+          }
+        ],
+        "lead-stress": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 361512,
+            "stockoutProbability": 0.8978,
+            "serviceLevel": 0.9970337852730634,
+            "cashOutflowP90": 364931,
+            "breakdown": {
+              "purchase": 313692,
+              "holding": 3517,
+              "stockoutLoss": 386,
+              "renewalPremium": 43917,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26141,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 347635,
+            "stockoutProbability": 0.0058,
+            "serviceLevel": 0.9999964171976632,
+            "cashOutflowP90": 348152,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3187,
+              "stockoutLoss": 0,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356722,
+            "stockoutProbability": 0.9203,
+            "serviceLevel": 0.9920462364136046,
+            "cashOutflowP90": 361907,
+            "breakdown": {
+              "purchase": 326390,
+              "holding": 4296,
+              "stockoutLoss": 1036,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25904,
+            "tone": "neutral"
+          }
+        ]
+      },
+      "matrixSha256": "4a0274354b520c2dcec34eb54ae1edfd679e9e1118c78796eb57f5354d37f892"
+    },
+    {
+      "seed": 1042027,
+      "seconds": 0.4932388999732211,
+      "matrix": {
+        "baseline": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 365955,
+            "stockoutProbability": 0.9171,
+            "serviceLevel": 0.9975332586510692,
+            "cashOutflowP90": 369881,
+            "breakdown": {
+              "purchase": 317352,
+              "holding": 3853,
+              "stockoutLoss": 321,
+              "renewalPremium": 44429,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26446,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 348034,
+            "stockoutProbability": 0.0094,
+            "serviceLevel": 0.999990041972223,
+            "cashOutflowP90": 348729,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3585,
+              "stockoutLoss": 1,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356598,
+            "stockoutProbability": 0.9132,
+            "serviceLevel": 0.9920383244511092,
+            "cashOutflowP90": 361914,
+            "breakdown": {
+              "purchase": 326264,
+              "holding": 4297,
+              "stockoutLoss": 1037,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25894,
+            "tone": "neutral"
+          }
+        ],
+        "demand-drop": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 310713,
+            "stockoutProbability": 0.2788,
+            "serviceLevel": 0.9996925094482834,
+            "cashOutflowP90": 316173,
+            "breakdown": {
+              "purchase": 268968,
+              "holding": 4055,
+              "stockoutLoss": 34,
+              "renewalPremium": 37656,
+              "terminationFee": 0
+            },
+            "unitsFromA": 22414,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 358153,
+            "stockoutProbability": 0.0,
+            "serviceLevel": 1.0,
+            "cashOutflowP90": 358834,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 13705,
+              "stockoutLoss": 0,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 306419,
+            "stockoutProbability": 0.9559,
+            "serviceLevel": 0.9898443481696314,
+            "cashOutflowP90": 312883,
+            "breakdown": {
+              "purchase": 275990,
+              "holding": 4306,
+              "stockoutLoss": 1123,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 21904,
+            "tone": "neutral"
+          }
+        ],
+        "lead-stress": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 361527,
+            "stockoutProbability": 0.8963,
+            "serviceLevel": 0.997041924260869,
+            "cashOutflowP90": 364826,
+            "breakdown": {
+              "purchase": 313704,
+              "holding": 3519,
+              "stockoutLoss": 385,
+              "renewalPremium": 43919,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26142,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 347643,
+            "stockoutProbability": 0.0047,
+            "serviceLevel": 0.9999966550550737,
+            "cashOutflowP90": 348154,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3195,
+              "stockoutLoss": 0,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356598,
+            "stockoutProbability": 0.9132,
+            "serviceLevel": 0.9920383244511092,
+            "cashOutflowP90": 361914,
+            "breakdown": {
+              "purchase": 326264,
+              "holding": 4297,
+              "stockoutLoss": 1037,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25894,
+            "tone": "neutral"
+          }
+        ]
+      },
+      "matrixSha256": "f339ecf697350a09a7dc871e38ebbda5880e8e9e86141174a12e001c584e6379"
+    },
+    {
+      "seed": 1042028,
+      "seconds": 0.5119441999995615,
+      "matrix": {
+        "baseline": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 365857,
+            "stockoutProbability": 0.9113,
+            "serviceLevel": 0.9975474987157179,
+            "cashOutflowP90": 369750,
+            "breakdown": {
+              "purchase": 317268,
+              "holding": 3852,
+              "stockoutLoss": 319,
+              "renewalPremium": 44418,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26439,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 348033,
+            "stockoutProbability": 0.0086,
+            "serviceLevel": 0.9999895923255144,
+            "cashOutflowP90": 348730,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3584,
+              "stockoutLoss": 1,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356676,
+            "stockoutProbability": 0.9223,
+            "serviceLevel": 0.9919099264393633,
+            "cashOutflowP90": 361946,
+            "breakdown": {
+              "purchase": 326327,
+              "holding": 4296,
+              "stockoutLoss": 1053,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25899,
+            "tone": "neutral"
+          }
+        ],
+        "demand-drop": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 310646,
+            "stockoutProbability": 0.2803,
+            "serviceLevel": 0.9996921343437132,
+            "cashOutflowP90": 316039,
+            "breakdown": {
+              "purchase": 268908,
+              "holding": 4057,
+              "stockoutLoss": 34,
+              "renewalPremium": 37647,
+              "terminationFee": 0
+            },
+            "unitsFromA": 22409,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 358154,
+            "stockoutProbability": 0.0,
+            "serviceLevel": 1.0,
+            "cashOutflowP90": 358837,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 13706,
+              "stockoutLoss": 0,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 306294,
+            "stockoutProbability": 0.9553,
+            "serviceLevel": 0.9898285405070699,
+            "cashOutflowP90": 312781,
+            "breakdown": {
+              "purchase": 275864,
+              "holding": 4306,
+              "stockoutLoss": 1124,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 21894,
+            "tone": "neutral"
+          }
+        ],
+        "lead-stress": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 361524,
+            "stockoutProbability": 0.896,
+            "serviceLevel": 0.9970636148210769,
+            "cashOutflowP90": 364909,
+            "breakdown": {
+              "purchase": 313704,
+              "holding": 3519,
+              "stockoutLoss": 382,
+              "renewalPremium": 43919,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26142,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 347645,
+            "stockoutProbability": 0.0054,
+            "serviceLevel": 0.9999958330897355,
+            "cashOutflowP90": 348160,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 3196,
+              "stockoutLoss": 1,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 356676,
+            "stockoutProbability": 0.9223,
+            "serviceLevel": 0.9919099264393633,
+            "cashOutflowP90": 361946,
+            "breakdown": {
+              "purchase": 326327,
+              "holding": 4296,
+              "stockoutLoss": 1053,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 25899,
+            "tone": "neutral"
+          }
+        ]
+      },
+      "matrixSha256": "1e9787881761c59c9540d5b971ec9e4d4d8b6db14e8bbb8ee4e7d320fd375641"
+    }
+  ],
+  "limitations": [
+    "Engine previews are mathematical benchmarks, not new reviewed public runs.",
+    "Three selected seeds are a stability check, not a universal probability guarantee.",
+    "Golden snapshot has 1000 trials; do not claim the public site uses 10000 trials.",
+    "Cost sum check is separate from existing oracle/gated-service tests; it does not independently validate every distribution assumption."
+  ]
+}

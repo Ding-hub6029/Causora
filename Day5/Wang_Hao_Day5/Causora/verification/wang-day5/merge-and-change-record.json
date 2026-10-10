@@ -1,0 +1,324 @@
+{
+  "authoritative": "Deng_Jinzhu_Day5.zip/Causora",
+  "referencePolicy": "NO_WHOLE_DIRECTORY_OVERWRITE",
+  "unchangedExistingFileCount": 310,
+  "sourceChanges": [
+    {
+      "path": "DAY5_DATA_AND_BUSINESS_CONTRACT.md",
+      "change": "ADDED",
+      "afterSha256": "4f815be56b91f254bd506674097da85996191a8270997c90569cd3d0dd4cf206"
+    },
+    {
+      "path": "DAY5_EXTERNAL_REQUIREMENTS.md",
+      "change": "ADDED",
+      "afterSha256": "fb855996316411add6c04ac0c57d2729ff97b880e9ddf8d2139c69968d2e7621"
+    },
+    {
+      "path": "DAY5_RUNBOOK.md",
+      "change": "ADDED",
+      "afterSha256": "13d72fb3ebf4e7f7181ab585a2a7635becbabfb377ae0999b560419650aa1481"
+    },
+    {
+      "path": "DAY5_WANG_CHANGELOG.md",
+      "change": "ADDED",
+      "afterSha256": "1a72c0989ba053954da1dec4ea9340ecc076020ce024eaa52005b20da8d7f242"
+    },
+    {
+      "path": "DAY5_WANG_REPORT.md",
+      "change": "ADDED",
+      "afterSha256": "255ab1ac552bd7067f26363b7d67f185e00ee66a960c6e537fb54891a7b338f0"
+    },
+    {
+      "path": "README.md",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "3cae490a563077081ad9605e4a166419bb6cb05686e6c5387bed7833485a8d84",
+      "afterSha256": "ada1d0157ed82927512b3285890fea4964ade00e7625f3252412b8cdcd4836c6"
+    },
+    {
+      "path": "TEAM_DAY5_STATUS.md",
+      "change": "ADDED",
+      "afterSha256": "d2b715df0fb45e70b4af7a04b63faac7d6e57b1c0d9db5dbacbb55da6d3e8886"
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/eval_interface.py",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "e872aef436779e92812429a681d74363adae3b3f47ea2775cd416338383e320e",
+      "afterSha256": "f1ca9cb2bf783ae365b033d0bfb82aa712ac309f349d41c1b181e4325f0761b9"
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/evidence_support.py",
+      "change": "ADDED",
+      "afterSha256": "52433d2be733d18ff5a0a71e7fbdccb060a08e39b1dc305c89f409bd2fb257ef"
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/numeric.py",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "4b3c765db2dba6351c82056f27cc584bae0358ace8a0b6bf1fde115822cb9af6",
+      "afterSha256": "2552e96c213f5a5bdb0f2fe8ef10df22f5b07cd48762f5b17f7f81d374e30530"
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/pipeline.py",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "eada52da94a29b3a4adf7073557186c3873069f7fe0d3c6fe773c071ac773317",
+      "afterSha256": "3baa214e243678acadb4d3e6724ae2b120f3a2ba51fe91498d0046636862139c"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/README.md",
+      "change": "ADDED",
+      "afterSha256": "acf8586e422995a213f7a01aa88c15e91d1903dd9abc6db48b989a97a443420c"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/__init__.py",
+      "change": "ADDED",
+      "afterSha256": "8d8786af3c1003239e2ff8120b4b4807267c98e87aea462126906270741581e8"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/day5_fixtures.py",
+      "change": "ADDED",
+      "afterSha256": "ca647f62da8bffb435fc47f2ef2f04306fbae73cfbf996a2dbb8f05fe0b6332b"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/run_offline_ai_evaluation.py",
+      "change": "ADDED",
+      "afterSha256": "6a921f08201365a0e777562bafae69805086d391b59b62606bfd80509413d450"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/test_day5_budget_portability.py",
+      "change": "ADDED",
+      "afterSha256": "705b9b00748ab8a58ca3d63b7df7205024b58811dc68515fa08b692b08696ce4"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/test_day5_evidence_support.py",
+      "change": "ADDED",
+      "afterSha256": "8542fdfeba39890a67f162e8f0d537a3e35ce7cc708ec5a4ab6d2d07e9f19a6c"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/test_day5_identity_binding.py",
+      "change": "ADDED",
+      "afterSha256": "6ff39ac1f40f66b7ac34c89351d714252e7296e7e68c2bdcad8517c170735de1"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/test_day5_numeric_claims.py",
+      "change": "ADDED",
+      "afterSha256": "c98855269b49facb5e637035436b3dfb13752bebdbc399b872c955ddbc8487cc"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/test_day5_openrouter.py",
+      "change": "ADDED",
+      "afterSha256": "5171ce755f3b2bfd68b08f57546f864e1cceb88314e066f90b4020e10958fc5b"
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/test_day5_pipeline_reliability.py",
+      "change": "ADDED",
+      "afterSha256": "caf051fa90cb16ba8e8f7e7d74e1e31f5ff5f4b3f9fbe5d9cc3607f38bfe405a"
+    },
+    {
+      "path": "backend/backend/app/boardroom_adapter.py",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "df68bf3300ab85be2eb66f7c86ad0d6b54ae9916aa59680944751c7ce62ac2cf",
+      "afterSha256": "633f690b8f72d4b2d276858b523a9112671150b258621599c2fe313b0b914124"
+    },
+    {
+      "path": "backend/backend/artifacts/traces/sim-bd035fd481bba8907eb8aedf.json",
+      "change": "ADDED",
+      "afterSha256": "bcb3d0afe239190d12272c9efc6b659f05a1011b6ebe6d2fd2f769850963c87b"
+    },
+    {
+      "path": "backend/backend/tests/test_day5_launcher_safety.py",
+      "change": "ADDED",
+      "afterSha256": "d90008a5d697a16de0c63d15505a4acdab99b349febe66fe5f8c1be3d117a52c"
+    },
+    {
+      "path": "backend/backend/tests/test_day5_wang_lifecycle.py",
+      "change": "ADDED",
+      "afterSha256": "f6fae437456d474cd2ec846dd3a8fcd7732ec053a7efd69da7c3f7bb4be743c0"
+    },
+    {
+      "path": "evaluation/day5/README.md",
+      "change": "ADDED",
+      "afterSha256": "6f9d954f3c271ce6c9af03629087549eab1c27e39658d29ad170d36c15691c4f"
+    },
+    {
+      "path": "evaluation/day5/WORK_SUMMARY.md",
+      "change": "ADDED",
+      "afterSha256": "00c47b8c2b63adda6345e67aa3b08a7387ee85ea5ecb1602e5056cee0a31e323"
+    },
+    {
+      "path": "evaluation/day5/__init__.py",
+      "change": "ADDED",
+      "afterSha256": "34fb1e0af8114a6ed1555eff1210b8b173eedbf1296edd4db448473af1eca410"
+    },
+    {
+      "path": "evaluation/day5/cli.py",
+      "change": "ADDED",
+      "afterSha256": "7015727c660ec2dcff359214fe2b6d368b5dc498b2525cda56526363f61ca4e3"
+    },
+    {
+      "path": "evaluation/day5/core.py",
+      "change": "ADDED",
+      "afterSha256": "e72b6ab089deb2b4d910a6cda9c46c3391a9038516e58fcc52fdcef48edd2bad"
+    },
+    {
+      "path": "evaluation/day5/fair_answer_schema.json",
+      "change": "ADDED",
+      "afterSha256": "368fff8734f65ac4f47bc5e0e5666a15f9c5a951f3ace9ccfb5627dcdffb97cf"
+    },
+    {
+      "path": "evaluation/day5/fixtures/dev_inputs.jsonl",
+      "change": "ADDED",
+      "afterSha256": "5d0ac6b814af94144231a6541a69fa47f212db6c91432b0860c9a5a30c54649e"
+    },
+    {
+      "path": "evaluation/day5/fixtures/dev_labels.jsonl",
+      "change": "ADDED",
+      "afterSha256": "7cc737123aa5433dd72ace7df2b642063a77cdedfa7d22df2fda9abc0b812ce5"
+    },
+    {
+      "path": "evaluation/day5/fixtures/evidence_registry.json",
+      "change": "ADDED",
+      "afterSha256": "d04af2eacc4fad5ad0ef8ce39a56d66420b8383e4a9112e0e010a0a723fdefb2"
+    },
+    {
+      "path": "evaluation/day5/fixtures/fair_prompt.md",
+      "change": "ADDED",
+      "afterSha256": "3f583e95b9f4606141b534eb702384e65f8e5c74ef4d89df9e23b53b4b8212fe"
+    },
+    {
+      "path": "evaluation/day5/fixtures/model_config.json",
+      "change": "ADDED",
+      "afterSha256": "69547556836347cfec0e18a465636a49d26a3e48959af0d11b14f1d965bbeba5"
+    },
+    {
+      "path": "evaluation/day5/fixtures/source_corpus_identity.json",
+      "change": "ADDED",
+      "afterSha256": "947c20a456c1a8cd9d6ca0f768af83ced9100c58a994277e58b840ffe2bf8247"
+    },
+    {
+      "path": "evaluation/day5/historical/ding_day3_synthetic_layer_c/SHA256SUMS",
+      "change": "ADDED",
+      "afterSha256": "43d3cb0a96c4ad8b401209d5daf94887708429f590164159659baab0aae9fb39"
+    },
+    {
+      "path": "evaluation/day5/historical/ding_day3_synthetic_layer_c/build_fixtures.py",
+      "change": "ADDED",
+      "afterSha256": "7803b928019f9b3957c67c81387118fd29f85942e0daa345fdfd5f68edaf9566"
+    },
+    {
+      "path": "evaluation/day5/historical/ding_day3_synthetic_layer_c/critic_dev.jsonl",
+      "change": "ADDED",
+      "afterSha256": "3caebdb73919a304d63171c36eb19d2d3dd0baba26cc39cb790496407d86c53c"
+    },
+    {
+      "path": "evaluation/day5/historical/ding_day3_synthetic_layer_c/critic_heldout_inputs.jsonl",
+      "change": "ADDED",
+      "afterSha256": "a412d5c3af6b4860aefb61801bcf83ab3c77c8f7e5d4a3808c4c7a1c9545084a"
+    },
+    {
+      "path": "evaluation/day5/historical/ding_day3_synthetic_layer_c/critic_heldout_labels.jsonl",
+      "change": "ADDED",
+      "afterSha256": "06e76cd137eb8f59fa67d623fb379fed4438fbb1e7dd78e7a89fbf8fa6c75e7e"
+    },
+    {
+      "path": "evaluation/day5/tests/test_day5_evaluation.py",
+      "change": "ADDED",
+      "afterSha256": "e479f20f90f953b1a42a0038eb3e5452e6cb4d76f5c1101db8bd7d78d97a9a12"
+    },
+    {
+      "path": "frontend/lib/boardroom-api.ts",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "8ed0b87c191519bbfa1de7c1e1f994876f01e5c0d0f47765dcd29c14d2c90fb6",
+      "afterSha256": "c9f88af1e08dd2af3aea3475c512711700dd875f8639c7c5ae49e53f718f1a15"
+    },
+    {
+      "path": "frontend/lib/evidence-api.ts",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "742184d4d2da4883132282e1ffc7d4fa5580863b0cd27475d5a052d5b8ad8739",
+      "afterSha256": "ee3e53886760fbf7f238aca07a6890bc7566a108bcc3e301691b4d640b541e5e"
+    },
+    {
+      "path": "frontend/package.json",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "55c0aedf162886d038b7e2f1ae1249e159a08cf4faca6f687f9c602a0fb86607",
+      "afterSha256": "50bb88e93b9cde834e326bccb0ff0ce0690ef32992d60296b176d1b5d386e94d"
+    },
+    {
+      "path": "frontend/tests/day4-api.test.mjs",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "7cddc6a2f8951fdce846fa5475cc592064b43f888cd2e8f8636884843baeff28",
+      "afterSha256": "6638e1bf52433b33636f163f2211cfb886f8161bd40e2defeb6007175eef4419"
+    },
+    {
+      "path": "frontend/tests/day5-wang-request-lifecycle.test.mjs",
+      "change": "ADDED",
+      "afterSha256": "e66bdc25cd3a9ceb88087e30ab64c812095af37bf6f632ae7c09a55e607d0a6d"
+    },
+    {
+      "path": "requirements-day5-tested.txt",
+      "change": "ADDED",
+      "afterSha256": "1e5c879d1c0529cbdd324b4b7ab561c4d88a1ddc67435542ac8fa47a49d2b314"
+    },
+    {
+      "path": "scripts/package_day5.py",
+      "change": "ADDED",
+      "afterSha256": "942e9cbf7120b4d42bb191fb9f635f5707a1c3ffa59eab76f9e57401ca7aa813"
+    },
+    {
+      "path": "scripts/setup-windows.ps1",
+      "change": "ADDED",
+      "afterSha256": "fef8d31098ca0239a5f170955b36bdbb2aea9919c188ccc27960fc8848ee96a5"
+    },
+    {
+      "path": "scripts/start-day5.ps1",
+      "change": "ADDED",
+      "afterSha256": "c126310417e792d014066ae1c20178f74ffa688e9fa4ba8505b8c301e1095cd8"
+    },
+    {
+      "path": "scripts/start_day5.py",
+      "change": "ADDED",
+      "afterSha256": "7ec02bbd7eb19708337bd9f66ba16ea969cfe82e221a13551d95cb9cfc07a1cf"
+    },
+    {
+      "path": "scripts/summarize_offline_day5.py",
+      "change": "ADDED",
+      "afterSha256": "cc77090e16b2b634ee5d7ad1878d08b769e5092cc50a8e9c2c913699d1a3bdb6"
+    },
+    {
+      "path": "scripts/test_day5.py",
+      "change": "ADDED",
+      "afterSha256": "58100edad9fac195d5c80de0baa67765fcb8a66fff0c337187a1ca8d47314bea"
+    },
+    {
+      "path": "scripts/verify_day5_local.py",
+      "change": "ADDED",
+      "afterSha256": "6c32d005d41e9d1ba421d5ede065639eca97d05b3cf515d6386c872ff73e2c04"
+    },
+    {
+      "path": "scripts/verify_package.py",
+      "change": "MODIFIED_CURRENT_MAIN",
+      "beforeSha256": "0c087498e579040387746542ce4629e30080306d90cae08a347f1d522f9a7c1a",
+      "afterSha256": "15b50bfb7c59b7e67cd54213ab624f78d0fc506bf21ecf6f8e70d2ff08729caa"
+    }
+  ],
+  "selectiveImports": [
+    {
+      "reference": "Ding_Xiangfeng_Day5/agents/wanghao-day3/tests/test_day4_budget_portability.py",
+      "target": "agents/wanghao-day3/tests_day5/test_day5_budget_portability.py",
+      "reason": "existing offline durable concurrency budget regression",
+      "runtimeMerged": false
+    },
+    {
+      "reference": "Ding_Xiangfeng_Day5/agents/wanghao-day3/tests/test_day4_openrouter.py",
+      "target": "agents/wanghao-day3/tests_day5/test_day5_openrouter.py",
+      "reason": "existing fake transport key/provider audit tests; fixture import adapted",
+      "runtimeMerged": false
+    },
+    {
+      "reference": "Ding_Xiangfeng_Day5/agents/wanghao-day3/agent_day3/evals/*",
+      "target": "evaluation/day5/historical/ding_day3_synthetic_layer_c/*",
+      "reason": "byte-preserved corpus audit only, never runtime or new heldout",
+      "runtimeMerged": false
+    }
+  ],
+  "windowsScripts": "Reimplemented locally; did not import old default budget path selecting a new journal.",
+  "status": "FINAL_SOURCE_HASHES_AFTER_ALL_TESTS"
+}

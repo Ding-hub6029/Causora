@@ -1,0 +1,10 @@
+........................................................................ [ 24%]
+........................................................................ [ 48%]
+........................................................................ [ 73%]
+..sss................................................................... [ 97%]
+......                                                                   [100%]
+=========================== short test summary info ============================
+SKIPPED [1] agent_day3/tests/test_mc_parent_integration.py:89: Original latest backend is required for source-file verification
+SKIPPED [1] agent_day3/tests/test_mc_parent_integration.py:98: Latest original backend verifier required
+SKIPPED [1] agent_day3/tests/test_mc_parent_integration.py:111: Integrated backend is required
+291 passed, 3 skipped in 73.52s (0:01:13)

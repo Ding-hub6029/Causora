@@ -1,0 +1,19 @@
+TEST_FIXTURE_ONLY injection reaches Synthesizer payload: True
+Traceback (most recent call last):
+  File "/home/ubuntu/jobs/job_kANwFy9M/red_injection_probe.py", line 88, in <module>
+    asyncio.run(main())
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/base_events.py", line 687, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/jobs/job_kANwFy9M/red_injection_probe.py", line 85, in main
+    assert INJECTION not in payload_json, 'untrusted option description must never reach model payload'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: untrusted option description must never reach model payload
+
+EXIT_STATUS=

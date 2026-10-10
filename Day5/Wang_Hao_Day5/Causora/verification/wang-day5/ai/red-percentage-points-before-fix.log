@@ -1,0 +1,9 @@
+TEST_FIXTURE_ONLY percentage-point tampering accepted: True
+errors: []
+Traceback (most recent call last):
+  File "/home/ubuntu/jobs/job_kANwFy9M/red_percentage_points_probe.py", line 18, in <module>
+    assert errors, 'a percentage-point display cannot bind a fraction/probability reference'
+           ^^^^^^
+AssertionError: a percentage-point display cannot bind a fraction/probability reference
+
+EXIT_STATUS=1

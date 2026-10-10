@@ -1,0 +1,7 @@
+{
+  "schema": "causora.day5.independent-evidence-registry.v1",
+  "entries": [
+    {"evidenceRef": "ev-a", "claimId": "claim-a", "quote": "known test fact", "supportStatus": "SUPPORTS"},
+    {"evidenceRef": "ev-b", "claimId": "claim-b", "quote": "known test fact", "supportStatus": "SUPPORTS"}
+  ]
+}

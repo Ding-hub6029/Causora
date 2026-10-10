@@ -1,0 +1,170 @@
+{
+  "schema": "causora.day5.legacy-corpus-audit.v1",
+  "legacyStatus": "INELIGIBLE_FOR_NEW_HELDOUT_AND_UNVERIFIED_FOR_HISTORICAL_PERFORMANCE",
+  "reason": [
+    "Generator identifies these as synthetic development inputs / LOCAL_MOCK, not Critic result or oracle.",
+    "Labels are AUTHOR_DRAFT_NEEDS_INDEPENDENT_REVIEW.",
+    "Generator is present and package history cannot prove no prior debugging/exposure; do not reuse 12/30 as new unseen corpus."
+  ],
+  "corpora": {
+    "dev": {
+      "count": 12,
+      "sha256": "3caebdb73919a304d63171c36eb19d2d3dd0baba26cc39cb790496407d86c53c",
+      "ids": [
+        "d001",
+        "d002",
+        "d003",
+        "d004",
+        "d005",
+        "d006",
+        "d007",
+        "d008",
+        "d009",
+        "d010",
+        "d011",
+        "d012"
+      ],
+      "normalizedModelPayloadSha256": [
+        "d5c9cf24d9a358e8b89b3adc87d3f1f30981477cdbaa245ab5f6fba35a2c14d7",
+        "7c1caf176abd7131e662a17cacd9b64a93fc18fc9bde9968f066beeafb0902f0",
+        "0d5b4fad98415383a1ee889df2eec87e258b191856597a87bcfe545bc4cbead9",
+        "a43b5b50eea4294dbdce268c0621956c8205a14c5ac0b5f816a7c990bd1626dd",
+        "22e3df97840f056348687cedc100fa5f65854d4c3de77841a99a5c90ce4cb9a8",
+        "4147f5fead623d4f013653dfe3d2159ee4e2f00284bf4418fe3f97ec5943a9de",
+        "77b37e2898f3d4200d16e02e106e888584d15a41dfd4174bcff5563bef0c41ff",
+        "9e35b4c5c738c6cce59072ebed0bcc6adec9ae08928ddd67e7f336edb51f5a8e",
+        "e1815e13dc44f09648a7b60abbfc9588f3e7e47b87f45c010a9eaecd030b6f41",
+        "e4fb334413a1308374a8b9e04954555fb9a792d86941ff7f01340a23bd209aeb",
+        "05f4a15c943d904690002a5e61008b0f5b884ed08510f66029d3a9eafd403dbe",
+        "5094218b7f4586bffa927708c10da420f0ebb3aa2518cf726f2da2d3e02df450"
+      ],
+      "source": [
+        "SYNTHETIC_LAYER_C_NOT_A_SIMULATION"
+      ],
+      "split": [
+        "dev"
+      ]
+    },
+    "heldout": {
+      "count": 30,
+      "sha256": "a412d5c3af6b4860aefb61801bcf83ab3c77c8f7e5d4a3808c4c7a1c9545084a",
+      "ids": [
+        "h001",
+        "h002",
+        "h003",
+        "h004",
+        "h005",
+        "h006",
+        "h007",
+        "h008",
+        "h009",
+        "h010",
+        "h011",
+        "h012",
+        "h013",
+        "h014",
+        "h015",
+        "h016",
+        "h017",
+        "h018",
+        "h019",
+        "h020",
+        "h021",
+        "h022",
+        "h023",
+        "h024",
+        "h025",
+        "h026",
+        "h027",
+        "h028",
+        "h029",
+        "h030"
+      ],
+      "normalizedModelPayloadSha256": [
+        "8965be346007a26716115c2bc84803c50fb658b30cf4766f739422520a6fcf74",
+        "c8e1031d50086d3ab914eeac9b8303eb314b3140229644de43ff10e8ca88f4d5",
+        "3946f3274e3323902d4951b38bf25f27fd8de43f4c2f6430f82466bc5c413ea9",
+        "1fcc45212649d76cceb8bb6f0380ddd3c5647bd4a5f9790e3741fbce68a45a61",
+        "fbe882274e2fe6309bae2d0963243f5a7416569f7003a5632e1c12cda979515b",
+        "45016fdf3fe5369c5be8ceb3a00a41f56e3e08a9efd2b91b553522a80bfcb76d",
+        "f1d3d2c1e656ee8f72de01d96a599a84d20d509fe95983408049ff1c49fd1430",
+        "2b68ae5a6f3898c44981f1c7623080662bcb3b259254f79a45f537b98b541603",
+        "f55c5b7979909f1c739508533340c6136915df1bdc5aa690e363e2046da2a7f8",
+        "5f65535dda431669f64cca3ecb6a6425c57d0087866d9322ef8ce79f1eae7572",
+        "46c7b929d9455833f33cc55a1d515ee8a0279e73981d3e5701a8f2b66928946c",
+        "44c04727314a11e849f13902fe5e5b0d8dbbfb7e84a70eab830d1e51ba9c3b6f",
+        "17e9a03d7969629fd30b587492ba84a9d6ed0ef3f2c8ca74596f7d5426a5090a",
+        "82b8dfa4c79469cd3bdbe59ea942a11779f5099d65707a3fbea0359550afb4c2",
+        "54660a989b5947fff8831499769c320bd6658886113637295348af0bab30cd14",
+        "c82d2466a42f171e5204fdc4eb2d56665af96ab0bf50f3377b3482b739d6d32a",
+        "cf2e37f5a0c9b0508376075143e638440c9c8fc984af1c2bc5da7afd8a856fb1",
+        "2bf21c2b1fe977cea8fc10e4922c5fb43ed66722512c2fbcda271058fcf0c82e",
+        "f164e455c27dc923f9c1098d31f6fd081505f9274be36216571cdca890e52a43",
+        "b594afce14c7d5c582a39b0fa37beb2e66a584427f6775c2a54fe5013c666059",
+        "d1e9712db7ce81dbe03f88fa1da6264f2b3a7456403a80feea8c65a494693ab1",
+        "4551ae207d44c11d1c7ed0ebc3da1397b12b6d75bb5c8fdcafdf79094e007830",
+        "fff31e2dcf897a83d5f748a85af95c3ae8913e335fd52155dced698ea8573624",
+        "02bac79e33e1d2d789b24c200ec7090fb0033b7765e72dbcf7f1fbb4b75c4a8c",
+        "ffd836d1148ac3429c4c70bf67fe6a7a65beb72a56911a60a9723ee3d2e9338f",
+        "d081ca94a4750330322d1ab41d7d6644febd509a8dae40128f9ed5f7fe580980",
+        "84af8381657db5249e64cbdf0051746567a87e43a62aaf700717cc3c22c3e3cd",
+        "701315c20c90b66694c989a9839f88da4d38367c7810ce42e162cae6b910e225",
+        "d6f34f51b3263966f4946ad923566a063f52c49d689c6e6bcdfff25e6faa27ff",
+        "8af6ded28057c0e5839f59e1e2fbdf1c3bc97c3066df9ddafe7024593e556d1a"
+      ],
+      "source": [
+        "SYNTHETIC_LAYER_C_NOT_A_SIMULATION"
+      ],
+      "split": [
+        "heldout"
+      ]
+    }
+  },
+  "overlap": {
+    "idIntersection": [],
+    "normalizedModelPayloadSha256Intersection": []
+  },
+  "labels": {
+    "count": 30,
+    "sha256": "06e76cd137eb8f59fa67d623fb379fed4438fbb1e7dd78e7a89fbf8fa6c75e7e",
+    "statuses": [
+      "AUTHOR_DRAFT_NEEDS_INDEPENDENT_REVIEW"
+    ],
+    "ids": [
+      "h001",
+      "h002",
+      "h003",
+      "h004",
+      "h005",
+      "h006",
+      "h007",
+      "h008",
+      "h009",
+      "h010",
+      "h011",
+      "h012",
+      "h013",
+      "h014",
+      "h015",
+      "h016",
+      "h017",
+      "h018",
+      "h019",
+      "h020",
+      "h021",
+      "h022",
+      "h023",
+      "h024",
+      "h025",
+      "h026",
+      "h027",
+      "h028",
+      "h029",
+      "h030"
+    ]
+  },
+  "runtimeSearch": {
+    "currentRuntimeCorpusFilesFound": [],
+    "onlyMainReference": "verification/wang-day5/version_comparison.json (inventory/comparison evidence, not a runtime import)"
+  }
+}

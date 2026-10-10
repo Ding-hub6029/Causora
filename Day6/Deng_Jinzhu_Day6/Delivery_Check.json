@@ -1,0 +1,8 @@
+{
+  "sourceCommit": "c54571240cb07d36815ff9cd8ed40151ef4acc20",
+  "newBackendCodeCommit": "40aa199f88b4924346ca7fd69ea591fa549327fe",
+  "regression": "149 combined tests passed plus one additional CORS test; frontend 62 and static server 3 passed",
+  "publication": "Source pushed to GitHub main. See deployment-evidence for actual hosting confirmation.",
+  "noChineseSemicolonInMarkdown": true,
+  "pdfPages": 2
+}

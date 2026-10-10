@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "causora.contract.v1",
+  "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+  "requestId": "req-cc35adb2b8ae48a0a28bc05d8ed28218",
+  "data": {
+    "scenarioId": "baseline",
+    "agentOutputs": [
+      {
+        "role": "CFO",
+        "accent": "emerald",
+        "focus": "Finance and cash",
+        "headline": "Selected mixed A and B sourcing reduces concentration versus all A baseline",
+        "body": "Selected plan preserves purchases from supplier A while increasing purchases from supplier B, creating a mixed sourcing allocation that lowers overall concentration versus the all A baseline. Inspect expected TCO impact {{delta_tco}} and the nearterm cash tail risk {{cash_outflow_p90}} when confirming the mix. Retained A purchase obligations and renewal exposure remain in the selected plan.",
+        "metrics": [
+          "delta_tco",
+          "cash_outflow_p90"
+        ],
+        "status": "Aligned"
+      },
+      {
+        "role": "COO",
+        "accent": "blue",
+        "focus": "Operations and continuity",
+        "headline": "Selected mixed sourcing reduces concentration versus all A",
+        "body": "Selected allocation retains supplier A and adds supplier B as a meaningful secondary source. This mixed sourcing reduces overall concentration compared with the all A baseline while maintaining active purchases from A and associated renewal exposure. Delivery risk metrics indicate low stockout probability for the selected mix {{stockout_probability}}. Alternative paths include keeping all supply with A or exiting A to B only; those remain conditional and are listed as options.",
+        "metrics": [
+          "stockout_probability"
+        ],
+        "status": "Aligned"
+      },
+      {
+        "role": "Risk",
+        "accent": "amber",
+        "focus": "Contract and downside",
+        "headline": "Mixed sourcing reduces supplier A dependence relative to baseline",
+        "body": "Selected action keeps both suppliers in the plan with a majority share remaining with supplier A and a significant share from supplier B. This reduces dependence on supplier A relative to the all-A baseline while supply concentration remains lower than baseline. Maintain the minimum purchase exposure to supplier A under the renewal terms. Inspect current cash tail risk {{cash_outflow_p90}} and the computed stockout probability {{stockout_probability}} for this mixed allocation before committing.",
+        "metrics": [
+          "cash_outflow_p90",
+          "stockout_probability"
+        ],
+        "status": "Aligned"
+      }
+    ],
+    "criticIssues": [
+      {
+        "severity": "Medium",
+        "headline": "Omitted compound risk involving locked forecast terms and holding cost changes",
+        "body": "The analysis does not explicitly address the interaction between locked forecast terms and holding cost changes under the selected mixed sourcing allocation. Although the roles acknowledge the retention of supplier A and the active minimum purchase commitments under renewal, they fail to specify that holding costs shift relative to the baseline and that excess units could become a compounded financial strain if demand were to decrease significantly, as the committed minimums are locked at renewal.",
+        "evidenceIds": [
+          "EV-019",
+          "EV-020",
+          "EV-024"
+        ],
+        "mechanism": {
+          "scenarioId": "baseline",
+          "forecastBasis": "locked-at-renewal",
+          "lockedForecastUnits24m": 26000,
+          "minPurchaseUnitsA": 15600,
+          "scenarioDemandUnits24m": 26000,
+          "committedExcessUnits": 0,
+          "holdingCostDeltaUsd": {
+            "D0": 0,
+            "D1": -259,
+            "D2": 452
+          }
+        }
+      }
+    ],
+    "brief": {
+      "recommendedOptionId": "D1",
+      "recommendation": "Retain the mixed A and B allocation as selected, keeping supplier A and adding supplier B to lower concentration while honoring the locked minimum purchases from A.",
+      "rationale": "The chosen mix preserves required minimum obligations to supplier A at renewal while introducing meaningful supply from supplier B to reduce dependence on A versus the all A baseline. This selection does not terminate supplier A, does not trigger an exit fee, and does not move to B-only sourcing. It balances service and cash tradeoffs qualitatively by improving delivery reliability under the mixed allocation and keeping projected cash tail risk within the enforced ceiling.",
+      "metricRefs": [
+        "delta_tco",
+        "stockout_probability",
+        "cash_outflow_p90"
+      ],
+      "formula": "TCO = purchase + holding + stockout loss + renewal premium + termination fee",
+      "formulaVersion": "tco-v1",
+      "formulaNotes": [
+        "All costs and risk measures originate from this verified simulation; cash tail risk is separate from expected total cost."
+      ],
+      "guardrail": "All displayed claims passed field-bound numeric and evidence validation.",
+      "scenarioId": "baseline",
+      "status": "selected"
+    },
+    "numericGuardrail": {
+      "passed": true,
+      "rejectedClaims": []
+    }
+  }
+}

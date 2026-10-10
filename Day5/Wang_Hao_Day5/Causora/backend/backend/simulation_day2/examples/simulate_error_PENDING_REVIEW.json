@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "causora.contract.v1",
+  "requestId": "req-day2-review-pending-001",
+  "error": {
+    "code": "simulation_failed",
+    "message": "Contract evidence and demo assumptions await human review.",
+    "details": {
+      "reason": "human_review_pending"
+    },
+    "requestId": "req-day2-review-pending-001"
+  }
+}

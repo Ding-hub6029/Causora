@@ -1,0 +1,3 @@
+TEST_FIXTURE_ONLY injection reaches Synthesizer payload: False
+
+EXIT_STATUS=0

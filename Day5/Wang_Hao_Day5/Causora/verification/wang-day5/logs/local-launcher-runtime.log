@@ -1,0 +1,14 @@
+INFO:     Started server process [10932]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:56627 (Press CTRL+C to quit)
+INFO:     127.0.0.1:46078 - "GET /health HTTP/1.1" 200 OK
+Causora static site listening on http://127.0.0.1:43657
+Causora live: http://127.0.0.1:43657/
+Simulation/replay only; live AI is disabled. Ctrl+C stops only these child processes.
+INFO:     127.0.0.1:46080 - "GET /health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [10932]
+Stopping local Causora processes.

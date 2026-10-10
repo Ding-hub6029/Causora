@@ -1,0 +1,67 @@
+{
+  "freezeSha256": "d835eeb08b0fdde372930d33ce97174ea1ac90f341817118b664abd49bea1af8",
+  "sourceMatches": [
+    {
+      "path": "agents/wanghao-day3/agent_day4/pipeline.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/numeric.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/evidence.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/evidence_support.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/inputs.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/wire.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/business.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/agent_day4/allocation.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/run_offline_ai_evaluation.py",
+      "shaMatches": true
+    },
+    {
+      "path": "agents/wanghao-day3/tests_day5/day5_fixtures.py",
+      "shaMatches": true
+    },
+    {
+      "path": "frontend/tests/fixtures/reviewed-v2-TEST_FIXTURE_ONLY.json",
+      "shaMatches": true
+    }
+  ],
+  "oldActualAiAndBenchmarkFilesUnchanged": true,
+  "historicalFileCount": 29,
+  "sampleCount": [
+    "clean_complete_fixture",
+    "numeric_percentage_point_tamper",
+    "wrong_evidence_id",
+    "source_evidence_prompt_injection",
+    "contract_prompt_injection",
+    "critic_missing",
+    "critic_timeout",
+    "critic_malformed_json_shape",
+    "role_missing_json_fields",
+    "role_identity_mismatch",
+    "no_feasible_zero_calls",
+    "mc_matrix_trace_immutable",
+    "d2_b_only_not_diversified",
+    "unsupported_existing_evidence_citation"
+  ]
+}

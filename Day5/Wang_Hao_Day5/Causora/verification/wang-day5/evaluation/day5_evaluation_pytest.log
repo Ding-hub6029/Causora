@@ -1,0 +1,23 @@
+Day5 evaluator final validation log
+Date: 2026-10-10 (sandbox local time)
+Working directory: /home/ubuntu/causora_day5/main/Causora
+Interpreter: /home/ubuntu/causora_day5/.venv/bin/python
+
+Command 1:
+PYTHONDONTWRITEBYTECODE=1 /home/ubuntu/causora_day5/.venv/bin/python -m py_compile evaluation/day5/core.py evaluation/day5/cli.py
+Result: exit 0
+
+Command 2:
+PYTHONDONTWRITEBYTECODE=1 /home/ubuntu/causora_day5/.venv/bin/python -m evaluation.day5.cli freeze --help | grep -F -- '--evidence-registry'
+Result:
+                     --evidence-registry EVIDENCE_REGISTRY --output OUTPUT
+  --evidence-registry EVIDENCE_REGISTRY
+
+Command 3:
+PYTHONDONTWRITEBYTECODE=1 /home/ubuntu/causora_day5/.venv/bin/python -m pytest -q evaluation/day5/tests -p no:cacheprovider
+Result:
+..................                                                       [100%]
+18 passed in 0.16s
+
+Actual external model/provider/network calls made by these commands: 0 / 0 / 0
+This is offline contract validation only; it is not real model-performance evidence.

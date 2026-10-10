@@ -1,0 +1,53 @@
+{
+  "schema": "causora.day5.evaluation-freeze.v1",
+  "createdAtUtc": "2026-10-09T19:47:41.536077Z",
+  "author": "AUTHOR_VISIBLE_DEVELOPMENT_HARNESS_NOT_HUMAN_APPROVAL",
+  "approval": {
+    "status": "AUTHOR_PROGRAM_DRAFT_PENDING_INDEPENDENT_REVIEW",
+    "note": "This freeze does not create, replace, or imply a human approval."
+  },
+  "executionAuthorization": "NO_NEW_MODEL_AUTHORIZATION",
+  "method": "causora_pipeline",
+  "answerSchema": "causora.day5.fair-answer.v1",
+  "artifacts": {
+    "inputs": {
+      "path": "../../../evaluation/day5/fixtures/dev_inputs.jsonl",
+      "sha256": "5d0ac6b814af94144231a6541a69fa47f212db6c91432b0860c9a5a30c54649e"
+    },
+    "labels": {
+      "path": "../../../evaluation/day5/fixtures/dev_labels.jsonl",
+      "sha256": "7cc737123aa5433dd72ace7df2b642063a77cdedfa7d22df2fda9abc0b812ce5"
+    },
+    "prompt": {
+      "path": "../../../evaluation/day5/fixtures/fair_prompt.md",
+      "sha256": "3f583e95b9f4606141b534eb702384e65f8e5c74ef4d89df9e23b53b4b8212fe"
+    },
+    "modelConfig": {
+      "path": "../../../evaluation/day5/fixtures/model_config.json",
+      "sha256": "69547556836347cfec0e18a465636a49d26a3e48959af0d11b14f1d965bbeba5"
+    },
+    "scoringSource": {
+      "path": "../../../evaluation/day5/core.py",
+      "sha256": "17e1fa9e362d6d1396094ba009bc8b3abe95d598a371d343a49dbd55ecf14f06"
+    },
+    "sourceCorpus": {
+      "path": "../../../evaluation/day5/fixtures/source_corpus_identity.json",
+      "sha256": "947c20a456c1a8cd9d6ca0f768af83ced9100c58a994277e58b840ffe2bf8247"
+    },
+    "evidenceRegistry": {
+      "path": "../../../evaluation/day5/fixtures/evidence_registry.json",
+      "sha256": "d04af2eacc4fad5ad0ef8ce39a56d66420b8383e4a9112e0e010a0a723fdefb2"
+    }
+  },
+  "inputCount": 2,
+  "labelStatus": [
+    "AUTHOR_DRAFT_NEEDS_INDEPENDENT_REVIEW"
+  ],
+  "labelsClaimIndependentlyReviewed": false,
+  "corpusSelfDeclaredEligibility": false,
+  "corpusFormalEligibility": false,
+  "officialScoreEligibility": "INELIGIBLE_CORPUS_NOT_FRESH_INDEPENDENT_OR_DEBUG_FREE",
+  "officialEligibilityNote": "Imported corpus fields, labelStatus strings, and the freeze author are not human approval. This offline evaluator has no trusted independent-review record or identity authority; its output cannot become an official model-performance score.",
+  "dispatchRule": "Only artifacts.inputs model_payload values, in canonical order, may be dispatched; labels, caseId, split, source, and hashes are scorer-only.",
+  "captureRule": "Only separately authorised external ACTUAL_CAPTURE imports can be sealed and reported as performance; fixture/mock/test data are rejected."
+}

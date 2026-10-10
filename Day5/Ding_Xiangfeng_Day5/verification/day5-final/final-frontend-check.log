@@ -1,0 +1,159 @@
+
+> causora-day5-ding@0.5.0 check
+> npm run typecheck && npm run lint && npm test && npm run build:previews && npm run test:production
+
+
+> causora-day5-ding@0.5.0 typecheck
+> tsc --noEmit
+
+
+> causora-day5-ding@0.5.0 lint
+> eslint . --max-warnings=0
+
+
+> causora-day5-ding@0.5.0 test
+> node --test tests/day1-flow.test.mjs tests/day2-ux.test.mjs tests/simulate-api.test.mjs tests/day4-api.test.mjs tests/golden-health.test.mjs tests/golden-bootstrap.test.mjs tests/toolchain-boundary.test.mjs
+
+✔ Contract version and all five stages have the required data (1.1944ms)
+✔ Four synthetic source files and the notice register are real packaged artifacts (1.5841ms)
+✔ All evidence quotes contain their critical values; EV-019 maps to a variable (0.2197ms)
+✔ All five EvidenceRecord quotes match their cited PDF page; wrong quote and page fail (73.4548ms)
+✔ Renewal lock requires a real date inequality AND an explicit notice input (0.5463ms)
+✔ Locked forecast mechanism is explicit and the Critic uses matching inputs (0.2352ms)
+✔ Every matrix has each fixed option exactly once and at most one recommended cell (0.1907ms)
+✔ All 9 formula traces add exactly to their cells without a double-counted uplift (0.2116ms)
+✔ Decision Delta is calculated from each selected scenario, not a hard-coded baseline (0.182ms)
+✔ Agent and Critic numerical claims are guarded tokens resolved against the contract (11.7623ms)
+✔ Golden Run is a complete independently serialised snapshot with a valid audit timestamp (0.5393ms)
+✔ Frozen workflow preserves Golden, labels unsimulated drafts and blocks stale live approval (0.6889ms)
+✔ Formula modal identifies a scenario and option; dialog manages Tab, Escape and focus restore (0.4641ms)
+✔ Static start command and mobile status display work without a live backend (2.0208ms)
+✔ Runtime validation rejects unknown versions, malformed types and inconsistent accounting (3.2259ms)
+✔ Fractional probability differences keep precision; money preserves non-round values (0.1955ms)
+✔ Guarded text handles cost increases, equality and unbound numbers (0.3392ms)
+✔ Per-scenario selection, inclusive limits, deterministic ties and no-feasible Brief (1.0475ms)
+✔ Golden integrity verification rejects tampering (2.7023ms)
+✔ Synthetic forecast provenance and rolling benchmark remain distinct from total excess (0.8057ms)
+✔ Day5 preserves validated live simulation while keeping the saved example explicitly labelled (0.6996ms)
+✔ Scenario and option meanings and all fixed Day2 option definitions remain unchanged (1.0089ms)
+✔ Risk and cash edits remain drafts until a new request; no stale approval is enabled (0.1565ms)
+✔ Matrix browsing and option inspection are view-only and preserve the validated live run (0.2323ms)
+✔ unreviewed v2 remains visibly non-decision-ready, has no winner styling, and traces weekly provenance (0.3818ms)
+✔ Day1/Day2 shared v1 contract, data version, formula and scenario identities remain intact (0.5066ms)
+✔ Boardroom success requires reviewed v2, exact run identity, correlated request id, three roles, Critic and Numeric Guardrail (2.3461ms)
+✔ Boardroom metric templates are declared and rendered from the matching Simulation (11.9963ms)
+✔ Boardroom client posts only v1 identity with no credentials, no-store, explicit request id, and classifies missing endpoint (3.3619ms)
+✔ Critic-unavailable and provider failures preserve retry classification without altering simulation (0.6561ms)
+✔ Evidence validator rejects stale ids, traversal, invalid pages and malformed PDF bboxes (0.5444ms)
+✔ Evidence client performs GET with omitted credentials and no-store, and maps a missing source to non-retryable (1.0968ms)
+✔ PDF locator highlights only an API bbox or an exact quote on the cited page (0.4322ms)
+✔ Golden cache refuses TEST_FIXTURE_ONLY data and hash-mismatched stored runs (29.0798ms)
+✔ Unmatched Evidence stays viewable but cannot satisfy Verified Golden creation or reload (81.2581ms)
+✔ Boardroom identity matcher rejects another simulation, request, dataVersion or scenario (0.281ms)
+✔ a fresh browser with empty storage loads the complete same-origin static Golden and validates it (61.1828ms)
+✔ a valid browser cache takes precedence and does not make a network request (29.7968ms)
+✔ a tampered local cache falls back to the immutable static record (47.8903ms)
+✔ an invalid bundled record or non-JSON response is rejected rather than shown as verified (24.1599ms)
+✔ the bundled Golden loader rejects non-same-origin URLs before fetching (0.2822ms)
+✔ health endpoint follows the configured API origin and defaults to same-origin proxy (0.6625ms)
+✔ static-only staging reports a missing public backend without sending a health request (0.5861ms)
+✔ health probe is a credential-free no-store GET and accepts reachability without promoting pending gates (15.801ms)
+✔ health probe rejects non-ready and malformed responses (0.6144ms)
+✔ health probe reports a short timeout and aborts its request (19.4665ms)
+✔ actual backend reviewed v2 wire response validates without development opt-in (45.665ms)
+✔ request builder preserves fixed options and maps shock, fractional risk, budget, seed and dataset (1.1635ms)
+✔ test-only v1 fixture passes the strict envelope, matrix, accounting, delta and selection validator (7.683ms)
+✔ v2 development response requires explicit opt-in/headers and a complete non-approved trace (8.2887ms)
+✔ validator rejects mock/zero-run/version/seed and inconsistent accounting, purchase, delta or winner (1.3369ms)
+✔ live Matrix recommendation styling derives from validated selections, not the response tone hint (0.3382ms)
+✔ HTTP client posts only to the configured v1 endpoint and accepts only a valid success envelope (0.5702ms)
+✔ HTTP client opts into the marked v2 development adapter only when explicitly configured (2.7968ms)
+✔ HTTP errors stay errors and retain the API request ID instead of applying a saved row as live (0.43ms)
+✔ Configured Next lint root resolution does not evaluate externally supplied brace/glob patterns (1.6805ms)
+ℹ tests 56
+ℹ suites 0
+ℹ pass 56
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1127.7809
+
+> causora-day5-ding@0.5.0 build:previews
+> node scripts/build-previews.mjs
+
+Prepared the local PDF.js worker asset.
+   ▲ Next.js 15.5.27
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.5s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                     105 kB         208 kB
+├ ○ /_not-found                            996 B         104 kB
+└ ○ /icon.svg                                0 B            0 B
++ First Load JS shared by all             103 kB
+  ├ chunks/255-9acdc15b78d766e6.js       46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          2.02 kB
+
+
+○  (Static)  prerendered as static content
+
+Verified build selection: static -> builds/static
+Prepared the local PDF.js worker asset.
+   ▲ Next.js 15.5.27
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 1766ms
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                     105 kB         208 kB
+├ ○ /_not-found                            996 B         104 kB
+└ ○ /icon.svg                                0 B            0 B
++ First Load JS shared by all             103 kB
+  ├ chunks/255-9acdc15b78d766e6.js       46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          2.02 kB
+
+
+○  (Static)  prerendered as static content
+
+Verified build selection: live -> builds/live
+
+> causora-day5-ding@0.5.0 test:production
+> node --test tests/static-server.test.mjs
+
+✔ Production preview serves correct source types and keeps source files private (286.0309ms)
+✔ Same-origin preview forwards API bodies and gate headers; unavailable backend fails closed (99.897ms)
+✔ Static-only deployment blocks health/API proxying before reaching the configured backend (79.6873ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 554.2694

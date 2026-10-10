@@ -1,0 +1,158 @@
+{
+  "schema": "causora.independent-oracle-controls.v1",
+  "source": "PENDING_HUMAN_REVIEW_DAY5_CONTROL_CASES_NOT_GENERATED_BY_SIMULATION_ENGINE",
+  "cases": [
+    {
+      "id": "locked_mixed_cost_rounding",
+      "kind": "cost",
+      "input": {
+        "unitsFromA": 150,
+        "unitsFromB": 100,
+        "priceAUsd": "12.00",
+        "priceBUsd": "12.60",
+        "renewalLocked": true,
+        "renewalUpliftFraction": "0.14",
+        "terminateA": false,
+        "terminationFeeUsd": 25000,
+        "rawHoldingMeanUsd": "25.5",
+        "rawStockoutLossMeanUsd": "5.5",
+        "fulfilledUnits": 250,
+        "sellingPriceUsdPerUnit": "20.00"
+      },
+      "expected": {
+        "breakdown": {
+          "purchase": 3060,
+          "holding": 26,
+          "stockoutLoss": 6,
+          "renewalPremium": 252,
+          "terminationFee": 0
+        },
+        "expectedTco": 3344,
+        "expectedRevenueUsd": 5000,
+        "expectedGrossProfitUsd": 1656,
+        "grossMargin": "0.3312",
+        "grossMarginStatus": "VALID"
+      }
+    },
+    {
+      "id": "locked_exit_fee_and_half_even",
+      "kind": "cost",
+      "input": {
+        "unitsFromA": 0,
+        "unitsFromB": 250,
+        "priceAUsd": "12.00",
+        "priceBUsd": "12.60",
+        "renewalLocked": true,
+        "renewalUpliftFraction": "0.14",
+        "terminateA": true,
+        "terminationFeeUsd": 25000,
+        "rawHoldingMeanUsd": "0.5",
+        "rawStockoutLossMeanUsd": "1.5",
+        "fulfilledUnits": 250,
+        "sellingPriceUsdPerUnit": "20.00"
+      },
+      "expected": {
+        "breakdown": {
+          "purchase": 3150,
+          "holding": 0,
+          "stockoutLoss": 2,
+          "renewalPremium": 0,
+          "terminationFee": 25000
+        },
+        "expectedTco": 28152,
+        "expectedRevenueUsd": 5000,
+        "expectedGrossProfitUsd": -23152,
+        "grossMargin": "-4.6304",
+        "grossMarginStatus": "VALID"
+      }
+    },
+    {
+      "id": "zero_revenue_is_invalid_not_divided_by_one",
+      "kind": "cost",
+      "input": {
+        "unitsFromA": 0,
+        "unitsFromB": 0,
+        "priceAUsd": "12.00",
+        "priceBUsd": "12.60",
+        "renewalLocked": false,
+        "renewalUpliftFraction": "0.14",
+        "terminateA": false,
+        "terminationFeeUsd": 25000,
+        "rawHoldingMeanUsd": "0",
+        "rawStockoutLossMeanUsd": "0",
+        "fulfilledUnits": 0,
+        "sellingPriceUsdPerUnit": "20.00"
+      },
+      "expected": {
+        "breakdown": {
+          "purchase": 0,
+          "holding": 0,
+          "stockoutLoss": 0,
+          "renewalPremium": 0,
+          "terminationFee": 0
+        },
+        "expectedTco": 0,
+        "expectedRevenueUsd": 0,
+        "expectedGrossProfitUsd": 0,
+        "grossMargin": null,
+        "grossMarginStatus": "INVALID_REVENUE_ZERO"
+      }
+    },
+    {
+      "id": "p90_nearest_rank_ten_trials",
+      "kind": "p90",
+      "input": { "cashOutflowUsd": [6, 12, 25, 9, 50, 45, 18, 23, 36, 31] },
+      "expected": {
+        "denominatorRuns": 10,
+        "rankOneBased": 9,
+        "cashOutflowP90": 45,
+        "method": "nearest_rank_ceil_0.90N"
+      }
+    },
+    {
+      "id": "constraint_selection_and_order",
+      "kind": "selection",
+      "input": {
+        "riskThreshold": "0.12",
+        "budgetCeilingUsd": 480,
+        "options": [
+          { "optionId": "D0", "feasible": true, "stockoutProbability": "0.20", "cashOutflowP90": 300, "expectedTco": 300 },
+          { "optionId": "D1", "feasible": true, "stockoutProbability": "0.05", "cashOutflowP90": 310, "expectedTco": 310 },
+          { "optionId": "D2", "feasible": true, "stockoutProbability": "0.05", "cashOutflowP90": 550, "expectedTco": 280 }
+        ]
+      },
+      "expected": {
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          { "optionId": "D0", "code": "stockout_threshold" },
+          { "optionId": "D2", "code": "cash_ceiling" }
+        ]
+      }
+    },
+    {
+      "id": "no_feasible_option_is_explicit",
+      "kind": "selection",
+      "input": {
+        "riskThreshold": "0.12",
+        "budgetCeilingUsd": 480,
+        "options": [
+          { "optionId": "D0", "feasible": false, "stockoutProbability": "0.20", "cashOutflowP90": 500, "expectedTco": 300 },
+          { "optionId": "D1", "feasible": true, "stockoutProbability": "0.13", "cashOutflowP90": 310, "expectedTco": 310 },
+          { "optionId": "D2", "feasible": true, "stockoutProbability": "0.05", "cashOutflowP90": 550, "expectedTco": 280 }
+        ]
+      },
+      "expected": {
+        "status": "no_feasible_option",
+        "recommendedOptionId": null,
+        "constraintViolations": [
+          { "optionId": "D0", "code": "infeasible" },
+          { "optionId": "D0", "code": "stockout_threshold" },
+          { "optionId": "D0", "code": "cash_ceiling" },
+          { "optionId": "D1", "code": "stockout_threshold" },
+          { "optionId": "D2", "code": "cash_ceiling" }
+        ]
+      }
+    }
+  ]
+}

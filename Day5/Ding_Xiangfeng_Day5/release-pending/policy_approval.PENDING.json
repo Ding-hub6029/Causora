@@ -1,0 +1,44 @@
+{
+  "kind": "causora.day3.policy-approval-record.v1",
+  "status": "pending",
+  "approvalRecordId": "",
+  "policyConfigurationId": "causora-model-policy-candidate-v1",
+  "policySha256": "be10983e7e3c719b6c1c0cf10067cc813c497b4be66671037b13febaae6a9f56",
+  "confirmedTopics": [
+    "renewal_date_opening_inventory_bridge",
+    "selling_price",
+    "lost_contribution_margin",
+    "holding_cost",
+    "safety_stock",
+    "target_stock",
+    "replenishment_and_minimum_purchase_schedule",
+    "purchase_and_cash_recognition_timing",
+    "supplier_b_lead_distribution",
+    "lead_stress_scope",
+    "stockout_probability_definition",
+    "service_level_definition",
+    "cash_p90_method_and_lines",
+    "money_and_mean_purchase_rounding",
+    "demand_bootstrap"
+  ],
+  "approvals": [
+    {
+      "role": "simulation_owner",
+      "actorId": "",
+      "decision": "pending",
+      "recordedAtUtc": ""
+    },
+    {
+      "role": "frontend_owner",
+      "actorId": "",
+      "decision": "pending",
+      "recordedAtUtc": ""
+    },
+    {
+      "role": "review_owner",
+      "actorId": "",
+      "decision": "pending",
+      "recordedAtUtc": ""
+    }
+  ]
+}

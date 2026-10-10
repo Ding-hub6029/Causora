@@ -1,0 +1,38 @@
+
+> causora-day4-ding@0.4.0 prebuild
+> node scripts/copy-pdf-worker.mjs
+
+Prepared the local PDF.js worker asset.
+
+> causora-day4-ding@0.4.0 build
+> next build
+
+   ▲ Next.js 15.5.27
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 9.3s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                     105 kB         208 kB
+├ ○ /_not-found                            993 B         104 kB
+└ ○ /icon.svg                                0 B            0 B
++ First Load JS shared by all             103 kB
+  ├ chunks/255-9acdc15b78d766e6.js       46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          1.98 kB
+
+
+○  (Static)  prerendered as static content
+
+EXIT_STATUS=0

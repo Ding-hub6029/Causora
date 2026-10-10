@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "modelCalls": 0,
+  "simulation": "ready",
+  "frontend": "HTTP_200",
+  "mode": "live_simulation_only",
+  "nativeWindowsExecuted": false
+}

@@ -1,0 +1,115 @@
+{
+  "path": "/api/boardroom",
+  "method": "POST",
+  "status": 200,
+  "requestCorsHeaders": {
+    "origin": "http://127.0.0.1:3044"
+  },
+  "request": {
+    "schemaVersion": "causora.contract.v1",
+    "simulationId": "sim-4ff6c803c309c2a34874eee8",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "scenarioId": "baseline"
+  },
+  "response": {
+    "schemaVersion": "causora.contract.v1",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "requestId": "causora-br-b12aa1d9-602c-4e11-beb8-cb605fbc5c88",
+    "data": {
+      "scenarioId": "baseline",
+      "agentOutputs": [
+        {
+          "role": "CFO",
+          "accent": "emerald",
+          "focus": "Finance and cash",
+          "headline": "Mixed sourcing chosen to lower concentration",
+          "body": "Selected allocation retains supplier A and adds supplier B in a mixed sourcing plan, reducing concentration versus the all A baseline while keeping minimum purchases from A and renewal exposure. Inspect expected total cost impact {{delta_tco}} and plan cash tail risk {{cash_outflow_p90}} when finalizing. Delivery concentration remains mixed; retained A purchase obligations are conditional and not an active A termination. Stockout and delivery tradeoffs reflect the mixed allocation rather than an exit to B.",
+          "metrics": [
+            "delta_tco",
+            "cash_outflow_p90"
+          ],
+          "status": "Aligned"
+        },
+        {
+          "role": "COO",
+          "accent": "blue",
+          "focus": "Operations and continuity",
+          "headline": "Mixed sourcing reduces supplier concentration versus baseline",
+          "body": "Selected plan keeps both suppliers active with a mixed allocation that reduces overall concentration compared with the all-A baseline. This retains minimum purchase exposure to supplier A while adding supplier B as a material source. Delivery risk improves under the selected mix according to supplied metrics; inspect current stockout probability {{stockout_probability}} for the chosen allocation before finalizing operational changes. Retained-A purchase obligations remain conditional under this plan and are not terminated.",
+          "metrics": [
+            "stockout_probability"
+          ],
+          "status": "Aligned"
+        },
+        {
+          "role": "Risk",
+          "accent": "amber",
+          "focus": "Contract and downside",
+          "headline": "Mixed sourcing reduces supplier A reliance while keeping dual supply",
+          "body": "Selected action keeps sourcing from both suppliers with a majority share remaining with supplier A and a meaningful share from supplier B. This mixed allocation reduces dependence on supplier A compared with the all A baseline while maintaining a diversified supply path. The retained-A plan remains subject to the contract renewal terms and minimum purchase commitment for supplier A; retained alternatives could trigger conditional purchase obligations under renewal. Inspect cash tail risk {{cash_outflow_p90}} and delivery disruption likelihood {{stockout_probability}} for the current allocation before finalizing.",
+          "metrics": [
+            "cash_outflow_p90",
+            "stockout_probability"
+          ],
+          "status": "Aligned"
+        }
+      ],
+      "criticIssues": [
+        {
+          "severity": "High",
+          "headline": "Locked forecast and minimum purchase commitment compound under demand change",
+          "body": "The selected mixed allocation relies on a locked forecast during the renewal window, leaving the business exposed to committed excess if demand falls. Minimum purchase requirements from the legacy supplier remain enforced regardless of downstream demand shifts, potentially leading to increased holding costs. While roles noted the mixed allocation, they missed how the fixed minimum floor compounds with a locked baseline to elevate financial risk under dropping demand scenarios.",
+          "evidenceIds": [
+            "EV-014",
+            "EV-019",
+            "EV-020",
+            "EV-024"
+          ],
+          "mechanism": {
+            "scenarioId": "baseline",
+            "forecastBasis": "locked-at-renewal",
+            "lockedForecastUnits24m": 26000,
+            "minPurchaseUnitsA": 15600,
+            "scenarioDemandUnits24m": 26000,
+            "committedExcessUnits": 0,
+            "holdingCostDeltaUsd": {
+              "D0": 0,
+              "D1": -259,
+              "D2": 452
+            }
+          }
+        }
+      ],
+      "brief": {
+        "recommendedOptionId": "D1",
+        "recommendation": "Retain the mixed A and B allocation as selected, keeping supplier A active at its required minimum and adding supplier B as a material source.",
+        "rationale": "The selected mix preserves the retained minimum purchase obligations to supplier A while introducing supplier B to lower overall supplier concentration relative to the all A baseline. Service and cash tradeoffs favor the mixed allocation: delivery risk improves under the mixed sourcing and the computed cash tail outcome stays within the enforced ceiling. The retained-A obligations are conditional under renewal and are not an active termination.",
+        "metricRefs": [
+          "delta_tco",
+          "stockout_probability",
+          "cash_outflow_p90"
+        ],
+        "formula": "TCO = purchase + holding + stockout loss + renewal premium + termination fee",
+        "formulaVersion": "tco-v1",
+        "formulaNotes": [
+          "All costs and risk measures originate from this verified simulation; cash tail risk is separate from expected total cost."
+        ],
+        "guardrail": "All displayed claims passed field-bound numeric and evidence validation.",
+        "scenarioId": "baseline",
+        "status": "selected"
+      },
+      "numericGuardrail": {
+        "passed": true,
+        "rejectedClaims": []
+      }
+    }
+  },
+  "headers": {
+    "x-request-id": "causora-br-b12aa1d9-602c-4e11-beb8-cb605fbc5c88",
+    "x-causora-current-simulation": "sim-4ff6c803c309c2a34874eee8",
+    "x-causora-provider-mode": "primary",
+    "x-causora-critic-status": "complete",
+    "access-control-expose-headers": "X-Causora-Review-Status, X-Causora-Trace-Contract, X-Causora-Execution-Mode, X-Request-Id, X-Causora-Provider-Mode, X-Causora-Critic-Status, X-Causora-Current-Simulation",
+    "access-control-allow-origin": "http://127.0.0.1:3044"
+  }
+}

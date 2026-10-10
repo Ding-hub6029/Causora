@@ -1,0 +1,533 @@
+{
+  "dataVersion": "demo-2026.10.04-v4",
+  "sourceFile": "public/demo/historical_demand.csv",
+  "sourceSha256": "654a22f3f5433e214611f3c5a69b625bedad2d11157dedfa9cd65bbb14d3499e",
+  "provenance": "synthetic_day1_fixture",
+  "weekCount": 104,
+  "totalUnits": 25936,
+  "meanWeeklyUnits": 249.3846153846154,
+  "lockedForecastUnits24m": 26000,
+  "lockedForecastProvenance": "Synthetic renewal-cycle forecast assumption: supplier_a_agreement.pdf p.4 and baseline contract.lockedForecastUnits24m; NOT the sum of historical demand",
+  "observations": [
+    {
+      "weekStart": "2024-10-07",
+      "unitsDemanded": 250,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-10-14",
+      "unitsDemanded": 279,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-10-21",
+      "unitsDemanded": 247,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-10-28",
+      "unitsDemanded": 218,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-11-04",
+      "unitsDemanded": 237,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-11-11",
+      "unitsDemanded": 241,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-11-18",
+      "unitsDemanded": 228,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-11-25",
+      "unitsDemanded": 243,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-12-02",
+      "unitsDemanded": 263,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-12-09",
+      "unitsDemanded": 273,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-12-16",
+      "unitsDemanded": 265,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-12-23",
+      "unitsDemanded": 255,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2024-12-30",
+      "unitsDemanded": 221,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-01-06",
+      "unitsDemanded": 254,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-01-13",
+      "unitsDemanded": 219,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-01-20",
+      "unitsDemanded": 271,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-01-27",
+      "unitsDemanded": 260,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-02-03",
+      "unitsDemanded": 224,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-02-10",
+      "unitsDemanded": 238,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-02-17",
+      "unitsDemanded": 286,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-02-24",
+      "unitsDemanded": 246,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-03-03",
+      "unitsDemanded": 226,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-03-10",
+      "unitsDemanded": 241,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-03-17",
+      "unitsDemanded": 271,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-03-24",
+      "unitsDemanded": 218,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-03-31",
+      "unitsDemanded": 238,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-04-07",
+      "unitsDemanded": 246,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-04-14",
+      "unitsDemanded": 242,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-04-21",
+      "unitsDemanded": 277,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-04-28",
+      "unitsDemanded": 216,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-05-05",
+      "unitsDemanded": 260,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-05-12",
+      "unitsDemanded": 259,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-05-19",
+      "unitsDemanded": 243,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-05-26",
+      "unitsDemanded": 246,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-06-02",
+      "unitsDemanded": 214,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-06-09",
+      "unitsDemanded": 217,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-06-16",
+      "unitsDemanded": 281,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-06-23",
+      "unitsDemanded": 230,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-06-30",
+      "unitsDemanded": 228,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-07-07",
+      "unitsDemanded": 290,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-07-14",
+      "unitsDemanded": 273,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-07-21",
+      "unitsDemanded": 254,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-07-28",
+      "unitsDemanded": 272,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-08-04",
+      "unitsDemanded": 260,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-08-11",
+      "unitsDemanded": 241,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-08-18",
+      "unitsDemanded": 271,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-08-25",
+      "unitsDemanded": 244,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-09-01",
+      "unitsDemanded": 219,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-09-08",
+      "unitsDemanded": 271,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-09-15",
+      "unitsDemanded": 260,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-09-22",
+      "unitsDemanded": 278,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-09-29",
+      "unitsDemanded": 232,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-10-06",
+      "unitsDemanded": 245,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-10-13",
+      "unitsDemanded": 218,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-10-20",
+      "unitsDemanded": 259,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-10-27",
+      "unitsDemanded": 264,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-11-03",
+      "unitsDemanded": 253,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-11-10",
+      "unitsDemanded": 285,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-11-17",
+      "unitsDemanded": 239,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-11-24",
+      "unitsDemanded": 256,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-12-01",
+      "unitsDemanded": 250,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-12-08",
+      "unitsDemanded": 274,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-12-15",
+      "unitsDemanded": 278,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-12-22",
+      "unitsDemanded": 237,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2025-12-29",
+      "unitsDemanded": 241,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-01-05",
+      "unitsDemanded": 287,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-01-12",
+      "unitsDemanded": 220,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-01-19",
+      "unitsDemanded": 229,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-01-26",
+      "unitsDemanded": 233,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-02-02",
+      "unitsDemanded": 234,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-02-09",
+      "unitsDemanded": 286,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-02-16",
+      "unitsDemanded": 241,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-02-23",
+      "unitsDemanded": 247,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-03-02",
+      "unitsDemanded": 225,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-03-09",
+      "unitsDemanded": 226,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-03-16",
+      "unitsDemanded": 253,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-03-23",
+      "unitsDemanded": 232,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-03-30",
+      "unitsDemanded": 230,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-04-06",
+      "unitsDemanded": 273,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-04-13",
+      "unitsDemanded": 226,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-04-20",
+      "unitsDemanded": 256,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-04-27",
+      "unitsDemanded": 237,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-05-04",
+      "unitsDemanded": 238,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-05-11",
+      "unitsDemanded": 273,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-05-18",
+      "unitsDemanded": 284,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-05-25",
+      "unitsDemanded": 233,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-06-01",
+      "unitsDemanded": 240,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-06-08",
+      "unitsDemanded": 266,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-06-15",
+      "unitsDemanded": 256,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-06-22",
+      "unitsDemanded": 235,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-06-29",
+      "unitsDemanded": 249,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-07-06",
+      "unitsDemanded": 249,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-07-13",
+      "unitsDemanded": 222,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-07-20",
+      "unitsDemanded": 223,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-07-27",
+      "unitsDemanded": 277,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-08-03",
+      "unitsDemanded": 258,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-08-10",
+      "unitsDemanded": 246,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-08-17",
+      "unitsDemanded": 245,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-08-24",
+      "unitsDemanded": 275,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-08-31",
+      "unitsDemanded": 277,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-09-07",
+      "unitsDemanded": 268,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-09-14",
+      "unitsDemanded": 272,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-09-21",
+      "unitsDemanded": 239,
+      "provenance": "synthetic_day1_fixture"
+    },
+    {
+      "weekStart": "2026-09-28",
+      "unitsDemanded": 241,
+      "provenance": "synthetic_day1_fixture"
+    }
+  ]
+}

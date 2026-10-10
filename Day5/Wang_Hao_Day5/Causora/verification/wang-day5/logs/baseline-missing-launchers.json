@@ -1,0 +1,17 @@
+[
+  {
+    "cmd": "SETUP_WINDOWS.cmd",
+    "target": "scripts/setup-windows.ps1",
+    "exists": false
+  },
+  {
+    "cmd": "START_LIVE.cmd",
+    "target": "scripts/start-day5.ps1",
+    "exists": false
+  },
+  {
+    "cmd": "START_STATIC.cmd",
+    "target": "scripts/start-day5.ps1",
+    "exists": false
+  }
+]

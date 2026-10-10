@@ -1,0 +1,10 @@
+{
+  "releaseCommit": "c54571240cb07d36815ff9cd8ed40151ef4acc20",
+  "backendDeployment": "dep-db4mbq142hec73dojdt0",
+  "status": "LIVE confirmed in Render dashboard",
+  "codeCommit": "40aa199f88b4924346ca7fd69ea591fa549327fe",
+  "scope": "Free existing service, no subscription or topup purchased",
+  "newSimulationRequestId": "req-255f3846c6fa4db18bf66b59b1f9324b",
+  "newSimulationUiValidation": "PASS",
+  "retainedOldEvidenceAfterRestart": "Old request timed out then not_found. New reviewed simulation registers source records again. This failure is retained, not hidden."
+}

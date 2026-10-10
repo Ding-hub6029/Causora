@@ -1,0 +1,316 @@
+
+> causora-day5-ding@0.5.0 test
+> node --test tests/day1-flow.test.mjs tests/day2-ux.test.mjs tests/simulate-api.test.mjs tests/day4-api.test.mjs tests/golden-health.test.mjs tests/golden-bootstrap.test.mjs tests/toolchain-boundary.test.mjs tests/day5-wang-request-lifecycle.test.mjs
+
+TAP version 13
+# Subtest: Contract version and all five stages have the required data
+ok 1 - Contract version and all five stages have the required data
+  ---
+  duration_ms: 5.089896
+  ...
+# Subtest: Four synthetic source files and the notice register are real packaged artifacts
+ok 2 - Four synthetic source files and the notice register are real packaged artifacts
+  ---
+  duration_ms: 2.748366
+  ...
+# Subtest: All evidence quotes contain their critical values; EV-019 maps to a variable
+ok 3 - All evidence quotes contain their critical values; EV-019 maps to a variable
+  ---
+  duration_ms: 0.563537
+  ...
+# Subtest: All five EvidenceRecord quotes match their cited PDF page; wrong quote and page fail
+ok 4 - All five EvidenceRecord quotes match their cited PDF page; wrong quote and page fail
+  ---
+  duration_ms: 194.0678
+  ...
+# Subtest: Renewal lock requires a real date inequality AND an explicit notice input
+ok 5 - Renewal lock requires a real date inequality AND an explicit notice input
+  ---
+  duration_ms: 0.628348
+  ...
+# Subtest: Locked forecast mechanism is explicit and the Critic uses matching inputs
+ok 6 - Locked forecast mechanism is explicit and the Critic uses matching inputs
+  ---
+  duration_ms: 0.483806
+  ...
+# Subtest: Every matrix has each fixed option exactly once and at most one recommended cell
+ok 7 - Every matrix has each fixed option exactly once and at most one recommended cell
+  ---
+  duration_ms: 0.516505
+  ...
+# Subtest: All 9 formula traces add exactly to their cells without a double-counted uplift
+ok 8 - All 9 formula traces add exactly to their cells without a double-counted uplift
+  ---
+  duration_ms: 0.442208
+  ...
+# Subtest: Decision Delta is calculated from each selected scenario, not a hard-coded baseline
+ok 9 - Decision Delta is calculated from each selected scenario, not a hard-coded baseline
+  ---
+  duration_ms: 0.371852
+  ...
+# Subtest: Agent and Critic numerical claims are guarded tokens resolved against the contract
+ok 10 - Agent and Critic numerical claims are guarded tokens resolved against the contract
+  ---
+  duration_ms: 20.001122
+  ...
+# Subtest: Golden Run is a complete independently serialised snapshot with a valid audit timestamp
+ok 11 - Golden Run is a complete independently serialised snapshot with a valid audit timestamp
+  ---
+  duration_ms: 0.981246
+  ...
+# Subtest: Frozen workflow preserves Golden, labels unsimulated drafts and blocks stale live approval
+ok 12 - Frozen workflow preserves Golden, labels unsimulated drafts and blocks stale live approval
+  ---
+  duration_ms: 0.647735
+  ...
+# Subtest: Formula modal identifies a scenario and option; dialog manages Tab, Escape and focus restore
+ok 13 - Formula modal identifies a scenario and option; dialog manages Tab, Escape and focus restore
+  ---
+  duration_ms: 0.363005
+  ...
+# Subtest: Static start command and mobile status display work without a live backend
+ok 14 - Static start command and mobile status display work without a live backend
+  ---
+  duration_ms: 0.941041
+  ...
+# Subtest: Runtime validation rejects unknown versions, malformed types and inconsistent accounting
+ok 15 - Runtime validation rejects unknown versions, malformed types and inconsistent accounting
+  ---
+  duration_ms: 7.246491
+  ...
+# Subtest: Fractional probability differences keep precision; money preserves non-round values
+ok 16 - Fractional probability differences keep precision; money preserves non-round values
+  ---
+  duration_ms: 0.5276
+  ...
+# Subtest: Guarded text handles cost increases, equality and unbound numbers
+ok 17 - Guarded text handles cost increases, equality and unbound numbers
+  ---
+  duration_ms: 1.004331
+  ...
+# Subtest: Per-scenario selection, inclusive limits, deterministic ties and no-feasible Brief
+ok 18 - Per-scenario selection, inclusive limits, deterministic ties and no-feasible Brief
+  ---
+  duration_ms: 2.653362
+  ...
+# Subtest: Golden integrity verification rejects tampering
+ok 19 - Golden integrity verification rejects tampering
+  ---
+  duration_ms: 8.658415
+  ...
+# Subtest: Synthetic forecast provenance and rolling benchmark remain distinct from total excess
+ok 20 - Synthetic forecast provenance and rolling benchmark remain distinct from total excess
+  ---
+  duration_ms: 1.005195
+  ...
+# Subtest: Day5 preserves validated live simulation while keeping the saved example explicitly labelled
+ok 21 - Day5 preserves validated live simulation while keeping the saved example explicitly labelled
+  ---
+  duration_ms: 1.308707
+  ...
+# Subtest: Scenario and option meanings and all fixed Day2 option definitions remain unchanged
+ok 22 - Scenario and option meanings and all fixed Day2 option definitions remain unchanged
+  ---
+  duration_ms: 1.534186
+  ...
+# Subtest: Risk and cash edits remain drafts until a new request; no stale approval is enabled
+ok 23 - Risk and cash edits remain drafts until a new request; no stale approval is enabled
+  ---
+  duration_ms: 0.337233
+  ...
+# Subtest: Matrix browsing and option inspection are view-only and preserve the validated live run
+ok 24 - Matrix browsing and option inspection are view-only and preserve the validated live run
+  ---
+  duration_ms: 0.402883
+  ...
+# Subtest: unreviewed v2 remains visibly non-decision-ready, has no winner styling, and traces weekly provenance
+ok 25 - unreviewed v2 remains visibly non-decision-ready, has no winner styling, and traces weekly provenance
+  ---
+  duration_ms: 0.682114
+  ...
+# Subtest: Day1/Day2 shared v1 contract, data version, formula and scenario identities remain intact
+ok 26 - Day1/Day2 shared v1 contract, data version, formula and scenario identities remain intact
+  ---
+  duration_ms: 0.751927
+  ...
+# Subtest: Boardroom success requires reviewed v2, exact run identity, correlated request id, three roles, Critic and Numeric Guardrail
+ok 27 - Boardroom success requires reviewed v2, exact run identity, correlated request id, three roles, Critic and Numeric Guardrail
+  ---
+  duration_ms: 3.050391
+  ...
+# Subtest: Boardroom metric templates are declared and rendered from the matching Simulation
+ok 28 - Boardroom metric templates are declared and rendered from the matching Simulation
+  ---
+  duration_ms: 38.433901
+  ...
+# Subtest: Boardroom client posts only v1 identity with no credentials, no-store, explicit request id, and classifies missing endpoint
+ok 29 - Boardroom client posts only v1 identity with no credentials, no-store, explicit request id, and classifies missing endpoint
+  ---
+  duration_ms: 19.634568
+  ...
+# Subtest: Critic-unavailable and provider failures preserve retry classification without altering simulation
+ok 30 - Critic-unavailable and provider failures preserve retry classification without altering simulation
+  ---
+  duration_ms: 1.876508
+  ...
+# Subtest: Evidence validator rejects stale ids, traversal, invalid pages and malformed PDF bboxes
+ok 31 - Evidence validator rejects stale ids, traversal, invalid pages and malformed PDF bboxes
+  ---
+  duration_ms: 1.10319
+  ...
+# Subtest: Evidence client performs GET with omitted credentials and no-store, and maps a missing source to non-retryable
+ok 32 - Evidence client performs GET with omitted credentials and no-store, and maps a missing source to non-retryable
+  ---
+  duration_ms: 2.962207
+  ...
+# Subtest: PDF locator highlights only an API bbox or an exact quote on the cited page
+ok 33 - PDF locator highlights only an API bbox or an exact quote on the cited page
+  ---
+  duration_ms: 0.803083
+  ...
+# Subtest: Golden cache refuses TEST_FIXTURE_ONLY data and hash-mismatched stored runs
+ok 34 - Golden cache refuses TEST_FIXTURE_ONLY data and hash-mismatched stored runs
+  ---
+  duration_ms: 63.973131
+  ...
+# Subtest: Unmatched Evidence stays viewable but cannot satisfy Verified Golden creation or reload
+ok 35 - Unmatched Evidence stays viewable but cannot satisfy Verified Golden creation or reload
+  ---
+  duration_ms: 150.846112
+  ...
+# Subtest: Boardroom identity matcher rejects another simulation, request, dataVersion or scenario
+ok 36 - Boardroom identity matcher rejects another simulation, request, dataVersion or scenario
+  ---
+  duration_ms: 0.751873
+  ...
+# Subtest: already-aborted Boardroom and Evidence signals fail closed before fetch is invoked
+ok 37 - already-aborted Boardroom and Evidence signals fail closed before fetch is invoked
+  ---
+  duration_ms: 3.32973
+  ...
+# Subtest: Boardroom requires the response request-id header and envelope to exactly echo the outbound ID
+ok 38 - Boardroom requires the response request-id header and envelope to exactly echo the outbound ID
+  ---
+  duration_ms: 2.551275
+  ...
+# Subtest: Evidence requires the response request-id header and envelope to exactly echo its outbound ID
+ok 39 - Evidence requires the response request-id header and envelope to exactly echo its outbound ID
+  ---
+  duration_ms: 2.42531
+  ...
+# Subtest: a fresh browser with empty storage loads the complete same-origin static Golden and validates it
+ok 40 - a fresh browser with empty storage loads the complete same-origin static Golden and validates it
+  ---
+  duration_ms: 129.044989
+  ...
+# Subtest: a valid browser cache takes precedence and does not make a network request
+ok 41 - a valid browser cache takes precedence and does not make a network request
+  ---
+  duration_ms: 56.208932
+  ...
+# Subtest: a tampered local cache falls back to the immutable static record
+ok 42 - a tampered local cache falls back to the immutable static record
+  ---
+  duration_ms: 103.873448
+  ...
+# Subtest: an invalid bundled record or non-JSON response is rejected rather than shown as verified
+ok 43 - an invalid bundled record or non-JSON response is rejected rather than shown as verified
+  ---
+  duration_ms: 65.321864
+  ...
+# Subtest: the bundled Golden loader rejects non-same-origin URLs before fetching
+ok 44 - the bundled Golden loader rejects non-same-origin URLs before fetching
+  ---
+  duration_ms: 0.892443
+  ...
+# Subtest: health endpoint follows the configured API origin and defaults to same-origin proxy
+ok 45 - health endpoint follows the configured API origin and defaults to same-origin proxy
+  ---
+  duration_ms: 1.162497
+  ...
+# Subtest: static-only staging reports a missing public backend without sending a health request
+ok 46 - static-only staging reports a missing public backend without sending a health request
+  ---
+  duration_ms: 6.066175
+  ...
+# Subtest: health probe is a credential-free no-store GET and accepts reachability without promoting pending gates
+ok 47 - health probe is a credential-free no-store GET and accepts reachability without promoting pending gates
+  ---
+  duration_ms: 97.686332
+  ...
+# Subtest: health probe rejects non-ready and malformed responses
+ok 48 - health probe rejects non-ready and malformed responses
+  ---
+  duration_ms: 1.530753
+  ...
+# Subtest: health probe reports a short timeout and aborts its request
+ok 49 - health probe reports a short timeout and aborts its request
+  ---
+  duration_ms: 15.920944
+  ...
+# Subtest: initial health probe accepts a server that wakes after the previous short timeout
+ok 50 - initial health probe accepts a server that wakes after the previous short timeout
+  ---
+  duration_ms: 2604.394111
+  ...
+# Subtest: actual backend reviewed v2 wire response validates without development opt-in
+ok 51 - actual backend reviewed v2 wire response validates without development opt-in
+  ---
+  duration_ms: 144.485754
+  ...
+# Subtest: request builder preserves fixed options and maps shock, fractional risk, budget, seed and dataset
+ok 52 - request builder preserves fixed options and maps shock, fractional risk, budget, seed and dataset
+  ---
+  duration_ms: 2.625603
+  ...
+# Subtest: test-only v1 fixture passes the strict envelope, matrix, accounting, delta and selection validator
+ok 53 - test-only v1 fixture passes the strict envelope, matrix, accounting, delta and selection validator
+  ---
+  duration_ms: 13.261331
+  ...
+# Subtest: v2 development response requires explicit opt-in/headers and a complete non-approved trace
+ok 54 - v2 development response requires explicit opt-in/headers and a complete non-approved trace
+  ---
+  duration_ms: 8.337667
+  ...
+# Subtest: validator rejects mock/zero-run/version/seed and inconsistent accounting, purchase, delta or winner
+ok 55 - validator rejects mock/zero-run/version/seed and inconsistent accounting, purchase, delta or winner
+  ---
+  duration_ms: 2.643618
+  ...
+# Subtest: live Matrix recommendation styling derives from validated selections, not the response tone hint
+ok 56 - live Matrix recommendation styling derives from validated selections, not the response tone hint
+  ---
+  duration_ms: 0.567267
+  ...
+# Subtest: HTTP client posts only to the configured v1 endpoint and accepts only a valid success envelope
+ok 57 - HTTP client posts only to the configured v1 endpoint and accepts only a valid success envelope
+  ---
+  duration_ms: 1.051784
+  ...
+# Subtest: HTTP client opts into the marked v2 development adapter only when explicitly configured
+ok 58 - HTTP client opts into the marked v2 development adapter only when explicitly configured
+  ---
+  duration_ms: 6.658361
+  ...
+# Subtest: HTTP errors stay errors and retain the API request ID instead of applying a saved row as live
+ok 59 - HTTP errors stay errors and retain the API request ID instead of applying a saved row as live
+  ---
+  duration_ms: 1.103795
+  ...
+# Subtest: Configured Next lint root resolution does not evaluate externally supplied brace/glob patterns
+ok 60 - Configured Next lint root resolution does not evaluate externally supplied brace/glob patterns
+  ---
+  duration_ms: 2.771561
+  ...
+1..60
+# tests 60
+# suites 0
+# pass 60
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3737.548356
+
+EXIT_STATUS=0

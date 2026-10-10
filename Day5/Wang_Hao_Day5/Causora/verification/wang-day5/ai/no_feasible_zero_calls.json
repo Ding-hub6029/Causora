@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "causora.wang.day5.offline-ai-evaluation.v1",
+  "sampleId": "no_feasible_zero_calls",
+  "label": {
+    "fixtureOnly": true,
+    "category": "no_feasible",
+    "expected": "accepted no-feasible result with zero calls",
+    "networkCalls": 0,
+    "realModelCalls": 0
+  },
+  "note": "No feasible solution is a code-only outcome; fixtures must not be called.",
+  "fixtureResponses": {
+    "primary": [],
+    "critic": [],
+    "fallback": []
+  },
+  "observed": {
+    "outcome": "accepted",
+    "reason": null,
+    "matrixTraceUnchanged": true,
+    "rawPipelineResult": {
+      "envelope": {
+        "schemaVersion": "causora.contract.v1",
+        "dataVersion": "TEST_FIXTURE_ONLY-reviewed-v1",
+        "requestId": "br-TEST_FIXTURE_ONLY-day5",
+        "data": {
+          "scenarioId": "demand-drop",
+          "agentOutputs": [],
+          "criticIssues": [],
+          "brief": {
+            "scenarioId": "demand-drop",
+            "status": "no_feasible_option",
+            "recommendedOptionId": null,
+            "constraintViolations": [
+              {
+                "optionId": "D0",
+                "code": "stockout_threshold"
+              },
+              {
+                "optionId": "D0",
+                "code": "cash_ceiling"
+              },
+              {
+                "optionId": "D1",
+                "code": "cash_ceiling"
+              },
+              {
+                "optionId": "D2",
+                "code": "stockout_threshold"
+              },
+              {
+                "optionId": "D2",
+                "code": "cash_ceiling"
+              }
+            ],
+            "message": "No simulated option meets the current constraints. Revise inputs and run the simulator again."
+          },
+          "numericGuardrail": {
+            "passed": true,
+            "rejectedClaims": []
+          }
+        }
+      },
+      "headers": {
+        "X-Causora-Provider-Mode": "primary",
+        "X-Causora-Critic-Status": "complete",
+        "X-Request-Id": "br-TEST_FIXTURE_ONLY-day5",
+        "Cache-Control": "no-store"
+      },
+      "audit": {
+        "simulationId": "sim-50197ba498e1fd0117aafe88",
+        "dataVersion": "TEST_FIXTURE_ONLY-reviewed-v1",
+        "scenarioId": "demand-drop",
+        "formulaVersion": "tco-v1",
+        "simulationRequestId": "req-0654b33181594b7caf66e9accec5c0b7",
+        "boardroomRequestId": "br-TEST_FIXTURE_ONLY-day5",
+        "inputSha256": "7fbe9b920aaf0e5dc88498cd1d10ca1db392d640311a9297db30c52a802c9d04",
+        "numericOrigin": "CURRENT_SIMULATION_AND_VETTED_EVIDENCE",
+        "events": [],
+        "formalTransport": true,
+        "timeouts": {
+          "totalSeconds": 4,
+          "stageSeconds": 0.5,
+          "criticSeconds": 0.5,
+          "frontendSeconds": 45,
+          "sdkMatchesEffectiveDeadline": true
+        },
+        "providerCalls": 0,
+        "stageStatus": "SKIPPED_NO_FEASIBLE_OPTION",
+        "noRecommendation": true
+      }
+    }
+  },
+  "verdict": "PASS"
+}

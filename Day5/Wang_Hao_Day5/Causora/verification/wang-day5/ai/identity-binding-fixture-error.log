@@ -1,0 +1,22 @@
+...F                                                                     [100%]
+=================================== FAILURES ===================================
+______ test_run_simulation_request_correlation_mismatch_stops_all_stages _______
+
+    def test_run_simulation_request_correlation_mismatch_stops_all_stages():
+        run = reviewed_run()
+>       run.correlation_id = "not-the-simulation-envelope-request"
+        ^^^^^^^^^^^^^^^^^^
+
+tests_day5/test_day5_identity_binding.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = VerifiedRun(simulation_request={'schemaVersion': 'causora.contract.v1', 'datasetId': 'ds-001', 'scenarios': [{'id': 'b...5/main/Causora/backend/backend'), simulation_request_id='req-0654b33181594b7caf66e9accec5c0b7', pin_snapshot_sha256='')
+name = 'correlation_id', value = 'not-the-simulation-envelope-request'
+
+>   ???
+E   dataclasses.FrozenInstanceError: cannot assign to field 'correlation_id'
+
+<string>:4: FrozenInstanceError
+=========================== short test summary info ============================
+FAILED tests_day5/test_day5_identity_binding.py::test_run_simulation_request_correlation_mismatch_stops_all_stages
+1 failed, 3 passed in 0.74s

@@ -1,0 +1,24 @@
+# Causora Day 5 API blueprint. This file contains no credentials.
+# Create the Render service manually or from this blueprint; set the secret and
+# origin variables described in DEPLOYMENT_GUIDE.md after the service has a URL.
+services:
+  - type: web
+    name: causora-api
+    runtime: python
+    # Free simulation hosting. Paid AI stays disabled without a persistent journal.
+    plan: free
+    rootDir: Day5/Causora
+    buildCommand: python -m pip install --upgrade pip && python -m pip install -r backend/backend/requirements.txt
+    startCommand: python deployment/render_start.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: CAUSORA_AI_PROVIDER
+        value: "openrouter"
+      # Formal AI dispatch is fail-closed unless an authorized operator changes
+      # both values to YES and adds the dedicated secret/key journal settings.
+      - key: CAUSORA_OPENROUTER_PAID_AUTHORIZED
+        value: "NO"
+      - key: OPENROUTER_SCOPED_KEY_CONFIRMED
+        value: "NO"

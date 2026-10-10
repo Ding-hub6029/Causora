@@ -1,0 +1,12 @@
+HTTP/1.1 503 Service Unavailable
+date: Tue, 06 Oct 2026 19:48:25 GMT
+server: uvicorn
+cache-control: no-store
+x-request-id: req-4d22b809ddc64f30b73ec24e1b5cfc61
+x-causora-review-status: pending
+x-causora-trace-contract: release-gated-v2-pending
+x-causora-execution-mode: review-gated
+content-length: 553
+content-type: application/json
+vary: Origin
+

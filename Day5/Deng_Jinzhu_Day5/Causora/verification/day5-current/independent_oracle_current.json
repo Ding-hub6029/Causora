@@ -1,0 +1,215 @@
+{
+  "caseCount": 6,
+  "failed": 0,
+  "oracleImplementation": "pure-python-decimal-no-simulation-imports",
+  "passed": 6,
+  "results": [
+    {
+      "actual": {
+        "breakdown": {
+          "holding": 26,
+          "purchase": 3060,
+          "renewalPremium": 252,
+          "stockoutLoss": 6,
+          "terminationFee": 0
+        },
+        "expectedGrossProfitUsd": 1656,
+        "expectedRevenueUsd": 5000,
+        "expectedTco": 3344,
+        "grossMargin": "0.3312",
+        "grossMarginStatus": "VALID"
+      },
+      "expected": {
+        "breakdown": {
+          "holding": 26,
+          "purchase": 3060,
+          "renewalPremium": 252,
+          "stockoutLoss": 6,
+          "terminationFee": 0
+        },
+        "expectedGrossProfitUsd": 1656,
+        "expectedRevenueUsd": 5000,
+        "expectedTco": 3344,
+        "grossMargin": "0.3312",
+        "grossMarginStatus": "VALID"
+      },
+      "id": "locked_mixed_cost_rounding",
+      "kind": "cost",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "breakdown": {
+          "holding": 0,
+          "purchase": 3150,
+          "renewalPremium": 0,
+          "stockoutLoss": 2,
+          "terminationFee": 25000
+        },
+        "expectedGrossProfitUsd": -23152,
+        "expectedRevenueUsd": 5000,
+        "expectedTco": 28152,
+        "grossMargin": "-4.6304",
+        "grossMarginStatus": "VALID"
+      },
+      "expected": {
+        "breakdown": {
+          "holding": 0,
+          "purchase": 3150,
+          "renewalPremium": 0,
+          "stockoutLoss": 2,
+          "terminationFee": 25000
+        },
+        "expectedGrossProfitUsd": -23152,
+        "expectedRevenueUsd": 5000,
+        "expectedTco": 28152,
+        "grossMargin": "-4.6304",
+        "grossMarginStatus": "VALID"
+      },
+      "id": "locked_exit_fee_and_half_even",
+      "kind": "cost",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "breakdown": {
+          "holding": 0,
+          "purchase": 0,
+          "renewalPremium": 0,
+          "stockoutLoss": 0,
+          "terminationFee": 0
+        },
+        "expectedGrossProfitUsd": 0,
+        "expectedRevenueUsd": 0,
+        "expectedTco": 0,
+        "grossMargin": null,
+        "grossMarginStatus": "INVALID_REVENUE_ZERO"
+      },
+      "expected": {
+        "breakdown": {
+          "holding": 0,
+          "purchase": 0,
+          "renewalPremium": 0,
+          "stockoutLoss": 0,
+          "terminationFee": 0
+        },
+        "expectedGrossProfitUsd": 0,
+        "expectedRevenueUsd": 0,
+        "expectedTco": 0,
+        "grossMargin": null,
+        "grossMarginStatus": "INVALID_REVENUE_ZERO"
+      },
+      "id": "zero_revenue_is_invalid_not_divided_by_one",
+      "kind": "cost",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "cashOutflowP90": 45,
+        "denominatorRuns": 10,
+        "method": "nearest_rank_ceil_0.90N",
+        "rankOneBased": 9
+      },
+      "expected": {
+        "cashOutflowP90": 45,
+        "denominatorRuns": 10,
+        "method": "nearest_rank_ceil_0.90N",
+        "rankOneBased": 9
+      },
+      "id": "p90_nearest_rank_ten_trials",
+      "kind": "p90",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "constraintViolations": [
+          {
+            "code": "stockout_threshold",
+            "optionId": "D0"
+          },
+          {
+            "code": "cash_ceiling",
+            "optionId": "D2"
+          }
+        ],
+        "recommendedOptionId": "D1",
+        "status": "selected"
+      },
+      "expected": {
+        "constraintViolations": [
+          {
+            "code": "stockout_threshold",
+            "optionId": "D0"
+          },
+          {
+            "code": "cash_ceiling",
+            "optionId": "D2"
+          }
+        ],
+        "recommendedOptionId": "D1",
+        "status": "selected"
+      },
+      "id": "constraint_selection_and_order",
+      "kind": "selection",
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "constraintViolations": [
+          {
+            "code": "infeasible",
+            "optionId": "D0"
+          },
+          {
+            "code": "stockout_threshold",
+            "optionId": "D0"
+          },
+          {
+            "code": "cash_ceiling",
+            "optionId": "D0"
+          },
+          {
+            "code": "stockout_threshold",
+            "optionId": "D1"
+          },
+          {
+            "code": "cash_ceiling",
+            "optionId": "D2"
+          }
+        ],
+        "recommendedOptionId": null,
+        "status": "no_feasible_option"
+      },
+      "expected": {
+        "constraintViolations": [
+          {
+            "code": "infeasible",
+            "optionId": "D0"
+          },
+          {
+            "code": "stockout_threshold",
+            "optionId": "D0"
+          },
+          {
+            "code": "cash_ceiling",
+            "optionId": "D0"
+          },
+          {
+            "code": "stockout_threshold",
+            "optionId": "D1"
+          },
+          {
+            "code": "cash_ceiling",
+            "optionId": "D2"
+          }
+        ],
+        "recommendedOptionId": null,
+        "status": "no_feasible_option"
+      },
+      "id": "no_feasible_option_is_explicit",
+      "kind": "selection",
+      "status": "PASS"
+    }
+  ],
+  "schema": "causora.independent-oracle-result.v1"
+}

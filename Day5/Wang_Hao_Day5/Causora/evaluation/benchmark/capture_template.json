@@ -1,0 +1,27 @@
+{
+  "schema": "causora.day5-benchmark-capture.v2",
+  "method": "plain_llm",
+  "status": "COMPLETED",
+  "runId": "replace-with-unique-run-id",
+  "modelId": "replace-with-actual-model-id",
+  "startedAtUtc": "2026-01-01T00:00:00Z",
+  "finishedAtUtc": "2026-01-01T00:00:01Z",
+  "commonInputSha256": "copy-from-run-output",
+  "promptSha256": "copy-from-run-output",
+  "reproducibility": {
+    "executionMode": "plain_llm_no_tools",
+    "inputSha256": "copy-from-run-output",
+    "promptSha256": "copy-from-run-output",
+    "auditReference": "redacted-provider-receipt-or-operator-log-reference"
+  },
+  "providerUsage": {"inputTokens": 0, "outputTokens": 0, "costUsd": 0},
+  "oracleCaseResults": [
+    {
+      "caseId": "replace-with-one-shared-case-id",
+      "answer": {},
+      "evidenceRefs": ["control:replace-with-one-shared-case-id"],
+      "poisonPillFlags": []
+    }
+  ],
+  "notes": "Template only. A COMPLETED capture needs each shared case exactly once. Do not place secrets, authorization headers, private source documents, or raw provider payloads in a capture."
+}

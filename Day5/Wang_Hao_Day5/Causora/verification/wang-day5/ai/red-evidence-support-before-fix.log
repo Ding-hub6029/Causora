@@ -1,0 +1,233 @@
+FFFF..FFFFF                                                              [100%]
+=================================== FAILURES ===================================
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract guarantees unlimited supply.-Risk] _
+
+stage = 'Risk', claim = 'The contract guarantees unlimited supply.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+----------------------------- Captured stdout call -----------------------------
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract guarantees unlimited supply.-Critic] _
+
+stage = 'Critic', claim = 'The contract guarantees unlimited supply.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The agreement assures uninterrupted deliveries.-Risk] _
+
+stage = 'Risk', claim = 'The agreement assures uninterrupted deliveries.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The agreement assures uninterrupted deliveries.-Critic] _
+
+stage = 'Critic', claim = 'The agreement assures uninterrupted deliveries.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract permits waiving the exit fee.-Risk] _
+
+stage = 'Risk', claim = 'The contract permits waiving the exit fee.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract permits waiving the exit fee.-Critic] _
+
+stage = 'Critic', claim = 'The contract permits waiving the exit fee.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[No termination fee applies to exiting supplier A.-Risk] _
+
+stage = 'Risk', claim = 'No termination fee applies to exiting supplier A.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+_ test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[No termination fee applies to exiting supplier A.-Critic] _
+
+stage = 'Critic', claim = 'No termination fee applies to exiting supplier A.'
+
+    @pytest.mark.parametrize("stage", ["Risk", "Critic"])
+    @pytest.mark.parametrize("claim", [
+        "The contract guarantees unlimited supply.",
+        "The agreement assures uninterrupted deliveries.",
+        "The supplier guarantees zero stockout risk.",
+        "The contract permits waiving the exit fee.",
+        "No termination fee applies to exiting supplier A.",
+    ])
+    def test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees(stage, claim):
+        def mutate(value):
+            if stage == "Critic":
+                return {**value, "issues": [{**value["issues"][0], "body": claim, "evidence_ids": ["EV-024"]}]}
+            return {**value, "body": claim, "evidence_ids": ["EV-024"]}
+        primary = FixtureProvider(mutations={"Risk": mutate} if stage == "Risk" else {})
+        critic = FixtureProvider(mutations={"Critic": mutate} if stage == "Critic" else {})
+        # Both Critic transports must fail closed; a validated clean fallback would
+        # correctly replace the rejected draft and is tested separately.
+        fallback = FixtureProvider(mutations={"Critic": mutate})
+>       with pytest.raises(PipelineError):
+E       Failed: DID NOT RAISE PipelineError
+
+tests_day5/test_day5_evidence_support.py:25: Failed
+__ test_unsupported_preferred_critic_can_only_return_clean_validated_fallback __
+
+    def test_unsupported_preferred_critic_can_only_return_clean_validated_fallback():
+        unsupported = "The contract guarantees unlimited supply."
+        critic = FixtureProvider(mutations={"Critic": lambda value: {**value, "issues": [{**value["issues"][0], "body": unsupported, "evidence_ids": ["EV-024"]}]}})
+        result = execute(critic=critic)
+>       assert result.audit["fallbackReason"] == "evidence_claim_unsupported"
+E       AssertionError: assert None == 'evidence_claim_unsupported'
+
+tests_day5/test_day5_evidence_support.py:33: AssertionError
+=========================== short test summary info ============================
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract guarantees unlimited supply.-Risk]
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract guarantees unlimited supply.-Critic]
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The agreement assures uninterrupted deliveries.-Risk]
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The agreement assures uninterrupted deliveries.-Critic]
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract permits waiving the exit fee.-Risk]
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[The contract permits waiving the exit fee.-Critic]
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[No termination fee applies to exiting supplier A.-Risk]
+FAILED tests_day5/test_day5_evidence_support.py::test_valid_evidence_id_cannot_support_invented_supply_or_fee_guarantees[No termination fee applies to exiting supplier A.-Critic]
+FAILED tests_day5/test_day5_evidence_support.py::test_unsupported_preferred_critic_can_only_return_clean_validated_fallback
+9 failed, 2 passed in 9.04s

@@ -1,0 +1,168 @@
+{
+  "$defs": {
+    "DecisionOption": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "shareA": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Sharea",
+          "type": "number"
+        },
+        "terminateA": {
+          "title": "Terminatea",
+          "type": "boolean"
+        },
+        "allocation": {
+          "title": "Allocation",
+          "type": "string"
+        },
+        "short": {
+          "title": "Short",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "shareA",
+        "terminateA",
+        "allocation",
+        "short",
+        "description"
+      ],
+      "title": "DecisionOption",
+      "type": "object"
+    },
+    "Scenario": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "tag": {
+          "title": "Tag",
+          "type": "string"
+        },
+        "demandShock": {
+          "maximum": 1000,
+          "minimum": -100,
+          "title": "Demandshock",
+          "type": "number"
+        },
+        "demandUnits24m": {
+          "minimum": 0,
+          "title": "Demandunits24M",
+          "type": "integer"
+        },
+        "leadTime": {
+          "title": "Leadtime",
+          "type": "string"
+        },
+        "leadTimeMultiplier": {
+          "exclusiveMinimum": 0,
+          "title": "Leadtimemultiplier",
+          "type": "number"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "label",
+        "tag",
+        "demandShock",
+        "demandUnits24m",
+        "leadTime",
+        "leadTimeMultiplier",
+        "description"
+      ],
+      "title": "Scenario",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "datasetId": {
+      "title": "Datasetid",
+      "type": "string"
+    },
+    "scenarios": {
+      "items": {
+        "$ref": "#/$defs/Scenario"
+      },
+      "title": "Scenarios",
+      "type": "array"
+    },
+    "options": {
+      "items": {
+        "$ref": "#/$defs/DecisionOption"
+      },
+      "title": "Options",
+      "type": "array"
+    },
+    "seed": {
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "riskThreshold": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Riskthreshold",
+      "type": "number"
+    },
+    "budgetCeilingUsd": {
+      "minimum": 0,
+      "title": "Budgetceilingusd",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "datasetId",
+    "scenarios",
+    "options",
+    "seed",
+    "riskThreshold",
+    "budgetCeilingUsd"
+  ],
+  "title": "SimulateRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/simulate_request_v1.schema.json"
+}

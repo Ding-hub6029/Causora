@@ -1,0 +1,45 @@
+{
+  "schema": "causora.day5-benchmark-contract.v2",
+  "purpose": "Compare plain LLM, LLM plus local code, and Causora on the same answer-free frozen controls using scorer-only expected labels and a shared strict scoring rule.",
+  "sharedControls": {
+    "input": "shared_control_inputs.json",
+    "expectedLabels": "expected_labels.json",
+    "rule": "Expected labels are scorer-only and must never be supplied in a model prompt or provider capture."
+  },
+  "methods": [
+    {
+      "id": "plain_llm",
+      "label": "Plain LLM",
+      "prompt": "prompts/plain_llm_control_prompt.md",
+      "statusBeforeExplicitPaidAuthorization": "NOT_RUN_NO_PAID_AUTHORIZATION"
+    },
+    {
+      "id": "llm_plus_code",
+      "label": "LLM + code execution",
+      "prompt": "prompts/llm_plus_code_control_prompt.md",
+      "statusBeforeExplicitPaidAuthorization": "NOT_RUN_NO_PAID_AUTHORIZATION"
+    },
+    {
+      "id": "causora",
+      "label": "Causora core shared-control runner",
+      "input": "shared_control_inputs.json",
+      "status": "OFFLINE_SHARED_CONTROL_SCORE_ONLY"
+    }
+  ],
+  "oracle": "../oracle/frozen_control_cases.json",
+  "capturedResultSchema": {
+    "schema": "causora.day5-benchmark-capture.v2",
+    "requiredFields": ["method", "status", "runId", "modelId", "commonInputSha256", "oracleCaseResults", "startedAtUtc", "finishedAtUtc"],
+    "allowedMethodValues": ["plain_llm", "llm_plus_code"],
+    "allowedStatusValues": ["COMPLETED", "FAILED", "TIMED_OUT", "CANCELLED"],
+    "prohibitedContent": ["API keys", "provider credentials", "unredacted request authorization headers"],
+    "notes": "A COMPLETED capture must have every shared case exactly once, no unknown/duplicate case, a structured answer, control evidence reference, poison-pill flags, frozen input/prompt hashes, and reproducibility evidence. A failed, cancelled, or timed-out capture is evidence of that outcome, not a zero-cost success. Completion and answer correctness are scored separately."
+  },
+  "comparisonRules": [
+    "Oracle controls are pending real human-review documentation and are evaluated by evaluation/oracle/independent_oracle.py without importing the simulation engine.",
+    "Causora uses production rounding, P90, and selection helpers on the same shared controls; the historic Golden reconciliation audit is reported separately and is not a comparison score.",
+    "Missing LLM captures remain NOT_RUN_NO_PAID_AUTHORIZATION and must not be imputed or presented as a result.",
+    "Every real model capture must include the exact control-case IDs, model identifier, elapsed time, provider-reported usage/cost if available, frozen input/prompt hashes, and a redacted audit reference.",
+    "Scores include exact answer accuracy, control-evidence coverage, poison-pill recognition, and reproducibility identity."
+  ]
+}

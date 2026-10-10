@@ -1,0 +1,114 @@
+{
+  "kind": "OFFLINE_KNOWN_FIXTURE_FREEZE_NOT_UNSEEN_MODEL_EVALUATION",
+  "sourceHashes": {
+    "agents/wanghao-day3/agent_day4/pipeline.py": "3baa214e243678acadb4d3e6724ae2b120f3a2ba51fe91498d0046636862139c",
+    "agents/wanghao-day3/agent_day4/numeric.py": "2552e96c213f5a5bdb0f2fe8ef10df22f5b07cd48762f5b17f7f81d374e30530",
+    "agents/wanghao-day3/agent_day4/evidence.py": "d8647599b13b2db984a77f9899895eb01b338ac84f8d11fa983f215e98b27c09",
+    "agents/wanghao-day3/agent_day4/evidence_support.py": "52433d2be733d18ff5a0a71e7fbdccb060a08e39b1dc305c89f409bd2fb257ef",
+    "agents/wanghao-day3/agent_day4/inputs.py": "47db7f61fc55fa91e9fc843ca2a6514658b551593b79b5a6edbede29e181dc30",
+    "agents/wanghao-day3/agent_day4/wire.py": "c4b3e9b2bfbdfde66454061dd88fe24ac94fb0d68c8f37eed7bc14f384751dc5",
+    "agents/wanghao-day3/agent_day4/business.py": "b1548ba4398c5111d266ed57f8e53176e9e0acbc7739fd3e132c3f10c35ac9c6",
+    "agents/wanghao-day3/agent_day4/allocation.py": "0dfd0ca49954b503a09ce3acf263838517bddc1ce900d9ac373217cf7484e3cb",
+    "agents/wanghao-day3/tests_day5/run_offline_ai_evaluation.py": "6a921f08201365a0e777562bafae69805086d391b59b62606bfd80509413d450",
+    "agents/wanghao-day3/tests_day5/day5_fixtures.py": "ca647f62da8bffb435fc47f2ef2f04306fbae73cfbf996a2dbb8f05fe0b6332b",
+    "frontend/tests/fixtures/reviewed-v2-TEST_FIXTURE_ONLY.json": "93fd3736530d09bea2eda7af0ea03548aa4af5148b23fd1b014a231a034f2716"
+  },
+  "promptSha256": "1059cf5f1964db8e92eb8ae46bb24c7c4a938565372ed696f62b6fe96b3b6e3a",
+  "provider": "TEST_FIXTURE_ONLY",
+  "modelCalls": 0,
+  "config": {
+    "total_timeout": 4,
+    "stage_timeout": 0.5,
+    "critic_timeout": 0.5,
+    "retries": 0,
+    "max_calls": 8
+  },
+  "sampleIds": [
+    "clean_complete_fixture",
+    "numeric_percentage_point_tamper",
+    "wrong_evidence_id",
+    "source_evidence_prompt_injection",
+    "contract_prompt_injection",
+    "critic_missing",
+    "critic_timeout",
+    "critic_malformed_json_shape",
+    "role_missing_json_fields",
+    "role_identity_mismatch",
+    "no_feasible_zero_calls",
+    "mc_matrix_trace_immutable",
+    "d2_b_only_not_diversified",
+    "unsupported_existing_evidence_citation"
+  ],
+  "labels": [
+    {
+      "sampleId": "clean_complete_fixture",
+      "expected": "accepted complete fixture flow",
+      "category": "positive_complete_flow"
+    },
+    {
+      "sampleId": "numeric_percentage_point_tamper",
+      "expected": "rejected",
+      "category": "numeric_unit_tamper"
+    },
+    {
+      "sampleId": "wrong_evidence_id",
+      "expected": "rejected",
+      "category": "evidence_id_tamper"
+    },
+    {
+      "sampleId": "source_evidence_prompt_injection",
+      "expected": "rejected",
+      "category": "source_prompt_injection"
+    },
+    {
+      "sampleId": "contract_prompt_injection",
+      "expected": "rejected",
+      "category": "contract_prompt_injection"
+    },
+    {
+      "sampleId": "critic_missing",
+      "expected": "accepted via same-family fallback",
+      "category": "critic_fallback"
+    },
+    {
+      "sampleId": "critic_timeout",
+      "expected": "accepted via same-family fallback",
+      "category": "critic_fallback"
+    },
+    {
+      "sampleId": "critic_malformed_json_shape",
+      "expected": "accepted via same-family fallback",
+      "category": "critic_fallback"
+    },
+    {
+      "sampleId": "role_missing_json_fields",
+      "expected": "rejected",
+      "category": "role_json_malformed"
+    },
+    {
+      "sampleId": "role_identity_mismatch",
+      "expected": "rejected",
+      "category": "role_identity"
+    },
+    {
+      "sampleId": "no_feasible_zero_calls",
+      "expected": "accepted no-feasible result with zero calls",
+      "category": "no_feasible"
+    },
+    {
+      "sampleId": "mc_matrix_trace_immutable",
+      "expected": "accepted with unchanged Matrix/Trace",
+      "category": "integrity"
+    },
+    {
+      "sampleId": "d2_b_only_not_diversified",
+      "expected": "rejected",
+      "category": "allocation_semantics"
+    },
+    {
+      "sampleId": "unsupported_existing_evidence_citation",
+      "expected": "rejected",
+      "category": "targeted_semantic_support"
+    }
+  ]
+}

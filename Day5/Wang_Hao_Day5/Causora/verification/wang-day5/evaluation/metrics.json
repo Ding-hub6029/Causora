@@ -1,0 +1,19 @@
+{
+  "schema": "causora.day5.fair-metrics.v1",
+  "performanceStatus": "N_A_NO_AUTHORIZED_ACTUAL_CAPTURE",
+  "reason": "Pending new explicit authorization for an external actual capture; no model/provider call was made by this evaluator.",
+  "sampleScope": {
+    "inputCaseCount": 0,
+    "predictionCaseCount": 0,
+    "allFailuresRetained": true
+  },
+  "metrics": {
+    "criticDetectionRate": {"numerator": 0, "denominator": 0, "value": null, "status": "NA", "reason": "No authorised actual capture; denominator is zero."},
+    "falsePositiveRate": {"numerator": 0, "denominator": 0, "value": null, "status": "NA", "reason": "No authorised actual capture; denominator is zero."},
+    "numericFidelity": {"numerator": 0, "denominator": 0, "value": null, "status": "NA", "reason": "No authorised actual capture; denominator is zero."},
+    "evidenceSupport": {"numerator": 0, "denominator": 0, "value": null, "status": "NA", "reason": "No authorised actual capture; denominator is zero."},
+    "completeWorkflow": {"numerator": 0, "denominator": 0, "value": null, "status": "NA", "reason": "No authorised actual capture; denominator is zero."}
+  },
+  "confusion": {"TP": 0, "FP": 0, "FN": 0, "TN": 0, "cleanExecutionFailuresExcludedFromFPR": 0},
+  "cases": []
+}

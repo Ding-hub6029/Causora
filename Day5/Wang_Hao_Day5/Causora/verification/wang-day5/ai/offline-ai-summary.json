@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "causora.wang.day5.offline-ai-summary.v1",
+  "generatedAtUtc": "2026-10-09T19:35:45.641198+00:00",
+  "executionMode": "TEST_FIXTURE_ONLY",
+  "networkCalls": 0,
+  "realModelCalls": 0,
+  "totalSamples": 14,
+  "passedExpectedOutcomes": 13,
+  "unresolvedSemanticFalseAcceptances": [
+    "unsupported_existing_evidence_citation"
+  ],
+  "failedExpectedOutcomes": [],
+  "explicitLimitation": "This is deterministic offline fixture coverage, not real-model detection-rate or quality evidence.",
+  "sampleIds": [
+    "clean_complete_fixture",
+    "numeric_percentage_point_tamper",
+    "wrong_evidence_id",
+    "source_evidence_prompt_injection",
+    "contract_prompt_injection",
+    "critic_missing",
+    "critic_timeout",
+    "critic_malformed_json_shape",
+    "role_missing_json_fields",
+    "role_identity_mismatch",
+    "no_feasible_zero_calls",
+    "mc_matrix_trace_immutable",
+    "d2_b_only_not_diversified",
+    "unsupported_existing_evidence_citation"
+  ]
+}

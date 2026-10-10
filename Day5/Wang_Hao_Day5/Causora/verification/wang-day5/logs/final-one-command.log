@@ -1,0 +1,11 @@
+Running backend
+Running release-config
+Running frontend
+Running frontend-typecheck
+Running frontend-lint
+Running ai-tests_day5
+Running evaluation
+Running frontend-build
+Running frontend-production
+Running local-http
+PASS: logs in /home/ubuntu/causora_day5/main/Causora/verification/wang-day5/final-one-command

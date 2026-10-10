@@ -1,0 +1,339 @@
+{
+  "schemaVersion": "causora.contract.v1",
+  "dataVersion": "demo-2026.10.04-v4",
+  "requestId": "req-day1-mock-002",
+  "data": {
+    "simulation": {
+      "simulationId": "sim-day1-mock-0001",
+      "seed": 1042026,
+      "dataVersion": "demo-2026.10.04-v4",
+      "formulaVersion": "tco-v1",
+      "weeks": 104,
+      "monteCarloRuns": 0,
+      "matrix": {
+        "baseline": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 420000,
+            "stockoutProbability": 0.09,
+            "serviceLevel": 0.968,
+            "cashOutflowP90": 451000,
+            "breakdown": {
+              "purchase": 312000,
+              "holding": 38000,
+              "stockoutLoss": 26320,
+              "renewalPremium": 43680,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26000,
+            "unitsFromB": 0,
+            "tone": "neutral"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 411000,
+            "stockoutProbability": 0.05,
+            "serviceLevel": 0.981,
+            "cashOutflowP90": 430000,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 41500,
+              "stockoutLoss": 25052,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "recommended"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 445000,
+            "stockoutProbability": 0.03,
+            "serviceLevel": 0.988,
+            "cashOutflowP90": 471000,
+            "breakdown": {
+              "purchase": 327600,
+              "holding": 44000,
+              "stockoutLoss": 48400,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 26000,
+            "tone": "neutral"
+          }
+        ],
+        "demand-drop": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 438000,
+            "stockoutProbability": 0.13,
+            "serviceLevel": 0.957,
+            "cashOutflowP90": 476000,
+            "breakdown": {
+              "purchase": 294000,
+              "holding": 76000,
+              "stockoutLoss": 26840,
+              "renewalPremium": 41160,
+              "terminationFee": 0
+            },
+            "unitsFromA": 24500,
+            "unitsFromB": 0,
+            "tone": "risk"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 419000,
+            "stockoutProbability": 0.07,
+            "serviceLevel": 0.977,
+            "cashOutflowP90": 444000,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 48000,
+              "stockoutLoss": 26552,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "recommended"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 452000,
+            "stockoutProbability": 0.04,
+            "serviceLevel": 0.983,
+            "cashOutflowP90": 482000,
+            "breakdown": {
+              "purchase": 309960,
+              "holding": 90000,
+              "stockoutLoss": 27040,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 24600,
+            "tone": "neutral"
+          }
+        ],
+        "lead-stress": [
+          {
+            "optionId": "D0",
+            "feasible": true,
+            "expectedTco": 451000,
+            "stockoutProbability": 0.2,
+            "serviceLevel": 0.924,
+            "cashOutflowP90": 489000,
+            "breakdown": {
+              "purchase": 312000,
+              "holding": 40000,
+              "stockoutLoss": 55320,
+              "renewalPremium": 43680,
+              "terminationFee": 0
+            },
+            "unitsFromA": 26000,
+            "unitsFromB": 0,
+            "tone": "risk"
+          },
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "expectedTco": 430000,
+            "stockoutProbability": 0.1,
+            "serviceLevel": 0.966,
+            "cashOutflowP90": 455000,
+            "breakdown": {
+              "purchase": 318240,
+              "holding": 43500,
+              "stockoutLoss": 42052,
+              "renewalPremium": 26208,
+              "terminationFee": 0
+            },
+            "unitsFromA": 15600,
+            "unitsFromB": 10400,
+            "tone": "recommended"
+          },
+          {
+            "optionId": "D2",
+            "feasible": true,
+            "expectedTco": 463000,
+            "stockoutProbability": 0.06,
+            "serviceLevel": 0.979,
+            "cashOutflowP90": 497000,
+            "breakdown": {
+              "purchase": 327600,
+              "holding": 46000,
+              "stockoutLoss": 64400,
+              "renewalPremium": 0,
+              "terminationFee": 25000
+            },
+            "unitsFromA": 0,
+            "unitsFromB": 26000,
+            "tone": "neutral"
+          }
+        ]
+      },
+      "unitPricesUsd": {
+        "A": 12.0,
+        "B": 12.6
+      }
+    },
+    "deltas": [
+      {
+        "scenarioId": "baseline",
+        "optionId": "D0",
+        "baselineOptionId": "D0",
+        "deltaTco": 0,
+        "deltaStockoutPp": 0.0,
+        "deltaServicePp": 0.0,
+        "deltaCashP90": 0
+      },
+      {
+        "scenarioId": "baseline",
+        "optionId": "D1",
+        "baselineOptionId": "D0",
+        "deltaTco": -9000,
+        "deltaStockoutPp": -4.0,
+        "deltaServicePp": 1.3,
+        "deltaCashP90": -21000
+      },
+      {
+        "scenarioId": "baseline",
+        "optionId": "D2",
+        "baselineOptionId": "D0",
+        "deltaTco": 25000,
+        "deltaStockoutPp": -6.0,
+        "deltaServicePp": 2.0,
+        "deltaCashP90": 20000
+      },
+      {
+        "scenarioId": "demand-drop",
+        "optionId": "D0",
+        "baselineOptionId": "D0",
+        "deltaTco": 0,
+        "deltaStockoutPp": 0.0,
+        "deltaServicePp": 0.0,
+        "deltaCashP90": 0
+      },
+      {
+        "scenarioId": "demand-drop",
+        "optionId": "D1",
+        "baselineOptionId": "D0",
+        "deltaTco": -19000,
+        "deltaStockoutPp": -6.0,
+        "deltaServicePp": 2.0,
+        "deltaCashP90": -32000
+      },
+      {
+        "scenarioId": "demand-drop",
+        "optionId": "D2",
+        "baselineOptionId": "D0",
+        "deltaTco": 14000,
+        "deltaStockoutPp": -9.0,
+        "deltaServicePp": 2.6,
+        "deltaCashP90": 6000
+      },
+      {
+        "scenarioId": "lead-stress",
+        "optionId": "D0",
+        "baselineOptionId": "D0",
+        "deltaTco": 0,
+        "deltaStockoutPp": 0.0,
+        "deltaServicePp": 0.0,
+        "deltaCashP90": 0
+      },
+      {
+        "scenarioId": "lead-stress",
+        "optionId": "D1",
+        "baselineOptionId": "D0",
+        "deltaTco": -21000,
+        "deltaStockoutPp": -10.0,
+        "deltaServicePp": 4.2,
+        "deltaCashP90": -34000
+      },
+      {
+        "scenarioId": "lead-stress",
+        "optionId": "D2",
+        "baselineOptionId": "D0",
+        "deltaTco": 12000,
+        "deltaStockoutPp": -14.0,
+        "deltaServicePp": 5.5,
+        "deltaCashP90": 8000
+      }
+    ],
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "no_feasible_option",
+        "recommendedOptionId": null,
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "cash_ceiling"
+          },
+          {
+            "optionId": "D1",
+            "code": "cash_ceiling"
+          },
+          {
+            "optionId": "D2",
+            "code": "cash_ceiling"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "no_feasible_option",
+        "recommendedOptionId": null,
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D0",
+            "code": "cash_ceiling"
+          },
+          {
+            "optionId": "D1",
+            "code": "cash_ceiling"
+          },
+          {
+            "optionId": "D2",
+            "code": "cash_ceiling"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "no_feasible_option",
+        "recommendedOptionId": null,
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D0",
+            "code": "cash_ceiling"
+          },
+          {
+            "optionId": "D1",
+            "code": "cash_ceiling"
+          },
+          {
+            "optionId": "D2",
+            "code": "cash_ceiling"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "path": "/api/evidence/EV-014",
+  "method": "GET",
+  "status": 200,
+  "requestCorsHeaders": {},
+  "request": null,
+  "response": {
+    "schemaVersion": "causora.contract.v1",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "requestId": "causora-ev-6547634f-43ca-4a33-b0a0-f2f48a90aee9",
+    "data": {
+      "evidence": {
+        "id": "EV-014",
+        "sourceFile": "supplier_a_agreement.pdf",
+        "page": 4,
+        "quote": "If written notice is not received at least 60 days before renewal, the agreement automatically renews.",
+        "locatorBbox": [
+          54.0,
+          606.711,
+          543.7199,
+          621.825
+        ],
+        "extractedField": "renewal_notice_days",
+        "extractedValue": "60 days",
+        "matchMethod": "exact",
+        "matchScore": 1.0,
+        "quoteMatched": true
+      }
+    }
+  },
+  "headers": {
+    "x-request-id": "causora-ev-6547634f-43ca-4a33-b0a0-f2f48a90aee9",
+    "x-causora-current-simulation": "sim-4ff6c803c309c2a34874eee8"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "recordedAtUtc": "2026-10-08T15:09:19.644269+00:00",
+  "scope": "LOCAL_REVIEWED_SIMULATION_AND_AI_UNAVAILABLE_FALLBACK; NOT_NEW_PAID_MODEL_VALIDATION_OR_HUMAN_TEST",
+  "runs": [
+    {
+      "index": 1,
+      "requestId": "req-4f83721138b24f73b5c842ae33716590",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.485
+    },
+    {
+      "index": 2,
+      "requestId": "req-f55bf7bd99534bd299af09993d4e32a4",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.344
+    },
+    {
+      "index": 3,
+      "requestId": "req-0fb571f7616d4f3bbcb732e92d5ed9f1",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.391
+    },
+    {
+      "index": 4,
+      "requestId": "req-2868f4ea6816460a9004cf9c683ecf78",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.328
+    },
+    {
+      "index": 5,
+      "requestId": "req-c199fb78d8cf408cb560073979a90dd3",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.344
+    },
+    {
+      "index": 6,
+      "requestId": "req-9d35c6e2e1f94012bd30625d83cd6e2f",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.375
+    },
+    {
+      "index": 7,
+      "requestId": "req-b8acd59e00734452becfd7505dfba943",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.312
+    },
+    {
+      "index": 8,
+      "requestId": "req-c91307444e9e4bfbbad6f4c288be1980",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.36
+    },
+    {
+      "index": 9,
+      "requestId": "req-1af36a8a4c2b45258c9b09b648089d45",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.359
+    },
+    {
+      "index": 10,
+      "requestId": "req-6c81eb1e2e6c414ba2b069dbe0c10ad7",
+      "simulationId": "sim-4ff6c803c309c2a34874eee8",
+      "simulationStatus": 200,
+      "aiFailureStatus": 503,
+      "matrixEqualsVerifiedGolden": true,
+      "seconds": 0.359
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-014",
+      "status": 200,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-019",
+      "status": 200,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-020",
+      "status": 200,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-021",
+      "status": 200,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-024",
+      "status": 200,
+      "quoteMatched": true
+    },
+    {
+      "id": "EV-027",
+      "status": 200,
+      "quoteMatched": true
+    }
+  ]
+}

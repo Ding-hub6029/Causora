@@ -1,0 +1,33 @@
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+APIKey.txt
+apikey.txt
+*.pem
+*.key
+
+# Python virtual environments and bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node/Next.js build caches
+node_modules/
+.next/
+.vercel/
+out/
+builds/
+*.tsbuildinfo
+
+# Runtime-only local artifacts
+.runtime/
+*.log
+
+# Operating-system/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

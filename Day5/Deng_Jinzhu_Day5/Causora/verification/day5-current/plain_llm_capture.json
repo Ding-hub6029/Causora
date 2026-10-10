@@ -1,0 +1,130 @@
+{
+  "schema": "causora.day5-benchmark-capture.v2",
+  "method": "plain_llm",
+  "status": "COMPLETED",
+  "runId": "gen-1791567435-suBrvdlhjLRhWubkk4eI",
+  "modelId": "openai/gpt-5-mini",
+  "startedAtUtc": "2026-10-09T17:37:15.330651+00:00",
+  "finishedAtUtc": "2026-10-09T17:37:36.543211+00:00",
+  "commonInputSha256": "12ccc54cc4fd6ed6e38848b38d5f44fc6996a0807f6fc64f574a46c6322c82a8",
+  "promptSha256": "ac6c9b5eac1b17d8fd969ae1fc9cbc04a6fc01b81eda10ddff4ed07a820c9a0c",
+  "reproducibility": {
+    "executionMode": "plain_llm_no_tools",
+    "inputSha256": "12ccc54cc4fd6ed6e38848b38d5f44fc6996a0807f6fc64f574a46c6322c82a8",
+    "promptSha256": "ac6c9b5eac1b17d8fd969ae1fc9cbc04a6fc01b81eda10ddff4ed07a820c9a0c",
+    "auditReference": "private-day5-benchmark/budget.json: gen-1791567435-suBrvdlhjLRhWubkk4eI"
+  },
+  "providerUsage": {
+    "inputTokens": 1846,
+    "outputTokens": 3555,
+    "costUsd": 0.0075715
+  },
+  "oracleCaseResults": [
+    {
+      "caseId": "locked_mixed_cost_rounding",
+      "answer": {
+        "purchaseCostAUsd": 1800,
+        "purchaseCostBUsd": 1260,
+        "totalPurchaseUsd": 3060,
+        "holdingCostUsd": 6375,
+        "stockoutCostUsd": 0,
+        "terminationFeeUsd": 0,
+        "totalCostUsd": 9435,
+        "revenueUsd": 5000,
+        "grossMargin": -0.887,
+        "revenueStatus": "VALID"
+      },
+      "evidenceRefs": [
+        "control:locked_mixed_cost_rounding"
+      ],
+      "poisonPillFlags": [
+        "half-even whole-USD rounding",
+        "locked renewal premium"
+      ]
+    },
+    {
+      "caseId": "locked_exit_fee_and_half_even",
+      "answer": {
+        "purchaseCostAUsd": 0,
+        "purchaseCostBUsd": 3150,
+        "totalPurchaseUsd": 3150,
+        "holdingCostUsd": 125,
+        "stockoutCostUsd": 0,
+        "terminationFeeUsd": 25000,
+        "totalCostUsd": 28275,
+        "revenueUsd": 5000,
+        "grossMargin": -4.655,
+        "revenueStatus": "VALID"
+      },
+      "evidenceRefs": [
+        "control:locked_exit_fee_and_half_even"
+      ],
+      "poisonPillFlags": [
+        "half-even whole-USD rounding",
+        "locked renewal premium",
+        "locked termination fee"
+      ]
+    },
+    {
+      "caseId": "zero_revenue_is_invalid_not_divided_by_one",
+      "answer": {
+        "purchaseCostAUsd": 0,
+        "purchaseCostBUsd": 0,
+        "totalPurchaseUsd": 0,
+        "holdingCostUsd": 0,
+        "stockoutCostUsd": 0,
+        "terminationFeeUsd": 0,
+        "totalCostUsd": 0,
+        "revenueUsd": 0,
+        "grossMargin": null,
+        "revenueStatus": "INVALID_REVENUE_ZERO"
+      },
+      "evidenceRefs": [
+        "control:zero_revenue_is_invalid_not_divided_by_one"
+      ],
+      "poisonPillFlags": [
+        "no divide-by-one for zero revenue"
+      ]
+    },
+    {
+      "caseId": "p90_nearest_rank_ten_trials",
+      "answer": {
+        "p90Usd": 45
+      },
+      "evidenceRefs": [
+        "control:p90_nearest_rank_ten_trials"
+      ],
+      "poisonPillFlags": [
+        "nearest-rank rather than interpolation"
+      ]
+    },
+    {
+      "caseId": "constraint_selection_and_order",
+      "answer": {
+        "selectedOptionId": "D1",
+        "reason": "D1 is feasible, has stockoutProbability (0.05) <= riskThreshold (0.12), and cashOutflowP90 (310) <= budgetCeilingUsd (480). It is the only option satisfying both constraints."
+      },
+      "evidenceRefs": [
+        "control:constraint_selection_and_order"
+      ],
+      "poisonPillFlags": [
+        "simultaneous risk/cash constraints"
+      ]
+    },
+    {
+      "caseId": "no_feasible_option_is_explicit",
+      "answer": {
+        "selectedOptionId": null,
+        "reason": "No option satisfies all requirements: either not feasible or fails the stockout threshold or cash ceiling. Therefore no recommendation is provided."
+      },
+      "evidenceRefs": [
+        "control:no_feasible_option_is_explicit"
+      ],
+      "poisonPillFlags": [
+        "no recommendation when no option is feasible",
+        "simultaneous risk/cash constraints"
+      ]
+    }
+  ],
+  "notes": "Actual OpenRouter response. Frozen method prompt plus operator transport wrapper; exact full request hash retained in receipt. Code-method results are actual executed program stdout; answers not corrected by operator."
+}

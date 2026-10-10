@@ -1,0 +1,87 @@
+{
+  "kind": "causora.wang.review-record.v1",
+  "status": "reviewed",
+  "reviewId": "wang-supplied-confirmation-2026-10-07",
+  "reviewerRole": "contract_reviewer",
+  "reviewerId": "Wang Hao",
+  "recordedAtUtc": "2026-10-07T15:35:32.928017+00:00",
+  "humanReviewDate": "2026-10-07",
+  "humanReviewTimePrecision": "date",
+  "recordedAtUtcMeaning": "Technical transcription timestamp; the human supplied only a calendar date, not an exact signing time.",
+  "origin": "TRANSCRIBED_SUPPLIED_HUMAN_CONFIRMATION",
+  "scope": "Synthetic demonstration only. noticeSent=false means no valid entry in the supplied synthetic register; real-world sending is unknown. EV-020 confirms the conditional clause exists. This does not approve model policies or release v2.",
+  "contractPayloadSha256": "affca2057f0cdea34de4f98fe87bc4af5d30d656a7f5c9a7c098b596ddcf68bd",
+  "fieldProvenanceSha256": "59689eda30c65515188296b8ace1b6cdeeb987cd91f669fbf38a1d4f9549817e",
+  "humanConfirmationSource": {
+    "sourceFile": "reviewed/wang-2026-10-07/WangHao-human-confirmation.docx",
+    "sourceSha256": "588ea89123cfeb69ad9b904bd0cef4f2272407db39b3ee70ea8c0ae71bd53310"
+  },
+  "reviewedItems": [
+    {
+      "id": "EV-014",
+      "status": "reviewed",
+      "confirmedValue": 60,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "EV-019",
+      "status": "reviewed",
+      "confirmedValue": 24,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "EV-021",
+      "status": "reviewed",
+      "confirmedValue": 0.14,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "EV-024",
+      "status": "reviewed",
+      "confirmedValue": 0.6,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "EV-027",
+      "status": "reviewed",
+      "confirmedValue": 25000,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "EV-020",
+      "status": "reviewed",
+      "confirmedValue": true,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "lockedForecastUnits24m",
+      "status": "reviewed",
+      "confirmedValue": 26000,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "decisionDate",
+      "status": "reviewed",
+      "confirmedValue": "2026-10-04",
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "renewalDate",
+      "status": "reviewed",
+      "confirmedValue": "2026-11-18",
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "noticeSent",
+      "status": "reviewed",
+      "confirmedValue": false,
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    },
+    {
+      "id": "forecastBasis",
+      "status": "reviewed",
+      "confirmedValue": "locked-at-renewal",
+      "notes": "Transcribed from supplied human confirmation; synthetic demonstration scope only."
+    }
+  ]
+}

@@ -1,9 +1,8 @@
 {
-  "archivePolicy": "Exact copies of user-supplied Day5.zip and Day6.zip. Nested archives recursively scanned for credentials before publication.",
+  "archivePolicy": "Original hashes retained as provenance only. All archives recursively expanded. ZIP files removed from current revision. See DELIVERY_FILES.json.",
   "packages": [
     {
       "day": "Day5",
-      "path": "Day5/Deliveries/Day5.zip",
       "bytes": 34227572,
       "sha256": "34e7d52345e5adc79d12cb1fcc9e443c47c7c49925425c35f61000256ad524b7",
       "containedArchives": [
@@ -11,18 +10,19 @@
         "Day5/Deng_Jinzhu_Day5.zip",
         "Day5/Ding_Xiangfeng_Day5.zip",
         "Day5/Wang_Hao_Day5.zip"
-      ]
+      ],
+      "historicalArchivePath": "Day5/Deliveries/Day5.zip"
     },
     {
       "day": "Day6",
-      "path": "Day6/Day6.zip",
       "bytes": 16028602,
       "sha256": "b51af853cad63a8c9faf04154af60ed3e5301a830a8aec6b5929ec5d2b535bde",
       "containedArchives": [
         "Day6/Deng_Jinzhu_Day6.zip",
         "Day6/Ding_Xiangfeng_Day6.zip",
         "Day6/Wang_Hao_Day6.zip"
-      ]
+      ],
+      "historicalArchivePath": "Day6/Day6.zip"
     }
   ]
 }

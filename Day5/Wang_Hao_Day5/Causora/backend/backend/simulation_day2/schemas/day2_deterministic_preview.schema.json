@@ -1,0 +1,665 @@
+{
+  "$defs": {
+    "Day2Policy": {
+      "additionalProperties": false,
+      "properties": {
+        "assumptionStatus": {
+          "const": "UNAPPROVED_TEST_INPUT",
+          "title": "Assumptionstatus",
+          "type": "string"
+        },
+        "horizonStartDate": {
+          "format": "date",
+          "title": "Horizonstartdate",
+          "type": "string"
+        },
+        "openingInventoryEffectiveDate": {
+          "format": "date",
+          "title": "Openinginventoryeffectivedate",
+          "type": "string"
+        },
+        "openingInventoryUnits": {
+          "minimum": 0,
+          "title": "Openinginventoryunits",
+          "type": "integer"
+        },
+        "openingInventorySource": {
+          "title": "Openinginventorysource",
+          "type": "string"
+        },
+        "sellingPriceUsdPerUnit": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Sellingpriceusdperunit"
+        },
+        "lostContributionMarginUsdPerUnit": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Lostcontributionmarginusdperunit"
+        },
+        "holdingCostUsdPerUnitWeek": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Holdingcostusdperunitweek"
+        },
+        "safetyStockUnits": {
+          "minimum": 0,
+          "title": "Safetystockunits",
+          "type": "integer"
+        },
+        "targetStockUnits": {
+          "exclusiveMinimum": 0,
+          "title": "Targetstockunits",
+          "type": "integer"
+        },
+        "cashTiming": {
+          "const": "at_order",
+          "title": "Cashtiming",
+          "type": "string"
+        },
+        "roundingMode": {
+          "const": "half_even",
+          "title": "Roundingmode",
+          "type": "string"
+        },
+        "demandMode": {
+          "const": "history_rescaled_to_scenario_units",
+          "title": "Demandmode",
+          "type": "string"
+        },
+        "leadTimeMode": {
+          "const": "seed_rotated_empirical_cycle",
+          "title": "Leadtimemode",
+          "type": "string"
+        },
+        "leadStressAppliesTo": {
+          "enum": [
+            "A_only",
+            "all_suppliers"
+          ],
+          "title": "Leadstressappliesto",
+          "type": "string"
+        },
+        "commitmentSchedule": {
+          "const": "linear_weekly",
+          "title": "Commitmentschedule",
+          "type": "string"
+        },
+        "purchaseRecognition": {
+          "const": "at_order",
+          "title": "Purchaserecognition",
+          "type": "string"
+        },
+        "holdingBasis": {
+          "const": "available_ending_average",
+          "title": "Holdingbasis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assumptionStatus",
+        "horizonStartDate",
+        "openingInventoryEffectiveDate",
+        "openingInventoryUnits",
+        "openingInventorySource",
+        "sellingPriceUsdPerUnit",
+        "lostContributionMarginUsdPerUnit",
+        "holdingCostUsdPerUnitWeek",
+        "safetyStockUnits",
+        "targetStockUnits",
+        "cashTiming",
+        "roundingMode",
+        "demandMode",
+        "leadTimeMode",
+        "leadStressAppliesTo",
+        "commitmentSchedule",
+        "purchaseRecognition",
+        "holdingBasis"
+      ],
+      "title": "Day2Policy",
+      "type": "object"
+    },
+    "DeterministicCell": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "demandUnits": {
+          "minimum": 0,
+          "title": "Demandunits",
+          "type": "integer"
+        },
+        "fulfilledUnits": {
+          "minimum": 0,
+          "title": "Fulfilledunits",
+          "type": "integer"
+        },
+        "lostUnits": {
+          "minimum": 0,
+          "title": "Lostunits",
+          "type": "integer"
+        },
+        "orderedUnitsA": {
+          "minimum": 0,
+          "title": "Orderedunitsa",
+          "type": "integer"
+        },
+        "orderedUnitsB": {
+          "minimum": 0,
+          "title": "Orderedunitsb",
+          "type": "integer"
+        },
+        "deliveredUnitsA": {
+          "minimum": 0,
+          "title": "Deliveredunitsa",
+          "type": "integer"
+        },
+        "deliveredUnitsB": {
+          "minimum": 0,
+          "title": "Deliveredunitsb",
+          "type": "integer"
+        },
+        "unitsInTransitAtEnd": {
+          "minimum": 0,
+          "title": "Unitsintransitatend",
+          "type": "integer"
+        },
+        "endingInventoryUnits": {
+          "minimum": 0,
+          "title": "Endinginventoryunits",
+          "type": "integer"
+        },
+        "stockoutOccurred": {
+          "title": "Stockoutoccurred",
+          "type": "boolean"
+        },
+        "serviceLevel": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Servicelevel",
+          "type": "number"
+        },
+        "feasible": {
+          "title": "Feasible",
+          "type": "boolean"
+        },
+        "revenueUsd": {
+          "title": "Revenueusd",
+          "type": "integer"
+        },
+        "grossProfitUsd": {
+          "title": "Grossprofitusd",
+          "type": "integer"
+        },
+        "grossMargin": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Grossmargin"
+        },
+        "grossMarginStatus": {
+          "enum": [
+            "VALID",
+            "INVALID_REVENUE_ZERO"
+          ],
+          "title": "Grossmarginstatus",
+          "type": "string"
+        },
+        "cashOutflowUsd": {
+          "minimum": 0,
+          "title": "Cashoutflowusd",
+          "type": "integer"
+        },
+        "costBreakdownUsd": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "propertyNames": {
+            "enum": [
+              "purchase",
+              "holding",
+              "stockoutLoss",
+              "renewalPremium",
+              "terminationFee"
+            ]
+          },
+          "title": "Costbreakdownusd",
+          "type": "object"
+        },
+        "tcoUsd": {
+          "minimum": 0,
+          "title": "Tcousd",
+          "type": "integer"
+        },
+        "weeklyTrace": {
+          "items": {
+            "$ref": "#/$defs/WeekTrace"
+          },
+          "maxItems": 104,
+          "minItems": 104,
+          "title": "Weeklytrace",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "optionId",
+        "demandUnits",
+        "fulfilledUnits",
+        "lostUnits",
+        "orderedUnitsA",
+        "orderedUnitsB",
+        "deliveredUnitsA",
+        "deliveredUnitsB",
+        "unitsInTransitAtEnd",
+        "endingInventoryUnits",
+        "stockoutOccurred",
+        "serviceLevel",
+        "feasible",
+        "revenueUsd",
+        "grossProfitUsd",
+        "grossMargin",
+        "grossMarginStatus",
+        "cashOutflowUsd",
+        "costBreakdownUsd",
+        "tcoUsd",
+        "weeklyTrace"
+      ],
+      "title": "DeterministicCell",
+      "type": "object"
+    },
+    "WeekTrace": {
+      "additionalProperties": false,
+      "properties": {
+        "week": {
+          "minimum": 1,
+          "title": "Week",
+          "type": "integer"
+        },
+        "startDate": {
+          "format": "date",
+          "title": "Startdate",
+          "type": "string"
+        },
+        "openingUnits": {
+          "minimum": 0,
+          "title": "Openingunits",
+          "type": "integer"
+        },
+        "arrivalsA": {
+          "minimum": 0,
+          "title": "Arrivalsa",
+          "type": "integer"
+        },
+        "arrivalsB": {
+          "minimum": 0,
+          "title": "Arrivalsb",
+          "type": "integer"
+        },
+        "demandUnits": {
+          "minimum": 0,
+          "title": "Demandunits",
+          "type": "integer"
+        },
+        "availableUnits": {
+          "minimum": 0,
+          "title": "Availableunits",
+          "type": "integer"
+        },
+        "fulfilledUnits": {
+          "minimum": 0,
+          "title": "Fulfilledunits",
+          "type": "integer"
+        },
+        "lostUnits": {
+          "minimum": 0,
+          "title": "Lostunits",
+          "type": "integer"
+        },
+        "endingUnits": {
+          "minimum": 0,
+          "title": "Endingunits",
+          "type": "integer"
+        },
+        "onOrderUnitsBefore": {
+          "minimum": 0,
+          "title": "Onorderunitsbefore",
+          "type": "integer"
+        },
+        "inventoryPositionBefore": {
+          "minimum": 0,
+          "title": "Inventorypositionbefore",
+          "type": "integer"
+        },
+        "reorderPointUnits": {
+          "minimum": 0,
+          "title": "Reorderpointunits",
+          "type": "integer"
+        },
+        "orderedA": {
+          "minimum": 0,
+          "title": "Ordereda",
+          "type": "integer"
+        },
+        "orderedB": {
+          "minimum": 0,
+          "title": "Orderedb",
+          "type": "integer"
+        },
+        "sampledLeadDaysA": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sampledleaddaysa"
+        },
+        "sampledLeadDaysB": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Sampledleaddaysb"
+        },
+        "plannedArrivalWeekA": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Plannedarrivalweeka"
+        },
+        "plannedArrivalWeekB": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Plannedarrivalweekb"
+        },
+        "onOrderUnitsAfter": {
+          "minimum": 0,
+          "title": "Onorderunitsafter",
+          "type": "integer"
+        },
+        "holdingRawUsd": {
+          "title": "Holdingrawusd",
+          "type": "string"
+        },
+        "stockoutLossRawUsd": {
+          "title": "Stockoutlossrawusd",
+          "type": "string"
+        },
+        "basePurchaseRawUsd": {
+          "title": "Basepurchaserawusd",
+          "type": "string"
+        },
+        "renewalPremiumRawUsd": {
+          "title": "Renewalpremiumrawusd",
+          "type": "string"
+        },
+        "terminationFeeRawUsd": {
+          "title": "Terminationfeerawusd",
+          "type": "string"
+        }
+      },
+      "required": [
+        "week",
+        "startDate",
+        "openingUnits",
+        "arrivalsA",
+        "arrivalsB",
+        "demandUnits",
+        "availableUnits",
+        "fulfilledUnits",
+        "lostUnits",
+        "endingUnits",
+        "onOrderUnitsBefore",
+        "inventoryPositionBefore",
+        "reorderPointUnits",
+        "orderedA",
+        "orderedB",
+        "sampledLeadDaysA",
+        "sampledLeadDaysB",
+        "plannedArrivalWeekA",
+        "plannedArrivalWeekB",
+        "onOrderUnitsAfter",
+        "holdingRawUsd",
+        "stockoutLossRawUsd",
+        "basePurchaseRawUsd",
+        "renewalPremiumRawUsd",
+        "terminationFeeRawUsd"
+      ],
+      "title": "WeekTrace",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "CAUSORA_DAY2_INTERNAL_DETERMINISTIC_PREVIEW_V1",
+      "title": "Kind",
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "UNREVIEWED_TEST_ONLY_NO_RECOMMENDATION",
+        "REVIEWED_SYNTHETIC_POLICY_UNAPPROVED_NO_RECOMMENDATION"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "decisionReady": {
+      "const": false,
+      "title": "Decisionready",
+      "type": "boolean"
+    },
+    "internalSchemaVersion": {
+      "const": "jinzhu.deterministic-preview.v1",
+      "title": "Internalschemaversion",
+      "type": "string"
+    },
+    "referencedContractVersion": {
+      "const": "causora.contract.v1",
+      "title": "Referencedcontractversion",
+      "type": "string"
+    },
+    "sourceDataVersion": {
+      "title": "Sourcedataversion",
+      "type": "string"
+    },
+    "previewId": {
+      "title": "Previewid",
+      "type": "string"
+    },
+    "formulaVersion": {
+      "const": "tco-v1",
+      "title": "Formulaversion",
+      "type": "string"
+    },
+    "seed": {
+      "minimum": 0,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "weeks": {
+      "const": 104,
+      "title": "Weeks",
+      "type": "integer"
+    },
+    "deterministicRuns": {
+      "const": 1,
+      "title": "Deterministicruns",
+      "type": "integer"
+    },
+    "monteCarloRuns": {
+      "const": 0,
+      "title": "Montecarloruns",
+      "type": "integer"
+    },
+    "reviewStatus": {
+      "enum": [
+        "PENDING_HUMAN_REVIEW",
+        "SELF_ATTESTED_SYNTHETIC_REVIEW"
+      ],
+      "title": "Reviewstatus",
+      "type": "string"
+    },
+    "reviewSha256": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Reviewsha256"
+    },
+    "engineSourceSha256": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Enginesourcesha256",
+      "type": "object"
+    },
+    "assumptionStatus": {
+      "const": "UNAPPROVED_TEST_INPUT",
+      "title": "Assumptionstatus",
+      "type": "string"
+    },
+    "note": {
+      "title": "Note",
+      "type": "string"
+    },
+    "inputHashesSha256": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Inputhashessha256",
+      "type": "object"
+    },
+    "intermediateManifestSha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Intermediatemanifestsha256",
+      "type": "string"
+    },
+    "unitPricesUsd": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "propertyNames": {
+        "enum": [
+          "A",
+          "B"
+        ]
+      },
+      "title": "Unitpricesusd",
+      "type": "object"
+    },
+    "policy": {
+      "$ref": "#/$defs/Day2Policy"
+    },
+    "matrix": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/DeterministicCell"
+        },
+        "type": "array"
+      },
+      "propertyNames": {
+        "enum": [
+          "baseline",
+          "demand-drop",
+          "lead-stress"
+        ]
+      },
+      "title": "Matrix",
+      "type": "object"
+    }
+  },
+  "required": [
+    "kind",
+    "status",
+    "decisionReady",
+    "internalSchemaVersion",
+    "referencedContractVersion",
+    "sourceDataVersion",
+    "previewId",
+    "formulaVersion",
+    "seed",
+    "weeks",
+    "deterministicRuns",
+    "monteCarloRuns",
+    "reviewStatus",
+    "reviewSha256",
+    "engineSourceSha256",
+    "assumptionStatus",
+    "note",
+    "inputHashesSha256",
+    "intermediateManifestSha256",
+    "unitPricesUsd",
+    "policy",
+    "matrix"
+  ],
+  "title": "DeterministicPreview",
+  "type": "object"
+}

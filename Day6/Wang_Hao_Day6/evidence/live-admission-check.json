@@ -1,0 +1,17 @@
+{
+  "status": 429,
+  "body": {
+    "schemaVersion": "causora.contract.v1",
+    "requestId": "req-c09781fec66e4436a7c847889f753c08",
+    "error": {
+      "code": "validation_error",
+      "requestId": "req-c09781fec66e4436a7c847889f753c08",
+      "message": "Another AI review is running. Retry after it finishes.",
+      "details": {
+        "reason": "review_busy"
+      }
+    }
+  },
+  "cors": "https://causora-one.vercel.app",
+  "retryAfter": "1"
+}

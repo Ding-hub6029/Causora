@@ -1,0 +1,81 @@
+{
+  "preview_url": "https://4173-i1t66nnenc24dtd3xsye3-aa4a5cab.sg2.manus.computer",
+  "fresh_context": true,
+  "checks": {
+    "public_https_and_static_only_state": "PASS",
+    "fresh_browser_verified_golden": "PASS",
+    "cached_matrix_no_false_live": "PASS",
+    "cached_boardroom_no_live_provider_claim": "PASS",
+    "stored_choice_provenance_and_read_only": "PASS",
+    "evidence_pdf_worker_and_quote_highlight": "PASS",
+    "responsive_1440_1280_768_390": "PASS",
+    "refresh_reloads_static_golden_without_storage": "PASS",
+    "static_only_direct_routes_blocked": "PASS",
+    "static_only_no_backend_requests": "PASS",
+    "browser_console": "PASS"
+  },
+  "screenshots": [
+    "day5-staging-cold-start-1440x1000.png",
+    "day5-staging-matrix-1440x1000.png",
+    "day5-staging-evidence-pdf-1440x1000.png",
+    "day5-staging-brief-1440x1000.png",
+    "day5-staging-brief-390x844.png"
+  ],
+  "api_requests": [],
+  "console_errors": [],
+  "initial_local_storage_entries": 0,
+  "evidence": {
+    "canvas": {
+      "width": 918,
+      "height": 1188
+    },
+    "locator": "Server-provided PDF bounding box highlighted.",
+    "overlay_count": 1,
+    "worker_responses": [
+      {
+        "url": "https://4173-i1t66nnenc24dtd3xsye3-aa4a5cab.sg2.manus.computer/pdf.worker.min.mjs",
+        "status": "200",
+        "content_type": "text/javascript; charset=utf-8"
+      }
+    ],
+    "pdf_responses": [
+      {
+        "url": "https://4173-i1t66nnenc24dtd3xsye3-aa4a5cab.sg2.manus.computer/demo/supplier_a_agreement.pdf",
+        "status": "200",
+        "content_type": "application/pdf"
+      }
+    ]
+  },
+  "responsive": {
+    "1440x1000": {
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440,
+      "horizontal_overflow": false
+    },
+    "1280x900": {
+      "viewport": 1280,
+      "document": 1280,
+      "body": 1280,
+      "horizontal_overflow": false
+    },
+    "768x1024": {
+      "viewport": 768,
+      "document": 768,
+      "body": 768,
+      "horizontal_overflow": false
+    },
+    "390x844": {
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "horizontal_overflow": false
+    }
+  },
+  "direct_backend_probes": {
+    "/health": 503,
+    "/api/simulate": 503,
+    "response_code": "backend_not_configured"
+  },
+  "status": "PASS"
+}

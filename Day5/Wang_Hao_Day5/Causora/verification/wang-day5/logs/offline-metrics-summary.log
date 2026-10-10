@@ -1,0 +1,51 @@
+{
+  "maliciousOrMalformedPipelineRejection": {
+    "numerator": 8,
+    "denominator": 8,
+    "value": 1.0,
+    "status": "OK_OFFLINE_CONTROLS_ONLY",
+    "sampleScope": "Eight deterministic known cases labeled rejected; local pipeline, NOT Critic model detection."
+  },
+  "cleanFixtureFalseRejection": {
+    "numerator": 0,
+    "denominator": 2,
+    "value": 0.0,
+    "status": "OK_OFFLINE_CONTROLS_ONLY",
+    "sampleScope": "Two clean complete-flow fixture controls only, not representative unseen clean sample."
+  },
+  "numericStatementsPassingValidation": {
+    "numerator": 5,
+    "denominator": 19,
+    "value": 0.2631578947368421,
+    "status": "OK_OFFLINE_CONTROLS_ONLY",
+    "sampleScope": "Nineteen author-visible number statements: five valid controls and fourteen intentionally invalid; NOT model fidelity."
+  },
+  "numericExpectedControlOutcomesMet": {
+    "numerator": 19,
+    "denominator": 19,
+    "value": 1.0,
+    "status": "OK_OFFLINE_CONTROLS_ONLY",
+    "sampleScope": "All nineteen deterministic numeric controls; correct invalid rejection counts as correct control outcome."
+  },
+  "sourceQuoteExistenceAndMatch": {
+    "numerator": 6,
+    "denominator": 6,
+    "value": 1.0,
+    "status": "OK_OFFLINE_CONTROLS_ONLY",
+    "sampleScope": "Six source-backed evidence lookups; proves quote matching, NOT support for arbitrary model conclusions."
+  },
+  "generalEvidenceEntailment": {
+    "numerator": 0,
+    "denominator": 0,
+    "value": null,
+    "status": "N/A",
+    "sampleScope": "No independent general natural-language entailment checker or actual model citations inspected."
+  },
+  "fixtureCompleteWorkflow": {
+    "numerator": 5,
+    "denominator": 13,
+    "value": 0.38461538461538464,
+    "status": "OK_OFFLINE_CONTROLS_ONLY",
+    "sampleScope": "Thirteen injected pipeline attempts excluding code-only no-feasible; deliberate failures retained; all five required stages needed."
+  }
+}

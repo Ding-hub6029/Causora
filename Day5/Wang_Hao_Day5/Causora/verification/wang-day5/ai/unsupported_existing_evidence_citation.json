@@ -1,0 +1,347 @@
+{
+  "schemaVersion": "causora.wang.day5.offline-ai-evaluation.v1",
+  "sampleId": "unsupported_existing_evidence_citation",
+  "label": {
+    "fixtureOnly": true,
+    "category": "semantic_entailment_known_gap",
+    "expected": "should reject but is currently accepted",
+    "networkCalls": 0,
+    "realModelCalls": 0
+  },
+  "note": "Known unresolved gap: source ID validity does not prove arbitrary natural-language entailment.",
+  "fixtureResponses": {
+    "primary": [
+      {
+        "stage": "CFO",
+        "response": {
+          "role": "CFO",
+          "headline": "Review current tradeoffs",
+          "body": "Review the referenced current-run metrics.",
+          "status": "Watch",
+          "metric_refs": [
+            "cash_outflow_p90",
+            "delta_tco"
+          ],
+          "evidence_ids": [],
+          "option_ids": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "claims": []
+        }
+      },
+      {
+        "stage": "COO",
+        "response": {
+          "role": "COO",
+          "headline": "Review current tradeoffs",
+          "body": "Review the referenced current-run metrics.",
+          "status": "Watch",
+          "metric_refs": [
+            "stockout_probability"
+          ],
+          "evidence_ids": [],
+          "option_ids": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "claims": []
+        }
+      },
+      {
+        "stage": "Risk",
+        "response": {
+          "role": "Risk",
+          "headline": "Review current tradeoffs",
+          "body": "Review the referenced current-run metrics.",
+          "status": "Watch",
+          "metric_refs": [
+            "cash_outflow_p90",
+            "stockout_probability"
+          ],
+          "evidence_ids": [
+            "EV-014"
+          ],
+          "option_ids": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "claims": []
+        }
+      },
+      {
+        "stage": "Synthesizer",
+        "response": {
+          "option_id": "D1",
+          "option_action": "rebalance_suppliers",
+          "cash_ceiling_enforced": true,
+          "recommendation": "Use the verified selected option for human review.",
+          "rationale": "The selected alternative follows the existing cash ceiling checks and accounts for its sourcing action.",
+          "metric_refs": [
+            "delta_tco",
+            "stockout_probability",
+            "cash_outflow_p90"
+          ],
+          "claims": [],
+          "challenges": []
+        }
+      }
+    ],
+    "critic": [
+      {
+        "stage": "Critic",
+        "response": {
+          "cash_ceiling_enforced": true,
+          "checked_roles": [
+            "CFO",
+            "COO",
+            "Risk"
+          ],
+          "coverage": [
+            "renewal_condition",
+            "locked_forecast",
+            "minimum_commitment",
+            "demand_change",
+            "cash_pressure",
+            "holding_cost",
+            "omission",
+            "conflict"
+          ],
+          "issues": [
+            {
+              "kind": "compound_risk",
+              "severity": "High",
+              "headline": "Locked commitments interact with reduced demand",
+              "body": "The contract guarantees unlimited supply.",
+              "evidence_ids": [
+                "EV-024"
+              ],
+              "claims": [],
+              "roles": [
+                "CFO",
+                "COO",
+                "Risk"
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "fallback": []
+  },
+  "observed": {
+    "outcome": "accepted",
+    "reason": null,
+    "matrixTraceUnchanged": true,
+    "rawPipelineResult": {
+      "envelope": {
+        "schemaVersion": "causora.contract.v1",
+        "dataVersion": "TEST_FIXTURE_ONLY-reviewed-v1",
+        "requestId": "br-TEST_FIXTURE_ONLY-day5",
+        "data": {
+          "scenarioId": "demand-drop",
+          "agentOutputs": [
+            {
+              "role": "CFO",
+              "accent": "emerald",
+              "focus": "Finance and cash",
+              "headline": "Review current tradeoffs",
+              "body": "Review the referenced current-run metrics.",
+              "metrics": [
+                "cash_outflow_p90",
+                "delta_tco"
+              ],
+              "status": "Watch"
+            },
+            {
+              "role": "COO",
+              "accent": "blue",
+              "focus": "Operations and continuity",
+              "headline": "Review current tradeoffs",
+              "body": "Review the referenced current-run metrics.",
+              "metrics": [
+                "stockout_probability"
+              ],
+              "status": "Watch"
+            },
+            {
+              "role": "Risk",
+              "accent": "amber",
+              "focus": "Contract and downside",
+              "headline": "Review current tradeoffs",
+              "body": "Review the referenced current-run metrics.",
+              "metrics": [
+                "cash_outflow_p90",
+                "stockout_probability"
+              ],
+              "status": "Watch"
+            }
+          ],
+          "criticIssues": [
+            {
+              "severity": "High",
+              "headline": "Locked commitments interact with reduced demand",
+              "body": "The contract guarantees unlimited supply.",
+              "evidenceIds": [
+                "EV-024"
+              ],
+              "mechanism": {
+                "scenarioId": "demand-drop",
+                "forecastBasis": "locked-at-renewal",
+                "lockedForecastUnits24m": 26000,
+                "minPurchaseUnitsA": 15600,
+                "scenarioDemandUnits24m": 22100,
+                "committedExcessUnits": 2340,
+                "holdingCostDeltaUsd": {
+                  "D0": 0,
+                  "D1": 9655,
+                  "D2": 252
+                }
+              }
+            }
+          ],
+          "brief": {
+            "scenarioId": "demand-drop",
+            "status": "selected",
+            "recommendedOptionId": "D1",
+            "recommendation": "Use the verified selected option for human review.",
+            "rationale": "The selected alternative follows the existing cash ceiling checks and accounts for its sourcing action.",
+            "metricRefs": [
+              "delta_tco",
+              "stockout_probability",
+              "cash_outflow_p90"
+            ],
+            "formula": "TCO = purchase + holding + stockout loss + renewal premium + termination fee",
+            "formulaVersion": "tco-v1",
+            "formulaNotes": [
+              "All costs and risk measures originate from this verified simulation; cash tail risk is separate from expected total cost."
+            ],
+            "guardrail": "All displayed claims passed field-bound numeric and evidence validation."
+          },
+          "numericGuardrail": {
+            "passed": true,
+            "rejectedClaims": []
+          }
+        }
+      },
+      "headers": {
+        "X-Causora-Provider-Mode": "primary",
+        "X-Causora-Critic-Status": "complete",
+        "X-Request-Id": "br-TEST_FIXTURE_ONLY-day5",
+        "Cache-Control": "no-store"
+      },
+      "audit": {
+        "simulationId": "sim-50197ba498e1fd0117aafe88",
+        "dataVersion": "TEST_FIXTURE_ONLY-reviewed-v1",
+        "scenarioId": "demand-drop",
+        "formulaVersion": "tco-v1",
+        "simulationRequestId": "req-0654b33181594b7caf66e9accec5c0b7",
+        "boardroomRequestId": "br-TEST_FIXTURE_ONLY-day5",
+        "inputSha256": "099bd3729abd8fd89a686ddcf9c5193b613980e2ea7ca71626c095c815dd6e1e",
+        "numericOrigin": "CURRENT_SIMULATION_AND_VETTED_EVIDENCE",
+        "events": [
+          {
+            "stage": "CFO",
+            "attempt": 1,
+            "model": "TEST_FIXTURE_ONLY-primary",
+            "family": "openai-gpt",
+            "startedOffsetSeconds": 0.54884,
+            "configuredTimeoutSeconds": 0.5,
+            "effectiveTimeoutSeconds": 0.5,
+            "reservedAfterSeconds": 0.0,
+            "status": "returned",
+            "elapsedSeconds": 0.00553
+          },
+          {
+            "stage": "COO",
+            "attempt": 1,
+            "model": "TEST_FIXTURE_ONLY-primary",
+            "family": "openai-gpt",
+            "startedOffsetSeconds": 0.55121,
+            "configuredTimeoutSeconds": 0.5,
+            "effectiveTimeoutSeconds": 0.5,
+            "reservedAfterSeconds": 0.0,
+            "status": "returned",
+            "elapsedSeconds": 0.00371
+          },
+          {
+            "stage": "Risk",
+            "attempt": 1,
+            "model": "TEST_FIXTURE_ONLY-primary",
+            "family": "openai-gpt",
+            "startedOffsetSeconds": 0.55283,
+            "configuredTimeoutSeconds": 0.5,
+            "effectiveTimeoutSeconds": 0.5,
+            "reservedAfterSeconds": 0.0,
+            "status": "returned",
+            "elapsedSeconds": 0.00251
+          },
+          {
+            "stage": "Critic",
+            "attempt": 1,
+            "model": "TEST_FIXTURE_ONLY-gemini",
+            "family": "google-gemini",
+            "startedOffsetSeconds": 0.68461,
+            "configuredTimeoutSeconds": 0.5,
+            "effectiveTimeoutSeconds": 0.5,
+            "reservedAfterSeconds": 0.6,
+            "status": "returned",
+            "elapsedSeconds": 0.00588
+          },
+          {
+            "stage": "Synthesizer",
+            "attempt": 1,
+            "model": "TEST_FIXTURE_ONLY-primary",
+            "family": "openai-gpt",
+            "startedOffsetSeconds": 0.69121,
+            "configuredTimeoutSeconds": 0.5,
+            "effectiveTimeoutSeconds": 0.5,
+            "reservedAfterSeconds": 0.1,
+            "status": "returned",
+            "elapsedSeconds": 0.00295
+          }
+        ],
+        "formalTransport": true,
+        "timeouts": {
+          "totalSeconds": 4,
+          "stageSeconds": 0.5,
+          "criticSeconds": 0.5,
+          "frontendSeconds": 45,
+          "sdkMatchesEffectiveDeadline": true
+        },
+        "interpretationPolicy": "supplier_identity_not_diversification_v2",
+        "providerCalls": 5,
+        "providerMode": "primary",
+        "criticStatus": "complete",
+        "fallbackReason": null,
+        "synthesisChallenge": null,
+        "challenges": [],
+        "businessConsistency": {
+          "selectedAction": "rebalance_suppliers",
+          "cashCeilingEnforced": true,
+          "checkedKnownContradictions": true,
+          "proposedAction": "rebalance_suppliers",
+          "allocation": {
+            "optionId": "D1",
+            "terminateA": false,
+            "shareA": 0.6,
+            "shareB": 0.4,
+            "allSupplyFromB": false,
+            "mixedSuppliers": true,
+            "concentrationIndex": 0.52,
+            "baselineConcentrationIndex": 1.0,
+            "overallConcentrationLowerThanBaseline": true,
+            "dependenceOnALowerThanBaseline": true,
+            "singleSupplierDependence": false
+          }
+        },
+        "elapsedSeconds": 0.8666,
+        "outputSha256": "601efaf95c6a1472d9a77563e6a4db95bcdf597a7d50f895751394152380c823"
+      }
+    }
+  },
+  "verdict": "UNRESOLVED_SEMANTIC_FALSE_ACCEPTANCE"
+}

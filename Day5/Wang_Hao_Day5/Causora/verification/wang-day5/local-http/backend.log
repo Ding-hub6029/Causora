@@ -1,0 +1,20 @@
+INFO:     Started server process [8251]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:56921 (Press CTRL+C to quit)
+INFO:     127.0.0.1:35864 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35872 - "POST /api/simulate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35886 - "GET /api/evidence/EV-014 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35900 - "GET /api/evidence/EV-019 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35914 - "GET /api/evidence/EV-020 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35916 - "GET /api/evidence/EV-021 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35918 - "GET /api/evidence/EV-024 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35924 - "GET /api/evidence/EV-027 HTTP/1.1" 200 OK
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+INFO:     127.0.0.1:35940 - "POST /api/boardroom HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:35946 - "GET /api/evidence/EV-024 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35954 - "POST /api/simulate HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [8251]

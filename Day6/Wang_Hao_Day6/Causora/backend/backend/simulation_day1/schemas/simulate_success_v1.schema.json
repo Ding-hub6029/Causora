@@ -1,0 +1,407 @@
+{
+  "$defs": {
+    "ConstraintViolation": {
+      "additionalProperties": false,
+      "properties": {
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "code": {
+          "enum": [
+            "infeasible",
+            "stockout_threshold",
+            "cash_ceiling"
+          ],
+          "title": "Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "optionId",
+        "code"
+      ],
+      "title": "ConstraintViolation",
+      "type": "object"
+    },
+    "CostBreakdown": {
+      "additionalProperties": false,
+      "properties": {
+        "purchase": {
+          "minimum": 0,
+          "title": "Purchase",
+          "type": "integer"
+        },
+        "holding": {
+          "minimum": 0,
+          "title": "Holding",
+          "type": "integer"
+        },
+        "stockoutLoss": {
+          "minimum": 0,
+          "title": "Stockoutloss",
+          "type": "integer"
+        },
+        "renewalPremium": {
+          "minimum": 0,
+          "title": "Renewalpremium",
+          "type": "integer"
+        },
+        "terminationFee": {
+          "minimum": 0,
+          "title": "Terminationfee",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "purchase",
+        "holding",
+        "stockoutLoss",
+        "renewalPremium",
+        "terminationFee"
+      ],
+      "title": "CostBreakdown",
+      "type": "object"
+    },
+    "DecisionDelta": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "baselineOptionId": {
+          "const": "D0",
+          "title": "Baselineoptionid",
+          "type": "string"
+        },
+        "deltaTco": {
+          "title": "Deltatco",
+          "type": "integer"
+        },
+        "deltaStockoutPp": {
+          "title": "Deltastockoutpp",
+          "type": "number"
+        },
+        "deltaServicePp": {
+          "title": "Deltaservicepp",
+          "type": "number"
+        },
+        "deltaCashP90": {
+          "title": "Deltacashp90",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "optionId",
+        "baselineOptionId",
+        "deltaTco",
+        "deltaStockoutPp",
+        "deltaServicePp",
+        "deltaCashP90"
+      ],
+      "title": "DecisionDelta",
+      "type": "object"
+    },
+    "MetricCell": {
+      "additionalProperties": false,
+      "properties": {
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "feasible": {
+          "title": "Feasible",
+          "type": "boolean"
+        },
+        "expectedTco": {
+          "minimum": 0,
+          "title": "Expectedtco",
+          "type": "integer"
+        },
+        "stockoutProbability": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Stockoutprobability",
+          "type": "number"
+        },
+        "serviceLevel": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Servicelevel",
+          "type": "number"
+        },
+        "cashOutflowP90": {
+          "minimum": 0,
+          "title": "Cashoutflowp90",
+          "type": "integer"
+        },
+        "breakdown": {
+          "$ref": "#/$defs/CostBreakdown"
+        },
+        "unitsFromA": {
+          "minimum": 0,
+          "title": "Unitsfroma",
+          "type": "integer"
+        },
+        "unitsFromB": {
+          "minimum": 0,
+          "title": "Unitsfromb",
+          "type": "integer"
+        },
+        "tone": {
+          "enum": [
+            "neutral",
+            "recommended",
+            "risk"
+          ],
+          "title": "Tone",
+          "type": "string"
+        }
+      },
+      "required": [
+        "optionId",
+        "feasible",
+        "expectedTco",
+        "stockoutProbability",
+        "serviceLevel",
+        "cashOutflowP90",
+        "breakdown",
+        "unitsFromA",
+        "unitsFromB",
+        "tone"
+      ],
+      "title": "MetricCell",
+      "type": "object"
+    },
+    "ScenarioSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "selected",
+            "no_feasible_option"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "recommendedOptionId": {
+          "anyOf": [
+            {
+              "enum": [
+                "D0",
+                "D1",
+                "D2"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Recommendedoptionid"
+        },
+        "constraintViolations": {
+          "items": {
+            "$ref": "#/$defs/ConstraintViolation"
+          },
+          "title": "Constraintviolations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "status",
+        "recommendedOptionId",
+        "constraintViolations"
+      ],
+      "title": "ScenarioSelection",
+      "type": "object"
+    },
+    "SimulateResponse": {
+      "additionalProperties": false,
+      "properties": {
+        "simulation": {
+          "$ref": "#/$defs/SimulationResult"
+        },
+        "deltas": {
+          "items": {
+            "$ref": "#/$defs/DecisionDelta"
+          },
+          "title": "Deltas",
+          "type": "array"
+        },
+        "selections": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ScenarioSelection"
+          },
+          "propertyNames": {
+            "enum": [
+              "baseline",
+              "demand-drop",
+              "lead-stress"
+            ]
+          },
+          "title": "Selections",
+          "type": "object"
+        }
+      },
+      "required": [
+        "simulation",
+        "deltas",
+        "selections"
+      ],
+      "title": "SimulateResponse",
+      "type": "object"
+    },
+    "SimulationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "simulationId": {
+          "title": "Simulationid",
+          "type": "string"
+        },
+        "seed": {
+          "minimum": 0,
+          "title": "Seed",
+          "type": "integer"
+        },
+        "dataVersion": {
+          "title": "Dataversion",
+          "type": "string"
+        },
+        "formulaVersion": {
+          "const": "tco-v1",
+          "title": "Formulaversion",
+          "type": "string"
+        },
+        "weeks": {
+          "const": 104,
+          "title": "Weeks",
+          "type": "integer"
+        },
+        "monteCarloRuns": {
+          "minimum": 0,
+          "title": "Montecarloruns",
+          "type": "integer"
+        },
+        "unitPricesUsd": {
+          "$ref": "#/$defs/UnitPrices"
+        },
+        "matrix": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/MetricCell"
+            },
+            "type": "array"
+          },
+          "propertyNames": {
+            "enum": [
+              "baseline",
+              "demand-drop",
+              "lead-stress"
+            ]
+          },
+          "title": "Matrix",
+          "type": "object"
+        }
+      },
+      "required": [
+        "simulationId",
+        "seed",
+        "dataVersion",
+        "formulaVersion",
+        "weeks",
+        "monteCarloRuns",
+        "unitPricesUsd",
+        "matrix"
+      ],
+      "title": "SimulationResult",
+      "type": "object"
+    },
+    "UnitPrices": {
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "minimum": 0,
+          "title": "A",
+          "type": "number"
+        },
+        "B": {
+          "minimum": 0,
+          "title": "B",
+          "type": "number"
+        }
+      },
+      "required": [
+        "A",
+        "B"
+      ],
+      "title": "UnitPrices",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "dataVersion": {
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "requestId": {
+      "title": "Requestid",
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/$defs/SimulateResponse"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "requestId",
+    "data"
+  ],
+  "title": "ApiSuccess[SimulateResponse]",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/simulate_success_v1.schema.json"
+}

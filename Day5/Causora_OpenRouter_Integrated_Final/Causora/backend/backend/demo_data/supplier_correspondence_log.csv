@@ -1,0 +1,4 @@
+date,channel,recipient,event,valid_written_nonrenewal_notice,provenance
+2026-09-01,email,supplier_a,quarterly_planning_check,false,synthetic_mock_not_a_real_supplier_record
+2026-09-19,register,supplier_a,notice_deadline_audit_no_notice_entry,false,synthetic_mock_not_a_real_supplier_record
+2026-10-04,register,supplier_a,decision_date_register_audit_no_notice_entry,false,synthetic_mock_not_a_real_supplier_record

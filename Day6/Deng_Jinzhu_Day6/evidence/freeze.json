@@ -1,0 +1,61 @@
+{
+  "day": 6,
+  "filenameDay": 6,
+  "baselineCommit": "d87e81d487ad5c1079fb16e3516f2132b21af564",
+  "datasetId": "ds-001",
+  "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+  "formulaVersion": "tco-v1",
+  "seed": 1042026,
+  "weeks": 104,
+  "publicRuns": 1000,
+  "benchmarkRuns": 10000,
+  "models": {
+    "primary": "openai/gpt-5-mini",
+    "preferredCritic": "google/gemini-3.1-pro-preview",
+    "fallbackCritic": "openai/gpt-5-mini"
+  },
+  "maxCallsPerReview": 6,
+  "transportRetries": 0,
+  "cumulativeAuthorization": "Existing teacher key balance only; no topup; no cumulative count limit",
+  "reviewAdmission": {
+    "workers": 1,
+    "concurrentReviews": 1,
+    "minimumStartIntervalSeconds": 15
+  },
+  "goldenSha256": "14ba108319cb8cbbdec940eb19658aecd027a1ed802266917cc5ffaff6d0bfdf",
+  "promptSourceHashes": {
+    "allocation.py": "0dfd0ca49954b503a09ce3acf263838517bddc1ce900d9ac373217cf7484e3cb",
+    "business.py": "b1548ba4398c5111d266ed57f8e53176e9e0acbc7739fd3e132c3f10c35ac9c6",
+    "cli.py": "543b4cdef7d7917c22b2f5df7a256c444299af5fec81ece2a2b5c0ba8f33e6b1",
+    "eval_interface.py": "f1ca9cb2bf783ae365b033d0bfb82aa712ac309f349d41c1b181e4325f0761b9",
+    "evidence.py": "d8647599b13b2db984a77f9899895eb01b338ac84f8d11fa983f215e98b27c09",
+    "evidence_support.py": "52433d2be733d18ff5a0a71e7fbdccb060a08e39b1dc305c89f409bd2fb257ef",
+    "inputs.py": "47db7f61fc55fa91e9fc843ca2a6514658b551593b79b5a6edbede29e181dc30",
+    "numeric.py": "2552e96c213f5a5bdb0f2fe8ef10df22f5b07cd48762f5b17f7f81d374e30530",
+    "openrouter_provider.py": "fedd84900e1a94feab4a08cb119e4968dd448d593424dd364f3869e284432e84",
+    "pipeline.py": "ab7183686358c7de88739c7dbba332140318b8ff1a1fe027b839fcedb5648776",
+    "postgres_budget.py": "f600d4c3c2a47ff126fe32ed40b5c1296405405debbd4ae76f46fea939bebe7a",
+    "provider.py": "630466cf182222938e5a010d91172a782fa210d738a76db567c20301d3d3c819",
+    "wire.py": "1486c37654bcac6351a39c3155f0970bbbbc57beeb500b3fe0ee83368fb7fc6f",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "releaseCommit": "c54571240cb07d36815ff9cd8ed40151ef4acc20",
+  "language": "English",
+  "packagedPromptSourceHashes": {
+    "allocation.py": "0dfd0ca49954b503a09ce3acf263838517bddc1ce900d9ac373217cf7484e3cb",
+    "business.py": "b1548ba4398c5111d266ed57f8e53176e9e0acbc7739fd3e132c3f10c35ac9c6",
+    "cli.py": "543b4cdef7d7917c22b2f5df7a256c444299af5fec81ece2a2b5c0ba8f33e6b1",
+    "eval_interface.py": "f1ca9cb2bf783ae365b033d0bfb82aa712ac309f349d41c1b181e4325f0761b9",
+    "evidence.py": "d8647599b13b2db984a77f9899895eb01b338ac84f8d11fa983f215e98b27c09",
+    "evidence_support.py": "52433d2be733d18ff5a0a71e7fbdccb060a08e39b1dc305c89f409bd2fb257ef",
+    "inputs.py": "47db7f61fc55fa91e9fc843ca2a6514658b551593b79b5a6edbede29e181dc30",
+    "numeric.py": "27c358b0a0812a29ff94c2eaeaed998b66143e89461a825336064e7e128ac01a",
+    "openrouter_provider.py": "fedd84900e1a94feab4a08cb119e4968dd448d593424dd364f3869e284432e84",
+    "pipeline.py": "ab7183686358c7de88739c7dbba332140318b8ff1a1fe027b839fcedb5648776",
+    "postgres_budget.py": "f600d4c3c2a47ff126fe32ed40b5c1296405405debbd4ae76f46fea939bebe7a",
+    "provider.py": "630466cf182222938e5a010d91172a782fa210d738a76db567c20301d3d3c819",
+    "wire.py": "1486c37654bcac6351a39c3155f0970bbbbc57beeb500b3fe0ee83368fb7fc6f",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "languageRevisionNote": "Day6 prose translated to English. Historical promptSourceHashes are retained as original capture metadata. Packaged hashes separately identify the Unicode-escaped, behavior-equivalent numeric source."
+}

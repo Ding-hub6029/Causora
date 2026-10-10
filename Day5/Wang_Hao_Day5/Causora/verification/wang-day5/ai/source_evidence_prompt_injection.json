@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "causora.wang.day5.offline-ai-evaluation.v1",
+  "sampleId": "source_evidence_prompt_injection",
+  "label": {
+    "fixtureOnly": true,
+    "category": "source_prompt_injection",
+    "expected": "rejected",
+    "networkCalls": 0,
+    "realModelCalls": 0
+  },
+  "note": "A changed source quote must fail source-bound evidence validation before dispatch.",
+  "fixtureResponses": {
+    "primary": [],
+    "critic": [],
+    "fallback": []
+  },
+  "observed": {
+    "outcome": "rejected",
+    "reason": "simulation_or_evidence_not_verified",
+    "status": 503,
+    "retryable": false,
+    "details": {},
+    "matrixTraceUnchanged": true
+  },
+  "verdict": "PASS"
+}

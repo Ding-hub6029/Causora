@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: Production preview serves correct source types and keeps source files private
+ok 1 - Production preview serves correct source types and keeps source files private
+  ---
+  duration_ms: 165.9008
+  type: 'test'
+  ...
+# Subtest: Same-origin preview forwards API bodies and gate headers; unavailable backend fails closed
+ok 2 - Same-origin preview forwards API bodies and gate headers; unavailable backend fails closed
+  ---
+  duration_ms: 99.0201
+  type: 'test'
+  ...
+# Subtest: Static-only deployment blocks health/API proxying before reaching the configured backend
+ok 3 - Static-only deployment blocks health/API proxying before reaching the configured backend
+  ---
+  duration_ms: 77.1881
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 414.6643

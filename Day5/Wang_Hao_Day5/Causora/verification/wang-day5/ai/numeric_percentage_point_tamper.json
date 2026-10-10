@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "causora.wang.day5.offline-ai-evaluation.v1",
+  "sampleId": "numeric_percentage_point_tamper",
+  "label": {
+    "fixtureOnly": true,
+    "category": "numeric_unit_tamper",
+    "expected": "rejected",
+    "networkCalls": 0,
+    "realModelCalls": 0
+  },
+  "note": "A probability reference must not accept a percentage-point display.",
+  "fixtureResponses": {
+    "primary": [
+      {
+        "stage": "CFO",
+        "response": {
+          "role": "CFO",
+          "headline": "Review current tradeoffs",
+          "body": "Stockout changed by 8.7 percentage points.",
+          "status": "Watch",
+          "metric_refs": [
+            "cash_outflow_p90",
+            "delta_tco"
+          ],
+          "evidence_ids": [],
+          "option_ids": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "claims": []
+        }
+      },
+      {
+        "stage": "COO",
+        "response": {
+          "role": "COO",
+          "headline": "Review current tradeoffs",
+          "body": "Review the referenced current-run metrics.",
+          "status": "Watch",
+          "metric_refs": [
+            "stockout_probability"
+          ],
+          "evidence_ids": [],
+          "option_ids": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "claims": []
+        }
+      },
+      {
+        "stage": "Risk",
+        "response": {
+          "role": "Risk",
+          "headline": "Review current tradeoffs",
+          "body": "Review the referenced current-run metrics.",
+          "status": "Watch",
+          "metric_refs": [
+            "cash_outflow_p90",
+            "stockout_probability"
+          ],
+          "evidence_ids": [
+            "EV-014"
+          ],
+          "option_ids": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "claims": []
+        }
+      }
+    ],
+    "critic": [],
+    "fallback": []
+  },
+  "observed": {
+    "outcome": "rejected",
+    "reason": "numeric_guardrail_rejected",
+    "status": 422,
+    "retryable": false,
+    "details": {
+      "rejectedClaims": [
+        "body:unbound numeric span '8.7 percentage points' at 20:41"
+      ]
+    },
+    "matrixTraceUnchanged": true
+  },
+  "verdict": "PASS"
+}

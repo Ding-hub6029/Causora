@@ -1,0 +1,1079 @@
+{
+  "$defs": {
+    "CashP90Basis": {
+      "additionalProperties": false,
+      "properties": {
+        "valueUsd": {
+          "minimum": 0,
+          "title": "Valueusd",
+          "type": "integer"
+        },
+        "method": {
+          "const": "nearest_rank_ceil_0.90N",
+          "title": "Method",
+          "type": "string"
+        },
+        "percentile": {
+          "const": 0.9,
+          "title": "Percentile",
+          "type": "number"
+        },
+        "rankOneBased": {
+          "minimum": 1,
+          "title": "Rankonebased",
+          "type": "integer"
+        },
+        "denominatorRuns": {
+          "minimum": 1,
+          "title": "Denominatorruns",
+          "type": "integer"
+        },
+        "includedCashComponents": {
+          "items": {
+            "enum": [
+              "purchase",
+              "holding",
+              "renewalPremium",
+              "terminationFee"
+            ],
+            "type": "string"
+          },
+          "title": "Includedcashcomponents",
+          "type": "array"
+        },
+        "excludedNonCashComponents": {
+          "items": {
+            "const": "stockoutLoss",
+            "type": "string"
+          },
+          "title": "Excludednoncashcomponents",
+          "type": "array"
+        },
+        "perRunRounding": {
+          "const": "whole_usd_half_even",
+          "title": "Perrunrounding",
+          "type": "string"
+        }
+      },
+      "required": [
+        "valueUsd",
+        "method",
+        "percentile",
+        "rankOneBased",
+        "denominatorRuns",
+        "includedCashComponents",
+        "excludedNonCashComponents",
+        "perRunRounding"
+      ],
+      "title": "CashP90Basis",
+      "type": "object"
+    },
+    "ConstraintViolation": {
+      "additionalProperties": false,
+      "properties": {
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "code": {
+          "enum": [
+            "infeasible",
+            "stockout_threshold",
+            "cash_ceiling"
+          ],
+          "title": "Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "optionId",
+        "code"
+      ],
+      "title": "ConstraintViolation",
+      "type": "object"
+    },
+    "CostBreakdown": {
+      "additionalProperties": false,
+      "properties": {
+        "purchase": {
+          "minimum": 0,
+          "title": "Purchase",
+          "type": "integer"
+        },
+        "holding": {
+          "minimum": 0,
+          "title": "Holding",
+          "type": "integer"
+        },
+        "stockoutLoss": {
+          "minimum": 0,
+          "title": "Stockoutloss",
+          "type": "integer"
+        },
+        "renewalPremium": {
+          "minimum": 0,
+          "title": "Renewalpremium",
+          "type": "integer"
+        },
+        "terminationFee": {
+          "minimum": 0,
+          "title": "Terminationfee",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "purchase",
+        "holding",
+        "stockoutLoss",
+        "renewalPremium",
+        "terminationFee"
+      ],
+      "title": "CostBreakdown",
+      "type": "object"
+    },
+    "DecisionDelta": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "baselineOptionId": {
+          "const": "D0",
+          "title": "Baselineoptionid",
+          "type": "string"
+        },
+        "deltaTco": {
+          "title": "Deltatco",
+          "type": "integer"
+        },
+        "deltaStockoutPp": {
+          "title": "Deltastockoutpp",
+          "type": "number"
+        },
+        "deltaServicePp": {
+          "title": "Deltaservicepp",
+          "type": "number"
+        },
+        "deltaCashP90": {
+          "title": "Deltacashp90",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "optionId",
+        "baselineOptionId",
+        "deltaTco",
+        "deltaStockoutPp",
+        "deltaServicePp",
+        "deltaCashP90"
+      ],
+      "title": "DecisionDelta",
+      "type": "object"
+    },
+    "ExecutionContext": {
+      "additionalProperties": false,
+      "description": "Response-wide status that prevents development calculations looking reviewed.",
+      "properties": {
+        "mode": {
+          "enum": [
+            "reviewed_release_gated",
+            "unreviewed_development_only"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "banner": {
+          "minLength": 1,
+          "title": "Banner",
+          "type": "string"
+        },
+        "humanReviewStatus": {
+          "enum": [
+            "reviewed",
+            "not_reviewed_development_only"
+          ],
+          "title": "Humanreviewstatus",
+          "type": "string"
+        },
+        "policyStatus": {
+          "enum": [
+            "approved",
+            "unapproved_development_only"
+          ],
+          "title": "Policystatus",
+          "type": "string"
+        },
+        "contractReleaseStatus": {
+          "enum": [
+            "released",
+            "not_released_development_only"
+          ],
+          "title": "Contractreleasestatus",
+          "type": "string"
+        },
+        "decisionReady": {
+          "title": "Decisionready",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "mode",
+        "banner",
+        "humanReviewStatus",
+        "policyStatus",
+        "contractReleaseStatus",
+        "decisionReady"
+      ],
+      "title": "ExecutionContext",
+      "type": "object"
+    },
+    "FormulaComponent": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "enum": [
+            "purchase",
+            "holding",
+            "stockoutLoss",
+            "renewalPremium",
+            "terminationFee"
+          ],
+          "title": "Key",
+          "type": "string"
+        },
+        "formula": {
+          "minLength": 1,
+          "title": "Formula",
+          "type": "string"
+        },
+        "inputKeys": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Inputkeys",
+          "type": "array"
+        },
+        "valueUsd": {
+          "minimum": 0,
+          "title": "Valueusd",
+          "type": "integer"
+        },
+        "roundingAudit": {
+          "$ref": "#/$defs/RoundingAudit"
+        }
+      },
+      "required": [
+        "key",
+        "formula",
+        "inputKeys",
+        "valueUsd",
+        "roundingAudit"
+      ],
+      "title": "FormulaComponent",
+      "type": "object"
+    },
+    "FormulaTrace": {
+      "additionalProperties": false,
+      "properties": {
+        "traceSchemaVersion": {
+          "const": "causora.formula-trace.v1",
+          "title": "Traceschemaversion",
+          "type": "string"
+        },
+        "simulationId": {
+          "minLength": 1,
+          "title": "Simulationid",
+          "type": "string"
+        },
+        "dataVersion": {
+          "minLength": 1,
+          "title": "Dataversion",
+          "type": "string"
+        },
+        "formulaVersion": {
+          "const": "tco-v1",
+          "title": "Formulaversion",
+          "type": "string"
+        },
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "runIdentity": {
+          "$ref": "#/$defs/TraceRunIdentity"
+        },
+        "parameters": {
+          "items": {
+            "$ref": "#/$defs/TraceParameter"
+          },
+          "minItems": 1,
+          "title": "Parameters",
+          "type": "array"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/$defs/FormulaComponent"
+          },
+          "maxItems": 5,
+          "minItems": 5,
+          "title": "Components",
+          "type": "array"
+        },
+        "expectedTcoUsd": {
+          "minimum": 0,
+          "title": "Expectedtcousd",
+          "type": "integer"
+        },
+        "stockoutProbability": {
+          "$ref": "#/$defs/StockoutProbabilityBasis"
+        },
+        "serviceLevel": {
+          "$ref": "#/$defs/ServiceLevelBasis"
+        },
+        "cashOutflowP90": {
+          "$ref": "#/$defs/CashP90Basis"
+        },
+        "summaryRoundingRule": {
+          "minLength": 1,
+          "title": "Summaryroundingrule",
+          "type": "string"
+        },
+        "samplePath": {
+          "$ref": "#/$defs/SamplePath"
+        }
+      },
+      "required": [
+        "traceSchemaVersion",
+        "simulationId",
+        "dataVersion",
+        "formulaVersion",
+        "scenarioId",
+        "optionId",
+        "runIdentity",
+        "parameters",
+        "components",
+        "expectedTcoUsd",
+        "stockoutProbability",
+        "serviceLevel",
+        "cashOutflowP90",
+        "summaryRoundingRule",
+        "samplePath"
+      ],
+      "title": "FormulaTrace",
+      "type": "object"
+    },
+    "MetricCell": {
+      "additionalProperties": false,
+      "properties": {
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "feasible": {
+          "title": "Feasible",
+          "type": "boolean"
+        },
+        "expectedTco": {
+          "minimum": 0,
+          "title": "Expectedtco",
+          "type": "integer"
+        },
+        "stockoutProbability": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Stockoutprobability",
+          "type": "number"
+        },
+        "serviceLevel": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Servicelevel",
+          "type": "number"
+        },
+        "cashOutflowP90": {
+          "minimum": 0,
+          "title": "Cashoutflowp90",
+          "type": "integer"
+        },
+        "breakdown": {
+          "$ref": "#/$defs/CostBreakdown"
+        },
+        "unitsFromA": {
+          "minimum": 0,
+          "title": "Unitsfroma",
+          "type": "integer"
+        },
+        "unitsFromB": {
+          "minimum": 0,
+          "title": "Unitsfromb",
+          "type": "integer"
+        },
+        "tone": {
+          "enum": [
+            "neutral",
+            "recommended",
+            "risk"
+          ],
+          "title": "Tone",
+          "type": "string"
+        }
+      },
+      "required": [
+        "optionId",
+        "feasible",
+        "expectedTco",
+        "stockoutProbability",
+        "serviceLevel",
+        "cashOutflowP90",
+        "breakdown",
+        "unitsFromA",
+        "unitsFromB",
+        "tone"
+      ],
+      "title": "MetricCell",
+      "type": "object"
+    },
+    "RoundingAudit": {
+      "additionalProperties": false,
+      "description": "Keeps raw Monte Carlo means distinct from display/accounting values.",
+      "properties": {
+        "rawMeanUsd": {
+          "minLength": 1,
+          "title": "Rawmeanusd",
+          "type": "string"
+        },
+        "displayedValueUsd": {
+          "minimum": 0,
+          "title": "Displayedvalueusd",
+          "type": "integer"
+        },
+        "displayedMinusRawMeanUsd": {
+          "minLength": 1,
+          "title": "Displayedminusrawmeanusd",
+          "type": "string"
+        },
+        "method": {
+          "minLength": 1,
+          "title": "Method",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rawMeanUsd",
+        "displayedValueUsd",
+        "displayedMinusRawMeanUsd",
+        "method"
+      ],
+      "title": "RoundingAudit",
+      "type": "object"
+    },
+    "SamplePath": {
+      "additionalProperties": false,
+      "properties": {
+        "sampleRunIndex": {
+          "minimum": 0,
+          "title": "Samplerunindex",
+          "type": "integer"
+        },
+        "classification": {
+          "const": "single_realised_trial_not_aggregate",
+          "title": "Classification",
+          "type": "string"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        },
+        "weeks": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "maxItems": 104,
+          "minItems": 104,
+          "title": "Weeks",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sampleRunIndex",
+        "classification",
+        "note",
+        "weeks"
+      ],
+      "title": "SamplePath",
+      "type": "object"
+    },
+    "ScenarioSelection": {
+      "additionalProperties": false,
+      "properties": {
+        "scenarioId": {
+          "enum": [
+            "baseline",
+            "demand-drop",
+            "lead-stress"
+          ],
+          "title": "Scenarioid",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "selected",
+            "no_feasible_option"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "recommendedOptionId": {
+          "anyOf": [
+            {
+              "enum": [
+                "D0",
+                "D1",
+                "D2"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Recommendedoptionid"
+        },
+        "constraintViolations": {
+          "items": {
+            "$ref": "#/$defs/ConstraintViolation"
+          },
+          "title": "Constraintviolations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "scenarioId",
+        "status",
+        "recommendedOptionId",
+        "constraintViolations"
+      ],
+      "title": "ScenarioSelection",
+      "type": "object"
+    },
+    "ServiceLevelBasis": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Value",
+          "type": "number"
+        },
+        "fulfilledUnitsAllRuns": {
+          "minimum": 0,
+          "title": "Fulfilledunitsallruns",
+          "type": "integer"
+        },
+        "demandUnitsAllRuns": {
+          "minimum": 0,
+          "title": "Demandunitsallruns",
+          "type": "integer"
+        },
+        "definition": {
+          "const": "fulfilled_units_all_runs / demand_units_all_runs",
+          "title": "Definition",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "fulfilledUnitsAllRuns",
+        "demandUnitsAllRuns",
+        "definition"
+      ],
+      "title": "ServiceLevelBasis",
+      "type": "object"
+    },
+    "SimulateResponseV2": {
+      "additionalProperties": false,
+      "properties": {
+        "simulation": {
+          "$ref": "#/$defs/SimulationResult"
+        },
+        "deltas": {
+          "items": {
+            "$ref": "#/$defs/DecisionDelta"
+          },
+          "title": "Deltas",
+          "type": "array"
+        },
+        "selections": {
+          "additionalProperties": {
+            "$ref": "#/$defs/ScenarioSelection"
+          },
+          "propertyNames": {
+            "enum": [
+              "baseline",
+              "demand-drop",
+              "lead-stress"
+            ]
+          },
+          "title": "Selections",
+          "type": "object"
+        },
+        "traces": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "$ref": "#/$defs/FormulaTrace"
+            },
+            "propertyNames": {
+              "enum": [
+                "D0",
+                "D1",
+                "D2"
+              ]
+            },
+            "type": "object"
+          },
+          "propertyNames": {
+            "enum": [
+              "baseline",
+              "demand-drop",
+              "lead-stress"
+            ]
+          },
+          "title": "Traces",
+          "type": "object"
+        },
+        "executionContext": {
+          "$ref": "#/$defs/ExecutionContext"
+        }
+      },
+      "required": [
+        "simulation",
+        "deltas",
+        "selections",
+        "traces",
+        "executionContext"
+      ],
+      "title": "SimulateResponseV2",
+      "type": "object"
+    },
+    "SimulationResult": {
+      "additionalProperties": false,
+      "properties": {
+        "simulationId": {
+          "title": "Simulationid",
+          "type": "string"
+        },
+        "seed": {
+          "minimum": 0,
+          "title": "Seed",
+          "type": "integer"
+        },
+        "dataVersion": {
+          "title": "Dataversion",
+          "type": "string"
+        },
+        "formulaVersion": {
+          "const": "tco-v1",
+          "title": "Formulaversion",
+          "type": "string"
+        },
+        "weeks": {
+          "const": 104,
+          "title": "Weeks",
+          "type": "integer"
+        },
+        "monteCarloRuns": {
+          "minimum": 0,
+          "title": "Montecarloruns",
+          "type": "integer"
+        },
+        "unitPricesUsd": {
+          "$ref": "#/$defs/UnitPrices"
+        },
+        "matrix": {
+          "additionalProperties": {
+            "items": {
+              "$ref": "#/$defs/MetricCell"
+            },
+            "type": "array"
+          },
+          "propertyNames": {
+            "enum": [
+              "baseline",
+              "demand-drop",
+              "lead-stress"
+            ]
+          },
+          "title": "Matrix",
+          "type": "object"
+        }
+      },
+      "required": [
+        "simulationId",
+        "seed",
+        "dataVersion",
+        "formulaVersion",
+        "weeks",
+        "monteCarloRuns",
+        "unitPricesUsd",
+        "matrix"
+      ],
+      "title": "SimulationResult",
+      "type": "object"
+    },
+    "StockoutProbabilityBasis": {
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Value",
+          "type": "number"
+        },
+        "numeratorStockoutRuns": {
+          "minimum": 0,
+          "title": "Numeratorstockoutruns",
+          "type": "integer"
+        },
+        "denominatorRuns": {
+          "minimum": 1,
+          "title": "Denominatorruns",
+          "type": "integer"
+        },
+        "definition": {
+          "const": "trials_with_at_least_one_lost_unit / monteCarloRuns",
+          "title": "Definition",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value",
+        "numeratorStockoutRuns",
+        "denominatorRuns",
+        "definition"
+      ],
+      "title": "StockoutProbabilityBasis",
+      "type": "object"
+    },
+    "TraceParameter": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "minLength": 1,
+          "title": "Key",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Value"
+        },
+        "unit": {
+          "minLength": 1,
+          "title": "Unit",
+          "type": "string"
+        },
+        "provenance": {
+          "$ref": "#/$defs/TraceProvenance"
+        }
+      },
+      "required": [
+        "key",
+        "value",
+        "unit",
+        "provenance"
+      ],
+      "title": "TraceParameter",
+      "type": "object"
+    },
+    "TraceProvenance": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "reviewed_contract",
+            "unreviewed_development_contract",
+            "approved_operating_assumption",
+            "unreviewed_development_assumption",
+            "observed_synthetic_dataset",
+            "derived_formula"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "reviewed",
+            "unreviewed_development_only",
+            "approved",
+            "observed",
+            "derived"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "sourceId": {
+          "minLength": 1,
+          "title": "Sourceid",
+          "type": "string"
+        },
+        "sourceFile": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourcefile"
+        },
+        "sourceSha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sourcesha256"
+        },
+        "evidenceIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidenceids",
+          "type": "array"
+        },
+        "reviewRecordId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewrecordid"
+        },
+        "reviewRecordSha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewrecordsha256"
+        },
+        "note": {
+          "minLength": 1,
+          "title": "Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "status",
+        "sourceId",
+        "note"
+      ],
+      "title": "TraceProvenance",
+      "type": "object"
+    },
+    "TraceRunIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "executionMode": {
+          "enum": [
+            "reviewed_release_gated",
+            "unreviewed_development_only"
+          ],
+          "title": "Executionmode",
+          "type": "string"
+        },
+        "reviewRecordId": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewrecordid"
+        },
+        "reviewRecordSha256": {
+          "anyOf": [
+            {
+              "pattern": "^[a-f0-9]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reviewrecordsha256"
+        },
+        "contractPayloadSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contractpayloadsha256",
+          "type": "string"
+        },
+        "policyApprovalReference": {
+          "minLength": 1,
+          "title": "Policyapprovalreference",
+          "type": "string"
+        },
+        "policyConfigurationId": {
+          "minLength": 1,
+          "title": "Policyconfigurationid",
+          "type": "string"
+        },
+        "policySha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Policysha256",
+          "type": "string"
+        },
+        "contractApprovalReference": {
+          "minLength": 1,
+          "title": "Contractapprovalreference",
+          "type": "string"
+        },
+        "contractReleaseRecordSha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Contractreleaserecordsha256",
+          "type": "string"
+        }
+      },
+      "required": [
+        "executionMode",
+        "contractPayloadSha256",
+        "policyApprovalReference",
+        "policyConfigurationId",
+        "policySha256",
+        "contractApprovalReference",
+        "contractReleaseRecordSha256"
+      ],
+      "title": "TraceRunIdentity",
+      "type": "object"
+    },
+    "UnitPrices": {
+      "additionalProperties": false,
+      "properties": {
+        "A": {
+          "minimum": 0,
+          "title": "A",
+          "type": "number"
+        },
+        "B": {
+          "minimum": 0,
+          "title": "B",
+          "type": "number"
+        }
+      },
+      "required": [
+        "A",
+        "B"
+      ],
+      "title": "UnitPrices",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v2",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "dataVersion": {
+      "minLength": 1,
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "requestId": {
+      "minLength": 1,
+      "title": "Requestid",
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/$defs/SimulateResponseV2"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "dataVersion",
+    "requestId",
+    "data"
+  ],
+  "title": "Causora POST /api/simulate success — reviewed or explicitly unreviewed development Matrix + Formula Trace v2",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.local/contracts/causora.contract.v2.schema.json",
+  "description": "Requests and error envelopes remain causora.contract.v1. A v2 success must carry executionContext; unreviewed_development_only is never decision-ready."
+}

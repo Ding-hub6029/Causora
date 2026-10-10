@@ -1,0 +1,133 @@
+{
+  "kind": "OFFLINE_REGRESSION_NOT_MODEL_PERFORMANCE",
+  "timeUtc": "2026-10-09T19:49:07.230412+00:00",
+  "modelDispatchAuthorized": false,
+  "commands": [
+    {
+      "name": "backend",
+      "cwdRelative": "backend/backend",
+      "argv": [
+        "/home/ubuntu/causora_day5/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests",
+        "simulation_day1/tests",
+        "simulation_day2/tests",
+        "simulation_day3/tests",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exitCode": 0,
+      "log": "backend.log"
+    },
+    {
+      "name": "release-config",
+      "cwdRelative": ".",
+      "argv": [
+        "/home/ubuntu/causora_day5/.venv/bin/python",
+        "deployment/render_start.py",
+        "--validate-only"
+      ],
+      "exitCode": 0,
+      "log": "release-config.log"
+    },
+    {
+      "name": "frontend",
+      "cwdRelative": "frontend",
+      "argv": [
+        "/home/ubuntu/.nvm/versions/node/v22.13.0/bin/npm",
+        "test"
+      ],
+      "exitCode": 0,
+      "log": "frontend.log"
+    },
+    {
+      "name": "frontend-typecheck",
+      "cwdRelative": "frontend",
+      "argv": [
+        "/home/ubuntu/.nvm/versions/node/v22.13.0/bin/npm",
+        "run",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "log": "frontend-typecheck.log"
+    },
+    {
+      "name": "frontend-lint",
+      "cwdRelative": "frontend",
+      "argv": [
+        "/home/ubuntu/.nvm/versions/node/v22.13.0/bin/npm",
+        "run",
+        "lint"
+      ],
+      "exitCode": 0,
+      "log": "frontend-lint.log"
+    },
+    {
+      "name": "ai-tests_day5",
+      "cwdRelative": "agents/wanghao-day3",
+      "argv": [
+        "/home/ubuntu/causora_day5/.venv/bin/python",
+        "-m",
+        "pytest",
+        "tests_day5",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exitCode": 0,
+      "log": "ai-tests_day5.log"
+    },
+    {
+      "name": "evaluation",
+      "cwdRelative": ".",
+      "argv": [
+        "/home/ubuntu/causora_day5/.venv/bin/python",
+        "-m",
+        "pytest",
+        "/home/ubuntu/causora_day5/main/Causora/evaluation/day5/tests",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "exitCode": 0,
+      "log": "evaluation.log"
+    },
+    {
+      "name": "frontend-build",
+      "cwdRelative": "frontend",
+      "argv": [
+        "/home/ubuntu/.nvm/versions/node/v22.13.0/bin/npm",
+        "run",
+        "build:previews"
+      ],
+      "exitCode": 0,
+      "log": "frontend-build.log"
+    },
+    {
+      "name": "frontend-production",
+      "cwdRelative": "frontend",
+      "argv": [
+        "/home/ubuntu/.nvm/versions/node/v22.13.0/bin/npm",
+        "run",
+        "test:production"
+      ],
+      "exitCode": 0,
+      "log": "frontend-production.log"
+    },
+    {
+      "name": "local-http",
+      "cwdRelative": ".",
+      "argv": [
+        "/home/ubuntu/causora_day5/.venv/bin/python",
+        "scripts/verify_day5_local.py",
+        "--output",
+        "/home/ubuntu/causora_day5/main/Causora/verification/wang-day5/final-one-command/local-http"
+      ],
+      "exitCode": 0,
+      "log": "local-http.log"
+    }
+  ],
+  "status": "PASS"
+}

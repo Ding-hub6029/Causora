@@ -1,0 +1,26 @@
+{
+  "schema": "causora.day5.fair-answer.v1",
+  "purpose": "所有三种方法（Causora pipeline、plain LLM、LLM + local code）都必须使用的结果结构；不含期望标签。",
+  "required": {
+    "schema": "causora.day5.fair-answer.v1",
+    "criticVerdict": "REJECT | ACCEPT",
+    "criticReasons": ["short observable reason"],
+    "numericStatements": [{
+      "statementId": "prompt-visible neutral statement id",
+      "value": "decimal string",
+      "precision": {"scale": 2, "rounding": "ROUND_HALF_EVEN"},
+      "roundingTrapId": "prompt-visible trap id"
+    }],
+    "evidenceCitations": [{
+      "citationId": "prompt-visible citation id",
+      "evidenceRef": "input-provided reference"
+    }],
+    "stageStatus": {"CFO": "PASSED", "COO": "PASSED", "Risk": "PASSED", "Critic": "PASSED", "Brief": "PASSED"}
+  },
+  "rules": [
+    "数字的 value、precision 和 roundingTrapId 均参与评分；不得只比较显示字符串。",
+    "该 schema 是结构合同，不是 expected label；expected labels 永远在独立 scorer-only 文件。",
+    "citation 的实际支持性由冻结的独立 evidence registry（quote + claimId）判定，不信任模型自报。stageStatus 仅显示，正式流程指标只读独立 stage-validation receipt。",
+    "模型 dispatch 只传 input payload 的有序数组，不传 caseId、split、source 或 labels。"
+  ]
+}

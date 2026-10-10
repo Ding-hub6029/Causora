@@ -1,0 +1,572 @@
+[
+  {
+    "attempt": 1,
+    "status": 200,
+    "elapsedSeconds": 3.219,
+    "requestId": "req-day5-repeat-1",
+    "timestamp": "2026-10-09T17:33:16.671887+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 2,
+    "status": 200,
+    "elapsedSeconds": 2.718,
+    "requestId": "req-day5-repeat-2",
+    "timestamp": "2026-10-09T17:33:19.387867+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 3,
+    "status": 200,
+    "elapsedSeconds": 2.407,
+    "requestId": "req-day5-repeat-3",
+    "timestamp": "2026-10-09T17:33:21.802479+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 4,
+    "status": 200,
+    "elapsedSeconds": 2.781,
+    "requestId": "req-day5-repeat-4",
+    "timestamp": "2026-10-09T17:33:24.573849+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 5,
+    "status": 200,
+    "elapsedSeconds": 2.734,
+    "requestId": "req-day5-repeat-5",
+    "timestamp": "2026-10-09T17:33:27.319723+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 6,
+    "status": 200,
+    "elapsedSeconds": 2.156,
+    "requestId": "req-day5-repeat-6",
+    "timestamp": "2026-10-09T17:33:29.463694+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 7,
+    "status": 200,
+    "elapsedSeconds": 2.61,
+    "requestId": "req-day5-repeat-7",
+    "timestamp": "2026-10-09T17:33:32.080413+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 8,
+    "status": 200,
+    "elapsedSeconds": 2.719,
+    "requestId": "req-day5-repeat-8",
+    "timestamp": "2026-10-09T17:33:34.805839+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 9,
+    "status": 200,
+    "elapsedSeconds": 2.421,
+    "requestId": "req-day5-repeat-9",
+    "timestamp": "2026-10-09T17:33:37.214064+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "attempt": 10,
+    "status": 200,
+    "elapsedSeconds": 2.485,
+    "requestId": "req-day5-repeat-10",
+    "timestamp": "2026-10-09T17:33:39.704230+00:00",
+    "kind": "PUBLIC_SIMULATION_API_ONLY_NOT_FULL_AI_FLOW",
+    "simulationId": "sim-bd035fd481bba8907eb8aedf",
+    "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+    "selections": {
+      "baseline": {
+        "scenarioId": "baseline",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "demand-drop": {
+        "scenarioId": "demand-drop",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      },
+      "lead-stress": {
+        "scenarioId": "lead-stress",
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "stockout_threshold"
+          }
+        ]
+      }
+    }
+  }
+]

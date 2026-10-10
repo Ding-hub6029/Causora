@@ -1,0 +1,59 @@
+{
+  "secretPatternFiles": [],
+  "releaseAndBoundFiles": [
+    {
+      "path": "release/model_policy.APPROVED.json",
+      "unchanged": true,
+      "sha256": "fc524acc87bfd86f62f3eb1d9594b5a605f343c71d28e27bdc7d5d1c9f11faba"
+    },
+    {
+      "path": "release/policy_approval.APPROVED.json",
+      "unchanged": true,
+      "sha256": "fe5a4adf94fc3c8d9d7c3de214ed59f8b721462695166f5c484e3394110c8786"
+    },
+    {
+      "path": "release/TEAM_APPROVAL_SOURCE.json",
+      "unchanged": true,
+      "sha256": "23148dc8a75a642790cd7bbc5793f7454963d1f24afb1a8c742c080e65154b39"
+    },
+    {
+      "path": "release/trace_release.RELEASED.json",
+      "unchanged": true,
+      "sha256": "cb417a78cfa349f2460145de6303a6ae71cad06cc38ad9ba30a2371028ee9825"
+    },
+    {
+      "path": "API_CONTRACT_V2.md",
+      "unchanged": true,
+      "sha256": "c00114a5fe79dfee61d4489f898d0411c15c880e2a2a9f44fc14e531914634c9"
+    },
+    {
+      "path": "backend/backend/app/contracts_v2.py",
+      "unchanged": true,
+      "sha256": "958eccff2b98206ac0f0bcd19e5831223f92746411e2384d6b24c15c1402ac96"
+    },
+    {
+      "path": "backend/backend/contracts/causora.contract.v2.schema.json",
+      "unchanged": true,
+      "sha256": "7eb78481a7eeebcf91ee2b844ad70548b60e35d0225ccb73267d1d860638b06d"
+    },
+    {
+      "path": "frontend/lib/contracts-v2.ts",
+      "unchanged": true,
+      "sha256": "2bccbd340b475e4759fdf42ebfd5748f3b65006ff792bf11fca2060113e054af"
+    },
+    {
+      "path": "frontend/lib/contracts-v2-dev.ts",
+      "unchanged": true,
+      "sha256": "c75cfe4272e4d3e6183c35a10e2da87e308ca088676d6abf65305a77cb9647aa"
+    },
+    {
+      "path": "frontend/lib/simulate-api.ts",
+      "unchanged": true,
+      "sha256": "402223b43f51667ea8732ffd5879314b0062f4500e881ec3c666d7e65c247808"
+    }
+  ],
+  "newModelRequests": 0,
+  "budgetJournalResetOrSwitched": false,
+  "scanScope": "DELIVERY_FILES_EXCLUDING_DEPENDENCIES_CACHES_REAL_ENV",
+  "priorFalsePositive": "frontend/tsconfig.tsbuildinfo is a generated cache excluded from delivery"
+}

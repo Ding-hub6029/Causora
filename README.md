@@ -15,17 +15,18 @@ Nested delivery archives were expanded so files can be browsed and edited. Each 
 
 Markdown punctuation was normalized on October 9, 2026 at the team's request. Original delivery documents and their original checksum inventories remain available in earlier commits. Historical package manifests describe those original deliveries and are not checksums for the edited Markdown in this revision. Runtime source files and approval data were not changed.
 
-## Day5 and Day6 delivery archives
+## Day5 and Day6 Expanded Deliveries
 
-The supplied Day5 and Day6 archives were uploaded on October 10, 2026, without changing their bytes. This upload does not change the earlier delivery dates listed above.
+The user-supplied packages were recursively expanded into source, documents and evidence on October 10, 2026. ZIP files from the previous upload were removed from the current revision.
 
-| Delivery | Archive | Notes |
-| --- | --- | --- |
-| Day5 | [Day5.zip](Day5/Deliveries/Day5.zip) | Three member packages and the integrated final package |
-| Day6 | [Day6.zip](Day6/Day6.zip) | Three member packages |
+- [Ding_Xiangfeng_Day5](Day5/Ding_Xiangfeng_Day5)
+- [Deng_Jinzhu_Day5](Day5/Deng_Jinzhu_Day5)
+- [Wang_Hao_Day5](Day5/Wang_Hao_Day5)
+- [Causora_OpenRouter_Integrated_Final](Day5/Causora_OpenRouter_Integrated_Final)
+- [Ding_Xiangfeng_Day6](Day6/Ding_Xiangfeng_Day6)
+- [Deng_Jinzhu_Day6](Day6/Deng_Jinzhu_Day6)
+- [Wang_Hao_Day6](Day6/Wang_Hao_Day6)
 
-[Archive inventory and SHA-256](DELIVERY_ARCHIVES.json) records exact uploaded files. Nested archives were recursively checked for API keys and credential-bearing database URLs before publication.
+[Imported file hashes](DELIVERY_FILES.json) preserve the original extracted bytes. [Original archive hashes](DELIVERY_ARCHIVES.json) retain provenance only. Existing Day5/Causora remains the production deployment root and is not overwritten. This upload does not establish final video or competition submission as complete.
 
-The existing [Day5/Causora](Day5/Causora) source was introduced during public deployment and includes subsequent integration and fixes. It remains the production deployment root. Archive uploads do not replace deployed source or imply final video and competition submission are complete.
-
-Live website: https://causora-one.vercel.app/
+Live: https://causora-one.vercel.app/

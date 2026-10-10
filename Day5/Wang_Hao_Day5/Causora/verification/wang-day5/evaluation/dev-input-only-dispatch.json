@@ -1,0 +1,29 @@
+{
+  "schema": "causora.day5.model-dispatch.v1",
+  "method": "causora_pipeline",
+  "answerSchema": "causora.day5.fair-answer.v1",
+  "payloads": [
+    {
+      "claim": "test malformed critic path",
+      "evidence": [
+        {
+          "ref": "ev-a",
+          "text": "known test fact"
+        }
+      ],
+      "scenario": "unit-test"
+    },
+    {
+      "claim": "test clean timeout path",
+      "evidence": [
+        {
+          "ref": "ev-b",
+          "text": "known test fact"
+        }
+      ],
+      "scenario": "unit-test"
+    }
+  ],
+  "frozenManifestSha256": "39b0da2bbe5226ef18d8ee43b006e21644daf99ddd87661f4fd58d935e58a1b1",
+  "rule": "Payload order is canonical. This bundle intentionally contains no labels, case IDs, split names, source metadata, or hashes for individual cases."
+}

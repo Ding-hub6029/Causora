@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "causora.contract.v1",
+  "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+  "requestId": "req-b2a7b4a1d3b249fc994e4988fa5727a3",
+  "data": {
+    "service": "ready",
+    "simulation": "ready",
+    "evidence": "verified",
+    "missingReasons": [],
+    "traceContract": "causora.contract.v2",
+    "provider": "not_required"
+  }
+}

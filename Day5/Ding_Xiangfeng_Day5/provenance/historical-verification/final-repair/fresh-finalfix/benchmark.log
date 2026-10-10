@@ -1,0 +1,2 @@
+{"runs": 1000, "wallClockSeconds": 0.327409, "output": "/tmp/deng-day4-finalfix-logs/benchmark_n1000.json"}
+{"runs": 10000, "wallClockSeconds": 1.750359, "output": "/tmp/deng-day4-finalfix-logs/benchmark_n10000.json"}

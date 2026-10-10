@@ -1,0 +1,4 @@
+TEST_FIXTURE_ONLY percentage-point tampering accepted: False
+errors: ['claim 0 range 20:34 does not exactly match a numeric span', "unbound numeric span '8.7 percentage points' at 20:41"]
+
+EXIT_STATUS=0

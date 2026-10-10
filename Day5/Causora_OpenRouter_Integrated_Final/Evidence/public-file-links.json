@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/demo/historical_demand.csv",
+    "status": 200,
+    "bytes": 3989,
+    "type": "text/csv; charset=utf-8"
+  },
+  {
+    "path": "/demo/supplier_delivery_history.xlsx",
+    "status": 200,
+    "bytes": 6773,
+    "type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  },
+  {
+    "path": "/demo/opening_inventory.csv",
+    "status": 200,
+    "bytes": 90,
+    "type": "text/csv; charset=utf-8"
+  },
+  {
+    "path": "/demo/supplier_a_agreement.pdf",
+    "status": 200,
+    "bytes": 7679,
+    "type": "application/pdf"
+  },
+  {
+    "path": "/demo/supplier_correspondence_log.csv",
+    "status": 200,
+    "bytes": 414,
+    "type": "text/csv; charset=utf-8"
+  },
+  {
+    "path": "/golden/verified_golden_e2e.json",
+    "status": 200,
+    "bytes": 641119,
+    "type": "application/json; charset=utf-8"
+  }
+]

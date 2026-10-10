@@ -1,0 +1,76 @@
+{
+  "maxCalls": 2,
+  "maxUsd": 0.1,
+  "entries": [
+    {
+      "method": "plain_llm",
+      "reservedUsd": 0.04,
+      "status": "returned",
+      "startedAtUtc": "2026-10-09T17:37:15.330651+00:00",
+      "exactRequestSha256": "f792241a140ffeba707f829ba89624c71dc7b432a253c5db504ce6e8076a10b4",
+      "httpStatus": 200,
+      "finishedAtUtc": "2026-10-09T17:37:36.543211+00:00",
+      "usage": {
+        "prompt_tokens": 1846,
+        "completion_tokens": 3555,
+        "total_tokens": 5401,
+        "cost": 0.0075715,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.0075715,
+          "upstream_inference_prompt_cost": 0.0004615,
+          "upstream_inference_completions_cost": 0.00711
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 2624,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "model": "openai/gpt-5-mini",
+      "runId": "gen-1791567435-suBrvdlhjLRhWubkk4eI",
+      "outputSha256": "d4819dc639b1273664906acfe136c038339208f7847e9d01b499c0c42dc6e0ce"
+    },
+    {
+      "method": "llm_plus_code",
+      "reservedUsd": 0.04,
+      "status": "returned",
+      "startedAtUtc": "2026-10-09T17:37:36.547417+00:00",
+      "exactRequestSha256": "e6e54f5aacaa4174cfd0dfff232bb60fa9770c952a25bf690210ddbfe8c06d8b",
+      "httpStatus": 200,
+      "finishedAtUtc": "2026-10-09T17:38:26.526945+00:00",
+      "usage": {
+        "prompt_tokens": 1912,
+        "completion_tokens": 8224,
+        "total_tokens": 10136,
+        "cost": 0.016926,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0.016926,
+          "upstream_inference_prompt_cost": 0.000478,
+          "upstream_inference_completions_cost": 0.016448
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 3776,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "model": "openai/gpt-5-mini",
+      "runId": "gen-1791567456-aJ12Gd3omLSacjuXfI4g",
+      "outputSha256": "66c72c113071c71989acf8dc07700e897f2582615b61b61d50ad4b8d12d3a54e"
+    }
+  ]
+}

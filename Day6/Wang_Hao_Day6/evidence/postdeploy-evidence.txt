@@ -1,0 +1,234 @@
+- main:
+  - complementary "Decision workflow":
+    - generic "Causora":
+      - generic: CAUSORA
+    - generic: DAY 5 / 07
+    - paragraph: Decision twin
+    - strong:
+      - text: Trace the choice
+      - text: before you make it.
+    - navigation:
+      - button "Data Intake Sources linked":
+        - generic: Data Intake
+        - generic: Sources linked
+      - button "Scenario Lab Variables constrained":
+        - generic: Scenario Lab
+        - generic: Variables constrained
+      - button "Decision Matrix Options compared":
+        - generic: Decision Matrix
+        - generic: Options compared
+      - button "04 AI Boardroom Views challenged":
+        - generic: "04"
+        - generic: AI Boardroom
+        - generic: Views challenged
+      - button "05 Decision Brief Human decision":
+        - generic: "05"
+        - generic: Decision Brief
+        - generic: Human decision
+    - generic: Saved-example integrity
+    - generic: 5 / 5 fixture fields matched
+    - paragraph:
+      - text: "Matrix values: validated live API response."
+      - text: Boardroom and Critic are validated for this exact run; Evidence is fetched on demand.
+  - generic: CAUSORA
+  - generic: Decision workspace
+  - strong: AI Boardroom
+  - generic: 04 / 05
+  - generic: LIVE · PRIMARY REVIEW COMPLETE
+  - button "Reset local demo":
+    - generic: Reset
+  - button "Open cached verified Golden E2E run":
+    - generic: Verified cache
+  - button "Open saved example":
+    - text: Open saved example
+  - status:
+    - generic: Simulation service reachable · ready
+    - paragraph: Health confirms service readiness only; human review and team policy gates are evaluated separately.
+    - button "Recheck health"
+  - region "Evidence to decision visual narrative":
+    - generic: THE PROOF ENGINE / 04
+    - heading "Let the numbers be challenged." [level=2]:
+      - text: Let the numbers
+      - emphasis: be challenged.
+    - paragraph: Validated primary Boardroom and complete Critic response are bound to sim-4ff6c803c309c2a34874eee8 · baseline.
+    - group "Follow the evidence chain":
+      - button "01 Evidence"
+      - button "02 Variable"
+      - button "03 Matrix"
+    - text: SAVED DEMO SOURCE · NOT LIVE
+    - generic: EV-014
+    - generic: 60 days
+    - paragraph: “If written notice is not received at least 60 days b...”
+    - generic: supplier_a_agreement.pdf
+    - generic: p. 4
+    - text: SAVED DEMO CONTRACT · NOT LIVE
+    - generic: NOTICE WINDOW
+    - generic: 60d
+    - generic: minimum share A
+    - strong: 60%
+    - generic: renewal premium
+    - strong: +14%
+    - generic: SAVED EXAMPLE · NOT IN LIVE DTO
+    - text: OPTION × SCENARIO
+    - text: BASELINE
+    - generic: · LIVE API
+    - generic: D0 / KEEP A
+    - generic: $365,811
+    - generic: D1 / DIVERSIFY
+    - generic: $348,040
+    - generic: D2 / EXIT A
+    - generic: $356,665
+    - generic: SELECTED D1 · 1,000 RUNS
+    - generic: LIVE BOARDROOM VALIDATED
+    - text: DATA VERSION / reviewed-synthetic-2026-10-07-wang-v1
+    - generic: ·
+    - text: 1,000 RUNS · SEED 1042026 · DATASET ds-001
+  - generic: "04"
+  - text: Independent viewpoints
+  - heading "Invite challenge into the room." [level=1]
+  - paragraph: Each perspective sees only its permitted decision surface. The Critic connects what they miss alone.
+  - generic: "04"
+  - text: Run-bound review
+  - heading "Review this validated simulation." [level=2]
+  - paragraph: The Boardroom request is bound to the current simulation ID, dataVersion, and selected scenario.
+  - generic: LIVE BOARDROOM · PRIMARY
+  - region "Simulation summary retained for this downstream stage":
+    - generic: BOUND TO CURRENT SIMULATION
+    - generic: Baseline
+    - generic: REVIEWED V2
+    - generic: D0
+    - generic: $365,811
+    - generic: Stockout 92% · P90 $369,631
+    - generic: D1
+    - generic: $348,040
+    - generic: Stockout 1% · P90 $348,723
+    - generic: D2
+    - generic: $356,665
+    - generic: Stockout 90% · P90 $361,811
+    - paragraph: "Validated server selection: D1. Server selection is separate from the browser-local choice."
+    - generic "Current simulation identity":
+      - text: Simulation
+      - generic: sim-4ff6c803c309c2a34874eee8
+      - text: Data version
+      - generic: reviewed-synthetic-2026-10-07-wang-v1
+      - text: Scenario
+      - generic: baseline
+      - text: Simulation request
+      - generic: req-255f3846c6fa4db18bf66b59b1f9324b
+      - text: Mode
+      - generic: reviewed-release-gated
+  - region "Validated live agent outputs":
+    - text: VALIDATED BOARDROOM RESPONSE
+    - heading "Three bounded perspectives" [level=3]
+    - generic: PRIMARY PROVIDER
+    - article:
+      - button "C Finance and cash − Mixed sourcing reduces concentration versus all A Aligned" [expanded]:
+        - generic: C
+        - emphasis: Finance and cash
+        - generic: −
+        - heading "Mixed sourcing reduces concentration versus all A" [level=3]
+        - generic: Aligned
+      - paragraph: Selected plan keeps a mix of suppliers A and B which lowers overall concentration relative to the all A baseline while retaining minimum A purchase exposure. Inspect expected TCO change −$17,771 and cash tail risk $348,723 when confirming the mix. Renewal premium exposure remains for retained A under this plan.
+      - generic: cash_outflow_p90
+      - generic: delta_tco
+    - article:
+      - button "C Operations and continuity − Mixed sourcing chosen to reduce single‑vendor exposure Aligned" [expanded]:
+        - generic: C
+        - emphasis: Operations and continuity
+        - generic: −
+        - heading "Mixed sourcing chosen to reduce single‑vendor exposure" [level=3]
+        - generic: Aligned
+      - paragraph: Selected plan retains both supplier A and supplier B with a mixed allocation that lowers overall concentration versus the all‑A baseline. This plan does not terminate supplier A and therefore maintains minimum A purchase and renewal exposure as a retained‑A alternative. Delivery risk improves under the selected mix compared with the baseline; inspect current stockout probability 1% for operational planning. Conditional all‑B termination remains an alternative but is not the selected action.
+      - generic: stockout_probability
+    - article:
+      - button "R Contract and downside − Selected plan keeps mixed sourcing with supplier A present Aligned" [expanded]:
+        - generic: R
+        - emphasis: Contract and downside
+        - generic: −
+        - heading "Selected plan keeps mixed sourcing with supplier A present" [level=3]
+        - generic: Aligned
+      - paragraph: The selected allocation retains both suppliers A and B in a mixed sourcing arrangement with a majority share still tied to supplier A. This reduces dependence on an all A baseline while maintaining supplier A exposure and minimum purchase commitments during renewal. Inspect cash tail risk $348,723 and the modeled stockout likelihood 1% for operational planning. Retained-A purchase obligations remain conditional under the renewed term; an all-B exit is a conditional alternative with its own exit costs.
+      - generic: cash_outflow_p90
+      - generic: stockout_probability
+  - region "Validated live Critic issues":
+    - text: CRITIC · COMPLETE
+    - heading "Cross-view issues" [level=3]
+    - article:
+      - generic: Medium
+      - heading "Omitted analysis of inventory carrying cost shifts" [level=4]
+      - paragraph: The analysis omits discussion of holding cost changes inherent to the selected mixed sourcing allocation compared to the baseline. Exploring carrying cost variations provides clearer visibility into operational impacts when dividing supply across alternatives.
+      - text: Locked forecast
+      - generic: 26,000 units
+      - text: Minimum purchase A
+      - generic: 15,600 units
+      - text: Scenario demand
+      - generic: 26,000 units
+      - text: A floor above rolling benchmark
+      - generic: 0 units
+      - text: Holding Δ D0 / D1 / D2
+      - generic: $0 / −$259 / +$452
+    - article:
+      - generic: Low
+      - heading "Incomplete synthesis of automatic renewal pricing impacts" [level=4]
+      - paragraph: While acknowledging the minimum purchase exposure under the retained alternative, the analyses do not synthesize how the automatic renewal directly enforces a continued pricing premium. Qualitative reviews should connect the premium directly to the enforced contractual logic.
+      - text: Locked forecast
+      - generic: 26,000 units
+      - text: Minimum purchase A
+      - generic: 15,600 units
+      - text: Scenario demand
+      - generic: 26,000 units
+      - text: A floor above rolling benchmark
+      - generic: 0 units
+      - text: Holding Δ D0 / D1 / D2
+      - generic: $0 / −$259 / +$452
+      - button "EV-020 · live source"
+      - button "EV-021 · live source"
+  - generic: AI failure, timeout, unavailable Critic, or malformed Brief never clears the validated simulation. Retry is Boardroom-only; review mode and approval stay tied to the same run.
+  - button "Review matching Decision Brief":
+    - text: Review matching Decision Brief
+  - button "Close dialog"
+  - dialog "Evidence detail":
+    - button "Close dialog" [active]:
+    - generic: EV
+    - text: Traceable evidence
+    - generic: EV-021
+    - heading "14% renewal_price_increase_pct" [level=2]:
+      - text: 14%
+      - generic: renewal_price_increase_pct
+    - blockquote: The agreement automatically renews for 24 months at a 14% higher unit price.
+    - generic: Source
+    - strong: supplier_a_agreement.pdf
+    - generic: Source page
+    - strong: p. 4
+    - generic: Quote match
+    - strong: matched · exact · 100%
+    - generic: Human confirmation
+    - strong: Not provided per record
+    - text: Simulation
+    - generic: sim-4ff6c803c309c2a34874eee8
+    - text: Data version
+    - generic: reviewed-synthetic-2026-10-07-wang-v1
+    - text: Scenario
+    - generic: baseline
+    - text: Simulation request
+    - generic: req-255f3846c6fa4db18bf66b59b1f9324b
+    - text: Evidence request
+    - generic: causora-ev-818fa9ec-c1e9-47a6-82cb-e0db264160b2
+    - region "Source PDF page 4":
+      - generic: Source document · page 4
+      - generic: 6 pages
+      - generic "PDF page 4"
+      - img "Source location highlighted from API bbox"
+      - status: Server-provided PDF bounding box highlighted.
+      - link "Open source PDF at page 4":
+        - /url: /demo/supplier_a_agreement.pdf#page=4&zoom=page-width
+        - text: Open source PDF at page 4
+        - generic: ↗
+    - link "Open source PDF · page 4":
+      - /url: /demo/supplier_a_agreement.pdf#page=4&zoom=page-width
+      - text: Open source PDF · page 4
+    - generic: Live Evidence response
+    - generic: The response is bound to the current dataVersion and run identity. The v1 Evidence DTO has no per-record human-approval field.
+    - generic: Quote match, human confirmation, and model/operating assumption are separate states; a quote match alone is not a fact or legal conclusion.
+    - generic: The supplied value is present in the preserved quote according to the recorded match method; interpretive assumptions remain separately sourced.
+- alert

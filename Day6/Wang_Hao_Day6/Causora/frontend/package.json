@@ -1,0 +1,47 @@
+{
+  "name": "causora-day5-ding",
+  "version": "0.5.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000",
+    "dev:local": "next dev -H 127.0.0.1 -p 3000",
+    "postinstall": "node scripts/copy-pdf-worker.mjs",
+    "predev": "node scripts/copy-pdf-worker.mjs",
+    "prebuild": "node scripts/copy-pdf-worker.mjs",
+    "build": "next build",
+    "start": "node scripts/serve-static.mjs",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/day1-flow.test.mjs tests/day2-ux.test.mjs tests/simulate-api.test.mjs tests/day4-api.test.mjs tests/golden-health.test.mjs tests/golden-bootstrap.test.mjs tests/toolchain-boundary.test.mjs tests/day5-wang-request-lifecycle.test.mjs",
+    "freeze:golden": "node scripts/freeze-golden.mjs",
+    "test:production": "node --test tests/static-server.test.mjs",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build:previews && npm run test:production",
+    "build:previews": "node scripts/build-previews.mjs",
+    "build:live": "node scripts/build-previews.mjs live",
+    "build:static": "node scripts/build-previews.mjs static",
+    "start:live": "node scripts/start-mode.mjs live",
+    "start:static": "node scripts/start-mode.mjs static"
+  },
+  "dependencies": {
+    "framer-motion": "^12.23.24",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.27",
+    "pdfjs-dist": "6.4.299",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "overrides": {
+    "postcss": "8.5.29"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "^15.5.27",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}
+

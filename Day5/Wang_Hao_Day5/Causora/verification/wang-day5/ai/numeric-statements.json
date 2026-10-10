@@ -1,0 +1,938 @@
+{
+  "kind": "OFFLINE_NUMERICAL_STATEMENTS_NOT_MODEL_PERFORMANCE",
+  "networkCalls": 0,
+  "sourceSha256": "c98855269b49facb5e637035436b3dfb13752bebdbc399b872c955ddbc8487cc",
+  "sampleScope": "Nineteen author-visible deterministic statements, including intentional invalid statements; not unseen.",
+  "numericValidationPassCount": 5,
+  "checkedNumericStatementCount": 19,
+  "validControlsAccepted": 5,
+  "validControlCount": 5,
+  "expectedOutcomesMet": 19,
+  "rows": [
+    {
+      "caseId": "money_correct",
+      "input": {
+        "text": "Cash is $12,345.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "cash"
+        ],
+        "claims": [
+          {
+            "start": 8,
+            "end": 15,
+            "ref": "cash"
+          }
+        ]
+      },
+      "expectedNumericValid": true,
+      "actualNumericValid": true,
+      "reasons": [
+        "exact field-bound number matches typed registry"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "money_tampered",
+      "input": {
+        "text": "Cash is $12,346.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "cash"
+        ],
+        "claims": [
+          {
+            "start": 8,
+            "end": 15,
+            "ref": "cash"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "money display '$12,346' does not match ref 'cash' at 8:15"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "currency_unit_wrong",
+      "input": {
+        "text": "Cash is 12,345 USD.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "minimum"
+        ],
+        "claims": [
+          {
+            "start": 8,
+            "end": 18,
+            "ref": "minimum"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "'12,345 USD' is not an integer display for ref 'minimum' at 8:18"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "probability_correct",
+      "input": {
+        "text": "Probability is 8.7%.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "probability"
+        ],
+        "claims": [
+          {
+            "start": 15,
+            "end": 19,
+            "ref": "probability"
+          }
+        ]
+      },
+      "expectedNumericValid": true,
+      "actualNumericValid": true,
+      "reasons": [
+        "exact field-bound number matches typed registry"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "probability_value_wrong",
+      "input": {
+        "text": "Probability is 87%.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "probability"
+        ],
+        "claims": [
+          {
+            "start": 15,
+            "end": 18,
+            "ref": "probability"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "percent display '87%' does not match ref 'probability' at 15:18"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "probability_pp_wrong",
+      "input": {
+        "text": "Probability is 8.7 percentage points.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "probability"
+        ],
+        "claims": [
+          {
+            "start": 15,
+            "end": 36,
+            "ref": "probability"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "'8.7 percentage points' is not a supported percent display for ref 'probability' at 15:36"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "probability_pp_short_wrong",
+      "input": {
+        "text": "Probability is 8.7 pp.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "probability"
+        ],
+        "claims": [
+          {
+            "start": 15,
+            "end": 21,
+            "ref": "probability"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "'8.7 pp' is not a supported percent display for ref 'probability' at 15:21"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "probability_bare_wrong",
+      "input": {
+        "text": "Probability is 0.087.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "probability"
+        ],
+        "claims": [
+          {
+            "start": 15,
+            "end": 20,
+            "ref": "probability"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "unsupported numeric form '0.087' at 15:20"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "units_correct",
+      "input": {
+        "text": "Minimum is 15,600 units.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "minimum"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 17,
+            "ref": "minimum"
+          }
+        ]
+      },
+      "expectedNumericValid": true,
+      "actualNumericValid": true,
+      "reasons": [
+        "exact field-bound number matches typed registry"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "units_wrong",
+      "input": {
+        "text": "Minimum is 15,599 units.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "minimum"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 17,
+            "ref": "minimum"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "integer display '15,599' does not exactly match ref 'minimum' at 11:17"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "units_money_wrong",
+      "input": {
+        "text": "Minimum is $15,600.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "minimum"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 18,
+            "ref": "minimum"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "'$15,600' is not an integer display for ref 'minimum' at 11:18"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "weeks_correct",
+      "input": {
+        "text": "Horizon is 104 weeks.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "weeks"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 14,
+            "ref": "weeks"
+          }
+        ]
+      },
+      "expectedNumericValid": true,
+      "actualNumericValid": true,
+      "reasons": [
+        "exact field-bound number matches typed registry"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "weeks_wrong",
+      "input": {
+        "text": "Horizon is 103 weeks.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "weeks"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 14,
+            "ref": "weeks"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "integer display '103' does not exactly match ref 'weeks' at 11:14"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "weeks_as_days_wrong",
+      "input": {
+        "text": "Horizon is 104 days.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "weeks"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 14,
+            "ref": "weeks"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "unit 'day' does not match 'week' for ref 'weeks' at 11:14"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "weeks_as_units_wrong",
+      "input": {
+        "text": "Horizon is 104 units.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "weeks"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 14,
+            "ref": "weeks"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "unit 'unit' does not match 'week' for ref 'weeks' at 11:14"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "units_as_weeks_wrong",
+      "input": {
+        "text": "Minimum is 15,600 weeks.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "minimum"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 17,
+            "ref": "minimum"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "unit 'week' does not match 'unit' for ref 'minimum' at 11:17"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "date_correct",
+      "input": {
+        "text": "Notice is 2026-10-07.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "notice"
+        ],
+        "claims": [
+          {
+            "start": 10,
+            "end": 20,
+            "ref": "notice"
+          }
+        ]
+      },
+      "expectedNumericValid": true,
+      "actualNumericValid": true,
+      "reasons": [
+        "exact field-bound number matches typed registry"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "date_wrong",
+      "input": {
+        "text": "Notice is 2026-10-08.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "notice"
+        ],
+        "claims": [
+          {
+            "start": 10,
+            "end": 20,
+            "ref": "notice"
+          }
+        ]
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "date '2026-10-08' does not exactly match ref 'notice' at 10:20"
+      ],
+      "expectedOutcomeMet": true
+    },
+    {
+      "caseId": "unbound_number",
+      "input": {
+        "text": "Cash is $12,345.",
+        "registry": {
+          "cash": {
+            "value": 12345,
+            "kind": "money",
+            "unit": "USD"
+          },
+          "probability": {
+            "value": 0.087,
+            "kind": "percent",
+            "unit": "fraction"
+          },
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          },
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          },
+          "notice": {
+            "value": "2026-10-07",
+            "kind": "date",
+            "unit": "date"
+          }
+        },
+        "declaredRefs": [
+          "cash"
+        ],
+        "claims": []
+      },
+      "expectedNumericValid": false,
+      "actualNumericValid": false,
+      "reasons": [
+        "unbound numeric span '$12,345' at 8:15"
+      ],
+      "expectedOutcomeMet": true
+    }
+  ]
+}

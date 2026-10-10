@@ -1,0 +1,12 @@
+{
+  "schema": "causora.day5.source-corpus-identity.v1",
+  "corpusStatus": "AUTHOR_VISIBLE_DEV_FIXTURE_NOT_HELDOUT_NOT_FORMAL",
+  "description": "仅用于 loader/scorer 单元测试；所有作者和本次实现者均可见，不能作为正式未见语料或模型性能样本。",
+  "labelApproval": "AUTHOR_DRAFT_NEEDS_INDEPENDENT_REVIEW",
+  "formalEligibility": {
+    "freshIndependent": false,
+    "labelsHeldSeparately": false,
+    "notUsedForDebug": false,
+    "evaluatorHasNotSeenLabels": false
+  }
+}

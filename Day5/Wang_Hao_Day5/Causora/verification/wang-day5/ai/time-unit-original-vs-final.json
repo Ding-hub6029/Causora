@@ -1,0 +1,59 @@
+{
+  "scope": "LOCAL_CODE_REPRODUCTION_NOT_MODEL_TEST",
+  "cases": [
+    {
+      "text": "Horizon is 104 days.",
+      "input": {
+        "registry": {
+          "weeks": {
+            "value": 104,
+            "kind": "integer",
+            "unit": "weeks"
+          }
+        },
+        "declared_refs": [
+          "weeks"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 14,
+            "ref": "weeks"
+          }
+        ]
+      },
+      "expected": "reject incorrect suffix unit",
+      "originalViolations": [],
+      "finalViolations": [
+        "unit 'day' does not match 'week' for ref 'weeks' at 11:14"
+      ]
+    },
+    {
+      "text": "Minimum is 15,600 weeks.",
+      "input": {
+        "registry": {
+          "minimum": {
+            "value": 15600,
+            "kind": "units",
+            "unit": "units"
+          }
+        },
+        "declared_refs": [
+          "minimum"
+        ],
+        "claims": [
+          {
+            "start": 11,
+            "end": 17,
+            "ref": "minimum"
+          }
+        ]
+      },
+      "expected": "reject incorrect suffix unit",
+      "originalViolations": [],
+      "finalViolations": [
+        "unit 'week' does not match 'unit' for ref 'minimum' at 11:17"
+      ]
+    }
+  ]
+}

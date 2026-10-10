@@ -1,0 +1,69 @@
+{
+  "scope": "READ_ONLY_WEBSITE_AND_HEALTH_NOT_PUBLIC_AI_E2E",
+  "requests": [
+    {
+      "url": "https://causora-one.vercel.app/",
+      "status": 200,
+      "headers": {
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*",
+        "Age": "2976",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Content-Disposition": "inline",
+        "Content-Length": "32985",
+        "Content-Type": "text/html; charset=utf-8",
+        "Date": "Fri, 09 Oct 2026 19:35:41 GMT",
+        "Etag": "\"bf86392033be45f2b8ddfa0bce49bf2b\"",
+        "Last-Modified": "Fri, 09 Oct 2026 18:46:05 GMT",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "Server": "Vercel",
+        "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Vercel-Cache": "HIT",
+        "X-Vercel-Id": "sin1::6hmd2-1791574541675-e5f723f810d5",
+        "Connection": "close"
+      },
+      "bodySha256": "df97dc14ba5a74cbb5798b75c1b33d247e3eb10c38908f5ed50d0b01c361d87b",
+      "elapsedSeconds": 0.085,
+      "checkedAtUtc": "2026-10-09T19:35:41.689838+00:00"
+    },
+    {
+      "url": "https://causora-api.onrender.com/health",
+      "status": 200,
+      "headers": {
+        "Date": "Fri, 09 Oct 2026 19:35:44 GMT",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Connection": "close",
+        "Cache-Control": "no-store",
+        "rndr-id": "5d15e8a6-af59-4d93",
+        "Server": "cloudflare",
+        "vary": "Accept-Encoding",
+        "x-causora-execution-mode": "review-gated",
+        "x-causora-review-status": "reviewed",
+        "x-causora-trace-contract": "causora.contract.v2",
+        "x-render-origin-server": "uvicorn",
+        "x-request-id": "req-639393798e0445b9a11b52ee9fde6272",
+        "cf-cache-status": "DYNAMIC",
+        "CF-RAY": "a47fd481bcea8bc4-EZE",
+        "alt-svc": "h3=\":443\"; ma=86400"
+      },
+      "bodySha256": "dab2826c5cb884d06130e79c8557cdf56fecbd408ee304650003c31d3e4853a3",
+      "elapsedSeconds": 2.755,
+      "checkedAtUtc": "2026-10-09T19:35:44.445090+00:00",
+      "json": {
+        "schemaVersion": "causora.contract.v1",
+        "dataVersion": "reviewed-synthetic-2026-10-07-wang-v1",
+        "requestId": "req-639393798e0445b9a11b52ee9fde6272",
+        "data": {
+          "service": "ready",
+          "simulation": "ready",
+          "evidence": "verified",
+          "missingReasons": [],
+          "traceContract": "causora.contract.v2",
+          "provider": "not_required"
+        }
+      }
+    }
+  ]
+}

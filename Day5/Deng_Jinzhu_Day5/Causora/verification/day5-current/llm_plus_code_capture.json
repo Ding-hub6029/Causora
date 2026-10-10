@@ -1,0 +1,164 @@
+{
+  "schema": "causora.day5-benchmark-capture.v2",
+  "method": "llm_plus_code",
+  "status": "COMPLETED",
+  "runId": "gen-1791567456-aJ12Gd3omLSacjuXfI4g",
+  "modelId": "openai/gpt-5-mini",
+  "startedAtUtc": "2026-10-09T17:37:36.547417+00:00",
+  "finishedAtUtc": "2026-10-09T17:38:26.526945+00:00",
+  "commonInputSha256": "12ccc54cc4fd6ed6e38848b38d5f44fc6996a0807f6fc64f574a46c6322c82a8",
+  "promptSha256": "ae74bde35e13c94b6687647379eec4ce063a4c6a0d9d5ef853089329715987a5",
+  "reproducibility": {
+    "executionMode": "llm_plus_local_code",
+    "inputSha256": "12ccc54cc4fd6ed6e38848b38d5f44fc6996a0807f6fc64f574a46c6322c82a8",
+    "promptSha256": "ae74bde35e13c94b6687647379eec4ce063a4c6a0d9d5ef853089329715987a5",
+    "auditReference": "private-day5-benchmark/budget.json: gen-1791567456-aJ12Gd3omLSacjuXfI4g",
+    "codeArtifactSha256": "32d9762db7e4d7e4b305614b1dd9eef4273fd0a43f18b536948d70dc6daeb9d7",
+    "executionLogSha256": "88d9ea08719eb3f3f0d6446d70fcbbb551c0d4bd405bcf9ec84758594d6d2b8f"
+  },
+  "providerUsage": {
+    "inputTokens": 1912,
+    "outputTokens": 8224,
+    "costUsd": 0.016926
+  },
+  "oracleCaseResults": [
+    {
+      "caseId": "locked_mixed_cost_rounding",
+      "answer": {
+        "procurementCostUsd": 3488,
+        "holdingCostUsd": 6375,
+        "stockoutCostUsd": 0,
+        "terminationFeeUsd": 0,
+        "totalCostUsd": 9863,
+        "revenueUsd": 5000,
+        "grossMarginUsd": -4863,
+        "grossMarginPct": -97.27
+      },
+      "evidenceRefs": [
+        "control:locked_mixed_cost_rounding"
+      ],
+      "poisonPillFlags": [
+        "recognized-rule-or-trap-id"
+      ],
+      "codeSummary": "Compute procurement (units\u00d7price), apply uplift if locked, add holding/stockout/termination, compute revenue; round USD half-even to whole dollars.",
+      "codeArtifactSha256": "32d9762db7e4d7e4b305614b1dd9eef4273fd0a43f18b536948d70dc6daeb9d7"
+    },
+    {
+      "caseId": "locked_exit_fee_and_half_even",
+      "answer": {
+        "procurementCostUsd": 3591,
+        "holdingCostUsd": 125,
+        "stockoutCostUsd": 0,
+        "terminationFeeUsd": 25000,
+        "totalCostUsd": 28716,
+        "revenueUsd": 5000,
+        "grossMarginUsd": -23716,
+        "grossMarginPct": -474.32
+      },
+      "evidenceRefs": [
+        "control:locked_exit_fee_and_half_even"
+      ],
+      "poisonPillFlags": [
+        "recognized-rule-or-trap-id"
+      ],
+      "codeSummary": "Compute procurement (units\u00d7price), apply uplift if locked, add holding/stockout/termination, compute revenue; round USD half-even to whole dollars.",
+      "codeArtifactSha256": "32d9762db7e4d7e4b305614b1dd9eef4273fd0a43f18b536948d70dc6daeb9d7"
+    },
+    {
+      "caseId": "zero_revenue_is_invalid_not_divided_by_one",
+      "answer": {
+        "procurementCostUsd": 0,
+        "holdingCostUsd": 0,
+        "stockoutCostUsd": 0,
+        "terminationFeeUsd": 0,
+        "totalCostUsd": 0,
+        "revenueUsd": 0,
+        "grossMarginUsd": null,
+        "grossMarginPct": null
+      },
+      "evidenceRefs": [
+        "control:zero_revenue_is_invalid_not_divided_by_one"
+      ],
+      "poisonPillFlags": [
+        "recognized-rule-or-trap-id",
+        "INVALID_REVENUE_ZERO"
+      ],
+      "codeSummary": "Compute procurement (units\u00d7price), apply uplift if locked, add holding/stockout/termination, compute revenue; round USD half-even to whole dollars.",
+      "codeArtifactSha256": "32d9762db7e4d7e4b305614b1dd9eef4273fd0a43f18b536948d70dc6daeb9d7"
+    },
+    {
+      "caseId": "p90_nearest_rank_ten_trials",
+      "answer": {
+        "sortedCashOutflowsUsd": [
+          6,
+          9,
+          12,
+          18,
+          23,
+          25,
+          31,
+          36,
+          45,
+          50
+        ],
+        "p90Usd": 45,
+        "p90Method": "nearest-rank-ceil(0.90*N)"
+      },
+      "evidenceRefs": [
+        "control:p90_nearest_rank_ten_trials"
+      ],
+      "poisonPillFlags": [
+        "recognized-rule-or-trap-id",
+        "no_p90_interpolation"
+      ],
+      "codeSummary": "Sort cash outflows and select element at rank ceil(0.90*N) (no interpolation).",
+      "codeArtifactSha256": "32d9762db7e4d7e4b305614b1dd9eef4273fd0a43f18b536948d70dc6daeb9d7"
+    },
+    {
+      "caseId": "constraint_selection_and_order",
+      "answer": {
+        "budgetCeilingUsd": 480,
+        "riskThreshold": 0.12,
+        "optionsPassed": [
+          {
+            "optionId": "D1",
+            "feasible": true,
+            "stockoutProbability": "0.05",
+            "cashOutflowP90": 310,
+            "expectedTco": 310
+          }
+        ],
+        "selectedOptionId": "D1",
+        "selectionReason": "Feasible and passed both stockout threshold and cash ceiling; chosen among passers by lowest expected TCO when multiple."
+      },
+      "evidenceRefs": [
+        "control:constraint_selection_and_order"
+      ],
+      "poisonPillFlags": [
+        "recognized-rule-or-trap-id"
+      ],
+      "codeSummary": "Filter options by feasibility, stockout <= risk threshold, and cashOutflowP90 <= budget; select lowest expectedTco among passers.",
+      "codeArtifactSha256": "32d9762db7e4d7e4b305614b1dd9eef4273fd0a43f18b536948d70dc6daeb9d7"
+    },
+    {
+      "caseId": "no_feasible_option_is_explicit",
+      "answer": {
+        "budgetCeilingUsd": 480,
+        "riskThreshold": 0.12,
+        "optionsPassed": [],
+        "selectedOptionId": null,
+        "selectionReason": "No option satisfied all constraints (feasibility, stockout threshold, and cash ceiling). No recommendation per rule."
+      },
+      "evidenceRefs": [
+        "control:no_feasible_option_is_explicit"
+      ],
+      "poisonPillFlags": [
+        "recognized-rule-or-trap-id",
+        "no_recommendation_for_no_feasible_cases"
+      ],
+      "codeSummary": "Filter options by feasibility, stockout <= risk threshold, and cashOutflowP90 <= budget; select lowest expectedTco among passers.",
+      "codeArtifactSha256": "32d9762db7e4d7e4b305614b1dd9eef4273fd0a43f18b536948d70dc6daeb9d7"
+    }
+  ],
+  "notes": "Actual OpenRouter response. Frozen method prompt plus operator transport wrapper; exact full request hash retained in receipt. Code-method results are actual executed program stdout; answers not corrected by operator."
+}

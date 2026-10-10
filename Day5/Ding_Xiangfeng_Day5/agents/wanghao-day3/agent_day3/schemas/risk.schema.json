@@ -1,0 +1,183 @@
+{
+  "$defs": {
+    "RiskContract": {
+      "additionalProperties": false,
+      "description": "Only clause-derived values / derived contract state; never evidence quotes.",
+      "properties": {
+        "forecastBasis": {
+          "enum": [
+            "locked-at-renewal",
+            "rolling"
+          ],
+          "title": "Forecastbasis",
+          "type": "string"
+        },
+        "lockedForecastUnits24m": {
+          "minimum": 0,
+          "title": "Lockedforecastunits24M",
+          "type": "integer"
+        },
+        "minPurchaseShareA": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Minpurchasesharea",
+          "type": "number"
+        },
+        "minPurchaseUnitsA": {
+          "minimum": 0,
+          "title": "Minpurchaseunitsa",
+          "type": "integer"
+        },
+        "renewalLocked": {
+          "title": "Renewallocked",
+          "type": "boolean"
+        },
+        "renewalNoticeDays": {
+          "minimum": 0,
+          "title": "Renewalnoticedays",
+          "type": "integer"
+        },
+        "renewalPriceIncreasePct": {
+          "minimum": 0,
+          "title": "Renewalpriceincreasepct",
+          "type": "number"
+        },
+        "renewalTermMonths": {
+          "exclusiveMinimum": 0,
+          "title": "Renewaltermmonths",
+          "type": "integer"
+        },
+        "terminationFeeUsd": {
+          "minimum": 0,
+          "title": "Terminationfeeusd",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "renewalLocked",
+        "renewalNoticeDays",
+        "renewalTermMonths",
+        "renewalPriceIncreasePct",
+        "minPurchaseShareA",
+        "forecastBasis",
+        "lockedForecastUnits24m",
+        "minPurchaseUnitsA",
+        "terminationFeeUsd"
+      ],
+      "title": "RiskContract",
+      "type": "object"
+    },
+    "RiskOption": {
+      "additionalProperties": false,
+      "properties": {
+        "cashOutflowP90Usd": {
+          "title": "Cashoutflowp90Usd",
+          "type": "integer"
+        },
+        "feasible": {
+          "title": "Feasible",
+          "type": "boolean"
+        },
+        "optionId": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2"
+          ],
+          "title": "Optionid",
+          "type": "string"
+        },
+        "stockoutProbability": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Stockoutprobability",
+          "type": "number"
+        }
+      },
+      "required": [
+        "optionId",
+        "feasible",
+        "cashOutflowP90Usd",
+        "stockoutProbability"
+      ],
+      "title": "RiskOption",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract": {
+      "$ref": "#/$defs/RiskContract"
+    },
+    "contractReview": {
+      "enum": [
+        "PENDING_LOCAL_MOCK",
+        "HUMAN_APPROVED"
+      ],
+      "title": "Contractreview",
+      "type": "string"
+    },
+    "demandShockPercent": {
+      "title": "Demandshockpercent",
+      "type": "number"
+    },
+    "leadTimeMultiplier": {
+      "exclusiveMinimum": 0,
+      "title": "Leadtimemultiplier",
+      "type": "number"
+    },
+    "matchedEvidenceIds": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Matchedevidenceids",
+      "type": "array"
+    },
+    "monteCarloRuns": {
+      "minimum": 0,
+      "title": "Montecarloruns",
+      "type": "integer"
+    },
+    "options": {
+      "items": {
+        "$ref": "#/$defs/RiskOption"
+      },
+      "maxItems": 3,
+      "minItems": 3,
+      "title": "Options",
+      "type": "array"
+    },
+    "role": {
+      "const": "Risk",
+      "default": "Risk",
+      "title": "Role",
+      "type": "string"
+    },
+    "scenarioId": {
+      "title": "Scenarioid",
+      "type": "string"
+    },
+    "sourceMode": {
+      "enum": [
+        "LOCAL_MOCK",
+        "SIMULATION_READY"
+      ],
+      "title": "Sourcemode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "scenarioId",
+    "sourceMode",
+    "contractReview",
+    "matchedEvidenceIds",
+    "demandShockPercent",
+    "leadTimeMultiplier",
+    "monteCarloRuns",
+    "contract",
+    "options"
+  ],
+  "title": "RiskView",
+  "type": "object"
+}

@@ -1,0 +1,37 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": "causora.contract.v1",
+      "title": "Schemaversion",
+      "type": "string"
+    },
+    "simulationId": {
+      "title": "Simulationid",
+      "type": "string"
+    },
+    "dataVersion": {
+      "title": "Dataversion",
+      "type": "string"
+    },
+    "scenarioId": {
+      "enum": [
+        "baseline",
+        "demand-drop",
+        "lead-stress"
+      ],
+      "title": "Scenarioid",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "simulationId",
+    "dataVersion",
+    "scenarioId"
+  ],
+  "title": "BoardroomRequest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day1-schemas/boardroom_request_v1.schema.json"
+}

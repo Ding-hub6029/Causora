@@ -1,0 +1,41 @@
+{
+  "schema": "causora.day5.fair-answer.v1",
+  "purpose": "Shared result structure for Causora pipeline, plain LLM and LLM plus local code. Contains no expected labels.",
+  "required": {
+    "schema": "causora.day5.fair-answer.v1",
+    "criticVerdict": "REJECT | ACCEPT",
+    "criticReasons": [
+      "short observable reason"
+    ],
+    "numericStatements": [
+      {
+        "statementId": "prompt-visible neutral statement id",
+        "value": "decimal string",
+        "precision": {
+          "scale": 2,
+          "rounding": "ROUND_HALF_EVEN"
+        },
+        "roundingTrapId": "prompt-visible trap id"
+      }
+    ],
+    "evidenceCitations": [
+      {
+        "citationId": "prompt-visible citation id",
+        "evidenceRef": "input-provided reference"
+      }
+    ],
+    "stageStatus": {
+      "CFO": "PASSED",
+      "COO": "PASSED",
+      "Risk": "PASSED",
+      "Critic": "PASSED",
+      "Brief": "PASSED"
+    }
+  },
+  "rules": [
+    "Score value, precision and roundingTrapId, not display strings alone.",
+    "This schema is a structural contract. Expected labels remain in separate scorer-only files.",
+    "Frozen independent source quotes and claim IDs determine citation support. Model self-attestation is not trusted. stageStatus is display-only. Workflow metrics require independent stage-validation receipts.",
+    "Dispatch includes ordered input payloads only, without caseId, split, source or labels."
+  ]
+}

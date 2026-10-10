@@ -1,0 +1,161 @@
+- main:
+  - complementary "Decision workflow":
+    - generic "Causora":
+      - generic: CAUSORA
+    - generic: DAY 5 / 07
+    - paragraph: Decision twin
+    - strong:
+      - text: Trace the choice
+      - text: before you make it.
+    - navigation:
+      - button "Data Intake Sources linked":
+        - generic: Data Intake
+        - generic: Sources linked
+      - button "Scenario Lab Variables constrained":
+        - generic: Scenario Lab
+        - generic: Variables constrained
+      - button "Decision Matrix Options compared":
+        - generic: Decision Matrix
+        - generic: Options compared
+      - button "04 AI Boardroom Views challenged":
+        - generic: "04"
+        - generic: AI Boardroom
+        - generic: Views challenged
+      - button "05 Decision Brief Human decision":
+        - generic: "05"
+        - generic: Decision Brief
+        - generic: Human decision
+    - generic: Saved-example integrity
+    - generic: 5 / 5 fixture fields matched
+    - paragraph:
+      - text: "Matrix values: validated live API response."
+      - text: Boardroom and Critic are validated for this exact run; Evidence is fetched on demand.
+  - strong: AI Boardroom
+  - generic: 04 / 05
+  - generic: LIVE · PRIMARY REVIEW COMPLETE
+  - button "Reset local demo":
+    - generic: Reset
+  - button "Open cached verified Golden E2E run":
+    - generic: Verified cache
+  - button "Open saved example":
+    - text: Open saved example
+  - status:
+    - generic: Simulation service reachable · ready
+    - paragraph: Health confirms service readiness only; human review and team policy gates are evaluated separately.
+    - button "Recheck health"
+  - region "Evidence to decision visual narrative":
+    - generic: THE PROOF ENGINE / 04
+    - heading "Let the numbers be challenged." [level=2]:
+      - text: Let the numbers
+      - emphasis: be challenged.
+    - paragraph: Validated primary Boardroom and complete Critic response are bound to sim-4ff6c803c309c2a34874eee8 · demand-drop.
+    - group "Follow the evidence chain":
+      - button "01 Evidence"
+      - button "02 Variable"
+      - button "03 Matrix"
+    - generic "Inspectable evidence chain":
+      - button "01 / EVIDENCE EV-014 60 days · contract p. 4":
+        - generic: 01 / EVIDENCE
+        - strong: EV-014
+        - generic: 60 days · contract p. 4
+      - 'button "02 / VARIABLE 60% min A Renewal locked-in: Yes"':
+        - generic: 02 / VARIABLE
+        - strong: 60% min A
+        - generic: "Renewal locked-in: Yes"
+      - button "03 / MATRIX D1 · $358,161 Demand −15% · live API":
+        - generic: 03 / MATRIX
+        - strong: D1 · $358,161
+        - generic: Demand −15% · live API
+    - generic: LIVE BOARDROOM VALIDATED
+    - text: DATA VERSION / reviewed-synthetic-2026-10-07-wang-v1
+    - generic: ·
+    - text: 1,000 RUNS · SEED 1042026 · DATASET ds-001
+  - generic: "04"
+  - text: Independent viewpoints
+  - heading "Invite challenge into the room." [level=1]
+  - paragraph: Each perspective sees only its permitted decision surface. The Critic connects what they miss alone.
+  - generic: "04"
+  - text: Run-bound review
+  - heading "Review this validated simulation." [level=2]
+  - paragraph: The Boardroom request is bound to the current simulation ID, dataVersion, and selected scenario.
+  - generic: LIVE BOARDROOM · PRIMARY
+  - region "Simulation summary retained for this downstream stage":
+    - generic: BOUND TO CURRENT SIMULATION
+    - generic: Demand −15%
+    - generic: REVIEWED V2
+    - generic: D0
+    - generic: $310,547
+    - generic: Stockout 26% · P90 $316,020
+    - generic: D1
+    - generic: $358,161
+    - generic: Stockout 0% · P90 $358,829
+    - generic: D2
+    - generic: $306,401
+    - generic: Stockout 96% · P90 $312,919
+    - paragraph: "Validated server selection: D1. Server selection is separate from the browser-local choice."
+    - generic "Current simulation identity":
+      - text: Simulation
+      - generic: sim-4ff6c803c309c2a34874eee8
+      - text: Data version
+      - generic: reviewed-synthetic-2026-10-07-wang-v1
+      - text: Scenario
+      - generic: demand-drop
+      - text: Simulation request
+      - generic: req-9c1c0a56a2314f2fad760f92585a98c4
+      - text: Mode
+      - generic: reviewed-release-gated
+  - region "Validated live agent outputs":
+    - text: VALIDATED BOARDROOM RESPONSE
+    - heading "Three bounded perspectives" [level=3]
+    - generic: PRIMARY PROVIDER
+    - article:
+      - button "C Finance and cash − Mixed A and B sourcing reduces concentration relative to current baseline Aligned" [expanded]:
+        - generic: C
+        - emphasis: Finance and cash
+        - generic: −
+        - heading "Mixed A and B sourcing reduces concentration relative to current baseline" [level=3]
+        - generic: Aligned
+      - paragraph: Selected plan keeps supply from both suppliers with a mixed allocation that lowers overall concentration versus the baseline. This retains minimum purchase and renewal exposure to supplier A while adding supplier B capacity. Inspect current cash tail risk $358,829 and expected total cost change +$47,614 when confirming the mixed sourcing implementation.
+      - generic: cash_outflow_p90
+      - generic: delta_tco
+    - article:
+      - button "C Operations and continuity − Mixed sourcing reduces concentration versus baseline Aligned" [expanded]:
+        - generic: C
+        - emphasis: Operations and continuity
+        - generic: −
+        - heading "Mixed sourcing reduces concentration versus baseline" [level=3]
+        - generic: Aligned
+      - paragraph: Selected allocation uses both suppliers and reduces dependence on supplier A while maintaining mixed sourcing with supplier B. This approach lowers overall concentration compared with the all A baseline and keeps supply exposure shared rather than moved entirely to B. Inspect current stockout probability 0% alongside operational buffers before committing.
+      - generic: stockout_probability
+    - article:
+      - button "R Contract and downside − Selected mix reduces reliance on A while keeping dual sourcing Aligned" [expanded]:
+        - generic: R
+        - emphasis: Contract and downside
+        - generic: −
+        - heading "Selected mix reduces reliance on A while keeping dual sourcing" [level=3]
+        - generic: Aligned
+      - paragraph: Selected allocation keeps purchases from both suppliers with a mixed A/B split. This reduces dependence on supplier A compared to the all A baseline while retaining a minimum A purchase commitment. Inspect cash tail risk $358,829 and note the modeled stockout probability 0% for this mixed plan.
+      - generic: cash_outflow_p90
+      - generic: stockout_probability
+  - region "Validated live Critic issues":
+    - text: CRITIC · COMPLETE
+    - heading "Cross-view issues" [level=3]
+    - article:
+      - generic: Medium
+      - heading "Fixed commitment forces excess inventory under falling demand" [level=4]
+      - paragraph: The locked purchase baseline in the supplier contract creates committed excess volumes when demand drops. The fixed minimum allocation prevents downward adjustment, raising carrying burdens and potential overall outlays despite the mixed sourcing arrangement.
+      - text: Locked forecast
+      - generic: 26,000 units
+      - text: Minimum purchase A
+      - generic: 15,600 units
+      - text: Scenario demand
+      - generic: 22,100 units
+      - text: Committed excess
+      - generic: 2,340 units
+      - text: Holding Δ D0 / D1 / D2
+      - generic: $0 / +$9,655 / +$252
+      - button "EV-024 · live source"
+  - generic: AI failure, timeout, unavailable Critic, or malformed Brief never clears the validated simulation. Retry is Boardroom-only; review mode and approval stay tied to the same run.
+  - button "Review matching Decision Brief":
+    - text: Review matching Decision Brief
+- alert

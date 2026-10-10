@@ -1,0 +1,104 @@
+{
+  "schema": "causora.day5-benchmark-shared-inputs.v1",
+  "purpose": "The same answer-free controls must be supplied to Causora, plain LLM, and LLM plus local code. Expected labels are stored separately and must never be sent in an evaluation prompt.",
+  "source": "DAY5_SHARED_SYNTHETIC_CONTROL_INPUTS_PENDING_HUMAN_REVIEW_RECORD",
+  "rules": [
+    "Round displayed whole USD with half-even rounding.",
+    "P90 uses nearest rank ceil(0.90 × N) on sorted actual cash values.",
+    "Revenue zero yields null gross margin and INVALID_REVENUE_ZERO; do not divide by one.",
+    "A selected option must be feasible and pass both the stockout threshold and cash ceiling."
+  ],
+  "cases": [
+    {
+      "caseId": "locked_mixed_cost_rounding",
+      "kind": "cost",
+      "evidenceRef": "control:locked_mixed_cost_rounding",
+      "input": {
+        "unitsFromA": 150,
+        "unitsFromB": 100,
+        "priceAUsd": "12.00",
+        "priceBUsd": "12.60",
+        "renewalLocked": true,
+        "renewalUpliftFraction": "0.14",
+        "terminateA": false,
+        "terminationFeeUsd": 25000,
+        "rawHoldingMeanUsd": "25.5",
+        "rawStockoutLossMeanUsd": "5.5",
+        "fulfilledUnits": 250,
+        "sellingPriceUsdPerUnit": "20.00"
+      }
+    },
+    {
+      "caseId": "locked_exit_fee_and_half_even",
+      "kind": "cost",
+      "evidenceRef": "control:locked_exit_fee_and_half_even",
+      "input": {
+        "unitsFromA": 0,
+        "unitsFromB": 250,
+        "priceAUsd": "12.00",
+        "priceBUsd": "12.60",
+        "renewalLocked": true,
+        "renewalUpliftFraction": "0.14",
+        "terminateA": true,
+        "terminationFeeUsd": 25000,
+        "rawHoldingMeanUsd": "0.5",
+        "rawStockoutLossMeanUsd": "1.5",
+        "fulfilledUnits": 250,
+        "sellingPriceUsdPerUnit": "20.00"
+      }
+    },
+    {
+      "caseId": "zero_revenue_is_invalid_not_divided_by_one",
+      "kind": "cost",
+      "evidenceRef": "control:zero_revenue_is_invalid_not_divided_by_one",
+      "input": {
+        "unitsFromA": 0,
+        "unitsFromB": 0,
+        "priceAUsd": "12.00",
+        "priceBUsd": "12.60",
+        "renewalLocked": false,
+        "renewalUpliftFraction": "0.14",
+        "terminateA": false,
+        "terminationFeeUsd": 25000,
+        "rawHoldingMeanUsd": "0",
+        "rawStockoutLossMeanUsd": "0",
+        "fulfilledUnits": 0,
+        "sellingPriceUsdPerUnit": "20.00"
+      }
+    },
+    {
+      "caseId": "p90_nearest_rank_ten_trials",
+      "kind": "p90",
+      "evidenceRef": "control:p90_nearest_rank_ten_trials",
+      "input": {"cashOutflowUsd": [6, 12, 25, 9, 50, 45, 18, 23, 36, 31]}
+    },
+    {
+      "caseId": "constraint_selection_and_order",
+      "kind": "selection",
+      "evidenceRef": "control:constraint_selection_and_order",
+      "input": {
+        "riskThreshold": "0.12",
+        "budgetCeilingUsd": 480,
+        "options": [
+          {"optionId": "D0", "feasible": true, "stockoutProbability": "0.20", "cashOutflowP90": 300, "expectedTco": 300},
+          {"optionId": "D1", "feasible": true, "stockoutProbability": "0.05", "cashOutflowP90": 310, "expectedTco": 310},
+          {"optionId": "D2", "feasible": true, "stockoutProbability": "0.05", "cashOutflowP90": 550, "expectedTco": 280}
+        ]
+      }
+    },
+    {
+      "caseId": "no_feasible_option_is_explicit",
+      "kind": "selection",
+      "evidenceRef": "control:no_feasible_option_is_explicit",
+      "input": {
+        "riskThreshold": "0.12",
+        "budgetCeilingUsd": 480,
+        "options": [
+          {"optionId": "D0", "feasible": false, "stockoutProbability": "0.20", "cashOutflowP90": 500, "expectedTco": 300},
+          {"optionId": "D1", "feasible": true, "stockoutProbability": "0.13", "cashOutflowP90": 310, "expectedTco": 310},
+          {"optionId": "D2", "feasible": true, "stockoutProbability": "0.05", "cashOutflowP90": 550, "expectedTco": 280}
+        ]
+      }
+    }
+  ]
+}

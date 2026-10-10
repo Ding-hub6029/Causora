@@ -1,0 +1,14 @@
+{
+  "kind": "WANG_JINZHU_DAY3_SUPPLIED_SOURCE_PINS_V1",
+  "archiveName": "Causora-DengJinzhu-Day3-Integrated(1).zip",
+  "archiveSha256": "89ac0fb9a851090d63722f33825b5250566fc7da28c2bb32ce6465f1a58bd9d3",
+  "backendFilesSha256": {
+    "app/service.py": "379923b2ddaf73933cd249b98ae93aef77bb208d25eb591ff29c8c588803e2be",
+    "app/unreviewed_development.py": "7eaa823b0d14d40ec02dea07e9f74a0f3af73952152dfefb6856c399e264af62",
+    "app/contracts_v2.py": "958eccff2b98206ac0f0bcd19e5831223f92746411e2384d6b24c15c1402ac96",
+    "app/release_verifiers.py": "6b1870dd3f43778110ead5faffe1b8b6c0b679f2cde9de54a13cbb206d45ba7c",
+    "simulation_day3/monte_carlo.py": "daaaf84bb5abeeff7b89413ee9d0d5e4d6fd7e8da48bd1985daf360eac755da8",
+    "simulation_day3/policy.py": "0dd84f4f390254a5897f73c6e96a9db54650b295d32ca8a85c9d0bc536dc9d47",
+    "contracts/causora.contract.v2.schema.json": "7eb78481a7eeebcf91ee2b844ad70548b60e35d0225ccb73267d1d860638b06d"
+  }
+}

@@ -1,0 +1,254 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://causora.example/day3-internal/unapproved_mc_policy.schema.json",
+  "$defs": {
+    "OperatingPolicy": {
+      "additionalProperties": false,
+      "description": "Explicit operating assumptions; no deterministic lead-time mode leaks in.",
+      "properties": {
+        "assumptionStatus": {
+          "const": "UNAPPROVED_TEST_INPUT",
+          "title": "Assumptionstatus",
+          "type": "string"
+        },
+        "horizonStartDate": {
+          "format": "date",
+          "title": "Horizonstartdate",
+          "type": "string"
+        },
+        "openingInventoryEffectiveDate": {
+          "format": "date",
+          "title": "Openinginventoryeffectivedate",
+          "type": "string"
+        },
+        "openingInventoryUnits": {
+          "maximum": 1000000,
+          "minimum": 0,
+          "title": "Openinginventoryunits",
+          "type": "integer"
+        },
+        "openingInventorySource": {
+          "minLength": 1,
+          "title": "Openinginventorysource",
+          "type": "string"
+        },
+        "sellingPriceUsdPerUnit": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Sellingpriceusdperunit"
+        },
+        "lostContributionMarginUsdPerUnit": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Lostcontributionmarginusdperunit"
+        },
+        "holdingCostUsdPerUnitWeek": {
+          "anyOf": [
+            {
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "pattern": "^(?!^[-+.]*$)[+-]?0*\\d*\\.?\\d*$",
+              "type": "string"
+            }
+          ],
+          "title": "Holdingcostusdperunitweek"
+        },
+        "safetyStockUnits": {
+          "maximum": 1000000,
+          "minimum": 0,
+          "title": "Safetystockunits",
+          "type": "integer"
+        },
+        "targetStockUnits": {
+          "exclusiveMinimum": 0,
+          "maximum": 1000000,
+          "title": "Targetstockunits",
+          "type": "integer"
+        },
+        "cashTiming": {
+          "const": "at_order",
+          "title": "Cashtiming",
+          "type": "string"
+        },
+        "roundingMode": {
+          "const": "half_even",
+          "title": "Roundingmode",
+          "type": "string"
+        },
+        "demandMode": {
+          "const": "empirical_weekly_bootstrap",
+          "title": "Demandmode",
+          "type": "string"
+        },
+        "leadTimeMode": {
+          "const": "empirical_po_bootstrap_with_explicit_B_fallback",
+          "title": "Leadtimemode",
+          "type": "string"
+        },
+        "leadStressAppliesTo": {
+          "enum": [
+            "A_only",
+            "all_suppliers"
+          ],
+          "title": "Leadstressappliesto",
+          "type": "string"
+        },
+        "commitmentSchedule": {
+          "const": "linear_weekly",
+          "title": "Commitmentschedule",
+          "type": "string"
+        },
+        "purchaseRecognition": {
+          "const": "at_order",
+          "title": "Purchaserecognition",
+          "type": "string"
+        },
+        "holdingBasis": {
+          "const": "available_ending_average",
+          "title": "Holdingbasis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "assumptionStatus",
+        "horizonStartDate",
+        "openingInventoryEffectiveDate",
+        "openingInventoryUnits",
+        "openingInventorySource",
+        "sellingPriceUsdPerUnit",
+        "lostContributionMarginUsdPerUnit",
+        "holdingCostUsdPerUnitWeek",
+        "safetyStockUnits",
+        "targetStockUnits",
+        "cashTiming",
+        "roundingMode",
+        "demandMode",
+        "leadTimeMode",
+        "leadStressAppliesTo",
+        "commitmentSchedule",
+        "purchaseRecognition",
+        "holdingBasis"
+      ],
+      "title": "OperatingPolicy",
+      "type": "object"
+    },
+    "TriangularLead": {
+      "additionalProperties": false,
+      "properties": {
+        "minDays": {
+          "maximum": 365,
+          "minimum": 1,
+          "title": "Mindays",
+          "type": "integer"
+        },
+        "modeDays": {
+          "maximum": 365,
+          "minimum": 1,
+          "title": "Modedays",
+          "type": "integer"
+        },
+        "maxDays": {
+          "maximum": 365,
+          "minimum": 1,
+          "title": "Maxdays",
+          "type": "integer"
+        },
+        "provenance": {
+          "const": "USER_ASSUMED_UNAPPROVED",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "explanation": {
+          "minLength": 12,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "minDays",
+        "modeDays",
+        "maxDays",
+        "provenance",
+        "explanation"
+      ],
+      "title": "TriangularLead",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "policyStatus": {
+      "const": "UNAPPROVED_TEST_INPUT",
+      "title": "Policystatus",
+      "type": "string"
+    },
+    "operatingPolicy": {
+      "$ref": "#/$defs/OperatingPolicy"
+    },
+    "supplierBLeadFallback": {
+      "$ref": "#/$defs/TriangularLead"
+    },
+    "monteCarloRuns": {
+      "maximum": 10000,
+      "minimum": 1,
+      "title": "Montecarloruns",
+      "type": "integer"
+    },
+    "demandMethod": {
+      "const": "empirical_weekly_bootstrap",
+      "title": "Demandmethod",
+      "type": "string"
+    },
+    "supplierALeadMethod": {
+      "const": "empirical_po_bootstrap",
+      "title": "Supplieraleadmethod",
+      "type": "string"
+    },
+    "supplierBLeadMethod": {
+      "const": "user_assumed_triangular",
+      "title": "Supplierbleadmethod",
+      "type": "string"
+    },
+    "cashP90Method": {
+      "const": "nearest_rank_ceil_0.90N",
+      "title": "Cashp90Method",
+      "type": "string"
+    },
+    "meanCostRounding": {
+      "const": "whole_usd_half_even_after_mean",
+      "title": "Meancostrounding",
+      "type": "string"
+    }
+  },
+  "required": [
+    "policyStatus",
+    "operatingPolicy",
+    "supplierBLeadFallback",
+    "monteCarloRuns",
+    "demandMethod",
+    "supplierALeadMethod",
+    "supplierBLeadMethod",
+    "cashP90Method",
+    "meanCostRounding"
+  ],
+  "title": "Day3Policy",
+  "type": "object"
+}

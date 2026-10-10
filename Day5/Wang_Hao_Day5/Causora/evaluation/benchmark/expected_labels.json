@@ -1,0 +1,152 @@
+{
+  "schema": "causora.day5-benchmark-expected-labels.v1",
+  "source": "PENDING_HUMAN_REVIEW_RECORD_DAY5_CONTROL_LABELS",
+  "sharedInputsSha256": "12ccc54cc4fd6ed6e38848b38d5f44fc6996a0807f6fc64f574a46c6322c82a8",
+  "labels": [
+    {
+      "caseId": "locked_mixed_cost_rounding",
+      "answer": {
+        "breakdown": {
+          "purchase": 3060,
+          "holding": 26,
+          "stockoutLoss": 6,
+          "renewalPremium": 252,
+          "terminationFee": 0
+        },
+        "expectedTco": 3344,
+        "expectedRevenueUsd": 5000,
+        "expectedGrossProfitUsd": 1656,
+        "grossMargin": "0.3312",
+        "grossMarginStatus": "VALID"
+      },
+      "requiredEvidenceRefs": [
+        "control:locked_mixed_cost_rounding"
+      ],
+      "requiredPoisonPillFlags": [
+        "half_even_whole_usd",
+        "renewal_premium_when_locked"
+      ]
+    },
+    {
+      "caseId": "locked_exit_fee_and_half_even",
+      "answer": {
+        "breakdown": {
+          "purchase": 3150,
+          "holding": 0,
+          "stockoutLoss": 2,
+          "renewalPremium": 0,
+          "terminationFee": 25000
+        },
+        "expectedTco": 28152,
+        "expectedRevenueUsd": 5000,
+        "expectedGrossProfitUsd": -23152,
+        "grossMargin": "-4.6304",
+        "grossMarginStatus": "VALID"
+      },
+      "requiredEvidenceRefs": [
+        "control:locked_exit_fee_and_half_even"
+      ],
+      "requiredPoisonPillFlags": [
+        "half_even_whole_usd",
+        "termination_fee_when_locked_and_terminated"
+      ]
+    },
+    {
+      "caseId": "zero_revenue_is_invalid_not_divided_by_one",
+      "answer": {
+        "breakdown": {
+          "purchase": 0,
+          "holding": 0,
+          "stockoutLoss": 0,
+          "renewalPremium": 0,
+          "terminationFee": 0
+        },
+        "expectedTco": 0,
+        "expectedRevenueUsd": 0,
+        "expectedGrossProfitUsd": 0,
+        "grossMargin": null,
+        "grossMarginStatus": "INVALID_REVENUE_ZERO"
+      },
+      "requiredEvidenceRefs": [
+        "control:zero_revenue_is_invalid_not_divided_by_one"
+      ],
+      "requiredPoisonPillFlags": [
+        "revenue_zero_must_not_be_divided_by_one"
+      ]
+    },
+    {
+      "caseId": "p90_nearest_rank_ten_trials",
+      "answer": {
+        "denominatorRuns": 10,
+        "rankOneBased": 9,
+        "cashOutflowP90": 45,
+        "method": "nearest_rank_ceil_0.90N"
+      },
+      "requiredEvidenceRefs": [
+        "control:p90_nearest_rank_ten_trials"
+      ],
+      "requiredPoisonPillFlags": [
+        "nearest_rank_not_interpolated"
+      ]
+    },
+    {
+      "caseId": "constraint_selection_and_order",
+      "answer": {
+        "status": "selected",
+        "recommendedOptionId": "D1",
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "cash_ceiling"
+          }
+        ]
+      },
+      "requiredEvidenceRefs": [
+        "control:constraint_selection_and_order"
+      ],
+      "requiredPoisonPillFlags": [
+        "risk_and_cash_constraints_both_apply",
+        "option_order_is_not_recommendation"
+      ]
+    },
+    {
+      "caseId": "no_feasible_option_is_explicit",
+      "answer": {
+        "status": "no_feasible_option",
+        "recommendedOptionId": null,
+        "constraintViolations": [
+          {
+            "optionId": "D0",
+            "code": "infeasible"
+          },
+          {
+            "optionId": "D0",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D0",
+            "code": "cash_ceiling"
+          },
+          {
+            "optionId": "D1",
+            "code": "stockout_threshold"
+          },
+          {
+            "optionId": "D2",
+            "code": "cash_ceiling"
+          }
+        ]
+      },
+      "requiredEvidenceRefs": [
+        "control:no_feasible_option_is_explicit"
+      ],
+      "requiredPoisonPillFlags": [
+        "no_feasible_option_must_not_recommend"
+      ]
+    }
+  ]
+}

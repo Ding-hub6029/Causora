@@ -1,0 +1,193 @@
+- main:
+  - complementary "Decision workflow":
+    - generic "Causora":
+      - generic: CAUSORA
+    - generic: DAY 4 / 07
+    - paragraph: Decision twin
+    - strong:
+      - text: Trace the choice
+      - text: before you make it.
+    - navigation:
+      - button "Data Intake Sources linked":
+        - generic: Data Intake
+        - generic: Sources linked
+      - button "Scenario Lab Variables constrained":
+        - generic: Scenario Lab
+        - generic: Variables constrained
+      - button "Decision Matrix Options compared":
+        - generic: Decision Matrix
+        - generic: Options compared
+      - button "AI Boardroom Views challenged":
+        - generic: AI Boardroom
+        - generic: Views challenged
+      - button "05 Decision Brief Human decision":
+        - generic: "05"
+        - generic: Decision Brief
+        - generic: Human decision
+    - generic: Saved-example integrity
+    - generic: 5 / 5 fixture fields matched
+    - paragraph:
+      - text: Read-only complete reviewed E2E cache; simulation, Boardroom, Evidence, and local decision were revalidated.
+      - text: No API call is made and the snapshot is read-only.
+  - generic: CAUSORA
+  - generic: Decision workspace
+  - strong: Decision Brief
+  - generic: 05 / 05
+  - generic: CACHED · VERIFIED GOLDEN RUN
+  - button "Reset local demo":
+    - generic: Reset
+  - button "Open saved example":
+    - text: Open saved example
+  - status:
+    - generic: Simulation service reachable · ready
+    - paragraph: Health confirms service readiness only; human review and team policy gates are evaluated separately.
+    - button "Recheck health"
+  - region "Evidence to decision visual narrative":
+    - generic: THE PROOF ENGINE / 05
+    - heading "The last word is human." [level=2]:
+      - text: The last word
+      - emphasis: is human.
+    - paragraph: The Brief is bound to the same simulation, dataVersion, scenario, Critic, and Numeric Guardrail. Final choice stays browser-local and human-controlled.
+    - group "Follow the evidence chain":
+      - button "01 Evidence"
+      - button "02 Variable"
+      - button "03 Matrix"
+    - text: SAVED DEMO SOURCE · NOT LIVE
+    - generic: EV-014
+    - generic: 60 days
+    - paragraph: “If written notice is not received at least 60 days b...”
+    - generic: supplier_a_agreement.pdf
+    - generic: p. 4
+    - text: SAVED DEMO CONTRACT · NOT LIVE
+    - generic: NOTICE WINDOW
+    - generic: 60d
+    - generic: minimum share A
+    - strong: 60%
+    - generic: renewal premium
+    - strong: +14%
+    - generic: SAVED EXAMPLE · NOT IN LIVE DTO
+    - text: OPTION × SCENARIO
+    - text: BASELINE
+    - generic: · LIVE API
+    - generic: D0 / KEEP A
+    - generic: $365,811
+    - generic: D1 / DIVERSIFY
+    - generic: $348,040
+    - generic: D2 / EXIT A
+    - generic: $356,665
+    - generic: SELECTED D1 · 1,000 RUNS
+    - status:
+      - generic: HUMAN REJECTED
+      - generic: D1 · browser-local only · no external action
+    - generic: REJECTED BY HUMAN REVIEWER
+    - text: DATA VERSION / reviewed-synthetic-2026-10-07-wang-v1
+    - generic: ·
+    - text: 1,000 RUNS · SEED 1042026 · DATASET ds-001
+  - generic: "05"
+  - text: Human decision
+  - heading "Review the matching decision brief." [level=1]
+  - paragraph: The simulation, Boardroom and Critic are validated for this exact run. The final choice remains under human control and is recorded only in this browser.
+  - generic: "05"
+  - text: Run-bound human decision
+  - heading "Retain the mixed A and B allocation as selected, keeping supplier A active at its required minimum and adding supplier B as a material source." [level=2]
+  - paragraph: "The selected mix preserves the retained minimum purchase obligations to supplier A while introducing supplier B to lower overall supplier concentration relative to the all A baseline. Service and cash tradeoffs favor the mixed allocation: delivery risk improves under the mixed sourcing and the computed cash tail outcome stays within the enforced ceiling. The retained-A obligations are conditional under renewal and are not an active termination."
+  - generic: CACHED VERIFIED REVIEW · READ-ONLY
+  - region "Simulation summary retained for this downstream stage":
+    - generic: BOUND TO CURRENT SIMULATION
+    - generic: Baseline
+    - generic: REVIEWED V2
+    - generic: D0
+    - generic: $365,811
+    - generic: Stockout 92% · P90 $369,631
+    - generic: D1
+    - generic: $348,040
+    - generic: Stockout 1% · P90 $348,723
+    - generic: D2
+    - generic: $356,665
+    - generic: Stockout 90% · P90 $361,811
+    - paragraph: "Validated server selection: D1. Server selection is separate from the browser-local human decision."
+    - generic "Current simulation identity":
+      - text: Simulation
+      - generic: sim-4ff6c803c309c2a34874eee8
+      - text: Data version
+      - generic: reviewed-synthetic-2026-10-07-wang-v1
+      - text: Scenario
+      - generic: baseline
+      - text: Simulation request
+      - generic: req-7a83290703a94ae189ef35adc1623c83
+      - text: Mode
+      - generic: reviewed-release-gated
+  - generic: Expected 24m TCO
+  - strong: $348,040
+  - generic: D1 · Baseline · from current validated Simulation
+  - generic: Stockout probability
+  - strong: 1%
+  - generic: from current validated Simulation
+  - generic: P90 cash outflow
+  - strong: $348,723
+  - generic: from current validated Simulation
+  - generic: Decision Delta · D1 − D0 · Baseline
+  - generic: TCO −$17,771
+  - generic: Stockout −91.1 pp
+  - generic: Service +0.243 pp
+  - generic: P90 cash −$20,908
+  - generic: "Numeric Guardrail PASSED · 0 rejected claims · accepted refs: delta_tco, stockout_probability, cash_outflow_p90"
+  - text: CRITIC · SAME RUN
+  - heading "Challenges retained" [level=3]
+  - article:
+    - generic: High · Locked forecast and minimum purchase commitment compound under demand change
+    - paragraph: The selected mixed allocation relies on a locked forecast during the renewal window, leaving the business exposed to committed excess if demand falls. Minimum purchase requirements from the legacy supplier remain enforced regardless of downstream demand shifts, potentially leading to increased holding costs. While roles noted the mixed allocation, they missed how the fixed minimum floor compounds with a locked baseline to elevate financial risk under dropping demand scenarios.
+    - button "EV-014 · open live Evidence"
+    - button "EV-019 · open live Evidence"
+    - button "EV-020 · open live Evidence"
+    - button "EV-024 · open live Evidence"
+  - button "Formula Trace · D1 · same simulation":
+    - text: Formula Trace · D1 · same simulation
+  - button "Open live Evidence":
+    - text: Open live Evidence
+  - text: Simulation ID
+  - generic: sim-4ff6c803c309c2a34874eee8
+  - text: Simulation request
+  - generic: req-7a83290703a94ae189ef35adc1623c83
+  - text: Boardroom request
+  - generic: causora-br-b12aa1d9-602c-4e11-beb8-cb605fbc5c88
+  - text: Data version
+  - generic: reviewed-synthetic-2026-10-07-wang-v1
+  - text: Scenario
+  - generic: baseline
+  - text: Provider
+  - generic: primary
+  - text: Human review
+  - generic: reviewed
+  - text: Team policy
+  - generic: approved
+  - text: v2 release
+  - generic: released
+  - generic: Approve/Reject records a choice in this browser for this exact run and option only. It is not transmitted, signed, or sent to a supplier.
+  - button "Record human approval D1" [disabled]:
+    - text: Record human approval D1
+  - button "Record rejection" [disabled]:
+    - text: Record rejection
+  - button "Change assumptions":
+    - text: Change assumptions
+  - generic: Rejected
+  - generic: Recorded locally for sim-4ff6c803c309c2a34874eee8 · baseline · D1; no external approval occurred.
+  - generic: A complete verified Golden E2E run is available in this browser.
+  - button "Open cached verified Golden run"
+  - button "Export verified Golden snapshot"
+  - heading "Human decision control" [level=3]
+  - generic: H
+  - generic: HUMAN REVIEWER
+  - heading "Keep the final call with the human." [level=3]
+  - paragraph: This verified Golden snapshot is read-only. Its stored decision cannot be overwritten; change assumptions to start a new live comparison.
+  - list:
+    - generic: Simulation
+    - generic: Reviewed v2
+    - generic: Boardroom identity
+    - generic: Matches current run
+    - generic: Numeric Guardrail
+    - generic: Passed
+    - generic: Human action
+    - generic: Disabled
+  - button "Return to Decision Matrix"
+- alert

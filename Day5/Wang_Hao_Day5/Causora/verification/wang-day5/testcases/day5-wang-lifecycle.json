@@ -1,0 +1,48 @@
+{
+  "kind": "causora.wang.day5.lifecycle-testcases.v1",
+  "scope": "local-only TEST_FIXTURE_ONLY; no provider, model, network, deployment, or secret call",
+  "cases": [
+    {
+      "id": "WANG-D5-BE-001",
+      "name": "AI wait followed by newer simulation rejects retired Boardroom result",
+      "file": "backend/backend/tests/test_day5_wang_lifecycle.py",
+      "assertions": ["old request receives 422 stale_simulation", "request ID echoes in header and body", "current simulation header names replacement"]
+    },
+    {
+      "id": "WANG-D5-BE-002",
+      "name": "AI/provider failure retains reviewed Matrix, Formula Trace, and Evidence",
+      "file": "backend/backend/tests/test_day5_wang_lifecycle.py",
+      "assertions": ["Boardroom returns provider failure", "stored trace remains identity-bound", "Evidence remains source-backed and dataVersion-bound"]
+    },
+    {
+      "id": "WANG-D5-BE-003",
+      "name": "No feasible option skips provider dispatch and has no recommendation",
+      "file": "backend/backend/tests/test_day5_wang_lifecycle.py",
+      "assertions": ["formal no-feasible branch returns 200 typed no-feasible brief", "provider factory is never reached", "recommendedOptionId is null"]
+    },
+    {
+      "id": "WANG-D5-FE-001",
+      "name": "Pre-aborted Boardroom/Evidence signal cannot invoke fetch",
+      "file": "frontend/tests/day5-wang-request-lifecycle.test.mjs",
+      "assertions": ["zero fetch calls", "stale_response", "non-retryable"]
+    },
+    {
+      "id": "WANG-D5-FE-002",
+      "name": "Boardroom response header and envelope correlate to outbound request ID",
+      "file": "frontend/tests/day5-wang-request-lifecycle.test.mjs",
+      "assertions": ["mismatched response x-request-id rejected", "outbound X-Request-Id retained"]
+    },
+    {
+      "id": "WANG-D5-FE-003",
+      "name": "Evidence response header and envelope correlate to outbound request ID",
+      "file": "frontend/tests/day5-wang-request-lifecycle.test.mjs",
+      "assertions": ["mismatched response x-request-id rejected", "mismatched envelope requestId rejected"]
+    },
+    {
+      "id": "WANG-D5-FE-004",
+      "name": "Syntactically valid unsupported Evidence IDs remain server-authoritative",
+      "file": "frontend/tests/day5-wang-request-lifecycle.test.mjs",
+      "assertions": ["EV-999 reaches the evidence endpoint", "server 404 maps to non-retryable not_found", "no client DTO allowlist is invented"]
+    }
+  ]
+}

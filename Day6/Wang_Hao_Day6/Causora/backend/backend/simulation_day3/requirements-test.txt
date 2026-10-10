@@ -1,0 +1,6 @@
+# Install alongside simulation_day1/requirements-test.txt.
+# PCG64/index draws must be rerun with the same NumPy version for byte-exact replay.
+numpy==2.5.3
+pytest>=8,<10
+jsonschema>=4,<5
+openpyxl>=3.1,<4

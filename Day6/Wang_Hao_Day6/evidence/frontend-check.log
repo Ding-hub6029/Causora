@@ -1,0 +1,494 @@
+
+> causora-day5-ding@0.5.0 check
+> npm run typecheck && npm run lint && npm test && npm run build:previews && npm run test:production
+
+
+> causora-day5-ding@0.5.0 typecheck
+> tsc --noEmit
+
+
+> causora-day5-ding@0.5.0 lint
+> eslint . --max-warnings=0
+
+
+> causora-day5-ding@0.5.0 test
+> node --test tests/day1-flow.test.mjs tests/day2-ux.test.mjs tests/simulate-api.test.mjs tests/day4-api.test.mjs tests/golden-health.test.mjs tests/golden-bootstrap.test.mjs tests/toolchain-boundary.test.mjs tests/day5-wang-request-lifecycle.test.mjs
+
+TAP version 13
+# Subtest: Contract version and all five stages have the required data
+ok 1 - Contract version and all five stages have the required data
+  ---
+  duration_ms: 1.7752
+  type: 'test'
+  ...
+# Subtest: Four synthetic source files and the notice register are real packaged artifacts
+ok 2 - Four synthetic source files and the notice register are real packaged artifacts
+  ---
+  duration_ms: 1.649
+  type: 'test'
+  ...
+# Subtest: All evidence quotes contain their critical values; EV-019 maps to a variable
+ok 3 - All evidence quotes contain their critical values; EV-019 maps to a variable
+  ---
+  duration_ms: 0.2059
+  type: 'test'
+  ...
+# Subtest: All five EvidenceRecord quotes match their cited PDF page; wrong quote and page fail
+ok 4 - All five EvidenceRecord quotes match their cited PDF page; wrong quote and page fail
+  ---
+  duration_ms: 80.9812
+  type: 'test'
+  ...
+# Subtest: Renewal lock requires a real date inequality AND an explicit notice input
+ok 5 - Renewal lock requires a real date inequality AND an explicit notice input
+  ---
+  duration_ms: 0.5321
+  type: 'test'
+  ...
+# Subtest: Locked forecast mechanism is explicit and the Critic uses matching inputs
+ok 6 - Locked forecast mechanism is explicit and the Critic uses matching inputs
+  ---
+  duration_ms: 0.2764
+  type: 'test'
+  ...
+# Subtest: Every matrix has each fixed option exactly once and at most one recommended cell
+ok 7 - Every matrix has each fixed option exactly once and at most one recommended cell
+  ---
+  duration_ms: 0.2848
+  type: 'test'
+  ...
+# Subtest: All 9 formula traces add exactly to their cells without a double-counted uplift
+ok 8 - All 9 formula traces add exactly to their cells without a double-counted uplift
+  ---
+  duration_ms: 0.2386
+  type: 'test'
+  ...
+# Subtest: Decision Delta is calculated from each selected scenario, not a hard-coded baseline
+ok 9 - Decision Delta is calculated from each selected scenario, not a hard-coded baseline
+  ---
+  duration_ms: 0.1948
+  type: 'test'
+  ...
+# Subtest: Agent and Critic numerical claims are guarded tokens resolved against the contract
+ok 10 - Agent and Critic numerical claims are guarded tokens resolved against the contract
+  ---
+  duration_ms: 11.751
+  type: 'test'
+  ...
+# Subtest: Golden Run is a complete independently serialised snapshot with a valid audit timestamp
+ok 11 - Golden Run is a complete independently serialised snapshot with a valid audit timestamp
+  ---
+  duration_ms: 0.5093
+  type: 'test'
+  ...
+# Subtest: Frozen workflow preserves Golden, labels unsimulated drafts and blocks stale live approval
+ok 12 - Frozen workflow preserves Golden, labels unsimulated drafts and blocks stale live approval
+  ---
+  duration_ms: 0.6181
+  type: 'test'
+  ...
+# Subtest: Formula modal identifies a scenario and option; dialog manages Tab, Escape and focus restore
+ok 13 - Formula modal identifies a scenario and option; dialog manages Tab, Escape and focus restore
+  ---
+  duration_ms: 0.4528
+  type: 'test'
+  ...
+# Subtest: Static start command and mobile status display work without a live backend
+ok 14 - Static start command and mobile status display work without a live backend
+  ---
+  duration_ms: 0.8688
+  type: 'test'
+  ...
+# Subtest: Runtime validation rejects unknown versions, malformed types and inconsistent accounting
+ok 15 - Runtime validation rejects unknown versions, malformed types and inconsistent accounting
+  ---
+  duration_ms: 3.4873
+  type: 'test'
+  ...
+# Subtest: Fractional probability differences keep precision; money preserves non-round values
+ok 16 - Fractional probability differences keep precision; money preserves non-round values
+  ---
+  duration_ms: 0.2126
+  type: 'test'
+  ...
+# Subtest: Guarded text handles cost increases, equality and unbound numbers
+ok 17 - Guarded text handles cost increases, equality and unbound numbers
+  ---
+  duration_ms: 0.3597
+  type: 'test'
+  ...
+# Subtest: Per-scenario selection, inclusive limits, deterministic ties and no-feasible Brief
+ok 18 - Per-scenario selection, inclusive limits, deterministic ties and no-feasible Brief
+  ---
+  duration_ms: 1.0004
+  type: 'test'
+  ...
+# Subtest: Golden integrity verification rejects tampering
+ok 19 - Golden integrity verification rejects tampering
+  ---
+  duration_ms: 3.1186
+  type: 'test'
+  ...
+# Subtest: Synthetic forecast provenance and rolling benchmark remain distinct from total excess
+ok 20 - Synthetic forecast provenance and rolling benchmark remain distinct from total excess
+  ---
+  duration_ms: 0.6407
+  type: 'test'
+  ...
+# Subtest: Day5 preserves validated live simulation while keeping the saved example explicitly labelled
+ok 21 - Day5 preserves validated live simulation while keeping the saved example explicitly labelled
+  ---
+  duration_ms: 0.6936
+  type: 'test'
+  ...
+# Subtest: Scenario and option meanings and all fixed Day2 option definitions remain unchanged
+ok 22 - Scenario and option meanings and all fixed Day2 option definitions remain unchanged
+  ---
+  duration_ms: 0.5409
+  type: 'test'
+  ...
+# Subtest: Risk and cash edits remain drafts until a new request; no stale approval is enabled
+ok 23 - Risk and cash edits remain drafts until a new request; no stale approval is enabled
+  ---
+  duration_ms: 0.1359
+  type: 'test'
+  ...
+# Subtest: Matrix browsing and option inspection are view-only and preserve the validated live run
+ok 24 - Matrix browsing and option inspection are view-only and preserve the validated live run
+  ---
+  duration_ms: 0.6249
+  type: 'test'
+  ...
+# Subtest: unreviewed v2 remains visibly non-decision-ready, has no winner styling, and traces weekly provenance
+ok 25 - unreviewed v2 remains visibly non-decision-ready, has no winner styling, and traces weekly provenance
+  ---
+  duration_ms: 0.6001
+  type: 'test'
+  ...
+# Subtest: Day1/Day2 shared v1 contract, data version, formula and scenario identities remain intact
+ok 26 - Day1/Day2 shared v1 contract, data version, formula and scenario identities remain intact
+  ---
+  duration_ms: 0.6013
+  type: 'test'
+  ...
+# Subtest: Boardroom success requires reviewed v2, exact run identity, correlated request id, three roles, Critic and Numeric Guardrail
+ok 27 - Boardroom success requires reviewed v2, exact run identity, correlated request id, three roles, Critic and Numeric Guardrail
+  ---
+  duration_ms: 1.7374
+  type: 'test'
+  ...
+# Subtest: Boardroom metric templates are declared and rendered from the matching Simulation
+ok 28 - Boardroom metric templates are declared and rendered from the matching Simulation
+  ---
+  duration_ms: 13.2644
+  type: 'test'
+  ...
+# Subtest: Boardroom client posts only v1 identity with no credentials, no-store, explicit request id, and classifies missing endpoint
+ok 29 - Boardroom client posts only v1 identity with no credentials, no-store, explicit request id, and classifies missing endpoint
+  ---
+  duration_ms: 3.4618
+  type: 'test'
+  ...
+# Subtest: Critic-unavailable and provider failures preserve retry classification without altering simulation
+ok 30 - Critic-unavailable and provider failures preserve retry classification without altering simulation
+  ---
+  duration_ms: 0.7047
+  type: 'test'
+  ...
+# Subtest: Evidence validator rejects stale ids, traversal, invalid pages and malformed PDF bboxes
+ok 31 - Evidence validator rejects stale ids, traversal, invalid pages and malformed PDF bboxes
+  ---
+  duration_ms: 0.5281
+  type: 'test'
+  ...
+# Subtest: Evidence client performs GET with omitted credentials and no-store, and maps a missing source to non-retryable
+ok 32 - Evidence client performs GET with omitted credentials and no-store, and maps a missing source to non-retryable
+  ---
+  duration_ms: 1.1368
+  type: 'test'
+  ...
+# Subtest: PDF locator highlights only an API bbox or an exact quote on the cited page
+ok 33 - PDF locator highlights only an API bbox or an exact quote on the cited page
+  ---
+  duration_ms: 0.3991
+  type: 'test'
+  ...
+# Subtest: Golden cache refuses TEST_FIXTURE_ONLY data and hash-mismatched stored runs
+ok 34 - Golden cache refuses TEST_FIXTURE_ONLY data and hash-mismatched stored runs
+  ---
+  duration_ms: 32.2314
+  type: 'test'
+  ...
+# Subtest: Unmatched Evidence stays viewable but cannot satisfy Verified Golden creation or reload
+ok 35 - Unmatched Evidence stays viewable but cannot satisfy Verified Golden creation or reload
+  ---
+  duration_ms: 81.5063
+  type: 'test'
+  ...
+# Subtest: Boardroom identity matcher rejects another simulation, request, dataVersion or scenario
+ok 36 - Boardroom identity matcher rejects another simulation, request, dataVersion or scenario
+  ---
+  duration_ms: 0.3187
+  type: 'test'
+  ...
+# Subtest: already-aborted Boardroom and Evidence signals fail closed before fetch is invoked
+ok 37 - already-aborted Boardroom and Evidence signals fail closed before fetch is invoked
+  ---
+  duration_ms: 1.7826
+  type: 'test'
+  ...
+# Subtest: Boardroom requires the response request-id header and envelope to exactly echo the outbound ID
+ok 38 - Boardroom requires the response request-id header and envelope to exactly echo the outbound ID
+  ---
+  duration_ms: 1.5207
+  type: 'test'
+  ...
+# Subtest: Evidence requires the response request-id header and envelope to exactly echo its outbound ID
+ok 39 - Evidence requires the response request-id header and envelope to exactly echo its outbound ID
+  ---
+  duration_ms: 1.4944
+  type: 'test'
+  ...
+# Subtest: syntactically valid but unsupported Evidence IDs remain a server-authoritative not-found response
+ok 40 - syntactically valid but unsupported Evidence IDs remain a server-authoritative not-found response
+  ---
+  duration_ms: 0.4513
+  type: 'test'
+  ...
+# Subtest: Evidence rejects a mutually consistent header/envelope that belongs to an older outbound request
+ok 41 - Evidence rejects a mutually consistent header/envelope that belongs to an older outbound request
+  ---
+  duration_ms: 0.4798
+  type: 'test'
+  ...
+# Subtest: a fresh browser with empty storage loads the complete same-origin static Golden and validates it
+ok 42 - a fresh browser with empty storage loads the complete same-origin static Golden and validates it
+  ---
+  duration_ms: 60.6019
+  type: 'test'
+  ...
+# Subtest: a valid browser cache takes precedence and does not make a network request
+ok 43 - a valid browser cache takes precedence and does not make a network request
+  ---
+  duration_ms: 29.0263
+  type: 'test'
+  ...
+# Subtest: a tampered local cache falls back to the immutable static record
+ok 44 - a tampered local cache falls back to the immutable static record
+  ---
+  duration_ms: 51.0137
+  type: 'test'
+  ...
+# Subtest: an invalid bundled record or non-JSON response is rejected rather than shown as verified
+ok 45 - an invalid bundled record or non-JSON response is rejected rather than shown as verified
+  ---
+  duration_ms: 23.2805
+  type: 'test'
+  ...
+# Subtest: the bundled Golden loader rejects non-same-origin URLs before fetching
+ok 46 - the bundled Golden loader rejects non-same-origin URLs before fetching
+  ---
+  duration_ms: 0.2024
+  type: 'test'
+  ...
+# Subtest: health endpoint follows the configured API origin and defaults to same-origin proxy
+ok 47 - health endpoint follows the configured API origin and defaults to same-origin proxy
+  ---
+  duration_ms: 1.1447
+  type: 'test'
+  ...
+# Subtest: static-only staging reports a missing public backend without sending a health request
+ok 48 - static-only staging reports a missing public backend without sending a health request
+  ---
+  duration_ms: 0.6307
+  type: 'test'
+  ...
+# Subtest: health probe is a credential-free no-store GET and accepts reachability without promoting pending gates
+ok 49 - health probe is a credential-free no-store GET and accepts reachability without promoting pending gates
+  ---
+  duration_ms: 18.8937
+  type: 'test'
+  ...
+# Subtest: health probe rejects non-ready and malformed responses
+ok 50 - health probe rejects non-ready and malformed responses
+  ---
+  duration_ms: 0.9563
+  type: 'test'
+  ...
+# Subtest: health probe reports a short timeout and aborts its request
+ok 51 - health probe reports a short timeout and aborts its request
+  ---
+  duration_ms: 16.3279
+  type: 'test'
+  ...
+# Subtest: initial health probe accepts a server that wakes after the previous short timeout
+ok 52 - initial health probe accepts a server that wakes after the previous short timeout
+  ---
+  duration_ms: 2611.1192
+  type: 'test'
+  ...
+# Subtest: actual backend reviewed v2 wire response validates without development opt-in
+ok 53 - actual backend reviewed v2 wire response validates without development opt-in
+  ---
+  duration_ms: 59.1529
+  type: 'test'
+  ...
+# Subtest: request builder preserves fixed options and maps shock, fractional risk, budget, seed and dataset
+ok 54 - request builder preserves fixed options and maps shock, fractional risk, budget, seed and dataset
+  ---
+  duration_ms: 1.0219
+  type: 'test'
+  ...
+# Subtest: test-only v1 fixture passes the strict envelope, matrix, accounting, delta and selection validator
+ok 55 - test-only v1 fixture passes the strict envelope, matrix, accounting, delta and selection validator
+  ---
+  duration_ms: 7.597
+  type: 'test'
+  ...
+# Subtest: v2 development response requires explicit opt-in/headers and a complete non-approved trace
+ok 56 - v2 development response requires explicit opt-in/headers and a complete non-approved trace
+  ---
+  duration_ms: 4.7673
+  type: 'test'
+  ...
+# Subtest: validator rejects mock/zero-run/version/seed and inconsistent accounting, purchase, delta or winner
+ok 57 - validator rejects mock/zero-run/version/seed and inconsistent accounting, purchase, delta or winner
+  ---
+  duration_ms: 1.2901
+  type: 'test'
+  ...
+# Subtest: live Matrix recommendation styling derives from validated selections, not the response tone hint
+ok 58 - live Matrix recommendation styling derives from validated selections, not the response tone hint
+  ---
+  duration_ms: 0.262
+  type: 'test'
+  ...
+# Subtest: HTTP client posts only to the configured v1 endpoint and accepts only a valid success envelope
+ok 59 - HTTP client posts only to the configured v1 endpoint and accepts only a valid success envelope
+  ---
+  duration_ms: 0.504
+  type: 'test'
+  ...
+# Subtest: HTTP client opts into the marked v2 development adapter only when explicitly configured
+ok 60 - HTTP client opts into the marked v2 development adapter only when explicitly configured
+  ---
+  duration_ms: 3.0511
+  type: 'test'
+  ...
+# Subtest: HTTP errors stay errors and retain the API request ID instead of applying a saved row as live
+ok 61 - HTTP errors stay errors and retain the API request ID instead of applying a saved row as live
+  ---
+  duration_ms: 0.5052
+  type: 'test'
+  ...
+# Subtest: Configured Next lint root resolution does not evaluate externally supplied brace/glob patterns
+ok 62 - Configured Next lint root resolution does not evaluate externally supplied brace/glob patterns
+  ---
+  duration_ms: 2.6891
+  type: 'test'
+  ...
+1..62
+# tests 62
+# suites 0
+# pass 62
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3112.3996
+
+> causora-day5-ding@0.5.0 build:previews
+> node scripts/build-previews.mjs
+
+Prepared the local PDF.js worker asset.
+   ▲ Next.js 15.5.27
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 14.0s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                     105 kB         208 kB
+├ ○ /_not-found                            994 B         104 kB
+└ ○ /icon.svg                                0 B            0 B
++ First Load JS shared by all             103 kB
+  ├ chunks/426-9dd0c0f0b4d8065a.js       46.5 kB
+  ├ chunks/80c73a23-62b10049c431e28b.js  54.2 kB
+  └ other shared chunks (total)          2.02 kB
+
+
+○  (Static)  prerendered as static content
+
+Verified build selection: static -> builds/static
+Prepared the local PDF.js worker asset.
+   ▲ Next.js 15.5.27
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.2s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                     105 kB         208 kB
+├ ○ /_not-found                            994 B         104 kB
+└ ○ /icon.svg                                0 B            0 B
++ First Load JS shared by all             103 kB
+  ├ chunks/426-9dd0c0f0b4d8065a.js       46.5 kB
+  ├ chunks/80c73a23-62b10049c431e28b.js  54.2 kB
+  └ other shared chunks (total)          2.02 kB
+
+
+○  (Static)  prerendered as static content
+
+Verified build selection: live -> builds/live
+
+> causora-day5-ding@0.5.0 test:production
+> node --test tests/static-server.test.mjs
+
+TAP version 13
+# Subtest: Production preview serves correct source types and keeps source files private
+ok 1 - Production preview serves correct source types and keeps source files private
+  ---
+  duration_ms: 265.1034
+  type: 'test'
+  ...
+# Subtest: Same-origin preview forwards API bodies and gate headers; unavailable backend fails closed
+ok 2 - Same-origin preview forwards API bodies and gate headers; unavailable backend fails closed
+  ---
+  duration_ms: 99.6587
+  type: 'test'
+  ...
+# Subtest: Static-only deployment blocks health/API proxying before reaching the configured backend
+ok 3 - Static-only deployment blocks health/API proxying before reaching the configured backend
+  ---
+  duration_ms: 101.2538
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 556.1886
